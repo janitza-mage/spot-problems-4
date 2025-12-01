@@ -1,4 +1,4 @@
-import {type ContentNode, type FolderNode} from "./types.tsx";
+import {type ContentNode, type FolderNode} from "./content.tsx";
 import {contentTree} from "../content/contentTree.tsx";
 
 export function getContentNodeChildById(node: ContentNode, id: string): ContentNode | null {

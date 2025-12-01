@@ -3,7 +3,7 @@ import {
   type ExerciseComponent,
   type ExerciseComponentProps,
   type HintLevelApplicable
-} from "../types.tsx";
+} from "../content.tsx";
 import {type ReactElement, useState} from "react";
 import {Button} from "@mui/material";
 

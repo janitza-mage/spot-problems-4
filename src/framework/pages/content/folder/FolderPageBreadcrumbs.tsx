@@ -1,4 +1,4 @@
-import {type ContentNode} from "../../../types.tsx";
+import {type ContentNode} from "../../../content.tsx";
 import {Breadcrumbs, type BreadcrumbsElement} from "../../../technical-components/navigation/Breadcrumbs/Breadcrumbs";
 import {buildUrlPathForContentPath, getContentNodeChildById} from "../../../paths.tsx";
 import {contentTree} from "../../../../content/contentTree";

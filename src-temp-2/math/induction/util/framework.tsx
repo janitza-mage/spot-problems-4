@@ -1,8 +1,8 @@
 import {type ReactNode} from "react";
-import {applyHintLevel, type ExerciseInstance, type HintLevelApplicable} from "../../../../framework/types.tsx";
-import {isNatPlus} from "../../../../framework/exercise-components/math/math-atoms";
-import {mathSpan} from "../../../../framework/technical-components/Math/Math";
-import {createShowProblemRevealSolution} from "../../../../framework/exercise-components/ShowProblemRevealSolution.tsx";
+import {applyHintLevel, type ExerciseInstance, type HintLevelApplicable} from "../../../../src/framework/content.tsx";
+import {isNatPlus} from "../../../../src/framework/exercise-components/math-atoms.tsx";
+import {mathSpan} from "../../../../src/framework/technical-components/Math/Math";
+import {createShowProblemRevealSolution} from "../../../../src/framework/exercise-components/ShowProblemRevealSolution.tsx";
 
 export interface ExtraExerciseOptions {
   baseCaseValue: number;

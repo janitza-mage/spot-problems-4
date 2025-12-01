@@ -1,5 +1,5 @@
 import {type ReactElement, useState} from "react";
-import type {ExerciseComponent, ExerciseComponentProps} from "../types.tsx";
+import type {ExerciseComponent, ExerciseComponentProps} from "../content.tsx";
 import type {NonEmptyArray} from "../util/NonEmptyArray.ts";
 
 export interface ReplacingSequenceProps extends ExerciseComponentProps {

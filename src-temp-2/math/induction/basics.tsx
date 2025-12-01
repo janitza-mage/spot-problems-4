@@ -1,9 +1,9 @@
 import type {ReactNode} from "react";
-import type {ContentNode, Exercise} from "../../../framework/types.tsx";
-import {mathSpan} from "../../../framework/technical-components/Math/Math.tsx";
+import type {ContentNode, Exercise} from "../../../src/framework/content.tsx";
+import {mathSpan} from "../../../src/framework/technical-components/Math/Math.tsx";
 import {createSelectOneStep} from "../../../framework/exercise-components/SelectOneStep.tsx";
-import {randomInt} from "../../../framework/util/random/randomInt.ts";
-import {createReplacingSequence} from "../../../framework/exercise-components/ReplacingSequence.tsx";
+import {randomInt} from "../../../src/framework/util/random/randomInt.ts";
+import {createReplacingSequence} from "../../../src/framework/exercise-components/ReplacingSequence.tsx";
 import {
   createSortEquationTransformationExercise
 } from "../../../framework/exercise-components/math/SortEquationTransformationExercise.tsx";

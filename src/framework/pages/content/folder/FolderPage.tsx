@@ -1,4 +1,4 @@
-import {checkForDuplicateChildIds, type FolderNode} from "../../../types.tsx";
+import {checkForDuplicateChildIds, type FolderNode} from "../../../content.tsx";
 import {FolderPageBreadcrumbs} from "./FolderPageBreadcrumbs";
 import {NavigationList} from "../../../technical-components/navigation/NavigationList/NavigationList";
 import {

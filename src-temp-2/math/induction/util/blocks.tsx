@@ -1,5 +1,5 @@
 import {Alert} from "@mui/material";
-import {mathSpan} from "../../../../framework/technical-components/Math/Math";
+import {mathSpan} from "../../../../src/framework/technical-components/Math/Math";
 
 export const universalOrFixedHint = <Alert severity="info" sx={{ marginTop: "1em" }}>
   <p>

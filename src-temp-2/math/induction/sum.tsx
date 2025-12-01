@@ -1,10 +1,10 @@
 // nothing is randomized in the instances, only the choice of instance is
-import {mathDiv, mathSpan} from "../../../framework/technical-components/Math/Math.tsx";
+import {mathDiv, mathSpan} from "../../../src/framework/technical-components/Math/Math.tsx";
 import {natInductionExercise} from "./util/framework.tsx";
-import {type ContentNode, type ExerciseInstance} from "../../../framework/types.tsx";
-import {isNatPlusWithoutDefinition} from "../../../framework/exercise-components/math/math-atoms.tsx";
+import {type ContentNode, type ExerciseInstance} from "../../../src/framework/content.tsx";
+import {isNatPlusWithoutDefinition} from "../../../src/framework/exercise-components/math-atoms.tsx";
 import {universalOrFixedHint} from "./util/blocks.tsx";
-import {randomElement} from "../../../framework/util/random/randomElement.ts";
+import {randomElement} from "../../../src/framework/util/random/randomElement.ts";
 
 // TODO hieraus ergeben sich aufgaben zur summenschreibweise an sich: "schreibe (informelle beschreibung) mit dem summenzeichen"
 // nothing is randomized in the instances, only the choice of instance is

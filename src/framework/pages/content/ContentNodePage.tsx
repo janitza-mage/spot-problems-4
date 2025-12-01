@@ -1,4 +1,4 @@
-import {type ContentNode, type ExerciseNode, type FolderNode} from "../../types.tsx";
+import {type ContentNode, type ExerciseNode, type FolderNode} from "../../content.tsx";
 import {FolderPage} from "./folder/FolderPage";
 import {ExercisePage} from "./exercise/ExercisePage";
 

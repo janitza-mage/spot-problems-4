@@ -1,5 +1,7 @@
 import {type ContentNode} from "../framework/content.tsx";
 import {mathDiv, mathSpan} from "../framework/technical-components/Math/Math.tsx";
+import {natInductionExercise} from "../../src-temp-2/math/induction/util/framework.tsx";
+import {isNatPlus} from "../framework/exercise-components/math-atoms.tsx";
 
 export const contentTree: ContentNode = {
     id: "root",
@@ -16,10 +18,11 @@ export const contentTree: ContentNode = {
             name: "Induction",
             type: "exercise",
             contentItems: [
+                /*
               {
                 problem: <>
                   Use induction to show that the sum of the first {mathSpan("n")} positive integers is equal to
-                  {mathSpan("#frac{n(n+1)}{2}")}.
+                  {mathSpan("#frac{n(n+1)}{2}")} for {isNatPlus("n")}.
                 </>,
                 answer: <>
                   <p>
@@ -53,7 +56,7 @@ export const contentTree: ContentNode = {
               {
                 problem: <>
                   Use induction to show that the sum of the first {mathSpan("n")} <b>odd</b> positive integers is equal
-                  to {mathSpan("n^2")}.
+                  to {mathSpan("n^2")} for {isNatPlus("n")}.
                 </>,
                 answer: <>
                   <p>
@@ -83,8 +86,35 @@ export const contentTree: ContentNode = {
                   {mathDiv("= (n+1)^2")}
                 </>,
               },
-                
-                // TODO -----------------------------
+              
+                 */
+              {
+                problem: <>
+                  Use induction to show that {mathSpan("n^3+2n")} is divisible by {mathSpan("3")} for {isNatPlus("n")}.
+                </>,
+                answer: <>
+                  <p>
+                    Base case ({mathSpan("n = 1")}):
+                  </p>
+                  {mathDiv("n^3+2n = 1^3+2#cdot 1 = 1 + 2 = 3")}
+                  <p>
+                    which is obviously divisible by 3.
+                  </p>
+                  <p>
+                    Induction step: Assume that {mathSpan("n^3+2n")} is divisible by {mathSpan("3")} (induction
+                    hypothesis). Then show that {mathSpan("(n+1)^3+2#cdot (n+1)")} is divisible by {mathSpan("3")} too.
+                    Proof:
+                  </p>
+                  {mathDiv("(n+1)^3 + 2#cdot (n+1)")}
+                  {mathDiv("= (n^3 + 3n^2 + 3n + 1) + (2n + 2)")}
+                  {mathDiv("= (n^3 + 2n) + (3n^2 + 3n + 3)")}
+                  {mathDiv("= (n^3 + 2n) + 3#cdot (n^2 + n + 1)")}
+                  <div>The first part is divisible by 3 by the induction hypothesis. The second part has an obvious
+                    factor of 3. Therefore, the sum is divisible by 3 too.</div>
+                </>,
+              },
+
+              // TODO -----------------------------
                 
               {
                 problem: <>1</>,

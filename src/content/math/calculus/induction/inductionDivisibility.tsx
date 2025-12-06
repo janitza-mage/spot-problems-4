@@ -341,109 +341,113 @@ export const inductionDivisibility: ExerciseNode = {
     ),
 
 
+      /*
+      TODO
 
     standardDivisibilityContentItem(
-        "dividend",
-        "nextDividend",
-        divisor,
-        "baseCaseProof",
+        "n^4-4n^2",
+        "(n+1)^4 - 4(n+1)^2",
+        3,
+        "n^4-4n^2 = 1^4-4#cdot 1^2 = 1 - 4 = -3",
         [
+          "(n+1)^4 - 4(n+1)^2",
+          "= (n^4 + 4n^3 + 6n^2 + 4n + 1) - 4(n^2 + 2n + 1)",
+          "= (n^4 + 4n^3 + 6n^2 + 4n + 1) - (4n^2 + 8n + 4)",
+          "= (n^4 - 4n^2) + (4n^3 + 6n^2 + 4n + 1 - 8n - 4)",
+          "= (n^4 - 4n^2) + (4n^3 + 6n^2 - 4n - 3)",
+          "= (n^4 - 4n^2) + 3(2n^2 - 1) + 4n(n+1)(n-1)",
         ],
-        firstSecondPartDivisible(xxx),
+        <div>The first part is divisible by 3 by the induction hypothesis. The second part has an obvious factor of 3.
+          In the third part, either {mathSpan("n")}, {mathSpan("(n+1)")} or {mathSpan("(n-1)")} is divisible by 3.</div>
+    ),
+          solutionFooter: <Alert severity="info" sx={{ marginTop: "1em" }}>
+            <div>The proof by induction does not really make things easier for this problem:</div>
+            {mathDiv("n^4 - 4n^2 = n^2(n^2 - 4) = n^2(n + 2)(n - 2)")}
+            <div>Either {mathSpan("n")}, {mathSpan("(n+2)")} or {mathSpan("(n-2)")} is divisible by 3.</div>
+          </Alert>,
+       */
+
+
+
+    standardDivisibilityContentItem(
+        "10^n + 3#cdot 4^{n + 2} + 5",
+        "10^{n + 1} + 3#cdot 4^{(n + 1) + 2} + 5",
+        9,
+        <>
+          {mathDiv("10^n + 3#cdot 4^{n + 2} + 5")}
+          {mathDiv("= 10^1 + 3#cdot 4^{1 + 2} + 5")}
+          {mathDiv("= 10 + 3#cdot 4^3 + 5")}
+          {mathDiv("= 15 + 3#cdot 64")}
+          {mathDiv("= 15 + 192")}
+          {mathDiv("= 207")}
+        </>,
+        [
+          "10^{n + 1} + 3#cdot 4^{(n + 1) + 2} + 5",
+          "10#cdot 10^n + 4#cdot 3#cdot 4^{n + 2} + 5",
+          "9#cdot 10^n + 1#cdot 10^n + 3#cdot 3#cdot 4^{n + 2} + 1#cdot 3#cdot 4^{n + 2} + 5",
+          "9#cdot 10^n + 9#cdot 4^{n + 2} + 10^n + 3#cdot 4^{n + 2} + 5",
+          "9(10^n + 4^{n + 2}) + (10^n + 3#cdot 4^{n + 2} + 5)",
+        ],
+        // TODO refers to first part but should be second part! reverse in formulasto keep the pattern
+        firstSecondPartDivisible(9),
+    ),
+    standardDivisibilityContentItem(
+        "4^n + 15n - 1",
+        "4^{n+1} + 15(n+1) - 1",
+        9,
+        "4^n + 15n - 1 = 4^1 + 15 - 1 = 18",
+        [
+          "4^{n+1} + 15(n+1) - 1",
+          "= 4#cdot 4^n + 15n + 14",
+          "= 4#cdot 4^n + 60n - 4 - 45n + 18",
+          "= 4#cdot (4^n + 15n - 1) - 9#cdot (5n + 2)",
+        ],
+        firstSecondPartDivisible(9),
+    ),
+    standardDivisibilityContentItem(
+        "5^{2n} + 24n - 1",
+        "5^{2(n + 1)} + 24(n + 1) - 1",
+        48,
+        "5^{2n} + 24n - 1 = 5^2 + 24 - 1 = 25 + 24 - 1 = 48",
+        [
+          "5^{2(n + 1)} + 24(n + 1) - 1",
+          "= 5^{2n + 2} + 24n + 23",
+          "= 25#cdot 5^{2n} + 24n - 1 + 24",
+          "= 5^{2n} + 24n - 1 + 24 + 24#cdot 5^{2n}",
+          "= (5^{2n} + 24n - 1) + 24#cdot(1 + 5^{2n})",
+        ],
+        <div>The first part is divisible by 48 by the induction hypothesis. The second part has an obvious factor of
+          24, and {mathSpan("(1 + 5^{2n})")} is even, so the second part (and thus the sum) is divisible by 48 too.</div>
+    ),
+    standardDivisibilityContentItem(
+        "11^{n+1} + 12{2n-1}",
+        "11^{(n+1)+1} + 12{2(n+1)-1}",
+        133,
+        "11^{n+1} + 12{2n-1} = 11^{1+1} + 12{2-1} = 11^2 + 12^1 = 121 + 12 = 133",
+        [
+          "11^{(n+1)+1} + 12{2(n+1)-1}",
+          "11^{n+2} + 12{2n+1}",
+          "11#cdot 11^{n+1} + 144#cdot 12{2n-1}",
+          "144#cdot 11^{n+1} + 144#cdot 12{2n-1} - 133#cdot 11^{n+1}",
+          "144#cdot (11^{n+1} + 12{2n-1}) - 133#cdot 11^{n+1}",
+        ],
+        firstSecondPartDivisible(133),
     ),
       
+      
+      
+    
       
       
     
     
     /*
 
+TODO
 
-  natInductionExercise(
-      <>{mathSpan("n^4-4n^2")} is divisible by {mathSpan("3")}</>,
-      mathDiv("n^4-4n^2 = 1^4-4#cdot 1^2 = 1 - 4 = -3"),
-      <>{mathSpan("(n+1)^4 - 4(n+1)^2")} is divisible by {mathSpan("3")}</>,
-      _detailLevel => <>
-        {mathDiv("(n+1)^4 - 4(n+1)^2")}
-        {mathDiv("= (n^4 + 4n^3 + 6n^2 + 4n + 1) - 4(n^2 + 2n + 1)")}
-        {mathDiv("= (n^4 + 4n^3 + 6n^2 + 4n + 1) - (4n^2 + 8n + 4)")}
-        {mathDiv("= (n^4 - 4n^2) + (4n^3 + 6n^2 + 4n + 1 - 8n - 4)")}
-        {mathDiv("= (n^4 - 4n^2) + (4n^3 + 6n^2 - 4n - 3)")}
-        {mathDiv("= (n^4 - 4n^2) + 3(2n^2 - 1) + 4n(n+1)(n-1)")}
-        <div>The first part is divisible by 3 by the induction hypothesis. The second part has an obvious factor of 3.
-          In the third part, either {mathSpan("n")}, {mathSpan("(n+1)")} or {mathSpan("(n-1)")} is divisible by 3.</div>
-      </>,
-      {
-        solutionFooter: <Alert severity="info" sx={{ marginTop: "1em" }}>
-          <div>The proof by induction does not really make things easier for this problem:</div>
-          {mathDiv("n^4 - 4n^2 = n^2(n^2 - 4) = n^2(n + 2)(n - 2)")}
-          <div>Either {mathSpan("n")}, {mathSpan("(n+2)")} or {mathSpan("(n-2)")} is divisible by 3.</div>
-        </Alert>,
-      }
-  ),
 
-  natInductionExercise(
-      <>{mathSpan("10^n + 3#cdot 4^{n + 2} + 5")} is divisible by {mathSpan("9")}</>,
-      <>
-        {mathDiv("10^n + 3#cdot 4^{n + 2} + 5")}
-        {mathDiv("= 10^1 + 3#cdot 4^{1 + 2} + 5")}
-        {mathDiv("= 10 + 3#cdot 4^3 + 5")}
-        {mathDiv("= 15 + 3#cdot 64")}
-        {mathDiv("= 15 + 192")}
-        {mathDiv("= 207")}
-      </>,
-      <>{mathSpan("10^{n + 1} + 3#cdot 4^{(n + 1) + 2} + 5")} is divisible by {mathSpan("9")}</>,
-      _detailLevel => <>
-        {mathDiv("10^{n + 1} + 3#cdot 4^{(n + 1) + 2} + 5")}
-        {mathDiv("10#cdot 10^n + 4#cdot 3#cdot 4^{n + 2} + 5")}
-        {mathDiv("9#cdot 10^n + 1#cdot 10^n + 3#cdot 3#cdot 4^{n + 2} + 1#cdot 3#cdot 4^{n + 2} + 5")}
-        {mathDiv("9#cdot 10^n + 9#cdot 4^{n + 2} + 10^n + 3#cdot 4^{n + 2} + 5")}
-        {mathDiv("9(10^n + 4^{n + 2}) + (10^n + 3#cdot 4^{n + 2} + 5)")}
-        <div>The second part is divisible by 9 by the induction hypothesis, so the sum is divisible by 9 too.</div>
-      </>,
-  ),
 
-  natInductionExercise(
-      <>{mathSpan("4^n + 15n - 1")} is divisible by {mathSpan("9")}</>,
-      mathDiv("4^n + 15n - 1 = 4^1 + 15 - 1 = 18"),
-      <>{mathSpan("4^{n+1} + 15(n+1) - 1")} is divisible by {mathSpan("9")}</>,
-      _detailLevel => <>
-        {mathDiv("4^{n+1} + 15(n+1) - 1")}
-        {mathDiv("= 4#cdot 4^n + 15n + 14")}
-        {mathDiv("= 4#cdot 4^n + 60n - 4 - 45n + 18")}
-        {mathDiv("= 4#cdot (4^n + 15n - 1) - 9#cdot (5n + 2)")}
-        <div>The first part is divisible by 9 by the induction hypothesis, so the sum is divisible by 9 too.</div>
-      </>,
-  ),
 
-  natInductionExercise(
-      <>{mathSpan("5^{2n} + 24n - 1")} is divisible by {mathSpan("48")}</>,
-      mathDiv("5^{2n} + 24n - 1 = 5^2 + 24 - 1 = 25 + 24 - 1 = 48"),
-      <>{mathSpan("5^{2(n + 1)} + 24(n + 1) - 1")} is divisible by {mathSpan("48")}</>,
-      _detailLevel => <>
-        {mathDiv("5^{2(n + 1)} + 24(n + 1) - 1")}
-        {mathDiv("= 5^{2n + 2} + 24n + 23")}
-        {mathDiv("= 25#cdot 5^{2n} + 24n - 1 + 24")}
-        {mathDiv("= 5^{2n} + 24n - 1 + 24 + 24#cdot 5^{2n}")}
-        {mathDiv("= (5^{2n} + 24n - 1) + 24#cdot(1 + 5^{2n})")}
-        <div>The first part is divisible by 48 by the induction hypothesis. The second part has an obvious factor of
-          24, and {mathSpan("(1 + 5^{2n})")} is even, so the second part (and thus the sum) is divisible by 48 too.</div>
-      </>,
-  ),
-
-  natInductionExercise(
-      <>{mathSpan("11^{n+1} + 12{2n-1}")} is divisible by {mathSpan("133")}</>,
-      mathDiv("11^{n+1} + 12{2n-1} = 11^{1+1} + 12{2-1} = 11^2 + 12^1 = 121 + 12 = 133"),
-      <>{mathSpan("11^{(n+1)+1} + 12{2(n+1)-1}")} is divisible by {mathSpan("133")}</>,
-      _detailLevel => <>
-        {mathDiv("11^{(n+1)+1} + 12{2(n+1)-1}")}
-        {mathDiv("11^{n+2} + 12{2n+1}")}
-        {mathDiv("11#cdot 11^{n+1} + 144#cdot 12{2n-1}")}
-        {mathDiv("144#cdot 11^{n+1} + 144#cdot 12{2n-1} - 133#cdot 11^{n+1}")}
-        {mathDiv("144#cdot (11^{n+1} + 12{2n-1}) - 133#cdot 11^{n+1}")}
-        <div>The first part is divisible by 133 by the induction hypothesis, so the sum is divisible by 133 too.</div>
-      </>,
-  ),
 
   natInductionExercise(
       <>{mathSpan("(2a-1)^n-1")} is even</>,
@@ -493,19 +497,6 @@ export const inductionDivisibility: ExerciseNode = {
 
 
 
-
-
-
-    standardDivisibilityContentItem(
-        "dividend",
-        "nextDividend",
-        divisor,
-        "baseCaseProof",
-        [
-        ],
-        <div>The first part is divisible by xxyzxyzxyzxyzxyz by the induction hypothesis. The second part has an obvious
-          factor of xxyzxyzxyzxyzxyz. Therefore, the sum is divisible by xxyzxyzxyzxyzxyz too.</div>
-    ),
       
      */
   ],

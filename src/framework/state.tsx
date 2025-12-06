@@ -80,7 +80,15 @@ export function selectContentItem(path: string[], numberOfContentItems: number):
   if (pendingRepetitionItems.length > 0) {
     return randomElement(pendingRepetitionItems)[0];
   }
+  
+  // then check for a new, unanswered item
+  const unansweredtems = state.stateItems.filter(item => item[1] == -2);
+  if (unansweredtems.length > 0) {
+    return randomElement(unansweredtems)[0];
+  }
 
+  // Next, check for items tht have been answered "wrong" before, but allow pulling more of them.
+  
   // If we have reached our limit for "wrong" items, repeat one of those. Note that we may exceed this limit if the
   // user answers an item correctly, then wrong later after additional items have been pulled. This is okay, it just
   // means that we really don't want to pull any more items.
@@ -99,7 +107,7 @@ export function selectContentItem(path: string[], numberOfContentItems: number):
       return null;
     }
   }
-  state.stateItems.push([newItemContentId, -1, -1]);
+  state.stateItems.push([newItemContentId, -2, -2]); // initial state: "unanswered", takes priority over wrong items
   state.stateHead += 1;
   saveExerciseState(path, state);
   

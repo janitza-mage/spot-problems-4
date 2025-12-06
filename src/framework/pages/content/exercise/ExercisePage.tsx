@@ -40,7 +40,7 @@ export function ExercisePage(props: ExercisePageProps) {
 
   function onClickCancel() {
     // eslint-disable-next-line no-restricted-globals
-    if (confirm("wirklich abbrechen?")) {
+    if (confirm("Really leave?")) {
       const parentPath = [...props.path];
       parentPath.pop();
       navigateToContentNode(parentPath);

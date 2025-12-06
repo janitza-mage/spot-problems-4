@@ -1,5 +1,5 @@
 import {type ReactNode} from "react";
-import {mathSpan} from "../technical-components/Math/Math.tsx";
+import {mathSpan} from "../../../framework/technical-components/Math/Math.tsx";
 
 export function isNat0(variable: string): ReactNode {
   return mathSpan(`${variable} #in #mathbb{N}^+_0=\\{0, 1, 2, 3, ...\\}`);

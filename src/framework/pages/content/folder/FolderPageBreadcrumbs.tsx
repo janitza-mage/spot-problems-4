@@ -25,7 +25,7 @@ function buildElements(props: FolderPageBreadcrumbsProps): BreadcrumbsElement[] 
     // otherwise, add a breadcrumb that links to the root node even though there is no path segment for it
     const result: BreadcrumbsElement[] = [
         {
-            text: "Themen",
+            text: "Topics",
             to: buildUrlPathForContentPath([])
         }
     ];

@@ -122,10 +122,223 @@ export const inductionDivisibility: ExerciseNode = {
         ],
         firstSecondPartDivisible(6),
     ),
+      
+      
+      
+    standardDivisibilityContentItem(
+        "n^3-6n^2+14n",
+        "(n+1)^3-6(n+1)^2+14(n+1)",
+        3,
+        "n^3-6n^2+14n = 1^3-6#cdot 1^2+14#cdot 1 = 1 - 6 + 14 = 9",
+        [
+          "(n+1)^3-6(n+1)^2+14(n+1)",
+          "= (n^3 + 3n^2 + 3n + 1) - 6(n^2 + 2n + 1) + (14n + 14)",
+          "= n^3 + 3n^2 + 3n + 1 - 6n^2 - 12n - 6 + 14n + 14",
+          "= n^3 - 6n^2 + 14n + 3n^2 + 3n + 1 - 12n - 6 + 14",
+          "= (n^3 - 6n^2 + 14n) + (3n^2 + - 9n + 9)",
+          "= (n^3 - 6n^2 + 14n) + 3(n^2 + - 3n + 3)",
+        ],
+        firstSecondPartDivisible(3),
+    ),
+    standardDivisibilityContentItem(
+        "3^n - 3",
+        "3^{n+1} - 3",
+        6,
+        "3^n - 3 = 3^1 - 3 = 3 - 3 = 0",
+        [
+          "3^{n+1} - 3",
+          "= (3#cdot 3^n) + (6 - 9)",
+          "= (3#cdot 3^n - 9) + 6",
+          "= 3#cdot (3^n - 3) + 6",
+        ],
+        firstSecondPartDivisible(6),
+    ),
+
+    standardDivisibilityContentItem(
+        "n^3 + (n+1)^3 + (n+2)^3",
+        "(n+1)^3 + ((n+1)+1)^3 + ((n+1)+2)^3",
+        9,
+        "n^3 + (n+1)^3 + (n+2)^3 = 1^3 + (1+1)^3 + (1+2)^3 = 1 + 2^3 + 3^3 = 1 + 8 + 27 = 36",
+        [
+          "(n+1)^3 + ((n+1)+1)^3 + ((n+1)+2)^3",
+          "= (n+1)^3 + (n+2)^3 + (n+3)^3",
+          "= (n^3 + 3n^2 + 3n + 1) + (n^3 + 6n^2 + 12n + 8) + (n^3 + 9n^2 + 27n + 27)",
+          "= n^3 + (n^3 + 3n^2 + 3n + 1) + (n^3 + 6n^2 + 12n + 8) + (9n^2 + 27n + 27)",
+          "= (n^3 + (n+1)^3 (n+2)^3) + 9(n^2 + 3n + 3)",
+        ],
+        firstSecondPartDivisible(9),
+    ),
+
+
+
+    standardDivisibilityContentItem(
+        "7^{2n}-2^n",
+        "7^{2(n+1)}-2^{n+1}",
+        47,
+        "7^{2n}-2^n = 7^2-2^1 = 49 - 2 = 47",
+        [
+          "7^{2(n+1)}-2^{n+1}",
+          "= 7^{2n+2}-2^{n+1}",
+          "= 49#cdot 7^{2n} - 2#cdot 2^n",
+          "= 2#cdot 7^{2n} - 2#cdot 2^n + 47#cdot 7^{2n}",
+          "= 2#cdot (7^{2n} - 2^n) + 47#cdot 7^{2n}",
+        ],
+        firstSecondPartDivisible(47),
+    ),
+
+
+
+    standardDivisibilityContentItem(
+        "5^n + 7",
+        "5^{n+1} + 7",
+        4,
+        "5^n + 7 = 5^1 + 7 = 5 + 7 = 12",
+        [
+          "5^{n+1} + 7",
+          "= 5#cdot 5^n + 7",
+          "= (5^n + 7) + 4#cdot 5^n",
+        ],
+        firstSecondPartDivisible(4),
+    ),
+
+
+
+    standardDivisibilityContentItem(
+        "5^{2n} - 3^{2n}",
+        "5^{2(n + 1)} - 3^{2(n + 1)}",
+        8,
+        "5^{2#cdot 1} - 3^{2#cdot 1} = 5^2 - 3^2 = 25 - 9 = 16",
+        [
+          "5^{2(n + 1)} - 3^{2(n + 1)}",
+          "= 5^{2n + 2} - 3^{2n + 2}",
+          "= 25#cdot 5^{2n} - 9#cdot 3^{2n}",
+          "= 9#cdot 5^{2n} - 9#cdot 3^{2n} + 16#cdot 5^{2n}",
+          "= 9#cdot (5^{2n} - 3^{2n}) + 16#cdot 5^{2n}",
+        ],
+        firstSecondPartDivisible(8),
+    ),
+    standardDivisibilityContentItem(
+        "2^{3n} + 13",
+        "2^{3(n + 1)} + 13",
+        7,
+        "2^{3n} + 13 = 2^{3#cdot 1} + 13 = 2^3 + 13 = 8 + 13 = 21",
+        [
+          "2^{3(n + 1)} + 13",
+          "= 2^{3n + 3} + 13",
+          "= 8#cdot 2^{3n} + 13",
+          "= 1#cdot 2^{3n} + 13 + 7#cdot 2^{3n}",
+          "= (2^{3n} + 13) + 7#cdot 2^{3n}",
+        ],
+        firstSecondPartDivisible(7),
+    ),
+
 
       
       
+      /*
+      TODO:
 
+    standardDivisibilityContentItem(
+        "dividend",
+        "nextDividend",
+        divisor,
+        "baseCaseProof",
+        [
+        ],
+        firstSecondPartDivisible(xxx),
+    ),
+    natInductionExercise(
+        <>{mathSpan("a^n-1")} is divisible by {mathSpan("a-1")}</>,
+        mathDiv("a^n-1 = a^1-1 = a-1"),
+        <>{mathSpan("a^{n+1}-1")} is divisible by {mathSpan("a-1")}</>,
+        _detailLevel => <>
+          {mathDiv("a^{n+1}-1")}
+          {mathDiv("= a#cdot a^n - 1")}
+          {mathDiv("= a#cdot a^n - a + a - 1")}
+          {mathDiv("= a#cdot (a^n - 1) + (a - 1)")}
+          <div>The first part is divisible by {mathSpan("(a-1)")} by the induction hypothesis, so the sum is divisible by {mathSpan("(a-1)")} too.</div>
+        </>,
+        {
+          problemPrelude: <>Let {isNatPlusWithoutDefinition("a")}, and {mathSpan("a>1")}.</>,
+          solutionFooter: universalOrFixedHint,
+        }
+    ),
+
+       */
+
+
+    standardDivisibilityContentItem(
+        "n^7 - n",
+        "(n+1)^7 - (n+1)",
+        7,
+        "n^7 - n = 1^7 - 1 = 1 - 1 = 0",
+        [
+          "(n+1)^7 - (n+1)",
+          "= (n^7 + 7n^6 + 21n^5 + 35n^4 + 35n^3 + 21n^2 + 7n + 1) - (n + 1)",
+          "= (n^7 - n) + (7n^6 + 21n^5 + 35n^4 + 35n^3 + 21n^2 + 7n + 1 - 1)",
+          "= (n^7 - n) + 7(n^6 + 3n^5 + 5n^4 + 5n^3 + 3n^2 + n)",
+        ],
+        firstSecondPartDivisible(7),
+    ),
+
+
+    standardDivisibilityContentItem(
+        "3^{n+1} + 2^{3n+1}",
+        "3^{(n+1)+1} + 2^{3(n+1)+1}",
+        5,
+        "3^{n+1} + 2^{3n+1} = 3^{1+1} + 2^{3+1} = 3^2 + 2^4 = 9 + 16 = 25",
+        [
+          "3^{(n+1)+1} + 2^{3(n+1)+1}",
+          "= 3^{n+2} + 2^{3n+4}",
+          "= 3#cdot 3^{n+1} + 8#cdot 2^{3n+1}",
+          "= 3#cdot 3^{n+1} + 3#cdot 2^{3n+1} + 5#cdot 2^{3n+1}",
+          "= 3#cdot (3^{n+1} + 2^{3n+1}) + 5#cdot 2^{3n+1}",
+        ],
+        firstSecondPartDivisible(5),
+    ),
+    standardDivisibilityContentItem(
+        "3n^5 + 5n^3 + 7n",
+        "3(n + 1)^5 + 5(n + 1)^3 + 7(n + 1)",
+        15,
+        "3n^5 + 5n^3 + 7n = 3#cdot 1^5 + 5#cdot 1^3 + 7#cdot 1 = 3 + 5 + 7 = 15",
+        [
+          "3(n + 1)^5 + 5(n + 1)^3 + 7(n + 1)",
+          "= 3(n^5 + 5n^4 + 10n^3 + 10n^2 + 5n + 1) + 5(n^3 + 3n^2 + 3n + 1) + 7(n + 1)",
+          "= (3n^5 + 15n^4 + 30n^3 + 30n^2 + 15n + 3) + (5n^3 + 15n^2 + 15n + 5) + (7n + 7)",
+          "= (3n^5 + 5n^3 + 7n) + (15n^4 + 30n^3 + 45n^2 + 30n + 15)",
+          "= (3n^5 + 5n^3 + 7n) + 15(n^4 + 2n^3 + 3n^2 + 2n + 1)",
+        ],
+        firstSecondPartDivisible(15),
+    ),
+    standardDivisibilityContentItem(
+        "3^{2n} + 7",
+        "3^{2(n+1)} + 7",
+        8,
+        "3^{2n} + 7 = 3^2 + 7 = 9 + 7 = 16",
+        [
+          "3^{2(n+1)} + 7",
+          "= 3^{2n+2} + 7",
+          "= 9#cdot 3^{2n} + 7",
+          "= (3^{2n} + 7) + 8#cdot 3^{2n}",
+        ],
+        firstSecondPartDivisible(8),
+    ),
+
+    standardDivisibilityContentItem(
+        "n^3 + 5n",
+        "(n + 1)^3 + 5(n + 1)",
+        6,
+        "n^3 + 5n = 1^3 + 5#cdot 1 = 1 + 5 = 6",
+        [
+          "(n + 1)^3 + 5(n + 1)",
+          "= (n^3 + 3n^2 + 3n + 1) + (5n + 5)",
+          "= (n^3 + 5n) + (3n^2 + 3n + 1 + 5)",
+          "= (n^3 + 5n) + 3(n^2 + n + 2)",
+          "= (n^3 + 5n) + 3(n^2 + n + 2)",
+        ],
+        <div>The first part is divisible by 6 by the induction hypothesis. The second part is obviously divisible by
+          3, and it is also even because {mathSpan("n^2")} and {mathSpan("n")} are either both odd or both even.</div>
+    ),
 
 
 
@@ -145,188 +358,6 @@ export const inductionDivisibility: ExerciseNode = {
     
     /*
 
-
-  natInductionExercise(
-      <>{mathSpan("n^3-6n^2+14n")} is divisible by {mathSpan("3")}</>,
-      mathDiv("n^3-6n^2+14n = 1^3-6#cdot 1^2+14#cdot 1 = 1 - 6 + 14 = 9"),
-      <>{mathSpan("(n+1)^3-6(n+1)^2+14(n+1)")} is divisible by {mathSpan("3")}</>,
-      _detailLevel => <>
-        {mathDiv("(n+1)^3-6(n+1)^2+14(n+1)")}
-        {mathDiv("= (n^3 + 3n^2 + 3n + 1) - 6(n^2 + 2n + 1) + (14n + 14)")}
-        {mathDiv("= n^3 + 3n^2 + 3n + 1 - 6n^2 - 12n - 6 + 14n + 14")}
-        {mathDiv("= n^3 - 6n^2 + 14n + 3n^2 + 3n + 1 - 12n - 6 + 14")}
-        {mathDiv("= (n^3 - 6n^2 + 14n) + (3n^2 + - 9n + 9)")}
-        {mathDiv("= (n^3 - 6n^2 + 14n) + 3(n^2 + - 3n + 3)")}
-        <div>The first part is divisible by 3 by the induction hypothesis, so the sum is divisible by 3 too.</div>
-      </>,
-  ),
-
-  natInductionExercise(
-      <>{mathSpan("3^n - 3")} is divisible by {mathSpan("6")}</>,
-      mathDiv("3^n - 3 = 3^1 - 3 = 3 - 3 = 0"),
-      <>{mathSpan("3^{n+1} - 3")} is divisible by {mathSpan("6")}</>,
-      _detailLevel => <>
-        {mathDiv("3^{n+1} - 3")}
-        {mathDiv("= (3#cdot 3^n) + (6 - 9)")}
-        {mathDiv("= (3#cdot 3^n - 9) + 6")}
-        {mathDiv("= 3#cdot (3^n - 3) + 6")}
-        <div>The first part is divisible by 6 by the induction hypothesis, so the sum is divisible by 6 too.</div>
-      </>,
-  ),
-
-  natInductionExercise(
-      <>{mathSpan("n^3 + (n+1)^3 + (n+2)^3")} is divisible by {mathSpan("9")}</>,
-      mathDiv("n^3 + (n+1)^3 + (n+2)^3 = 1^3 + (1+1)^3 + (1+2)^3 = 1 + 2^3 + 3^3 = 1 + 8 + 27 = 36"),
-      <>{mathSpan("(n+1)^3 + ((n+1)+1)^3 + ((n+1)+2)^3")} is divisible by {mathSpan("9")}</>,
-      _detailLevel => <>
-        {mathDiv("(n+1)^3 + ((n+1)+1)^3 + ((n+1)+2)^3")}
-        {mathDiv("= (n+1)^3 + (n+2)^3 + (n+3)^3")}
-        {mathDiv("= (n^3 + 3n^2 + 3n + 1) + (n^3 + 6n^2 + 12n + 8) + (n^3 + 9n^2 + 27n + 27)")}
-        {mathDiv("= n^3 + (n^3 + 3n^2 + 3n + 1) + (n^3 + 6n^2 + 12n + 8) + (9n^2 + 27n + 27)")}
-        {mathDiv("= (n^3 + (n+1)^3 (n+2)^3) + 9(n^2 + 3n + 3)")}
-        <div>The first part is divisible by 9 by the induction hypothesis, so the sum is divisible by 9 too.</div>
-      </>,
-  ),
-
-  natInductionExercise(
-      <>{mathSpan("7^{2n}-2^n")} is divisible by {mathSpan("47")}</>,
-      mathDiv("7^{2n}-2^n = 7^2-2^1 = 49 - 2 = 47"),
-      <>{mathSpan("7^{2(n+1)}-2^{n+1}")} is divisible by {mathSpan("47")}</>,
-      _detailLevel => <>
-        {mathDiv("7^{2(n+1)}-2^{n+1}")}
-        {mathDiv("= 7^{2n+2}-2^{n+1}")}
-        {mathDiv("= 49#cdot 7^{2n} - 2#cdot 2^n")}
-        {mathDiv("= 2#cdot 7^{2n} - 2#cdot 2^n + 47#cdot 7^{2n}")}
-        {mathDiv("= 2#cdot (7^{2n} - 2^n) + 47#cdot 7^{2n}")}
-        <div>The first part is divisible by 47 by the induction hypothesis, so the sum is divisible by 47 too.</div>
-      </>,
-  ),
-
-  natInductionExercise(
-      <>{mathSpan("5^n + 7")} is divisible by {mathSpan("4")}</>,
-      mathDiv("5^n + 7 = 5^1 + 7 = 5 + 7 = 12"),
-      <>{mathSpan("5^{n+1} + 7")} is divisible by {mathSpan("4")}</>,
-      _detailLevel => <>
-        {mathDiv("5^{n+1} + 7")}
-        {mathDiv("= 5#cdot 5^n + 7")}
-        {mathDiv("= (5^n + 7) + 4#cdot 5^n")}
-        <div>The first part is divisible by 4 by the induction hypothesis, so the sum is divisible by 4 too.</div>
-      </>,
-  ),
-
-  natInductionExercise(
-      <>{mathSpan("5^{2n} - 3^{2n}")} is divisible by {mathSpan("8")}</>,
-      mathDiv("5^{2#cdot 1} - 3^{2#cdot 1} = 5^2 - 3^2 = 25 - 9 = 16"),
-      <>{mathSpan("5^{2(n + 1)} - 3^{2(n + 1)}")} is divisible by {mathSpan("8")}</>,
-      _detailLevel => <>
-        {mathDiv("5^{2(n + 1)} - 3^{2(n + 1)}")}
-        {mathDiv("= 5^{2n + 2} - 3^{2n + 2}")}
-        {mathDiv("= 25#cdot 5^{2n} - 9#cdot 3^{2n}")}
-        {mathDiv("= 9#cdot 5^{2n} - 9#cdot 3^{2n} + 16#cdot 5^{2n}")}
-        {mathDiv("= 9#cdot (5^{2n} - 3^{2n}) + 16#cdot 5^{2n}")}
-        <div>The first part is divisible by 8 by the induction hypothesis, so the sum is divisible by 8 too.</div>
-      </>,
-  ),
-
-  natInductionExercise(
-      <>{mathSpan("2^{3n} + 13")} is divisible by {mathSpan("7")}</>,
-      mathDiv("2^{3n} + 13 = 2^{3#cdot 1} + 13 = 2^3 + 13 = 8 + 13 = 21"),
-      <>{mathSpan("2^{3(n + 1)} + 13")} is divisible by {mathSpan("7")}</>,
-      _detailLevel => <>
-        {mathDiv("2^{3(n + 1)} + 13")}
-        {mathDiv("= 2^{3n + 3} + 13")}
-        {mathDiv("= 8#cdot 2^{3n} + 13")}
-        {mathDiv("= 1#cdot 2^{3n} + 13 + 7#cdot 2^{3n}")}
-        {mathDiv("= (2^{3n} + 13) + 7#cdot 2^{3n}")}
-        <div>The first part is divisible by 7 by the induction hypothesis, so the sum is divisible by 7 too.</div>
-      </>,
-  ),
-
-  natInductionExercise(
-      <>{mathSpan("a^n-1")} is divisible by {mathSpan("a-1")}</>,
-      mathDiv("a^n-1 = a^1-1 = a-1"),
-      <>{mathSpan("a^{n+1}-1")} is divisible by {mathSpan("a-1")}</>,
-      _detailLevel => <>
-        {mathDiv("a^{n+1}-1")}
-        {mathDiv("= a#cdot a^n - 1")}
-        {mathDiv("= a#cdot a^n - a + a - 1")}
-        {mathDiv("= a#cdot (a^n - 1) + (a - 1)")}
-        <div>The first part is divisible by {mathSpan("(a-1)")} by the induction hypothesis, so the sum is divisible by {mathSpan("(a-1)")} too.</div>
-      </>,
-      {
-        problemPrelude: <>Let {isNatPlusWithoutDefinition("a")}, and {mathSpan("a>1")}.</>,
-        solutionFooter: universalOrFixedHint,
-      }
-  ),
-
-  natInductionExercise(
-      <>{mathSpan("n^7 - n")} is divisible by {mathSpan("7")}</>,
-      mathDiv("n^7 - n = 1^7 - 1 = 1 - 1 = 0"),
-      <>{mathSpan("(n+1)^7 - (n+1)")} is divisible by {mathSpan("7")}</>,
-      _detailLevel => <>
-        {mathDiv("(n+1)^7 - (n+1)")}
-        {mathDiv("= (n^7 + 7n^6 + 21n^5 + 35n^4 + 35n^3 + 21n^2 + 7n + 1) - (n + 1)")}
-        {mathDiv("= (n^7 - n) + (7n^6 + 21n^5 + 35n^4 + 35n^3 + 21n^2 + 7n + 1 - 1)")}
-        {mathDiv("= (n^7 - n) + 7(n^6 + 3n^5 + 5n^4 + 5n^3 + 3n^2 + n)")}
-        <div>The first part is divisible by 7 by the induction hypothesis, so the sum is divisible by 7 too.</div>
-      </>,
-  ),
-
-  natInductionExercise(
-      <>{mathSpan("3^{n+1} + 2^{3n+1}")} is divisible by {mathSpan("5")}</>,
-      mathDiv("3^{n+1} + 2^{3n+1} = 3^{1+1} + 2^{3+1} = 3^2 + 2^4 = 9 + 16 = 25"),
-      <>{mathSpan("3^{(n+1)+1} + 2^{3(n+1)+1}")} is divisible by {mathSpan("5")}</>,
-      _detailLevel => <>
-        {mathDiv("3^{(n+1)+1} + 2^{3(n+1)+1}")}
-        {mathDiv("= 3^{n+2} + 2^{3n+4}")}
-        {mathDiv("= 3#cdot 3^{n+1} + 8#cdot 2^{3n+1}")}
-        {mathDiv("= 3#cdot 3^{n+1} + 3#cdot 2^{3n+1} + 5#cdot 2^{3n+1}")}
-        {mathDiv("= 3#cdot (3^{n+1} + 2^{3n+1}) + 5#cdot 2^{3n+1}")}
-        <div>The first part is divisible by 5 by the induction hypothesis, so the sum is divisible by 5 too.</div>
-      </>,
-  ),
-
-  natInductionExercise(
-      <>{mathSpan("3n^5 + 5n^3 + 7n")} is divisible by {mathSpan("15")}</>,
-      mathDiv("3n^5 + 5n^3 + 7n = 3#cdot 1^5 + 5#cdot 1^3 + 7#cdot 1 = 3 + 5 + 7 = 15"),
-      <>{mathSpan("3(n + 1)^5 + 5(n + 1)^3 + 7(n + 1)")} is divisible by {mathSpan("15")}</>,
-      _detailLevel => <>
-        {mathDiv("3(n + 1)^5 + 5(n + 1)^3 + 7(n + 1)")}
-        {mathDiv("= 3(n^5 + 5n^4 + 10n^3 + 10n^2 + 5n + 1) + 5(n^3 + 3n^2 + 3n + 1) + 7(n + 1)")}
-        {mathDiv("= (3n^5 + 15n^4 + 30n^3 + 30n^2 + 15n + 3) + (5n^3 + 15n^2 + 15n + 5) + (7n + 7)")}
-        {mathDiv("= (3n^5 + 5n^3 + 7n) + (15n^4 + 30n^3 + 45n^2 + 30n + 15)")}
-        {mathDiv("= (3n^5 + 5n^3 + 7n) + 15(n^4 + 2n^3 + 3n^2 + 2n + 1)")}
-        <div>The first part is divisible by 15 by the induction hypothesis, so the sum is divisible by 15 too.</div>
-      </>,
-  ),
-
-  natInductionExercise(
-      <>{mathSpan("3^{2n} + 7")} is divisible by {mathSpan("8")}</>,
-      mathDiv("3^{2n} + 7 = 3^2 + 7 = 9 + 7 = 16"),
-      <>{mathSpan("3^{2(n+1)} + 7")} is divisible by {mathSpan("8")}</>,
-      _detailLevel => <>
-        {mathDiv("3^{2(n+1)} + 7")}
-        {mathDiv("= 3^{2n+2} + 7")}
-        {mathDiv("= 9#cdot 3^{2n} + 7")}
-        {mathDiv("= (3^{2n} + 7) + 8#cdot 3^{2n}")}
-        <div>The first part is divisible by 8 by the induction hypothesis, so the sum is divisible by 8 too.</div>
-      </>,
-  ),
-
-  natInductionExercise(
-      <>{mathSpan("n^3 + 5n")} is divisible by {mathSpan("6")}</>,
-      mathDiv("n^3 + 5n = 1^3 + 5#cdot 1 = 1 + 5 = 6"),
-      <>{mathSpan("(n + 1)^3 + 5(n + 1)")} is divisible by {mathSpan("6")}</>,
-      _detailLevel => <>
-        {mathDiv("(n + 1)^3 + 5(n + 1)")}
-        {mathDiv("= (n^3 + 3n^2 + 3n + 1) + (5n + 5)")}
-        {mathDiv("= (n^3 + 5n) + (3n^2 + 3n + 1 + 5)")}
-        {mathDiv("= (n^3 + 5n) + 3(n^2 + n + 2)")}
-        {mathDiv("= (n^3 + 5n) + 3(n^2 + n + 2)")}
-        <div>The first part is divisible by 6 by the induction hypothesis. The second part is obviously divisible by
-          3, and it is also even because {mathSpan("n^2")} and {mathSpan("n")} are either both odd or both even.</div>
-      </>,
-  ),
 
   natInductionExercise(
       <>{mathSpan("n^4-4n^2")} is divisible by {mathSpan("3")}</>,

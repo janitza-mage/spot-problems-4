@@ -5,9 +5,10 @@ import {
 } from "../../../technical-components/navigation/ContentNodeLink/useNavigateToContentNode";
 import {type AnswerQuality, selectContentItem, updateState} from "../../../state.tsx";
 import {PageWithHeader} from "../../../technical-components/layout/PageWithHeader.tsx";
-import {IconButton} from "@mui/material";
+import {Button, Dialog, IconButton} from "@mui/material";
 import CancelIcon from "@mui/icons-material/Cancel";
 import {ContentItemView} from "./ContentItemView.tsx";
+import {ExerciseControlModal} from "./ExerciseControlModal.tsx";
 
 export interface ExercisePageProps {
   path: string[];
@@ -27,6 +28,7 @@ export function ExercisePage(props: ExercisePageProps) {
   
   const [instanceCounter, setInstanceCounter] = useState(0);
   const [contentItemId, setContentItemId] = useState<ContentItemId | null>(() => getNewContentItemId(props));
+  const [exerciseControlModalOpen, setExerciseControlModalOpen] = useState(false);
 
   function onClickGrade(answerQuality: AnswerQuality) {
     if (contentItemId !== null) {
@@ -46,8 +48,14 @@ export function ExercisePage(props: ExercisePageProps) {
   }
 
   return <>
+    <Dialog open={exerciseControlModalOpen} onClose={() => setExerciseControlModalOpen(false)} fullWidth={true}>
+      <ExerciseControlModal path={props.path} exerciseNode={props.exerciseNode} />
+    </Dialog>
     <PageWithHeader
         header={<>
+          <div style={{float: "right"}}>
+            <Button onClick={() => setExerciseControlModalOpen(true)}>C</Button>
+          </div>
           <h1 style={{margin: 0}}>
             <IconButton onClick={onClickCancel} sx={{marginRight: "1em"}}>
               <CancelIcon fontSize={"large"} />

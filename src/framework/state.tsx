@@ -67,6 +67,10 @@ function saveExerciseState(path: string[], state: ExerciseState) {
   localStorage.setItem(path.join("/"), textualItems.join("|"));
 }
 
+function deleteExerciseState(path: string[]) {
+  localStorage.removeItem(path.join("/"));
+}
+
 // --------------------------------------------------------------------------------------------------------------------
 // public API
 // --------------------------------------------------------------------------------------------------------------------
@@ -145,4 +149,8 @@ export function updateState(path: string[], contentItemId: ContentItemId, answer
 
   }).filter(isNotNull);
   saveExerciseState(path, state);
+}
+
+export function resetExerciseState(path: string[]) {
+  deleteExerciseState(path);
 }

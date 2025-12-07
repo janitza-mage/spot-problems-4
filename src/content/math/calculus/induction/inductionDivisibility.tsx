@@ -2,22 +2,33 @@ import type {ContentItem, ExerciseNode} from "../../../../framework/content.tsx"
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {isNatPlus} from "../../util/math-atoms.tsx";
 import type {ReactNode} from "react";
-import {mathDivOrCustom} from "../../util/math-util.tsx";
+import {mathDivOrCustom, mathSpanOrCustom} from "../../util/math-util.tsx";
+
+interface ExtraOptions {
+  useDivsForDividend: boolean;
+}
+
+const defaultExtraOptions: ExtraOptions = {
+  useDivsForDividend: false,
+};
 
 function standardDivisibilityContentItem(
-    dividendFormula: string,
-    nextDividendFormula: string,
+    dividendFormula: string | ReactNode,
+    nextDividendFormula: string | ReactNode,
     divisorFormula: string | number,
     baseCaseProof: string | ReactNode, // a string will be fed to mathDiv, a ReactNode will be used as-is
-    inductionStepProofFormulas: string[],
+    inductionStepProofFormulas: (string | ReactNode)[],
     inductionStepConclusion: ReactNode,
+    extraOptions?: Partial<ExtraOptions>,
 ): ContentItem {
-  const dividendSpan = mathSpan(dividendFormula);
-  const nextDividendSpan = mathSpan(nextDividendFormula);
+  const materializedExtraOptions: ExtraOptions = {...defaultExtraOptions, ...extraOptions};
+  const dividendMapper = materializedExtraOptions.useDivsForDividend ? mathDivOrCustom : mathSpanOrCustom;
+  const mappedDividend = dividendMapper(dividendFormula);
+  const mappedNextDividend = dividendMapper(nextDividendFormula);
   const divisorSpan = mathSpan(String(divisorFormula));
   return {
     problem: <>
-      Use induction to show that {dividendSpan} is divisible by {divisorSpan} for {isNatPlus("n")}.
+      Use induction to show that {mappedDividend} is divisible by {divisorSpan} for {isNatPlus("n")}.
     </>,
     answer: <>
       <p>
@@ -28,13 +39,13 @@ function standardDivisibilityContentItem(
         which is obviously divisible by {divisorSpan}.
       </p>
       <p>
-        Induction step: Assume that {dividendSpan} is divisible by {divisorSpan} (induction hypothesis). Then show
-        that {nextDividendSpan} is divisible by {divisorSpan} too.
+        Induction step: Assume that {mappedDividend} is divisible by {divisorSpan} (induction hypothesis). Then show
+        that {mappedNextDividend} is divisible by {divisorSpan} too.
       </p>
       <p>
         Proof:
       </p>
-      {inductionStepProofFormulas.map(mathDiv)}
+      {inductionStepProofFormulas.map(mathDivOrCustom)}
       {inductionStepConclusion}
   </>,
   };
@@ -74,6 +85,7 @@ export const inductionDivisibility: ExerciseNode = {
       [
         "(n+1)^3 + 2#cdot (n+1)",
         "= (n^3 + 3n^2 + 3n + 1) + (2n + 2)",
+        <>(rearranging the terms)</>,
         "= (n^3 + 2n) + (3n^2 + 3n + 3)",
         "= (n^3 + 2n) + 3#cdot (n^2 + n + 1)",
       ],
@@ -83,12 +95,14 @@ export const inductionDivisibility: ExerciseNode = {
         "4n^3-n",
         "4(n+1)^3-(n+1)",
         3,
-        "baseCaseProof",
+        "4n^3-n = 4#cdot 1^3 - 1 = 4#cdot 1 - 1 = 4 - 1 = 3",
         [
           "4(n+1)^3-(n+1)",
           "= 4#cdot (n^3 + 3n^2 + 3n + 1) - n - 1",
           "= 4n^3 + 12n^2 + 12n + 4 - n - 1",
-          "= 4n^3 - n + 12n^2 + 12n + 3",
+          <>(rearranging the terms)</>,
+          "= (4n^3 - n) + (12n^2 + 12n + 3)",
+          "= (4n^3 - n) + 3#cdot (4n^2 + 4n + 1)",
         ],
         firstSecondPartDivisible(3),
     ),
@@ -99,8 +113,9 @@ export const inductionDivisibility: ExerciseNode = {
         "n^3-n = 1^3-1 = 0",
         [
           "(n+1)^3 - (n+1)",
-          "= n^3 + 3n^2 + 3n + 1 - n - 1",
-          "= n^3 - n + 3n^2 + 3n",
+          "= (n^3 + 3n^2 + 3n + 1) - (n + 1)",
+          <>(rearranging the terms)</>,
+          "= (n^3 - n) + (3n^2 + 3n)",
           "= (n^3 - n) + 3n(n + 1)",
         ],
         <div>The first part is divisible by 6 by the induction hypothesis. The second part is divisible by 6 because
@@ -114,17 +129,15 @@ export const inductionDivisibility: ExerciseNode = {
         "2n^3+3n^2+n = 2#cdot 1^3 + 3#cdot 1^2 + 1 = 2 + 3 + 1 = 6",
         [
           "2(n+1)^3+3(n+1)^2+(n+1)",
-          "= 2(n^3 + 3n^2 + 3n + 1) + 3(n^2 + 2n + 1) + n + 1",
-          "= 2n^3 + 6n^2 + 6n + 2 + 3n^2 + 6n + 3 + n + 1",
-          "= 2n^3 + 3n^2 + n + 6n^2 + 6n + 2 + 6n + 3 + 1",
+          "= 2(n^3 + 3n^2 + 3n + 1) + 3(n^2 + 2n + 1) + (n + 1)",
+          "= (2n^3 + 6n^2 + 6n + 2) + (3n^2 + 6n + 3) + (n + 1)",
+          <>(rearranging the terms)</>,
+          "= (2n^3 + 3n^2 + n) + (6n^2 + 6n + 2 + 6n + 3 + 1)",
           "= (2n^3 + 3n^2 + n) + (6n^2 + 12n + 6)",
           "= (2n^3 + 3n^2 + n) + 6(n^2 + 2n + 1)",
         ],
         firstSecondPartDivisible(6),
     ),
-      
-      
-      
     standardDivisibilityContentItem(
         "n^3-6n^2+14n",
         "(n+1)^3-6(n+1)^2+14(n+1)",
@@ -132,9 +145,10 @@ export const inductionDivisibility: ExerciseNode = {
         "n^3-6n^2+14n = 1^3-6#cdot 1^2+14#cdot 1 = 1 - 6 + 14 = 9",
         [
           "(n+1)^3-6(n+1)^2+14(n+1)",
-          "= (n^3 + 3n^2 + 3n + 1) - 6(n^2 + 2n + 1) + (14n + 14)",
-          "= n^3 + 3n^2 + 3n + 1 - 6n^2 - 12n - 6 + 14n + 14",
-          "= n^3 - 6n^2 + 14n + 3n^2 + 3n + 1 - 12n - 6 + 14",
+          "= (n^3 + 3n^2 + 3n + 1) - 6(n^2 + 2n + 1) + 14(n+1)",
+          "= (n^3 + 3n^2 + 3n + 1) + (-6n^2 - 12n - 6) + (14n + 14)",
+          <>(rearranging the terms)</>,
+          "= (n^3 - 6n^2 + 14n) + (3n^2 + 3n + 1 - 12n - 6 + 14)",
           "= (n^3 - 6n^2 + 14n) + (3n^2 + - 9n + 9)",
           "= (n^3 - 6n^2 + 14n) + 3(n^2 + - 3n + 3)",
         ],
@@ -153,24 +167,27 @@ export const inductionDivisibility: ExerciseNode = {
         ],
         firstSecondPartDivisible(6),
     ),
-
     standardDivisibilityContentItem(
         "n^3 + (n+1)^3 + (n+2)^3",
         "(n+1)^3 + ((n+1)+1)^3 + ((n+1)+2)^3",
         9,
-        "n^3 + (n+1)^3 + (n+2)^3 = 1^3 + (1+1)^3 + (1+2)^3 = 1 + 2^3 + 3^3 = 1 + 8 + 27 = 36",
+        <>
+          {mathDiv("n^3 + (n+1)^3 + (n+2)^3")}
+          {mathDiv("= 1^3 + (1+1)^3 + (1+2)^3")}
+          {mathDiv("= 1 + 2^3 + 3^3")}
+          {mathDiv("= 1 + 8 + 27")}
+          {mathDiv("= 36")}
+        </>,
         [
           "(n+1)^3 + ((n+1)+1)^3 + ((n+1)+2)^3",
           "= (n+1)^3 + (n+2)^3 + (n+3)^3",
-          "= (n^3 + 3n^2 + 3n + 1) + (n^3 + 6n^2 + 12n + 8) + (n^3 + 9n^2 + 27n + 27)",
-          "= n^3 + (n^3 + 3n^2 + 3n + 1) + (n^3 + 6n^2 + 12n + 8) + (9n^2 + 27n + 27)",
-          "= (n^3 + (n+1)^3 (n+2)^3) + 9(n^2 + 3n + 3)",
+          "= (n+1)^3 + (n+2)^3 + (n^3 + 9n^2 + 27n + 27)",
+          "= n^3 + (n+1)^3 + (n+2)^3 + (9n^2 + 27n + 27)",
+          "= (n^3 + (n+1)^3 + (n+2)^3) + 9#cdot (n^2 + 3n + 3)",
         ],
         firstSecondPartDivisible(9),
+        {useDivsForDividend: true},
     ),
-
-
-
     standardDivisibilityContentItem(
         "7^{2n}-2^n",
         "7^{2(n+1)}-2^{n+1}",
@@ -185,9 +202,6 @@ export const inductionDivisibility: ExerciseNode = {
         ],
         firstSecondPartDivisible(47),
     ),
-
-
-
     standardDivisibilityContentItem(
         "5^n + 7",
         "5^{n+1} + 7",
@@ -200,9 +214,6 @@ export const inductionDivisibility: ExerciseNode = {
         ],
         firstSecondPartDivisible(4),
     ),
-
-
-
     standardDivisibilityContentItem(
         "5^{2n} - 3^{2n}",
         "5^{2(n + 1)} - 3^{2(n + 1)}",
@@ -233,6 +244,7 @@ export const inductionDivisibility: ExerciseNode = {
     ),
 
 
+    // TODO -- bis hier auf Richtigkeit geprüft
       
       
       /*

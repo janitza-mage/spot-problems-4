@@ -24,16 +24,24 @@ export function ContentItemView(props: ItemViewProps) {
     <br />
     {revealed && <div style={{textAlign: "center", marginBottom: "2em"}}>
       <div style={{display: "inline-block", width: "23%"}}>
-        <Button variant={"contained"} onClick={() => props.onClickGrade(0)}>Wrong</Button>
+        <Button variant={"contained"} sx={{backgroundColor: "#600"}} onClick={() => props.onClickGrade(0)}>
+            <span style={{display: "inlineBlock", width: "5em"}}>Wrong</span>
+        </Button>
       </div>
       <div style={{display: "inline-block", width: "23%"}}>
-        <Button variant={"contained"} onClick={() => props.onClickGrade(1)}>Hard</Button>
+        <Button variant={"contained"} sx={{backgroundColor: "#f60", color: "#000"}} onClick={() => props.onClickGrade(1)}>
+            <span style={{display: "inlineBlock", width: "5em"}}>Hard</span>
+        </Button>
       </div>
       <div style={{display: "inline-block", width: "23%"}}>
-        <Button variant={"contained"} onClick={() => props.onClickGrade(2)}>Medium</Button>
+        <Button variant={"contained"} sx={{backgroundColor: "#fd0", color: "#000"}} onClick={() => props.onClickGrade(2)}>
+            <span style={{display: "inlineBlock", width: "5em"}}>Medium</span>
+        </Button>
       </div>
       <div style={{display: "inline-block", width: "23%"}}>
-        <Button variant={"contained"} onClick={() => props.onClickGrade(3)}>Easy</Button>
+        <Button variant={"contained"} sx={{backgroundColor: "#0f0", color: "#000"}} onClick={() => props.onClickGrade(3)}>
+            <span style={{display: "inlineBlock", width: "5em"}}>Easy</span>
+        </Button>
       </div>
     </div>}
   </>;

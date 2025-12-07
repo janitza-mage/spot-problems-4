@@ -3,7 +3,7 @@ import {mathDiv, mathSpan} from "../../../src/framework/technical-components/Mat
 import {natInductionExercise} from "./util/framework.tsx";
 import {type ContentNode, type ExerciseInstance} from "../../../src/framework/content.tsx";
 import {isNatPlusWithoutDefinition} from "../../../src/content/math/util/math-atoms.tsx";
-import {universalOrFixedHint} from "./util/blocks.tsx";
+import {universalOrFixedHint} from "../../../src/content/math/calculus/induction/blocks.tsx";
 import {randomElement} from "../../../src/framework/util/random/randomElement.ts";
 
 // TODO hieraus ergeben sich aufgaben zur summenschreibweise an sich: "schreibe (informelle beschreibung) mit dem summenzeichen"

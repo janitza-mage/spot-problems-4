@@ -1,15 +1,20 @@
 import type {ContentItem, ExerciseNode} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
-import {isNatPlus} from "../../util/math-atoms.tsx";
+import {isNatPlus, isNatPlusWithoutDefinition} from "../../util/math-atoms.tsx";
 import type {ReactNode} from "react";
 import {mathDivOrCustom, mathSpanOrCustom} from "../../util/math-util.tsx";
+import {universalOrFixedHint} from "./blocks.tsx";
 
 interface ExtraOptions {
   useDivsForDividend: boolean;
+  problemPrelude?: ReactNode | null | undefined;
+  solutionFooter?: ReactNode | null | undefined;
 }
 
 const defaultExtraOptions: ExtraOptions = {
   useDivsForDividend: false,
+  problemPrelude: <></>,
+  solutionFooter: <></>,
 };
 
 function standardDivisibilityContentItem(
@@ -28,6 +33,7 @@ function standardDivisibilityContentItem(
   const divisorSpan = mathSpan(String(divisorFormula));
   return {
     problem: <>
+      {materializedExtraOptions.problemPrelude}
       Use induction to show that {mappedDividend} is divisible by {divisorSpan} for {isNatPlus("n")}.
     </>,
     answer: <>
@@ -47,6 +53,7 @@ function standardDivisibilityContentItem(
       </p>
       {inductionStepProofFormulas.map(mathDivOrCustom)}
       {inductionStepConclusion}
+      {materializedExtraOptions.solutionFooter}
   </>,
   };
 }
@@ -57,7 +64,6 @@ function firstSecondPartDivisible(divisorFormula: string | number): ReactNode {
     factor of {divisorSpan}. Therefore, the sum is divible by {divisorSpan} too.</div>;
 }
 
-// TODO check for correctness
 export const inductionDivisibility: ExerciseNode = {
   id: "divisibility",
   name: "Divisibility",
@@ -244,40 +250,27 @@ export const inductionDivisibility: ExerciseNode = {
     ),
 
 
-    // TODO -- bis hier auf Richtigkeit geprüft
       
       
-      /*
-      TODO:
-
     standardDivisibilityContentItem(
-        "dividend",
-        "nextDividend",
-        divisor,
-        "baseCaseProof",
+        "a^n-1",
+        "a^{n+1}-1",
+        "a-1",
+        "a^n-1 = a^1-1 = a-1",
         [
+          "a^{n+1}-1",
+          "= a#cdot a^n - 1",
+          "= a#cdot a^n - a + a - 1",
+          "= a#cdot (a^n - 1) + (a - 1)",
         ],
-        firstSecondPartDivisible(xxx),
-    ),
-    natInductionExercise(
-        <>{mathSpan("a^n-1")} is divisible by {mathSpan("a-1")}</>,
-        mathDiv("a^n-1 = a^1-1 = a-1"),
-        <>{mathSpan("a^{n+1}-1")} is divisible by {mathSpan("a-1")}</>,
-        _detailLevel => <>
-          {mathDiv("a^{n+1}-1")}
-          {mathDiv("= a#cdot a^n - 1")}
-          {mathDiv("= a#cdot a^n - a + a - 1")}
-          {mathDiv("= a#cdot (a^n - 1) + (a - 1)")}
-          <div>The first part is divisible by {mathSpan("(a-1)")} by the induction hypothesis, so the sum is divisible by {mathSpan("(a-1)")} too.</div>
-        </>,
+        firstSecondPartDivisible("(a-1)"),
         {
-          problemPrelude: <>Let {isNatPlusWithoutDefinition("a")}, and {mathSpan("a>1")}.</>,
-          solutionFooter: universalOrFixedHint,
-        }
+          problemPrelude: <>Let {isNatPlusWithoutDefinition("a")}, and {mathSpan("a>1")}. </>,
+          solutionFooter: universalOrFixedHint, TODO collapsed by default; "for advanced readers" label
+        },
     ),
 
-       */
-
+    // TODO -- bis hier auf Richtigkeit geprüft
 
     standardDivisibilityContentItem(
         "n^7 - n",

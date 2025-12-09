@@ -239,26 +239,10 @@ export const inductionSums: ExerciseNode = {
           "= #frac{(n+1)(3n+2)}{2}",
         ],
     ),
-
-
-
-
-
-
-
-
-
-// TODO bis hier geprüft
-
-
-
-
-
-
     standardSumContentItem(
         observeThat("3+7+11+...+(4n-1) = #sum_{i=1}^n(4i-1)"),
         "#sum_{i=1}^n(4i-1) = 2n^2 + n",
-        "#sum_{i=1}^n(4i-1) = #sum_{i=1}^1(4i-1) = 4#cdot 1 - 1 = 3 = 2 + 1 = 2#cdot 1^2 + 1",
+        "#sum_{i=1}^n(4i-1) = #sum_{i=1}^1(4i-1) = 4#cdot 1 - 1 = 3 = 2 + 1 = 2#cdot n^2 + 1",
         "#sum_{i=1}^{n+1}(4i-1) = 2(n+1)^2 + (n+1)",
         [
           "#sum_{i=1}^{n+1}(4i-1)",
@@ -272,6 +256,7 @@ export const inductionSums: ExerciseNode = {
         ],
     ),
 
+// TODO bis hier geprüft
 
     standardSumContentItem(
         observeThat("1+2+4+8+...+2^n = #sum_{i=0}^n2^i"),

@@ -5,16 +5,22 @@ import type {ReactNode} from "react";
 import {mathDivOrCustom} from "../../util/math-util.tsx";
 
 interface ExtraOptions {
-  problemPrelude?: ReactNode | null | undefined;
   solutionFooter?: ReactNode | null | undefined;
 }
 
 const defaultExtraOptions: ExtraOptions = {
-  problemPrelude: <></>,
   solutionFooter: <></>,
 };
 
+function observeThat(formula: string) {
+  return <>
+    <p>Observe that</p>
+    {mathDiv(formula)}
+  </>;
+}
+
 function standardSumContentItem(
+    problemPrelude: ReactNode, // not in ExtraOptions because in this section we need it almost everywhere
     equationToProve: string | ReactNode,
     baseCaseProof: string | ReactNode, // a string will be fed to mathDiv, a ReactNode will be used as-is
     nextEquationToProve: string | ReactNode,
@@ -26,7 +32,7 @@ function standardSumContentItem(
   const nextEquationToProveDiv = mathDivOrCustom(nextEquationToProve);
   return {
     problem: <>
-      {materializedExtraOptions.problemPrelude}
+      {problemPrelude}
       <p>Use induction to show that</p>
       {equationToProveDiv}
       <p>for {isNatPlus("n")}.</p>
@@ -40,7 +46,7 @@ function standardSumContentItem(
       {nextEquationToProveDiv}
       <p>Proof:</p>
       {nextEquationProof.map(mathDivOrCustom)}
-      {defaultExtraOptions.solutionFooter}
+      {materializedExtraOptions.solutionFooter}
     </>,
   };
 }
@@ -118,6 +124,7 @@ export const inductionSums: ExerciseNode = {
       </>,
     },
     standardSumContentItem(
+        observeThat("1^2 + 2^2 + 3^2 + ... + n^2 = #sum_{i=1}^ni^2"),
         "#sum_{i=1}^ni^2 = #frac{n(n+1)(2n+1)}6",
         "#sum_{i=1}^ni^2 = #sum_{i=1}^1i^2 = 1^2 = 1 = #frac{1#cdot 2#cdot 3}6 = #frac{n(n+1)(2n+1)}6",
         <>
@@ -138,8 +145,9 @@ export const inductionSums: ExerciseNode = {
         ],
     ),
     standardSumContentItem(
+        observeThat("1^3 + 2^3 + 3^3 + ... + n^3 = #sum_{i=1}^ni^3"),
         "#sum_{i=1}^ni^3 = #frac{n^2(n+1)^2}4",
-        "#sum_{i=1}^ni^3 = #sum_{i=1}^1i^3 = 1^3 = 1 = #frac{1^2(1+1)^2}4",
+        "#sum_{i=1}^ni^3 = #sum_{i=1}^1i^3 = 1^3 = 1 = #frac44 = #frac{1^2(1+1)^2}4 = #frac{n^2(n+1)^2}4",
         "#sum_{i=1}^{n+1}i^3 = #frac{(n+1)^2(n+2)^2}4",
         [
           "#sum_{i=1}^{n+1}i^3",
@@ -154,6 +162,7 @@ export const inductionSums: ExerciseNode = {
         ],
     ),
     standardSumContentItem(
+        observeThat("1^4 + 2^4 + 3^4 + ... + n^4 = #sum_{i=1}^ni^4"),
         "#sum_{i=1}^ni^4 = #frac{n(n+1)(2n+1)(3n^2+3n-1)}{30}",
         <>
           {mathDiv("#sum_{i=1}^ni^4 = #sum_{i=1}^1i^4 = 1^4 = 1 = #frac{30}{30}")}
@@ -183,6 +192,7 @@ export const inductionSums: ExerciseNode = {
         ],
     ),
     standardSumContentItem(
+        observeThat("1^2 + 3^2 + 5^2 + ... + (2n-1)^2 = #sum_{i=1}^n(2i-1)^2"),
         "#sum_{i=1}^n(2i-1)^2 = #frac{(2n-1)2n(2n+1)}{6}",
         <>
           {mathDiv("#sum_{i=1}^n(2i-1)^2 = #sum_{i=1}^1(2i-1)^2 = (2#cdot 1 - 1)^2 = 1")}
@@ -207,6 +217,7 @@ export const inductionSums: ExerciseNode = {
         ],
     ),
     standardSumContentItem(
+        observeThat("1 + 4 + 7 + 10 + 13 + ... + (3n-2) = #sum_{i=1}^n(3i-2)"),
         "#sum_{i=1}^n(3i-2) = #frac{n(3n-1)}{2}",
         <>
           {mathDiv("#sum_{i=1}^n(3i-2) = #sum_{i=1}^1(3i-2) = (3#cdot 1-2) = 1")}
@@ -245,7 +256,8 @@ export const inductionSums: ExerciseNode = {
 
 
     standardSumContentItem(
-        "3+7+11+...+(4n-1) = #sum_{i=1}^n(4i-1) = 2n^2 + n",
+        observeThat("3+7+11+...+(4n-1) = #sum_{i=1}^n(4i-1)"),
+        "#sum_{i=1}^n(4i-1) = 2n^2 + n",
         "#sum_{i=1}^n(4i-1) = #sum_{i=1}^1(4i-1) = 4#cdot 1 - 1 = 3 = 2 + 1 = 2#cdot 1^2 + 1",
         "#sum_{i=1}^{n+1}(4i-1) = 2(n+1)^2 + (n+1)",
         [
@@ -262,7 +274,8 @@ export const inductionSums: ExerciseNode = {
 
 
     standardSumContentItem(
-        "1+2+4+8+...+2^n = #sum_{i=0}^n2^i = 2^{n+1}-1",
+        observeThat("1+2+4+8+...+2^n = #sum_{i=0}^n2^i"),
+        "#sum_{i=0}^n2^i = 2^{n+1}-1",
         "#sum_{i=0}^n2^i = #sum_{i=0}^12^i = 2^0 + 2^1 = 3 = 4 - 1 = 2^2 - 1 = 2^{n+1}-1",
         "#sum_{i=0}^{n+1}2^i = 2^{(n+1)+1}-1",
         [
@@ -278,7 +291,11 @@ export const inductionSums: ExerciseNode = {
 
 
     standardSumContentItem(
-        "1 + a + a^2 + ... + a^n = #sum_{i=0}^na^i = #frac{a^{n+1}-1}{a-1}",
+        <>
+          <p>Let {isNatPlusWithoutDefinition("a")}. Observe that</p>
+          {mathDiv("1 + a + a^2 + ... + a^n = #sum_{i=0}^na^i")}
+        </>,
+        "#sum_{i=0}^na^i = #frac{a^{n+1}-1}{a-1}",
         <>
           {mathDiv("#sum_{i=0}^na^i = #sum_{i=0}^1a^i = a^0 + a^1 = a + 1")}
           <div>and</div>
@@ -297,13 +314,11 @@ export const inductionSums: ExerciseNode = {
           "= #frac{a^{n+2} - 1}{a-1}",
           "= #frac{a^{(n+1) + 1}-1}{a-1}",
         ],
-        {
-          problemPrelude: <>Let {isNatPlusWithoutDefinition("a")}.</>,
-        }
     ),
 
 
     standardSumContentItem(
+        observeThat("##################################################"),
         "1 + #frac{2^0}{3^1} + #frac{2^2}{3^2} + ... + #frac{2^{2(n-1)}}{3^n} = 1 + #sum_{i=1}^n#frac{2^{2(i-1)}}{3^i} = (#frac{4}{3})^n",
         <>
           {mathDiv("1 + #sum_{i=1}^n#frac{2^{2(i-1)}}{3^i} = 1 + #sum_{i=1}^1#frac{2^{2(i-1)}}{3^i} = 1 + #frac{2^{2(1-1)}}{3^1}")}
@@ -326,6 +341,7 @@ export const inductionSums: ExerciseNode = {
 
 
     standardSumContentItem(
+        observeThat("##################################################"),
         "1^2 - 2^2 + 3^2 - 4^2 + ... + -1^{n-1}n^2 = #sum_{i=1}^n-1^{i-1}i^2 = -1^{n-1}#frac{n(n+1)}{2}",
         <>
           {mathDiv("#sum_{i=1}^n-1^{i-1}i^2 = #sum_{i=1}^1-1^{i-1}i^2 = -1^{1-1}1^2 = -1^0#cdot 1 = 1")}
@@ -350,6 +366,7 @@ export const inductionSums: ExerciseNode = {
 
 
     standardSumContentItem(
+        observeThat("##################################################"),
         "1#cdot 2 + 2#cdot 3 + 3#cdot 4 + ... + n(n+1) = #sum_{i=1}^ni(i+1) = #frac{n(n+1)(n+2)}{3}",
         "#sum_{i=1}^ni(i+1) = #sum_{i=1}^1i(i+1) = 1(1+1) = 2 = #frac{6}{3} = #frac{1#cdot 2#cdot 3}{3}",
         "#sum_{i=1}^{n+1}i(i+1) = #frac{(n+1)(n+2)(n+3)}{3}",
@@ -366,6 +383,7 @@ export const inductionSums: ExerciseNode = {
 
 
     standardSumContentItem(
+        observeThat("##################################################"),
         "1#cdot 1! + 2#cdot 2! + ... + n#cdot n! = #sum_{i=1}^ni#cdot i! = (n+1)!-1",
         "#sum_{i=1}^ni#cdot i! = #sum_{i=1}^1i#cdot i! = 1#cdot 1! = 1 = 2 - 1 = 2! - 1 = (n+1)! - 1",
         "#sum_{i=1}^{n+1}i#cdot i! = ((n+1)+1)!-1",
@@ -382,6 +400,7 @@ export const inductionSums: ExerciseNode = {
 
 
     standardSumContentItem(
+        observeThat("##################################################"),
         "1#cdot 2#cdot 3 + 2#cdot 3#cdot 4 + 3#cdot 4#cdot 5 + ... + n(n+1)(n+2) = #sum_{i=1}^ni(i+1)(i+2) = #frac{n(n+1)(n+2)(n+3)}{4}",
         "#sum_{i=1}^ni(i+1)(i+2) = #sum_{i=1}^1i(i+1)(i+2) = 1(1+1)(1+2) = 1#cdot 2#cdot 3 = #frac{1#cdot 2#cdot 3#cdot 4}{4}",
         "#sum_{i=1}^{n+1}i(i+1)(i+2) = #frac{(n+1)(n+2)(n+3)(n+4)}{4}",
@@ -399,8 +418,14 @@ export const inductionSums: ExerciseNode = {
 
 
 
-    // komplizierter -- summe auf beiden seiten!
+    // komplizierter -- summe auf beiden seiten! Prelude prüfen!
     standardSumContentItem(
+      <>
+        {mathDiv("#frac{1}{1} - #frac{1}{2} + #frac{1}{3} - #frac{1}{4} + ... + #frac{1}{2n-1} - #frac{1}{2n} = #sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i})")}
+        {mathDiv("#frac{1}{n+1} + #frac{1}{n+2} + #frac{1}{n+3} + ... + #frac{1}{2n} = #sum_{i=n+1}^{2n}#frac{1}{i}")}
+        <p>Observe that</p>
+        {mathDiv("#sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i}) = #sum_{i=n+1}^{2n}#frac{1}{i}")}
+      </>,
       "#sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i}) = #sum_{i=n+1}^{2n}#frac{1}{i}",
       <>
         {mathDiv("#sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i})")}
@@ -422,17 +447,12 @@ export const inductionSums: ExerciseNode = {
         "= (#frac{2}{2n+2} - #frac{1}{2n+2} - #frac{1}{2n+2}) + #sum_{i=n+2}^{2n+2}#frac{1}{i}",
         "= #sum_{i=(n+1)+1}^{2(n+1)}#frac{1}{i}",
       ],
-      {
-        problemPrelude: <>
-          {mathDiv("#frac{1}{1} - #frac{1}{2} + #frac{1}{3} - #frac{1}{4} + ... + #frac{1}{2n-1} - #frac{1}{2n} = #sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i})")}
-          {mathDiv("#frac{1}{n+1} + #frac{1}{n+2} + #frac{1}{n+3} + ... + #frac{1}{2n} = #sum_{i=n+1}^{2n}#frac{1}{i}")}
-        </>,
-      },
     ),
 
 
       
     standardSumContentItem(
+        observeThat("##################################################"),
         "1 + #frac{1}{2} + #frac{1}{4} + ... + #frac{1}{2^{n-1}} = #sum_{i=0}^{n-1}#frac{1}{2^i} = 2#cdot (1 - #frac{1}{2^n})",
         "#sum_{i=0}^{n-1}#frac{1}{2^i} = #sum_{i=0}^{1-1}#frac{1}{2^i} = #frac{1}{2^0} = 1 = 2#cdot #frac{1}{2} = 2#cdot (1 - #frac{1}{2}) = 2#cdot (1 - #frac{1}{2^n})",
         "#sum_{i=0}^{(n+1)-1}#frac{1}{2^i} = 2#cdot (1 - #frac{1}{2^{n+1}})",
@@ -452,6 +472,7 @@ export const inductionSums: ExerciseNode = {
 
 
     standardSumContentItem(
+        observeThat("##################################################"),
         "#frac{1}{1#cdot 2} + #frac{1}{2#cdot 3} + #frac{1}{3#cdot 4} + ... + #frac{1}{n(n+1)} = #sum_{i=1}^{n}#frac{1}{i(i+1)} = #frac{n}{n+1}",
         "#sum_{i=1}^{n}#frac{1}{i(i+1)} = #sum_{i=1}^{1}#frac{1}{i(i+1)} = #frac{1}{1(1+1)} = #frac{1}{2} = #frac{1}{1#cdot 2} = #frac{n}{n+1}",
         "#sum_{i=1}^{n+1}#frac{1}{i(i+1)} = #frac{n+1}{n+2}",

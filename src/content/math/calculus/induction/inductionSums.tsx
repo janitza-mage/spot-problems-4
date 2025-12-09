@@ -255,9 +255,6 @@ export const inductionSums: ExerciseNode = {
           "= 2(n+1)^2 + (n + 1)",
         ],
     ),
-
-// TODO bis hier geprüft
-
     standardSumContentItem(
         observeThat("1+2+4+8+...+2^n = #sum_{i=0}^n2^i"),
         "#sum_{i=0}^n2^i = 2^{n+1}-1",
@@ -273,8 +270,6 @@ export const inductionSums: ExerciseNode = {
           "= 2^{(n+1)+1} - 1",
         ],
     ),
-
-
     standardSumContentItem(
         <>
           <p>Let {isNatPlusWithoutDefinition("a")}. Observe that</p>
@@ -300,11 +295,9 @@ export const inductionSums: ExerciseNode = {
           "= #frac{a^{(n+1) + 1}-1}{a-1}",
         ],
     ),
-
-
     standardSumContentItem(
-        observeThat("##################################################"),
-        "1 + #frac{2^0}{3^1} + #frac{2^2}{3^2} + ... + #frac{2^{2(n-1)}}{3^n} = 1 + #sum_{i=1}^n#frac{2^{2(i-1)}}{3^i} = (#frac{4}{3})^n",
+        observeThat("1 + #frac{2^0}{3^1} + #frac{2^2}{3^2} + #frac{2^4}{3^3} + ... + #frac{2^{2(n-1)}}{3^n} = 1 + #sum_{i=1}^n#frac{2^{2(i-1)}}{3^i}"),
+        "1 + #sum_{i=1}^n#frac{2^{2(i-1)}}{3^i} = (#frac{4}{3})^n",
         <>
           {mathDiv("1 + #sum_{i=1}^n#frac{2^{2(i-1)}}{3^i} = 1 + #sum_{i=1}^1#frac{2^{2(i-1)}}{3^i} = 1 + #frac{2^{2(1-1)}}{3^1}")}
           {mathDiv("= 1 + #frac{2^0}{3} = 1 + #frac{1}{3} = (#frac{4}{3})^1 = (#frac{4}{3})^n")}
@@ -324,6 +317,7 @@ export const inductionSums: ExerciseNode = {
         ],
     ),
 
+// TODO bis hier geprüft
 
     standardSumContentItem(
         observeThat("##################################################"),

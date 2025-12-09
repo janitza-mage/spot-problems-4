@@ -8,3 +8,6 @@ export const inductionSubtree: FolderNode = {
   type: "folder",
   children: [inductionSums, inductionDivisibility],
 };
+
+// TODO base case other than n=1
+// TODO cases where induction fails / is used wrong

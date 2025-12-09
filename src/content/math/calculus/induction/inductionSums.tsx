@@ -425,10 +425,10 @@ export const inductionSums: ExerciseNode = {
 
       
     standardSumContentItem(
-        observeThat("##################################################"),
-        "1 + #frac{1}{2} + #frac{1}{4} + ... + #frac{1}{2^{n-1}} = #sum_{i=0}^{n-1}#frac{1}{2^i} = 2#cdot (1 - #frac{1}{2^n})",
-        "#sum_{i=0}^{n-1}#frac{1}{2^i} = #sum_{i=0}^{1-1}#frac{1}{2^i} = #frac{1}{2^0} = 1 = 2#cdot #frac{1}{2} = 2#cdot (1 - #frac{1}{2}) = 2#cdot (1 - #frac{1}{2^n})",
-        "#sum_{i=0}^{(n+1)-1}#frac{1}{2^i} = 2#cdot (1 - #frac{1}{2^{n+1}})",
+        observeThat("#frac{1}{2} + #frac{1}{4} + #frac{1}{8} + ... + #frac{1}{2^n} = #sum_{i=1}^{n}#frac{1}{2^i}"),
+        "#sum_{i=1}^{n}#frac{1}{2^i} = 1 - #frac{1}{2^n}",
+        "#sum_{i=1}^{n}#frac{1}{2^i} = #sum_{i=1}^{1}#frac{1}{2^i} = #frac{1}{2^1} = #frac{1}{2} = 1 - #frac{1}{2} = 1 - #frac{1}{2^n}",
+        "#sum_{i=1}^{n+1}#frac{1}{2^i} = 1 - #frac{1}{2^{n+1}}",
         [
           "#sum_{i=0}^{(n+1)-1}#frac{1}{2^i}",
           "= #sum_{i=0}^n#frac{1}{2^i}",

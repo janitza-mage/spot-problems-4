@@ -1,6 +1,6 @@
 import type {ContentItem, ExerciseNode} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
-import {isNatPlus} from "../../util/math-atoms.tsx";
+import {isNatPlus, isNatPlusWithoutDefinition} from "../../util/math-atoms.tsx";
 import type {ReactNode} from "react";
 import {mathDivOrCustom} from "../../util/math-util.tsx";
 
@@ -237,248 +237,239 @@ export const inductionSums: ExerciseNode = {
 
 
 
+// TODO bis hier geprüft
 
 
 
 
 
 
-
-    // standardSumContentItem(
-    //     "equationToProve",
-    //     "baseCaseProof",
-    //     "nextEquationToProve",
-    //     [
-    //     ],
-    // ),
-
-
-    /*
-    TODO:
-    
-    
-    
-  
-  
-  
-  
-    natInductionExercise(
-        <>{mathSpan("3+7+11+...+(4n-1) = #sum_{i=1}^n(4i-1) = 2n^2 + n")}</>,
-        <>{mathDiv("#sum_{i=1}^n(4i-1) = #sum_{i=1}^1(4i-1) = 4#cdot 1 - 1 = 3 = 2 + 1 = 2#cdot 1^2 + 1")}</>,
-        mathSpan("#sum_{i=1}^{n+1}(4i-1) = 2(n+1)^2 + (n+1)"),
-        _detailLevel => <>
-          {mathDiv("#sum_{i=1}^{n+1}(4i-1)")}
-          {mathDiv("= 4(n+1)-1 + #sum_{i=1}^n(4i-1)")}
-          <div>using the induction hypothesis:</div>
-          {mathDiv("= 4(n+1)-1 + 2n^2 + n")}
-          {mathDiv("= 4n + 3 + 2n^2 + n")}
-          {mathDiv("= 2n^2 + 5n + 3")}
-          {mathDiv("= (2n^2 + 4n + 2) + (n + 1)")}
-          {mathDiv("= 2(n+1)^2 + (n + 1)")}
-        </>
+    standardSumContentItem(
+        "3+7+11+...+(4n-1) = #sum_{i=1}^n(4i-1) = 2n^2 + n",
+        "#sum_{i=1}^n(4i-1) = #sum_{i=1}^1(4i-1) = 4#cdot 1 - 1 = 3 = 2 + 1 = 2#cdot 1^2 + 1",
+        "#sum_{i=1}^{n+1}(4i-1) = 2(n+1)^2 + (n+1)",
+        [
+          "#sum_{i=1}^{n+1}(4i-1)",
+          "= 4(n+1)-1 + #sum_{i=1}^n(4i-1)",
+          <div>using the induction hypothesis:</div>,
+          "= 4(n+1)-1 + 2n^2 + n",
+          "= 4n + 3 + 2n^2 + n",
+          "= 2n^2 + 5n + 3",
+          "= (2n^2 + 4n + 2) + (n + 1)",
+          "= 2(n+1)^2 + (n + 1)",
+        ],
     ),
-  
-    natInductionExercise(
-        <>{mathSpan("1+2+4+8+...+2^n = #sum_{i=0}^n2^i = 2^{n+1}-1")}</>,
-        <>{mathDiv("#sum_{i=0}^n2^i = #sum_{i=0}^12^i = 2^0 + 2^1 = 3 = 4 - 1 = 2^2 - 1 = 2^{n+1}-1")}</>,
-        mathSpan("#sum_{i=0}^{n+1}2^i = 2^{(n+1)+1}-1"),
-        _detailLevel => <>
-          {mathDiv("#sum_{i=0}^{n+1}2^i")}
-          {mathDiv("= #sum_{i=0}^{n}2^i + 2^{n+1}")}
-          <div>using the induction hypothesis:</div>
-          {mathDiv("= 2^{n+1}-1 + 2^{n+1}")}
-          {mathDiv("= 2#cdot 2^{n+1} - 1")}
-          {mathDiv("= 2^{n+2} - 1")}
-          {mathDiv("= 2^{(n+1)+1} - 1")}
-        </>
+
+
+    standardSumContentItem(
+        "1+2+4+8+...+2^n = #sum_{i=0}^n2^i = 2^{n+1}-1",
+        "#sum_{i=0}^n2^i = #sum_{i=0}^12^i = 2^0 + 2^1 = 3 = 4 - 1 = 2^2 - 1 = 2^{n+1}-1",
+        "#sum_{i=0}^{n+1}2^i = 2^{(n+1)+1}-1",
+        [
+          "#sum_{i=0}^{n+1}2^i",
+          "= #sum_{i=0}^{n}2^i + 2^{n+1}",
+          <div>using the induction hypothesis:</div>,
+          "= 2^{n+1}-1 + 2^{n+1}",
+          "= 2#cdot 2^{n+1} - 1",
+          "= 2^{n+2} - 1",
+          "= 2^{(n+1)+1} - 1",
+        ],
     ),
-  
-    natInductionExercise(
-        <>{mathSpan("1 + a + a^2 + ... + a^n = #sum_{i=0}^na^i = #frac{a^{n+1}-1}{a-1}")}</>,
+
+
+    standardSumContentItem(
+        "1 + a + a^2 + ... + a^n = #sum_{i=0}^na^i = #frac{a^{n+1}-1}{a-1}",
         <>
           {mathDiv("#sum_{i=0}^na^i = #sum_{i=0}^1a^i = a^0 + a^1 = a + 1")}
           <div>and</div>
           {mathDiv("#frac{a^{n+1}-1}{a-1} = #frac{a^{1+1}-1}{a-1} = #frac{a^2-1}{a-1} = #frac{(a+1)(a-1)}{a-1} = a + 1")}
         </>,
-        mathSpan("#sum_{i=0}^{n+1}a^i = #frac{a^{(n+1)+1}-1}{a-1}"),
-        _detailLevel => <>
-          {mathDiv("#sum_{i=0}^{n+1}a^i")}
-          {mathDiv("= #sum_{i=0}^na^i + a^{n+1}")}
-          <div>using the induction hypothesis:</div>
-          {mathDiv("= #frac{a^{n+1}-1}{a-1} + a^{n+1}")}
-          {mathDiv("= #frac{a^{n+1}-1}{a-1} + #frac{a^{n+1}(a-1)}{a-1}")}
-          {mathDiv("= #frac{a^{n+1}-1 + a^{n+1}(a-1)}{a-1}")}
-          {mathDiv("= #frac{a^{n+1}(1 + (a-1)) - 1}{a-1}")}
-          {mathDiv("= #frac{a^{n+1}#cdot a - 1}{a-1}")}
-          {mathDiv("= #frac{a^{n+2} - 1}{a-1}")}
-          {mathDiv("= #frac{a^{(n+1) + 1}-1}{a-1}")}
-        </>,
+        "#sum_{i=0}^{n+1}a^i = #frac{a^{(n+1)+1}-1}{a-1}",
+        [
+          "#sum_{i=0}^{n+1}a^i",
+          "= #sum_{i=0}^na^i + a^{n+1}",
+          <div>using the induction hypothesis:</div>,
+          "= #frac{a^{n+1}-1}{a-1} + a^{n+1}",
+          "= #frac{a^{n+1}-1}{a-1} + #frac{a^{n+1}(a-1)}{a-1}",
+          "= #frac{a^{n+1}-1 + a^{n+1}(a-1)}{a-1}",
+          "= #frac{a^{n+1}(1 + (a-1)) - 1}{a-1}",
+          "= #frac{a^{n+1}#cdot a - 1}{a-1}",
+          "= #frac{a^{n+2} - 1}{a-1}",
+          "= #frac{a^{(n+1) + 1}-1}{a-1}",
+        ],
         {
           problemPrelude: <>Let {isNatPlusWithoutDefinition("a")}.</>,
-          solutionFooter: universalOrFixedHint,
         }
     ),
-  
-    natInductionExercise(
-        <>{mathSpan("1 + #frac{2^0}{3^1} + #frac{2^2}{3^2} + ... + #frac{2^{2(n-1)}}{3^n} = 1 + #sum_{i=1}^n#frac{2^{2(i-1)}}{3^i} = (#frac{4}{3})^n")}</>,
+
+
+    standardSumContentItem(
+        "1 + #frac{2^0}{3^1} + #frac{2^2}{3^2} + ... + #frac{2^{2(n-1)}}{3^n} = 1 + #sum_{i=1}^n#frac{2^{2(i-1)}}{3^i} = (#frac{4}{3})^n",
         <>
           {mathDiv("1 + #sum_{i=1}^n#frac{2^{2(i-1)}}{3^i} = 1 + #sum_{i=1}^1#frac{2^{2(i-1)}}{3^i} = 1 + #frac{2^{2(1-1)}}{3^1}")}
           {mathDiv("= 1 + #frac{2^0}{3} = 1 + #frac{1}{3} = (#frac{4}{3})^1 = (#frac{4}{3})^n")}
         </>,
-        mathSpan("1 + #sum_{i=1}^{n+1}#frac{2^{2(i-1)}}{3^i} = (#frac{4}{3})^{n+1}"),
-        _detailLevel => <>
-          {mathDiv("1 + #sum_{i=1}^{n+1}#frac{2^{2(i-1)}}{3^i}")}
-          {mathDiv("= 1 + #sum_{i=1}^n#frac{2^{2(i-1)}}{3^i} + #frac{2^{2((n+1)-1)}}{3^{n+1}}")}
-          <div>using the induction hypothesis:</div>
-          {mathDiv("= (#frac{4}{3})^n + #frac{2^{2((n+1)-1)}}{3^{n+1}}")}
-          {mathDiv("= (#frac{4}{3})^n + #frac{2^{2n}}{3^{n+1}}")}
-          {mathDiv("= (#frac{4}{3})^n + #frac{1}{3}#cdot #frac{4^n}{3^n}")}
-          {mathDiv("= 1#cdot (#frac{4}{3})^n + #frac{1}{3}#cdot (#frac{4}{3})^n")}
-          {mathDiv("= (1 + #frac{1}{3})#cdot (#frac{4}{3})^n")}
-          {mathDiv("= #frac{4}{3}#cdot (#frac{4}{3})^n")}
-          {mathDiv("= (#frac{4}{3})^{n+1}")}
-        </>
+        "1 + #sum_{i=1}^{n+1}#frac{2^{2(i-1)}}{3^i} = (#frac{4}{3})^{n+1}",
+        [
+          "1 + #sum_{i=1}^{n+1}#frac{2^{2(i-1)}}{3^i}",
+          "= 1 + #sum_{i=1}^n#frac{2^{2(i-1)}}{3^i} + #frac{2^{2((n+1)-1)}}{3^{n+1}}",
+          <div>using the induction hypothesis:</div>,
+          "= (#frac{4}{3})^n + #frac{2^{2((n+1)-1)}}{3^{n+1}}",
+          "= (#frac{4}{3})^n + #frac{2^{2n}}{3^{n+1}}",
+          "= (#frac{4}{3})^n + #frac{1}{3}#cdot #frac{4^n}{3^n}",
+          "= 1#cdot (#frac{4}{3})^n + #frac{1}{3}#cdot (#frac{4}{3})^n",
+          "= (1 + #frac{1}{3})#cdot (#frac{4}{3})^n",
+          "= #frac{4}{3}#cdot (#frac{4}{3})^n",
+          "= (#frac{4}{3})^{n+1}",
+        ],
     ),
-  
-    natInductionExercise(
-        <>{mathSpan("1^2 - 2^2 + 3^2 - 4^2 + ... + -1^{n-1}n^2 = #sum_{i=1}^n-1^{i-1}i^2 = -1^{n-1}#frac{n(n+1)}{2}")}</>,
+
+
+    standardSumContentItem(
+        "1^2 - 2^2 + 3^2 - 4^2 + ... + -1^{n-1}n^2 = #sum_{i=1}^n-1^{i-1}i^2 = -1^{n-1}#frac{n(n+1)}{2}",
         <>
           {mathDiv("#sum_{i=1}^n-1^{i-1}i^2 = #sum_{i=1}^1-1^{i-1}i^2 = -1^{1-1}1^2 = -1^0#cdot 1 = 1")}
           <div>and</div>
           {mathDiv("-1^{n-1}#frac{n(n+1)}{2} = -1^{1-1}#frac{1(1+1)}{2} = #frac{1#cdot 2}{2} = 1")}
         </>,
-        mathSpan("#sum_{i=1}^{n+1}-1^{i-1}i^2 = -1^{(n+1)-1}#frac{(n+1)((n+1)+1)}{2}"),
-        _detailLevel => <>
-          {mathDiv("#sum_{i=1}^{n+1}-1^{i-1}i^2")}
-          {mathDiv("= #sum_{i=1}^n-1^{i-1}i^2 + (-1^{(n+1)-1}(n+1)^2)")}
-          <div>using the induction hypothesis:</div>
-          {mathDiv("= (-1^{n-1}#frac{n(n+1)}{2}) + (-1^{(n+1)-1}(n+1)^2)")}
-          {mathDiv("= (-1^{n-1}#frac{n(n+1)}{2}) - (-1^{n-1}(n+1)^2)")}
-          {mathDiv("= (-1^{n-1})(n+1)(#frac{n}{2} - (n+1))")}
-          {mathDiv("= (-1^{n-1})(n+1)(-#frac{n}{2} - 1))")}
-          {mathDiv("= -1^{n-1}#frac{(n+1)(-n - 2))}{2}")}
-          {mathDiv("= -(-1^{n-1}#frac{(n+1)(n+2)}{2})")}
-          {mathDiv("= -(-1^{n-1}#frac{(n+1)((n+1)+1)}{2})")}
-          {mathDiv("= -1^{(n+1)-1}#frac{(n+1)((n+1)+1)}{2}")}
-        </>
+        "#sum_{i=1}^{n+1}-1^{i-1}i^2 = -1^{(n+1)-1}#frac{(n+1)((n+1)+1)}{2}",
+        [
+          "#sum_{i=1}^{n+1}-1^{i-1}i^2",
+          "= #sum_{i=1}^n-1^{i-1}i^2 + (-1^{(n+1)-1}(n+1)^2)",
+          <div>using the induction hypothesis:</div>,
+          "= (-1^{n-1}#frac{n(n+1)}{2}) + (-1^{(n+1)-1}(n+1)^2)",
+          "= (-1^{n-1}#frac{n(n+1)}{2}) - (-1^{n-1}(n+1)^2)",
+          "= (-1^{n-1})(n+1)(#frac{n}{2} - (n+1))",
+          "= (-1^{n-1})(n+1)(-#frac{n}{2} - 1))",
+          "= -1^{n-1}#frac{(n+1)(-n - 2))}{2}",
+          "= -(-1^{n-1}#frac{(n+1)(n+2)}{2})",
+          "= -(-1^{n-1}#frac{(n+1)((n+1)+1)}{2})",
+          "= -1^{(n+1)-1}#frac{(n+1)((n+1)+1)}{2}",
+        ],
     ),
-  
-    natInductionExercise(
-        <>{mathSpan("1#cdot 2 + 2#cdot 3 + 3#cdot 4 + ... + n(n+1) = #sum_{i=1}^ni(i+1) = #frac{n(n+1)(n+2)}{3}")}</>,
-        <>{mathDiv("#sum_{i=1}^ni(i+1) = #sum_{i=1}^1i(i+1) = 1(1+1) = 2 = #frac{6}{3} = #frac{1#cdot 2#cdot 3}{3}")}</>,
-        mathSpan("#sum_{i=1}^{n+1}i(i+1) = #frac{(n+1)(n+2)(n+3)}{3}"),
-        _detailLevel => <>
-          {mathDiv("#sum_{i=1}^{n+1}i(i+1)")}
-          {mathDiv("= #sum_{i=1}^ni(i+1) + (n+1)((n+1)+1)")}
-          <div>using the induction hypothesis:</div>
-          {mathDiv("= #frac{n(n+1)(n+2)}{3} + (n+1)(n+2)")}
-          {mathDiv("= (n+1)(n+2)(#frac{n}{3} + 1)")}
-          {mathDiv("= (n+1)(n+2)(#frac{n}{3} + #frac{3}{3})")}
-          {mathDiv("= #frac{(n+1)(n+2)(n+3)}{3}")}
-        </>
-    ),
-  
-    natInductionExercise(
-        <>{mathSpan("1#cdot 1! + 2#cdot 2! + ... + n#cdot n! = #sum_{i=1}^ni#cdot i! = (n+1)!-1")}</>,
-        <>{mathDiv("#sum_{i=1}^ni#cdot i! = #sum_{i=1}^1i#cdot i! = 1#cdot 1! = 1 = 2 - 1 = 2! - 1 = (n+1)! - 1")}</>,
-        mathSpan("#sum_{i=1}^{n+1}i#cdot i! = ((n+1)+1)!-1"),
-        _detailLevel => <>
-          {mathDiv("#sum_{i=1}^{n+1}i#cdot i!")}
-          {mathDiv("= #sum_{i=1}^ni#cdot i! + (n+1)#cdot (n+1)!")}
-          <div>using the induction hypothesis:</div>
-          {mathDiv("= (n+1)!-1 + (n+1)#cdot (n+1)!")}
-          {mathDiv("= (n+1)!(1 + (n+1)) - 1")}
-          {mathDiv("= (n+1)!(n+2) - 1")}
-          {mathDiv("= (n+2)! - 1")}
-        </>
-    ),
-  
-    natInductionExercise(
-        <>{mathSpan("1#cdot 2#cdot 3 + 2#cdot 3#cdot 4 + 3#cdot 4#cdot 5 + ... + n(n+1)(n+2) = #sum_{i=1}^ni(i+1)(i+2) = #frac{n(n+1)(n+2)(n+3)}{4}")}</>,
-        <>{mathDiv("#sum_{i=1}^ni(i+1)(i+2) = #sum_{i=1}^1i(i+1)(i+2) = 1(1+1)(1+2) = 1#cdot 2#cdot 3 = #frac{1#cdot 2#cdot 3#cdot 4}{4}")}</>,
-        mathSpan("#sum_{i=1}^{n+1}i(i+1)(i+2) = #frac{(n+1)(n+2)(n+3)(n+4)}{4}"),
-        _detailLevel => <>
-          {mathDiv("#sum_{i=1}^{n+1}i(i+1)(i+2)")}
-          {mathDiv("= (n+1)((n+1)+1)((n+1)+2) + #sum_{i=1}^ni(i+1)(i+2)")}
-          <div>using the induction hypothesis:</div>
-          {mathDiv("= (n+1)((n+1)+1)((n+1)+2) + #frac{n(n+1)(n+2)(n+3)}{4}")}
-          {mathDiv("= #frac{4(n+1)(n+2)(n+3)}{4} + #frac{n(n+1)(n+2)(n+3)}{4}")}
-          {mathDiv("= #frac{4(n+1)(n+2)(n+3) + n(n+1)(n+2)(n+3)}{4}")}
-          {mathDiv("= #frac{(n+1)(n+2)(n+3)(n+4)}{4}")}
-        </>
-    ),
-  
-  
-    // komplizierter -- summe auf beiden seiten!
-    natInductionExercise(
-        <>{mathSpan("#sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i}) = #sum_{i=n+1}^{2n}#frac{1}{i}")}</>,
-        <>
-          {mathDiv("#sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i})")}
-          {mathDiv("= #sum_{i=1}^{1}(#frac{1}{2i-1} - #frac{1}{2i})")}
-          {mathDiv("= #frac{1}{2#cdot 1-1} - #frac{1}{2#cdot 1}")}
-          {mathDiv("= #frac{1}{2 - 1} - #frac{1}{2}")}
-          {mathDiv("= #frac{1}{2}")}
-          {mathDiv("= #sum_{i=2}^{2}#frac{1}{i}")}
-          {mathDiv("= #sum_{i=1+1}^{2#cdot 1}#frac{1}{i}")}
-        </>,
-        mathSpan("#sum_{i=1}^{n+1}(#frac{1}{2i-1} - #frac{1}{2i}) = #sum_{i=(n+1)+1}^{2(n+1)}#frac{1}{i}"),
-        _detailLevel => <>
-          {mathDiv("#sum_{i=1}^{n+1}(#frac{1}{2i-1} - #frac{1}{2i})")}
-          {mathDiv("= (#frac{1}{2(n+1)-1} - #frac{1}{2(n+1)}) + #sum_{i=1}^n(#frac{1}{2i-1} - #frac{1}{2i})")}
-          <div>using the induction hypothesis:</div>
-          {mathDiv("= (#frac{1}{2n+1} - #frac{1}{2n+2}) + #sum_{i=n+1}^{2n}#frac{1}{i}")}
-          {mathDiv("= (#frac{1}{2n+1} - #frac{1}{2n+2}) + (#frac{1}{n+1} - #frac{1}{2n+1} - #frac{1}{2n+2}) + #sum_{i=n+2}^{2n+2}#frac{1}{i}")}
-          {mathDiv("= (#frac{1}{2n+1} - #frac{1}{2n+1} + #frac{1}{n+1} - #frac{1}{2n+2} - #frac{1}{2n+2}) + #sum_{i=n+2}^{2n+2}#frac{1}{i}")}
-          {mathDiv("= (#frac{2}{2n+2} - #frac{1}{2n+2} - #frac{1}{2n+2}) + #sum_{i=n+2}^{2n+2}#frac{1}{i}")}
-          {mathDiv("= #sum_{i=(n+1)+1}^{2(n+1)}#frac{1}{i}")}
-        </>,
-        {
-          problemPrelude: <>
-            {mathDiv("#frac{1}{1} - #frac{1}{2} + #frac{1}{3} - #frac{1}{4} + ... + #frac{1}{2n-1} - #frac{1}{2n} = #sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i})")}
-            {mathDiv("#frac{1}{n+1} + #frac{1}{n+2} + #frac{1}{n+3} + ... + #frac{1}{2n} = #sum_{i=n+1}^{2n}#frac{1}{i}")}
-          </>,
-        },
-    ),
-  
-    natInductionExercise(
-        <>{mathSpan("1 + #frac{1}{2} + #frac{1}{4} + ... + #frac{1}{2^{n-1}} = #sum_{i=0}^{n-1}#frac{1}{2^i} = 2#cdot (1 - #frac{1}{2^n})")}</>,
-        <>{mathDiv("#sum_{i=0}^{n-1}#frac{1}{2^i} = #sum_{i=0}^{1-1}#frac{1}{2^i} = #frac{1}{2^0} = 1 = 2#cdot #frac{1}{2} = 2#cdot (1 - #frac{1}{2}) = 2#cdot (1 - #frac{1}{2^n})")}</>,
-        mathSpan("#sum_{i=0}^{(n+1)-1}#frac{1}{2^i} = 2#cdot (1 - #frac{1}{2^{n+1}})"),
-        _detailLevel => <>
-          {mathDiv("#sum_{i=0}^{(n+1)-1}#frac{1}{2^i}")}
-          {mathDiv("= #sum_{i=0}^n#frac{1}{2^i}")}
-          {mathDiv("= #frac{1}{2^n} + #sum_{i=0}^{n-1}#frac{1}{2^i}")}
-          <div>using the induction hypothesis:</div>
-          {mathDiv("= #frac{1}{2^n} + 2#cdot (1 - #frac{1}{2^n})")}
-          {mathDiv("= 2#cdot #frac{1}{2^{n+1}} + 2#cdot (1 - #frac{1}{2^n})")}
-          {mathDiv("= 2#cdot (#frac{1}{2^{n+1}} + 1 - #frac{1}{2^n})")}
-          {mathDiv("= 2#cdot (1 - #frac{1}{2^n} + #frac{1}{2^{n+1}})")}
-          {mathDiv("= 2#cdot (1 - (#frac{2}{2^{n+1}} - #frac{1}{2^{n+1}}))")}
-          {mathDiv("= 2#cdot (1 - #frac{1}{2^{n+1}})")}
-        </>
-    ),
-  
-    natInductionExercise(
-        <>{mathSpan("#frac{1}{1#cdot 2} + #frac{1}{2#cdot 3} + #frac{1}{3#cdot 4} + ... + #frac{1}{n(n+1)} = #sum_{i=1}^{n}#frac{1}{i(i+1)} = #frac{n}{n+1}")}</>,
-        <>{mathDiv("#sum_{i=1}^{n}#frac{1}{i(i+1)} = #sum_{i=1}^{1}#frac{1}{i(i+1)} = #frac{1}{1(1+1)} = #frac{1}{2} = #frac{1}{1#cdot 2} = #frac{n}{n+1}")}</>,
-        mathSpan("#sum_{i=1}^{n+1}#frac{1}{i(i+1)} = #frac{n+1}{n+2}"),
-        _detailLevel => <>
-          {mathDiv("#sum_{i=1}^{n+1}#frac{1}{i(i+1)}")}
-          {mathDiv("= #frac{1}{(n+1)(n+2)} + #sum_{i=1}^{n}#frac{1}{i(i+1)}")}
-          <div>using the induction hypothesis:</div>
-          {mathDiv("= #frac{1}{(n+1)(n+2)} + #frac{n}{n+1}")}
-          {mathDiv("= #frac{1}{(n+1)(n+2)} + #frac{n(n+2)}{(n+1)(n+2)}")}
-          {mathDiv("= #frac{1 + n(n+2)}{(n+1)(n+2)}")}
-          {mathDiv("= #frac{n^2 + 2n + 1}{(n+1)(n+2)}")}
-          {mathDiv("= #frac{(n+1)^2}{(n+1)(n+2)}")}
-          {mathDiv("= #frac{n+1}{n+2}")}
-        </>
-    ),
-      
-      // (next 19)
-     
-     */
 
+
+    standardSumContentItem(
+        "1#cdot 2 + 2#cdot 3 + 3#cdot 4 + ... + n(n+1) = #sum_{i=1}^ni(i+1) = #frac{n(n+1)(n+2)}{3}",
+        "#sum_{i=1}^ni(i+1) = #sum_{i=1}^1i(i+1) = 1(1+1) = 2 = #frac{6}{3} = #frac{1#cdot 2#cdot 3}{3}",
+        "#sum_{i=1}^{n+1}i(i+1) = #frac{(n+1)(n+2)(n+3)}{3}",
+        [
+          "#sum_{i=1}^{n+1}i(i+1)",
+          "= #sum_{i=1}^ni(i+1) + (n+1)((n+1)+1)",
+          <div>using the induction hypothesis:</div>,
+          "= #frac{n(n+1)(n+2)}{3} + (n+1)(n+2)",
+          "= (n+1)(n+2)(#frac{n}{3} + 1)",
+          "= (n+1)(n+2)(#frac{n}{3} + #frac{3}{3})",
+          "= #frac{(n+1)(n+2)(n+3)}{3}",
+        ],
+    ),
+
+
+    standardSumContentItem(
+        "1#cdot 1! + 2#cdot 2! + ... + n#cdot n! = #sum_{i=1}^ni#cdot i! = (n+1)!-1",
+        "#sum_{i=1}^ni#cdot i! = #sum_{i=1}^1i#cdot i! = 1#cdot 1! = 1 = 2 - 1 = 2! - 1 = (n+1)! - 1",
+        "#sum_{i=1}^{n+1}i#cdot i! = ((n+1)+1)!-1",
+        [
+          "#sum_{i=1}^{n+1}i#cdot i!",
+          "= #sum_{i=1}^ni#cdot i! + (n+1)#cdot (n+1)!",
+          <div>using the induction hypothesis:</div>,
+          "= (n+1)!-1 + (n+1)#cdot (n+1)!",
+          "= (n+1)!(1 + (n+1)) - 1",
+          "= (n+1)!(n+2) - 1",
+          "= (n+2)! - 1",
+        ],
+    ),
+
+
+    standardSumContentItem(
+        "1#cdot 2#cdot 3 + 2#cdot 3#cdot 4 + 3#cdot 4#cdot 5 + ... + n(n+1)(n+2) = #sum_{i=1}^ni(i+1)(i+2) = #frac{n(n+1)(n+2)(n+3)}{4}",
+        "#sum_{i=1}^ni(i+1)(i+2) = #sum_{i=1}^1i(i+1)(i+2) = 1(1+1)(1+2) = 1#cdot 2#cdot 3 = #frac{1#cdot 2#cdot 3#cdot 4}{4}",
+        "#sum_{i=1}^{n+1}i(i+1)(i+2) = #frac{(n+1)(n+2)(n+3)(n+4)}{4}",
+        [
+          "#sum_{i=1}^{n+1}i(i+1)(i+2)",
+          "= (n+1)((n+1)+1)((n+1)+2) + #sum_{i=1}^ni(i+1)(i+2)",
+          <div>using the induction hypothesis:</div>,
+          "= (n+1)((n+1)+1)((n+1)+2) + #frac{n(n+1)(n+2)(n+3)}{4}",
+          "= #frac{4(n+1)(n+2)(n+3)}{4} + #frac{n(n+1)(n+2)(n+3)}{4}",
+          "= #frac{4(n+1)(n+2)(n+3) + n(n+1)(n+2)(n+3)}{4}",
+          "= #frac{(n+1)(n+2)(n+3)(n+4)}{4}",
+        ],
+    ),
+
+
+
+
+    // komplizierter -- summe auf beiden seiten!
+    standardSumContentItem(
+      "#sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i}) = #sum_{i=n+1}^{2n}#frac{1}{i}",
+      <>
+        {mathDiv("#sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i})")}
+        {mathDiv("= #sum_{i=1}^{1}(#frac{1}{2i-1} - #frac{1}{2i})")}
+        {mathDiv("= #frac{1}{2#cdot 1-1} - #frac{1}{2#cdot 1}")}
+        {mathDiv("= #frac{1}{2 - 1} - #frac{1}{2}")}
+        {mathDiv("= #frac{1}{2}")}
+        {mathDiv("= #sum_{i=2}^{2}#frac{1}{i}")}
+        {mathDiv("= #sum_{i=1+1}^{2#cdot 1}#frac{1}{i}")}
+      </>,
+      "#sum_{i=1}^{n+1}(#frac{1}{2i-1} - #frac{1}{2i}) = #sum_{i=(n+1)+1}^{2(n+1)}#frac{1}{i}",
+      [
+        "#sum_{i=1}^{n+1}(#frac{1}{2i-1} - #frac{1}{2i})",
+        "= (#frac{1}{2(n+1)-1} - #frac{1}{2(n+1)}) + #sum_{i=1}^n(#frac{1}{2i-1} - #frac{1}{2i})",
+        <div>using the induction hypothesis:</div>,
+        "= (#frac{1}{2n+1} - #frac{1}{2n+2}) + #sum_{i=n+1}^{2n}#frac{1}{i}",
+        "= (#frac{1}{2n+1} - #frac{1}{2n+2}) + (#frac{1}{n+1} - #frac{1}{2n+1} - #frac{1}{2n+2}) + #sum_{i=n+2}^{2n+2}#frac{1}{i}",
+        "= (#frac{1}{2n+1} - #frac{1}{2n+1} + #frac{1}{n+1} - #frac{1}{2n+2} - #frac{1}{2n+2}) + #sum_{i=n+2}^{2n+2}#frac{1}{i}",
+        "= (#frac{2}{2n+2} - #frac{1}{2n+2} - #frac{1}{2n+2}) + #sum_{i=n+2}^{2n+2}#frac{1}{i}",
+        "= #sum_{i=(n+1)+1}^{2(n+1)}#frac{1}{i}",
+      ],
+      {
+        problemPrelude: <>
+          {mathDiv("#frac{1}{1} - #frac{1}{2} + #frac{1}{3} - #frac{1}{4} + ... + #frac{1}{2n-1} - #frac{1}{2n} = #sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i})")}
+          {mathDiv("#frac{1}{n+1} + #frac{1}{n+2} + #frac{1}{n+3} + ... + #frac{1}{2n} = #sum_{i=n+1}^{2n}#frac{1}{i}")}
+        </>,
+      },
+    ),
+
+
+      
+    standardSumContentItem(
+        "1 + #frac{1}{2} + #frac{1}{4} + ... + #frac{1}{2^{n-1}} = #sum_{i=0}^{n-1}#frac{1}{2^i} = 2#cdot (1 - #frac{1}{2^n})",
+        "#sum_{i=0}^{n-1}#frac{1}{2^i} = #sum_{i=0}^{1-1}#frac{1}{2^i} = #frac{1}{2^0} = 1 = 2#cdot #frac{1}{2} = 2#cdot (1 - #frac{1}{2}) = 2#cdot (1 - #frac{1}{2^n})",
+        "#sum_{i=0}^{(n+1)-1}#frac{1}{2^i} = 2#cdot (1 - #frac{1}{2^{n+1}})",
+        [
+          "#sum_{i=0}^{(n+1)-1}#frac{1}{2^i}",
+          "= #sum_{i=0}^n#frac{1}{2^i}",
+          "= #frac{1}{2^n} + #sum_{i=0}^{n-1}#frac{1}{2^i}",
+          <div>using the induction hypothesis:</div>,
+          "= #frac{1}{2^n} + 2#cdot (1 - #frac{1}{2^n})",
+          "= 2#cdot #frac{1}{2^{n+1}} + 2#cdot (1 - #frac{1}{2^n})",
+          "= 2#cdot (#frac{1}{2^{n+1}} + 1 - #frac{1}{2^n})",
+          "= 2#cdot (1 - #frac{1}{2^n} + #frac{1}{2^{n+1}})",
+          "= 2#cdot (1 - (#frac{2}{2^{n+1}} - #frac{1}{2^{n+1}}))",
+          "= 2#cdot (1 - #frac{1}{2^{n+1}})",
+        ],
+    ),
+
+
+    standardSumContentItem(
+        "#frac{1}{1#cdot 2} + #frac{1}{2#cdot 3} + #frac{1}{3#cdot 4} + ... + #frac{1}{n(n+1)} = #sum_{i=1}^{n}#frac{1}{i(i+1)} = #frac{n}{n+1}",
+        "#sum_{i=1}^{n}#frac{1}{i(i+1)} = #sum_{i=1}^{1}#frac{1}{i(i+1)} = #frac{1}{1(1+1)} = #frac{1}{2} = #frac{1}{1#cdot 2} = #frac{n}{n+1}",
+        "#sum_{i=1}^{n+1}#frac{1}{i(i+1)} = #frac{n+1}{n+2}",
+        [
+          "#sum_{i=1}^{n+1}#frac{1}{i(i+1)}",
+          "= #frac{1}{(n+1)(n+2)} + #sum_{i=1}^{n}#frac{1}{i(i+1)}",
+          <div>using the induction hypothesis:</div>,
+          "= #frac{1}{(n+1)(n+2)} + #frac{n}{n+1}",
+          "= #frac{1}{(n+1)(n+2)} + #frac{n(n+2)}{(n+1)(n+2)}",
+          "= #frac{1 + n(n+2)}{(n+1)(n+2)}",
+          "= #frac{n^2 + 2n + 1}{(n+1)(n+2)}",
+          "= #frac{(n+1)^2}{(n+1)(n+2)}",
+          "= #frac{n+1}{n+2}",
+        ],
+    ),
+
+
+      // TODO (next 19)
 
   ],
 };

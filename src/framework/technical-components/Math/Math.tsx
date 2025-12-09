@@ -28,6 +28,7 @@ function useRendered(source: string, displayMode: boolean): string {
 
 export interface MathProps {
     source: string;
+    textSize?: number;
 }
 
 // --------------------------------------------------------------------------------------------------------------------
@@ -39,11 +40,12 @@ export interface MathDivProps extends MathProps {
 
 export function MathDiv(props: MathDivProps) {
     const html = useRendered(props.source, true);
-    return <div dangerouslySetInnerHTML={{ __html: html }} />;
+    const style = props.textSize ? {fontSize: props.textSize + "em"} : {};
+    return <div style={style} dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
-export function mathDiv(source: string): ReactElement {
-    return <MathDiv source={source} />;
+export function mathDiv(source: string, textSize?: number): ReactElement {
+    return <MathDiv source={source} textSize={textSize} />;
 }
 
 // --------------------------------------------------------------------------------------------------------------------
@@ -55,11 +57,12 @@ export interface MathSpanProps extends MathProps {
 
 export function MathSpan(props: MathSpanProps) {
     const html = useRendered(props.source, false);
-    return <span dangerouslySetInnerHTML={{ __html: html }} />;
+    const style = props.textSize ? {fontSize: props.textSize + "em"} : {};
+    return <span style={style} dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
-export function mathSpan(source: string): ReactElement {
-    return <MathSpan source={source} />;
+export function mathSpan(source: string, textSize?: number): ReactElement {
+    return <MathSpan source={source} textSize={textSize} />;
 }
 
 // --------------------------------------------------------------------------------------------------------------------
@@ -72,9 +75,14 @@ export interface MathInlineBlockProps extends MathProps {
 
 export function MathInlineBlock(props: MathInlineBlockProps) {
     const html = useRendered(props.source, true);
-    return <span style={{display: "inline-block", width: props.widthEm + "em"}} dangerouslySetInnerHTML={{ __html: html }} />;
+    const style = {
+      display: "inline-block",
+      width: props.widthEm + "em",
+      ...props.textSize ? {fontSize: props.textSize + "em"} : {},
+    };
+    return <span style={style} dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
-export function mathInlineBlock(source: string, widthEm: number): ReactElement {
-    return <MathInlineBlock source={source} widthEm={widthEm} />;
+export function mathInlineBlock(source: string, widthEm: number, textSize?: number): ReactElement {
+    return <MathInlineBlock source={source} widthEm={widthEm} textSize={textSize} />;
 }

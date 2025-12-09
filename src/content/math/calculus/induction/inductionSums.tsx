@@ -393,30 +393,19 @@ export const inductionSums: ExerciseNode = {
           "= #frac{(n+1)(n+2)(n+3)(n+4)}{4}",
         ],
     ),
-
-
-// TODO bis hier geprüft
-
-
-
-
-    // komplizierter -- summe auf beiden seiten! Prelude prüfen!
     standardSumContentItem(
-      <>
-        {mathDiv("#frac{1}{1} - #frac{1}{2} + #frac{1}{3} - #frac{1}{4} + ... + #frac{1}{2n-1} - #frac{1}{2n} = #sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i})")}
-        {mathDiv("#frac{1}{n+1} + #frac{1}{n+2} + #frac{1}{n+3} + ... + #frac{1}{2n} = #sum_{i=n+1}^{2n}#frac{1}{i}")}
-        <p>Observe that</p>
-        {mathDiv("#sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i}) = #sum_{i=n+1}^{2n}#frac{1}{i}")}
-      </>,
+      observeThat(
+        "#frac{1}{1} - #frac{1}{2} + #frac{1}{3} - #frac{1}{4} + ... + #frac{1}{2n-1} - #frac{1}{2n} = #sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i})",
+        <p>and</p>,
+        "#frac{1}{n+1} + #frac{1}{n+2} + #frac{1}{n+3} + ... + #frac{1}{2n} = #sum_{i=n+1}^{2n}#frac{1}{i}",
+      ),
       "#sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i}) = #sum_{i=n+1}^{2n}#frac{1}{i}",
       <>
         {mathDiv("#sum_{i=1}^{n}(#frac{1}{2i-1} - #frac{1}{2i})")}
         {mathDiv("= #sum_{i=1}^{1}(#frac{1}{2i-1} - #frac{1}{2i})")}
         {mathDiv("= #frac{1}{2#cdot 1-1} - #frac{1}{2#cdot 1}")}
         {mathDiv("= #frac{1}{2 - 1} - #frac{1}{2}")}
-        {mathDiv("= #frac{1}{2}")}
-        {mathDiv("= #sum_{i=2}^{2}#frac{1}{i}")}
-        {mathDiv("= #sum_{i=1+1}^{2#cdot 1}#frac{1}{i}")}
+        {mathDiv("= 1 - #frac{1}{2} = #frac{1}{2} = #sum_{i=2}^{2}#frac{1}{i} = #sum_{i=1+1}^{2#cdot 1}#frac{1}{i} = #sum_{i=n+1}^{2n}#frac{1}{i}")}
       </>,
       "#sum_{i=1}^{n+1}(#frac{1}{2i-1} - #frac{1}{2i}) = #sum_{i=(n+1)+1}^{2(n+1)}#frac{1}{i}",
       [
@@ -425,12 +414,14 @@ export const inductionSums: ExerciseNode = {
         <div>using the induction hypothesis:</div>,
         "= (#frac{1}{2n+1} - #frac{1}{2n+2}) + #sum_{i=n+1}^{2n}#frac{1}{i}",
         "= (#frac{1}{2n+1} - #frac{1}{2n+2}) + (#frac{1}{n+1} - #frac{1}{2n+1} - #frac{1}{2n+2}) + #sum_{i=n+2}^{2n+2}#frac{1}{i}",
-        "= (#frac{1}{2n+1} - #frac{1}{2n+1} + #frac{1}{n+1} - #frac{1}{2n+2} - #frac{1}{2n+2}) + #sum_{i=n+2}^{2n+2}#frac{1}{i}",
+        <>(rearranging the terms)</>,
+        "= (#frac{1}{2n+1} - #frac{1}{2n+1}) + (#frac{1}{n+1} - #frac{1}{2n+2} - #frac{1}{2n+2}) + #sum_{i=n+2}^{2n+2}#frac{1}{i}",
         "= (#frac{2}{2n+2} - #frac{1}{2n+2} - #frac{1}{2n+2}) + #sum_{i=n+2}^{2n+2}#frac{1}{i}",
         "= #sum_{i=(n+1)+1}^{2(n+1)}#frac{1}{i}",
       ],
     ),
 
+// TODO bis hier geprüft
 
       
     standardSumContentItem(

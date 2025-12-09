@@ -12,10 +12,10 @@ const defaultExtraOptions: ExtraOptions = {
   solutionFooter: <></>,
 };
 
-function observeThat(formula: string) {
+function observeThat(...formulas: (string | ReactNode)[]) {
   return <>
     <p>Observe that</p>
-    {mathDiv(formula)}
+    {formulas.map(mathDivOrCustom)}
   </>;
 }
 
@@ -316,12 +316,9 @@ export const inductionSums: ExerciseNode = {
           "= (#frac{4}{3})^{n+1}",
         ],
     ),
-
-// TODO bis hier geprüft
-
     standardSumContentItem(
-        observeThat("##################################################"),
-        "1^2 - 2^2 + 3^2 - 4^2 + ... + -1^{n-1}n^2 = #sum_{i=1}^n-1^{i-1}i^2 = -1^{n-1}#frac{n(n+1)}{2}",
+        observeThat("1^2 - 2^2 + 3^2 - 4^2 + ... + -1^{n-1}n^2 = #sum_{i=1}^n-1^{i-1}i^2"),
+        "#sum_{i=1}^n-1^{i-1}i^2 = -1^{n-1}#frac{n(n+1)}{2}",
         <>
           {mathDiv("#sum_{i=1}^n-1^{i-1}i^2 = #sum_{i=1}^1-1^{i-1}i^2 = -1^{1-1}1^2 = -1^0#cdot 1 = 1")}
           <div>and</div>
@@ -342,12 +339,13 @@ export const inductionSums: ExerciseNode = {
           "= -1^{(n+1)-1}#frac{(n+1)((n+1)+1)}{2}",
         ],
     ),
-
-
     standardSumContentItem(
-        observeThat("##################################################"),
-        "1#cdot 2 + 2#cdot 3 + 3#cdot 4 + ... + n(n+1) = #sum_{i=1}^ni(i+1) = #frac{n(n+1)(n+2)}{3}",
-        "#sum_{i=1}^ni(i+1) = #sum_{i=1}^1i(i+1) = 1(1+1) = 2 = #frac{6}{3} = #frac{1#cdot 2#cdot 3}{3}",
+        observeThat("1#cdot 2 + 2#cdot 3 + 3#cdot 4 + ... + n(n+1) = #sum_{i=1}^ni(i+1)"),
+        "#sum_{i=1}^ni(i+1) = #frac{n(n+1)(n+2)}{3}",
+        <>
+          {mathDiv("#sum_{i=1}^ni(i+1) = #sum_{i=1}^1i(i+1) = 1(1+1) = 2")}
+          {mathDiv("= #frac{6}{3} = #frac{1#cdot 2#cdot 3}{3} = #frac{n(n+1)(n+2)}{3}")}
+        </>,
         "#sum_{i=1}^{n+1}i(i+1) = #frac{(n+1)(n+2)(n+3)}{3}",
         [
           "#sum_{i=1}^{n+1}i(i+1)",
@@ -359,11 +357,9 @@ export const inductionSums: ExerciseNode = {
           "= #frac{(n+1)(n+2)(n+3)}{3}",
         ],
     ),
-
-
     standardSumContentItem(
-        observeThat("##################################################"),
-        "1#cdot 1! + 2#cdot 2! + ... + n#cdot n! = #sum_{i=1}^ni#cdot i! = (n+1)!-1",
+        observeThat("1#cdot 1! + 2#cdot 2! + 3#cdot 3! + ... + n#cdot n! = #sum_{i=1}^ni#cdot i!"),
+        "#sum_{i=1}^ni#cdot i! = (n+1)!-1",
         "#sum_{i=1}^ni#cdot i! = #sum_{i=1}^1i#cdot i! = 1#cdot 1! = 1 = 2 - 1 = 2! - 1 = (n+1)! - 1",
         "#sum_{i=1}^{n+1}i#cdot i! = ((n+1)+1)!-1",
         [
@@ -376,12 +372,16 @@ export const inductionSums: ExerciseNode = {
           "= (n+2)! - 1",
         ],
     ),
-
-
     standardSumContentItem(
-        observeThat("##################################################"),
-        "1#cdot 2#cdot 3 + 2#cdot 3#cdot 4 + 3#cdot 4#cdot 5 + ... + n(n+1)(n+2) = #sum_{i=1}^ni(i+1)(i+2) = #frac{n(n+1)(n+2)(n+3)}{4}",
-        "#sum_{i=1}^ni(i+1)(i+2) = #sum_{i=1}^1i(i+1)(i+2) = 1(1+1)(1+2) = 1#cdot 2#cdot 3 = #frac{1#cdot 2#cdot 3#cdot 4}{4}",
+        observeThat(
+            "1#cdot 2#cdot 3 + 2#cdot 3#cdot 4 + 3#cdot 4#cdot 5 + ... + n(n+1)(n+2)",
+            "= #sum_{i=1}^ni(i+1)(i+2)"
+        ),
+        "#sum_{i=1}^ni(i+1)(i+2) = #frac{n(n+1)(n+2)(n+3)}{4}",
+        <>
+          {mathDiv("#sum_{i=1}^ni(i+1)(i+2) = #sum_{i=1}^1i(i+1)(i+2) = 1(1+1)(1+2)")}
+          {mathDiv("= 1#cdot 2#cdot 3 = #frac{1#cdot 2#cdot 3#cdot 4}{4}")}
+        </>,
         "#sum_{i=1}^{n+1}i(i+1)(i+2) = #frac{(n+1)(n+2)(n+3)(n+4)}{4}",
         [
           "#sum_{i=1}^{n+1}i(i+1)(i+2)",
@@ -393,6 +393,9 @@ export const inductionSums: ExerciseNode = {
           "= #frac{(n+1)(n+2)(n+3)(n+4)}{4}",
         ],
     ),
+
+
+// TODO bis hier geprüft
 
 
 

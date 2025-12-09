@@ -7,3 +7,6 @@ export const mathSubtree: FolderNode = {
   type: "folder",
   children: [calculusSubtree],
 };
+
+// TODO SChreibweisen: a^b (b in nat), Summe, Produkt, Fakultät
+// TODO Grundlagen: Mengen, Beweisverfahren

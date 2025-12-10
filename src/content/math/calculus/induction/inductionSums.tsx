@@ -451,33 +451,61 @@ export const inductionSums: ExerciseNode = {
           "= #frac{n+1}{n+2}",
         ],
     ),
-
-
-      // TODO (next 19)
-
     standardSumContentItem(
-        observeThat("#frac{1}{1#cot 3} + #frac{1}{3#cot 5} + #frac{1}{5#cot 7} + ... + #frac{1}{(2n-1)(2n+1)} = #sum_{i=1}^{n}#frac{1}{(2i-1)(2i+1)}"),
+        observeThat(
+            "#frac{1}{1#cdot 3} + #frac{1}{3#cdot 5} + #frac{1}{5#cdot 7} + ... + #frac{1}{(2n-1)(2n+1)}",
+            "= #sum_{i=1}^{n}#frac{1}{(2i-1)(2i+1)}"
+        ),
         "#sum_{i=1}^{n}#frac{1}{(2i-1)(2i+1)} = #frac{n}{2n+1}",
-        
-        "baseCaseProof",
-        "nextEquationToProve",
+        <>
+          {mathDiv("#sum_{i=1}^{n}#frac{1}{(2i-1)(2i+1)} = #sum_{i=1}^{1}#frac{1}{(2i-1)(2i+1)}")}
+          {mathDiv("= #frac{1}{(2#cdot 1-1)(2#cdot 1+1)} = #frac{n}{1#cdot (2n+1)}")}
+        </>,
+        "#sum_{i=1}^{n+1}#frac{1}{(2i-1)(2i+1)} = #frac{n+1}{2(n+1)+1}",
         [
-          "",
+          "#sum_{i=1}^{n+1}#frac{1}{(2i-1)(2i+1)}",
+          "= #frac{1}{(2(n+1)-1)(2(n+1)+1)} + #sum_{i=1}^{n}#frac{1}{(2i-1)(2i+1)}",
           <div>using the induction hypothesis:</div>,
+          "= #frac{1}{(2n+1)(2n+3)} + #frac{n}{2n+1}",
+          "= #frac{1}{(2n+1)(2n+3)} + #frac{n(2n+3)}{(2n+1)(2n+3)}",
+          "= #frac{1 + n(2n+3)}{(2n+1)(2n+3)}",
+          "= #frac{2n^2 + 3n + 1}{(2n+1)(2n+3)}",
+          "= #frac{(2n+1)(n+1)}{(2n+1)(2n+3)}",
+          "= #frac{n+1}{2n+3}",
+          "= #frac{n+1}{2(n+1)+1}",
+        ],
+    ),
+    standardSumContentItem(
+        observeThat(
+            "#frac{1}{1#cdot 4} + #frac{1}{4#cdot 7} + #frac{1}{7#cdot 10} + ... + #frac{1}{(3n-2)(3n+1)}",
+            "= #sum_{i=1}^{n}#frac{1}{(3i-2)(3i+1)}",
+        ),
+        "#sum_{i=1}^{n}#frac{1}{(3i-2)(3i+1)} = #frac{n}{3n+1}",
+        <>
+          {mathDiv("#sum_{i=1}^{n}#frac{1}{(3i-2)(3i+1)} = #sum_{i=1}^{1}#frac{1}{(3i-2)(3i+1)}")}
+          {mathDiv("= #frac{1}{(3#cdot 1-2)(3#cdot 1+1)} = #frac{n}{1#cdot (3n+1)}")}
+        </>,
+        "#sum_{i=1}^{n+1}#frac{1}{(3i-2)(3i+1)} = #frac{n+1}{3(n+1)+1}",
+        [
+          "#sum_{i=1}^{n+1}#frac{1}{(3i-2)(3i+1)}",
+          "= #frac{1}{(3(n+1)-2)(3(n+1)+1)} + #sum_{i=1}^{n}#frac{1}{(3i-2)(3i+1)}",
+          <div>using the induction hypothesis:</div>,
+          "= #frac{1}{(3n+1)(3n+4)} + #frac{n}{3n+1}",
+          "= #frac{1}{(3n+1)(3n+4)} + #frac{n(3n+4)}{(3n+1)(3n+4)}",
+          "= #frac{1 + n(3n+4)}{(3n+1)(3n+4)}",
+          "= #frac{3n^2 + 4n + 1}{(3n+1)(3n+4)}",
+          "= #frac{(3n+1)(n+1)}{(3n+1)(3n+4)}",
+          "= #frac{n+1}{3n+4}",
+          "= #frac{n+1}{3(n+1)+1}",
         ],
     ),
 
-    standardSumContentItem(
-        observeThat("#frac{1}{1#cdot 4} + #frac{1}{4#cdot 7} + #frac{1}{7#cdot 10} + ... + #frac{1}{(3n-2)(3n+1)} = #sum_{i=1}^{n}#frac{1}{(3i-2)(3i+1)}"),
-        "#sum_{i=1}^{n}#frac{1}{(3i-2)(3i+1)} = #frac{n}{3n+1}",
-        
-        "baseCaseProof",
-        "nextEquationToProve",
-        [
-          "",
-          <div>using the induction hypothesis:</div>,
-        ],
-    ),
+
+
+    // TODO (next 19)
+
+
+
 
     standardSumContentItem(
         observeThat("#frac{1}{1#cdot 5} + #frac{1}{5#cdot 9} + #frac{1}{9#cdot 13} + ... + #frac{1}{(4n-3)(4n+1)} = #sum_{i=1}^{n}#frac{1}{(4i-3)(4i+1)}"),

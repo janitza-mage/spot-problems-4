@@ -633,45 +633,75 @@ export const inductionSums: ExerciseNode = {
           "= #frac{(n+1)(2n^2 + 5n + 2)}{2(2n+1)(2n+3)}",
         ],
     ),
-
-    // TODO (next 27)
-
-
-
-
-
     standardSumContentItem(
-        observeThat("#################################"),
-        "equationToProve",
-        "baseCaseProof",
-        "nextEquationToProve",
+        observeThat("#frac{1}{2^1} + #frac{2}{2^2} + #frac{3}{2^3} + ... + #frac{n}{2^n} = #sum_{i=1}^{n}#frac{i}{2^i}"),
+        "#sum_{i=1}^{n}#frac{i}{2^i} = 2 - #frac{n+2}{2^n}",
+        <>
+          {mathDiv("#sum_{i=1}^{n}#frac{i}{2^i} = #sum_{i=1}^{1}#frac{i}{2^i}")}
+          {mathDiv("= #frac{1}{2^1} = #frac{1}{2} = 2 - #frac{3}{2} = 2 - #frac{n+2}{2}")}
+        </>,
+        "#sum_{i=1}^{n+1}#frac{i}{2^i} = 2 - #frac{(n+1)+2}{2^{n+1}}",
         [
-          "",
+          "#sum_{i=1}^{n+1}#frac{i}{2^i}",
+          "= #frac{n+1}{2^{n+1}} + #sum_{i=1}^{n}#frac{i}{2^i}",
           <div>using the induction hypothesis:</div>,
+          "= #frac{n+1}{2^{n+1}} + 2 - #frac{n+2}{2^n}",
+          "= 2 + #frac{n+1}{2^{n+1}} - #frac{2(n+2)}{2^{n+1}}",
+          "= 2 + #frac{n + 1 - 2(n+2)}{2^{n+1}}",
+          "= 2 + #frac{n + 1 - 2n - 4}{2^{n+1}}",
+          "= 2 + #frac{-n - 3}{2^{n+1}}",
+          "= 2 - #frac{n+3}{2^{n+1}}",
+          "= 2 - #frac{(n+1)+2}{2^{n+1}}",
+        ],
+    ),
+    standardSumContentItem(
+        observeThat("#frac{1}{2!} + #frac{2}{3!} + #frac{3}{4!} + ... + #frac{n}{(n+1)!} = #sum_{i=1}^{n}#frac{i}{(i+1)!}"),
+        "#sum_{i=1}^{n}#frac{i}{(i+1)!} = #frac{(n+1)!-1}{(n+1)!}",
+        <>
+          {mathDiv("#sum_{i=1}^{n}#frac{i}{(i+1)!} = #sum_{i=1}^{1}#frac{i}{(i+1)!}")}
+          {mathDiv("= #frac{1}{(1+1)!} = #frac{1}{2!} = #frac{1}{2}")}
+          <p>and</p>
+          {mathDiv("#frac{(n+1)!-1}{(n+1)!} = #frac{(1+1)!-1}{(1+1)!} = #frac{2!-1}{2!} = #frac{1}{2}")}
+        </>,
+        "#sum_{i=1}^{n+1}#frac{i}{(i+1)!} = #frac{((n+1)+1)!-1}{((n+1)+1)!}",
+        [
+          "#sum_{i=1}^{n+1}#frac{i}{(i+1)!}",
+          "= #frac{n+1}{((n+1)+1)!} + #sum_{i=1}^{n}#frac{i}{(i+1)!}",
+          <div>using the induction hypothesis:</div>,
+          "= #frac{n+1}{(n+2)!} + #frac{(n+1)!-1}{(n+1)!}",
+          "= #frac{n+1}{(n+2)!} + #frac{(n+2)((n+1)!-1)}{(n+2)!}",
+          "= #frac{(n+1) + (n+2)((n+1)!-1)}{(n+2)!}",
+          "= #frac{(n+1) + (n+2)(n+1)! - (n+2)}{(n+2)!}",
+          "= #frac{(n+2)! - 1}{(n+2)!}",
+          "= #frac{((n+1)+1)!-1}{((n+1)+1)!}",
+        ],
+    ),
+    standardSumContentItem(
+        observeThat("1#cdot 2^1 + 2#cdot 2^2 + 3#cdot 2^3 + ... + n#cdot 2^n = #sum_{i=1}^{n}i#cdot 2^i"),
+        "#sum_{i=1}^{n}i#cdot 2^i = (n-1)#cdot 2^{n+1}+2",
+        <>
+          {mathDiv("#sum_{i=1}^{n}i#cdot 2^i = #sum_{i=1}^{1}i#cdot 2^i")}
+          {mathDiv(" = 1#cdot 2^1 = 2 = 0#cdot 2^{2} + 2 = (n-1)#cdot 2^{n+1} + 2")}
+        </>,
+        "#sum_{i=1}^{n+1}i#cdot 2^i = ((n+1)-1)#cdot 2^{(n+1)+1}+2",
+        [
+          "#sum_{i=1}^{n+1}i#cdot 2^i",
+          "= (n+1)#cdot 2^{n+1} + #sum_{i=1}^{n}i#cdot 2^i",
+          <div>using the induction hypothesis:</div>,
+          "= (n+1)#cdot 2^{n+1} + (n-1)#cdot 2^{n+1} + 2",
+          "= ((n+1) + (n-1))#cdot 2^{n+1} + 2",
+          "= 2n#cdot 2^{n+1} + 2",
+          "= n#cdot 2^{n+2} + 2",
+          "= ((n + 1) - 1)#cdot 2^{(n + 1) + 1} + 2",
         ],
     ),
 
-    standardSumContentItem(
-        observeThat("#################################"),
-        "equationToProve",
-        "baseCaseProof",
-        "nextEquationToProve",
-        [
-          "",
-          <div>using the induction hypothesis:</div>,
-        ],
-    ),
 
-    standardSumContentItem(
-        observeThat("#################################"),
-        "equationToProve",
-        "baseCaseProof",
-        "nextEquationToProve",
-        [
-          "",
-          <div>using the induction hypothesis:</div>,
-        ],
-    ),
+
+    // TODO (next 29)
+
+
+
 
     standardSumContentItem(
         observeThat("#################################"),

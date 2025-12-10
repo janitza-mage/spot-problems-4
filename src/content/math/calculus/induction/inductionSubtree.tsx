@@ -12,9 +12,10 @@ export const inductionSubtree: FolderNode = {
 // TODO base case other than n=1
 // TODO cases where induction fails / is used wrong
 
-// TODO new section
+// TODO new section -- binomial coefficients and pascal's triangle; prob fits into induction chapter
 //   https://www.emath.de/Referate/induktion-aufgaben-loesungen.pdf
 //     p.3; 26, 31, 32
-// TODO new section
+
+// TODO new section -- working with ln(), is an induction exercise but fits better with ln() exercises
 //   https://www.emath.de/Referate/induktion-aufgaben-loesungen.pdf
 //     p.3; 28 

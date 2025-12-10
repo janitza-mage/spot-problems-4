@@ -11,3 +11,10 @@ export const inductionSubtree: FolderNode = {
 
 // TODO base case other than n=1
 // TODO cases where induction fails / is used wrong
+
+// TODO new section
+//   https://www.emath.de/Referate/induktion-aufgaben-loesungen.pdf
+//     p.3; 26, 31, 32
+// TODO new section
+//   https://www.emath.de/Referate/induktion-aufgaben-loesungen.pdf
+//     p.3; 28 

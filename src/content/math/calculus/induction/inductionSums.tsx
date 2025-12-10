@@ -604,23 +604,41 @@ export const inductionSums: ExerciseNode = {
           "= #frac{n^3 + 6n^2 + 9n + 4}{(n+1)(n+2)(n+3)}",
         ],
     ),
-
-    // TODO (next 25)
-
-
-
-
-
     standardSumContentItem(
-        observeThat("#################################"),
-        "equationToProve",
-        "baseCaseProof",
-        "nextEquationToProve",
+        observeThat(
+            "#frac{1^2}{1#cdot 3} + #frac{2^2}{3#cdot 5} + #frac{3^2}{5#cdot 7} + ... + #frac{n^2}{(2n-1)(2n+1)}",
+            "= #sum_{i=1}^{n}#frac{i^2}{(2i-1)(2i+1)}",
+        ),
+        "#sum_{i=1}^{n}#frac{i^2}{(2i-1)(2i+1)} = #frac{n(n+1)}{2(2n+1)}",
+        <>
+          {mathDiv("#sum_{i=1}^{n}#frac{i^2}{(2i-1)(2i+1)} = #sum_{i=1}^{1}#frac{i^2}{(2i-1)(2i+1)}")}
+          {mathDiv("#frac{1^2}{(2#cdot 1-1)(2#cdot 1+1)} = #frac{1}{(2-1)(2+1)} = #frac{1}{1#cdot 3} = #frac{1}{3}")}
+          <p>and</p>
+          {mathDiv("#frac{n(n+1)}{2(2n+1)} = #frac{1(1+1)}{2(2#cdot 1+1)} = #frac{1#cdot 2}{2(2+1)} = #frac{1}{3}")}
+        </>,
+        "#sum_{i=1}^{n+1}#frac{i^2}{(2i-1)(2i+1)} = #frac{(n+1)((n+1)+1)}{2(2(n+1)+1)}",
         [
-          "",
+          "#sum_{i=1}^{n+1}#frac{i^2}{(2i-1)(2i+1)}",
+          "= #frac{(n+1)^2}{(2(n+1)-1)(2(n+1)+1)} + #sum_{i=1}^{n}#frac{i^2}{(2i-1)(2i+1)}",
           <div>using the induction hypothesis:</div>,
+          "= #frac{(n+1)^2}{(2n+1)(2n+3)} + #frac{n(n+1)}{2(2n+1)}",
+          "= #frac{2(n+1)^2}{2(2n+1)(2n+3)} + #frac{n(n+1)(2n+3)}{2(2n+1)(2n+3)}",
+          "= #frac{2(n+1)^2 + n(n+1)(2n+3)}{2(2n+1)(2n+3)}",
+          "= #frac{(n+1)(2(n+1) + n(2n+3))}{2(2n+1)(2n+3)}",
+          "= #frac{(n+1)(2n^2 + 5n + 2)}{2(2n+1)(2n+3)}",
+          <p>and</p>,
+          "#frac{(n+1)((n+1)+1)}{2(2(n+1)+1)}",
+          "= #frac{(n+1)(n+2)}{2(2n+3)}",
+          "= #frac{(n+1)(n+2)(2n+1)}{2(2n+3)(2n+1)}",
+          "= #frac{(n+1)(2n^2 + 5n + 2)}{2(2n+1)(2n+3)}",
         ],
     ),
+
+    // TODO (next 27)
+
+
+
+
 
     standardSumContentItem(
         observeThat("#################################"),

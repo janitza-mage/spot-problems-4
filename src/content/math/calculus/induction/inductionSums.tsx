@@ -420,33 +420,23 @@ export const inductionSums: ExerciseNode = {
         "= #sum_{i=(n+1)+1}^{2(n+1)}#frac{1}{i}",
       ],
     ),
-
-// TODO bis hier geprüft
-
-      
     standardSumContentItem(
         observeThat("#frac{1}{2} + #frac{1}{4} + #frac{1}{8} + ... + #frac{1}{2^n} = #sum_{i=1}^{n}#frac{1}{2^i}"),
         "#sum_{i=1}^{n}#frac{1}{2^i} = 1 - #frac{1}{2^n}",
         "#sum_{i=1}^{n}#frac{1}{2^i} = #sum_{i=1}^{1}#frac{1}{2^i} = #frac{1}{2^1} = #frac{1}{2} = 1 - #frac{1}{2} = 1 - #frac{1}{2^n}",
         "#sum_{i=1}^{n+1}#frac{1}{2^i} = 1 - #frac{1}{2^{n+1}}",
         [
-          "#sum_{i=0}^{(n+1)-1}#frac{1}{2^i}",
-          "= #sum_{i=0}^n#frac{1}{2^i}",
-          "= #frac{1}{2^n} + #sum_{i=0}^{n-1}#frac{1}{2^i}",
+          "#sum_{i=1}^{n+1}#frac{1}{2^i}",
+          "= #frac{1}{2^{n+1}} + #sum_{i=1}^{n}#frac{1}{2^i}",
           <div>using the induction hypothesis:</div>,
-          "= #frac{1}{2^n} + 2#cdot (1 - #frac{1}{2^n})",
-          "= 2#cdot #frac{1}{2^{n+1}} + 2#cdot (1 - #frac{1}{2^n})",
-          "= 2#cdot (#frac{1}{2^{n+1}} + 1 - #frac{1}{2^n})",
-          "= 2#cdot (1 - #frac{1}{2^n} + #frac{1}{2^{n+1}})",
-          "= 2#cdot (1 - (#frac{2}{2^{n+1}} - #frac{1}{2^{n+1}}))",
-          "= 2#cdot (1 - #frac{1}{2^{n+1}})",
+          "= #frac{1}{2^{n+1}} + 1 - #frac{1}{2^n}",
+          "= 1 - (#frac{1}{2^n} - #frac{1}{2^{n+1}})",
+          "= 1 - #frac{1}{2^{n+1}}",
         ],
     ),
-
-
     standardSumContentItem(
-        observeThat("##################################################"),
-        "#frac{1}{1#cdot 2} + #frac{1}{2#cdot 3} + #frac{1}{3#cdot 4} + ... + #frac{1}{n(n+1)} = #sum_{i=1}^{n}#frac{1}{i(i+1)} = #frac{n}{n+1}",
+        observeThat("#frac{1}{1#cdot 2} + #frac{1}{2#cdot 3} + #frac{1}{3#cdot 4} + ... + #frac{1}{n(n+1)} = #sum_{i=1}^{n}#frac{1}{i(i+1)}"),
+        "#sum_{i=1}^{n}#frac{1}{i(i+1)} = #frac{n}{n+1}",
         "#sum_{i=1}^{n}#frac{1}{i(i+1)} = #sum_{i=1}^{1}#frac{1}{i(i+1)} = #frac{1}{1(1+1)} = #frac{1}{2} = #frac{1}{1#cdot 2} = #frac{n}{n+1}",
         "#sum_{i=1}^{n+1}#frac{1}{i(i+1)} = #frac{n+1}{n+2}",
         [
@@ -464,6 +454,149 @@ export const inductionSums: ExerciseNode = {
 
 
       // TODO (next 19)
+
+    standardSumContentItem(
+        observeThat("#frac{1}{1#cot 3} + #frac{1}{3#cot 5} + #frac{1}{5#cot 7} + ... + #frac{1}{(2n-1)(2n+1)} = #sum_{i=1}^{n}#frac{1}{(2i-1)(2i+1)}"),
+        "#sum_{i=1}^{n}#frac{1}{(2i-1)(2i+1)} = #frac{n}{2n+1}",
+        
+        "baseCaseProof",
+        "nextEquationToProve",
+        [
+          "",
+          <div>using the induction hypothesis:</div>,
+        ],
+    ),
+
+    standardSumContentItem(
+        observeThat("#frac{1}{1#cdot 4} + #frac{1}{4#cdot 7} + #frac{1}{7#cdot 10} + ... + #frac{1}{(3n-2)(3n+1)} = #sum_{i=1}^{n}#frac{1}{(3i-2)(3i+1)}"),
+        "#sum_{i=1}^{n}#frac{1}{(3i-2)(3i+1)} = #frac{n}{3n+1}",
+        
+        "baseCaseProof",
+        "nextEquationToProve",
+        [
+          "",
+          <div>using the induction hypothesis:</div>,
+        ],
+    ),
+
+    standardSumContentItem(
+        observeThat("#frac{1}{1#cdot 5} + #frac{1}{5#cdot 9} + #frac{1}{9#cdot 13} + ... + #frac{1}{(4n-3)(4n+1)} = #sum_{i=1}^{n}#frac{1}{(4i-3)(4i+1)}"),
+        "#sum_{i=1}^{n}#frac{1}{(4i-3)(4i+1)} = #frac{n}{4n+1}",
+        
+        "baseCaseProof",
+        "nextEquationToProve",
+        [
+          "",
+          <div>using the induction hypothesis:</div>,
+        ],
+    ),
+
+    standardSumContentItem(
+        observeThat("#frac{1}{(1+3)(1+4)} + #frac{1}{(2+3)(2+4)} + #frac{1}{(3+3)(3+4)} + ... + #frac{1}{(n+3)(n+4)} = #sum_{i=1}^{n}#frac{1}{(i+3)(i+4)}"),
+        "#sum_{i=1}^{n}#frac{1}{(i+3)(i+4)} = #frac{n}{4(n+4)}",
+        
+        "baseCaseProof",
+        "nextEquationToProve",
+        [
+          "",
+          <div>using the induction hypothesis:</div>,
+        ],
+    ),
+
+    standardSumContentItem(
+        observeThat("#frac{4}{1#cdot 3} + #frac{4}{2#cdot 4} + #frac{4}{3#cdot 5} + ... + #frac{4}{n(n+2)} = #sum_{i=1}^{n}#frac{4}{i(i+2)}"),
+        "#sum_{i=1}^{n}#frac{4}{i(i+2)} = #frac{n(3n+5)}{(n+1)(n+2)}",
+        
+        "baseCaseProof",
+        "nextEquationToProve",
+        [
+          "",
+          <div>using the induction hypothesis:</div>,
+        ],
+    ),
+
+    standardSumContentItem(
+        observeThat("#frac{4}{1#cdot 2#cdot 3} + #frac{4}{2#cdot 3#cdot 4} + #frac{4}{3#cdot 4#cdot 5} + ... + #frac{4}{(n+1)(n+2)(n+3)} = #sum_{i=1}^{n}#frac{4}{(i+1)(i+2)(i+3)}"),
+        "#sum_{i=1}^{n}#frac{4}{(i+1)(i+2)(i+3)} = #frac{(n+1)(n+4)}{(n+2)(n+3)}",
+        
+        "baseCaseProof",
+        "nextEquationToProve",
+        [
+          "",
+          <div>using the induction hypothesis:</div>,
+        ],
+    ),
+
+      
+      
+      
+      
+      
+    standardSumContentItem(
+        observeThat("#################################"),
+        "equationToProve",
+        "baseCaseProof",
+        "nextEquationToProve",
+        [
+          "",
+          <div>using the induction hypothesis:</div>,
+        ],
+    ),
+
+    standardSumContentItem(
+        observeThat("#################################"),
+        "equationToProve",
+        "baseCaseProof",
+        "nextEquationToProve",
+        [
+          "",
+          <div>using the induction hypothesis:</div>,
+        ],
+    ),
+
+    standardSumContentItem(
+        observeThat("#################################"),
+        "equationToProve",
+        "baseCaseProof",
+        "nextEquationToProve",
+        [
+          "",
+          <div>using the induction hypothesis:</div>,
+        ],
+    ),
+
+    standardSumContentItem(
+        observeThat("#################################"),
+        "equationToProve",
+        "baseCaseProof",
+        "nextEquationToProve",
+        [
+          "",
+          <div>using the induction hypothesis:</div>,
+        ],
+    ),
+
+    standardSumContentItem(
+        observeThat("#################################"),
+        "equationToProve",
+        "baseCaseProof",
+        "nextEquationToProve",
+        [
+          "",
+          <div>using the induction hypothesis:</div>,
+        ],
+    ),
+
+    standardSumContentItem(
+        observeThat("#################################"),
+        "equationToProve",
+        "baseCaseProof",
+        "nextEquationToProve",
+        [
+          "",
+          <div>using the induction hypothesis:</div>,
+        ],
+    ),
 
   ],
 };

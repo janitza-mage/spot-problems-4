@@ -9,4 +9,7 @@ export const mathSubtree: FolderNode = {
 };
 
 // TODO SChreibweisen: a^b (b in nat), Summe (auch Elemente rein/rausziehen, indexverschiebung), Produkt, Fakultät
-// TODO Grundlagen: Mengen, Beweisverfahren
+// TODO Grundlagen: Mengen, Beweisverfahren, wchtige Mengen zb nat, Funktionen, Relationen, Kreuzprodukt/Tupel
+// Quantoren, und/oder/implikation/äquivalenz
+
+

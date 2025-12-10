@@ -499,67 +499,118 @@ export const inductionSums: ExerciseNode = {
           "= #frac{n+1}{3(n+1)+1}",
         ],
     ),
-
-
-
-    // TODO (next 19)
-
-
-
-
     standardSumContentItem(
-        observeThat("#frac{1}{1#cdot 5} + #frac{1}{5#cdot 9} + #frac{1}{9#cdot 13} + ... + #frac{1}{(4n-3)(4n+1)} = #sum_{i=1}^{n}#frac{1}{(4i-3)(4i+1)}"),
+        observeThat(
+            "#frac{1}{1#cdot 5} + #frac{1}{5#cdot 9} + #frac{1}{9#cdot 13} + ... + #frac{1}{(4n-3)(4n+1)}",
+            "= #sum_{i=1}^{n}#frac{1}{(4i-3)(4i+1)}",
+        ),
         "#sum_{i=1}^{n}#frac{1}{(4i-3)(4i+1)} = #frac{n}{4n+1}",
-        
-        "baseCaseProof",
-        "nextEquationToProve",
+        <>
+          {mathDiv("#sum_{i=1}^{n}#frac{1}{(4i-3)(4i+1)} = #sum_{i=1}^{1}#frac{1}{(4i-3)(4i+1)}")}
+          {mathDiv("= #frac{1}{(4#cdot 1-3)(4#cdot 1+1)} = #frac{n}{1#cdot (4n+1)}")}
+        </>,
+        "#sum_{i=1}^{n+1}#frac{1}{(4i-3)(4i+1)} = #frac{n+1}{4(n+1)+1}",
         [
-          "",
+          "#sum_{i=1}^{n+1}#frac{1}{(4i-3)(4i+1)}",
+          "= #frac{1}{(4(n+1)-3)(4(n+1)+1)} + #sum_{i=1}^{n}#frac{1}{(4i-3)(4i+1)}",
           <div>using the induction hypothesis:</div>,
+          "= #frac{1}{(4n+1)(4n+5)} + #frac{n}{4n+1}",
+          "= #frac{1}{(4n+1)(4n+5)} + #frac{n(4n+5)}{(4n+1)(4n+5)}",
+          "= #frac{1 + n(4n+5)}{(4n+1)(4n+5)}",
+          "= #frac{4n^2 + 5n + 1}{(4n+1)(4n+5)}",
+          "= #frac{(4n+1)(n+1)}{(4n+1)(4n+5)}",
+          "= #frac{n+1}{4n+5}",
+          "= #frac{n+1}{4(n+1)+1}",
         ],
     ),
-
     standardSumContentItem(
-        observeThat("#frac{1}{(1+3)(1+4)} + #frac{1}{(2+3)(2+4)} + #frac{1}{(3+3)(3+4)} + ... + #frac{1}{(n+3)(n+4)} = #sum_{i=1}^{n}#frac{1}{(i+3)(i+4)}"),
+        observeThat(
+            "#frac{1}{4#cdot 5} + #frac{1}{5#cdot 6} + #frac{1}{6#cdot 7} + ... + #frac{1}{(n+3)(n+4)}",
+            "= #sum_{i=1}^{n}#frac{1}{(i+3)(i+4)}",
+        ),
         "#sum_{i=1}^{n}#frac{1}{(i+3)(i+4)} = #frac{n}{4(n+4)}",
-        
-        "baseCaseProof",
-        "nextEquationToProve",
+        <>
+          {mathDiv("#sum_{i=1}^{n}#frac{1}{(i+3)(i+4)} = #sum_{i=1}^{1}#frac{1}{(i+3)(i+4)}")}
+          {mathDiv("= #frac{1}{(1+3)(1+4)} = #frac{n}{4(n+4)}")}
+        </>,
+        "#sum_{i=1}^{n+1}#frac{1}{(i+3)(i+4)} = #frac{n+1}{4((n+1)+4)}",
         [
-          "",
+          "#sum_{i=1}^{n+1}#frac{1}{(i+3)(i+4)}",
+          "= #frac{1}{((n+1)+3)((n+1)+4)} + #sum_{i=1}^{n}#frac{1}{(i+3)(i+4)}",
           <div>using the induction hypothesis:</div>,
+          "= #frac{1}{(n+4)(n+5)} + #frac{n}{4(n+4)}",
+          "= #frac{4}{4(n+4)(n+5)} + #frac{n(n+5)}{4(n+4)(n+5)}",
+          "= #frac{4 + n(n+5)}{4(n+4)(n+5)}",
+          "= #frac{n^2 + 5n + 4}{4(n+4)(n+5)}",
+          "= #frac{(n+1)(n+4)}{4(n+4)(n+5)}",
+          "= #frac{n+1}{4(n+5)}",
+          "= #frac{n+1}{4((n+1)+4)}",
         ],
     ),
-
     standardSumContentItem(
-        observeThat("#frac{4}{1#cdot 3} + #frac{4}{2#cdot 4} + #frac{4}{3#cdot 5} + ... + #frac{4}{n(n+2)} = #sum_{i=1}^{n}#frac{4}{i(i+2)}"),
+        observeThat(
+            "#frac{4}{1#cdot 3} + #frac{4}{2#cdot 4} + #frac{4}{3#cdot 5} + ... + #frac{4}{n(n+2)}",
+            "= #sum_{i=1}^{n}#frac{4}{i(i+2)}",
+        ),
         "#sum_{i=1}^{n}#frac{4}{i(i+2)} = #frac{n(3n+5)}{(n+1)(n+2)}",
-        
-        "baseCaseProof",
-        "nextEquationToProve",
+        <>
+          {mathDiv("#sum_{i=1}^{n}#frac{4}{i(i+2)} = #sum_{i=1}^{1}#frac{4}{i(i+2)} = #frac{4}{1#cdot (1+2)} = #frac{4}{3}")}
+          <p>and</p>
+          {mathDiv("#frac{n(3n+5)}{(n+1)(n+2)} = #frac{1#cdot (3#cdot 1+5)}{(1+1)(1+2)} = #frac{3+5}{2#cdot 3} = #frac{8}{6} = #frac{4}{3}")}
+        </>,
+        "#sum_{i=1}^{n+1}#frac{4}{i(i+2)} = #frac{(n+1)(3(n+1)+5)}{((n+1)+1)((n+1)+2)}",
         [
-          "",
+          "#sum_{i=1}^{n+1}#frac{4}{i(i+2)}",
+          "= #frac{4}{(n+1)((n+1)+2)} + #sum_{i=1}^{n}#frac{4}{i(i+2)}",
           <div>using the induction hypothesis:</div>,
+          "= #frac{4}{(n+1)(n+3)} + #frac{n(3n+5)}{(n+1)(n+2)}",
+          "= #frac{4(n+2)}{(n+1)(n+2)(n+3)} + #frac{n(3n+5)(n+3)}{(n+1)(n+2)(n+3)}",
+          "= #frac{4(n+2) + n(3n+5)(n+3)}{(n+1)(n+2)(n+3)}",
+          "= #frac{4n + 8 + 3n^3 + 14n^2 + 15n}{(n+1)(n+2)(n+3)}",
+          "= #frac{3n^3 + 14n^2 + 19n + 8}{(n+1)(n+2)(n+3)}",
+          "= #frac{(n^2 + 2n + 1)(3n + 8)}{(n+1)(n+2)(n+3)}",
+          "= #frac{(n + 1)(n + 1)(3n + 8)}{(n+1)(n+2)(n+3)}",
+          "= #frac{(n + 1)(3n + 8)}{(n+2)(n+3)}",
+          "= #frac{(n + 1)(3(n+1) + 5)}{((n+1)+1)((n+1)+2)}",
         ],
     ),
-
     standardSumContentItem(
-        observeThat("#frac{4}{1#cdot 2#cdot 3} + #frac{4}{2#cdot 3#cdot 4} + #frac{4}{3#cdot 4#cdot 5} + ... + #frac{4}{(n+1)(n+2)(n+3)} = #sum_{i=1}^{n}#frac{4}{(i+1)(i+2)(i+3)}"),
-        "#sum_{i=1}^{n}#frac{4}{(i+1)(i+2)(i+3)} = #frac{(n+1)(n+4)}{(n+2)(n+3)}",
-        
-        "baseCaseProof",
-        "nextEquationToProve",
+        observeThat(
+            "#frac{4}{1#cdot 2#cdot 3} + #frac{4}{2#cdot 3#cdot 4} + #frac{4}{3#cdot 4#cdot 5} + ... + #frac{4}{n(n+1)(n+2)}",
+            "= #sum_{i=1}^{n}#frac{4}{i(i+1)(i+2)}",
+        ),
+        "#sum_{i=1}^{n}#frac{4}{i(i+1)(i+2)} = #frac{n(n+3)}{(n+1)(n+2)}",
+        <>
+          {mathDiv("#sum_{i=1}^{n}#frac{4}{i(i+1)(i+2)} = #sum_{i=1}^{1}#frac{4}{i(i+1)(i+2)}")}
+          {mathDiv("= #frac{4}{1(1+1)(1+2)} = #frac{4}{1#cdot 2#cdot 3} = #frac{2}{3}")}
+          <p>and</p>
+          {mathDiv("#frac{n(n+3)}{(n+1)(n+2)} = #frac{1(1+3)}{(1+1)(1+2)} = #frac{1#cdot 4}{2#cdot 3} = #frac{2}{3}")}
+        </>,
+        "#sum_{i=1}^{n+1}#frac{4}{i(i+1)(i+2)} = #frac{(n+1)((n+1)+3)}{((n+1)+1)((n+1)+2)}",
         [
-          "",
+          "#sum_{i=1}^{n+1}#frac{4}{i(i+1)(i+2)}",
+          "= #frac{4}{(n+1)((n+1)+1)((n+1)+2)} + #sum_{i=1}^{n}#frac{4}{i(i+1)(i+2)}",
           <div>using the induction hypothesis:</div>,
+          "= #frac{4}{(n+1)(n+2)(n+3)} + #frac{n(n+3)}{(n+1)(n+2)}",
+          "= #frac{4}{(n+1)(n+2)(n+3)} + #frac{n(n+3)(n+3)}{(n+1)(n+2)(n+3)}",
+          "= #frac{4 + n(n+3)^2}{(n+1)(n+2)(n+3)}",
+          "= #frac{4 + n(n^2 + 6n + 9)}{(n+1)(n+2)(n+3)}",
+          "= #frac{n^3 + 6n^2 + 9n + 4}{(n+1)(n+2)(n+3)}",
+          <p>and</p>,
+          "#frac{(n+1)((n+1)+3)}{((n+1)+1)((n+1)+2)}",
+          "= #frac{(n+1)(n+4)}{(n+2)(n+3)}",
+          "= #frac{(n+1)^2(n+4)}{(n+1)(n+2)(n+3)}",
+          "= #frac{(n^2 + 2n + 1)(n+4)}{(n+1)(n+2)(n+3)}",
+          "= #frac{n^3 + 6n^2 + 9n + 4}{(n+1)(n+2)(n+3)}",
         ],
     ),
 
-      
-      
-      
-      
-      
+    // TODO (next 25)
+
+
+
+
+
     standardSumContentItem(
         observeThat("#################################"),
         "equationToProve",

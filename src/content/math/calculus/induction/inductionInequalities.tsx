@@ -163,5 +163,45 @@ export const inductionInequalities: ExerciseNode = {
           "= (n+1)^{#frac{(n+1)(n+2)}{2}}",
         ],
     ),
+    standardFomulaInductionItem(
+        <>Let {mathSpan("a #in #mathbb{R}")}, {mathSpan("a > -1")}, {mathSpan("a #neq 0")}.</>,
+        "(1 + a)^n #geq 1 + n#cdot a",
+        "(1 + a)^n = (1 + a)^1 = 1 + a = 1 + n#cdot a",
+        "(1 + a)^{n+1} #geq 1 + (n+1)#cdot a",
+        [
+          <p>Since {mathSpan("a > -1")}, {mathSpan("(1 + a) > 0")}. This is important so we don't have to worry about "flipping" the inequality.</p>,
+          "(1 + a)^{n+1}",
+          "= (1 + a)#cdot (1 + a)^n",
+          <div>using the induction hypothesis:</div>,
+          "#geq (1 + a)#cdot (1 + n#cdot a)",
+          "= na^2 + na + a + 1",
+          <div>since {mathSpan("a^2>0")} and therefore {mathSpan("na^2>0")}:</div>,
+          "#geq na + a + 1",
+          "= 1 + (n+1)#cdot a",
+        ],
+    ),
+    standardFomulaInductionItem(
+        <>Let {mathSpan("a #in #mathbb{R}")}, {mathSpan("0 #leq a #leq 1")}.</>,
+        "(1 + a)^n #leq 1 + (2^n - 1)#cdot a",
+        <>
+          {mathDiv("(1 + a)^n = (1 + a)^1 = 1 + a")}
+          {mathDiv(" = 1 + (2 - 1)#cdot a = 1 + (2^n - 1)#cdot a")}
+        </>,
+        "(1 + a)^{n+1} #leq 1 + (2^{n+1} - 1)#cdot a",
+        [
+          "(1 + a)^{n+1}",
+          "= (1 + a)#cdot (1 + a)^n",
+          <div>using the induction hypothesis:</div>,
+          "#leq (1 + a)#cdot (1 + (2^n - 1)#cdot a)",
+          "= 1 + a + (2^n - 1)#cdot a#cdot(1+a)",
+          "= 1 + (1 + (2^n - 1)#cdot(1+a))#cdot a",
+          "= 1 + (1 + 2^n + a2^n - 1 - a)#cdot a",
+          "= 1 + (2^n + a2^n - a)#cdot a",
+          <div>since {mathSpan("2^n-1>0")}, </div>,
+          "#leq 1 + (2^n + 1#cdot 2^n - 1)#cdot a",
+          "= 1 + (2^n + 2^n - 1)#cdot a",
+          "= 1 + (2^{n+1} - 1)#cdot a",
+        ],
+    ),
   ],
 };

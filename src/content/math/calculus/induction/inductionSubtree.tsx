@@ -24,3 +24,6 @@ export const inductionSubtree: FolderNode = {
 
 // TODO unclear: p.3, D9
 
+// TODO p.4 sequences -> move to sequences chapter
+
+// TODO p.4 derivatives -> move to derivatives chapter

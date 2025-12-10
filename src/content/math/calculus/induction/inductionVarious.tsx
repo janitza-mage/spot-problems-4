@@ -77,5 +77,34 @@ export const inductionVarious: ExerciseNode = {
         </p>
       </>,
     },
+    {
+      problem: <>
+        Let {isNatPlus("n")}, {mathSpan("n #geq 3")}. Use induction to show that every convex polygon
+        with {mathSpan("n")} vertices has {mathSpan("#frac{n(n-3)}{2}")} diagonals.
+      </>,
+      answer: <>
+        <p>
+          Base case ({mathSpan("n = 3")}): A triangle has no diagonals and
+        </p>
+        {mathDiv("#frac{n(n-3)}{2} = #frac{3(3-3)}{2} = 0")}
+        <p>
+          Induction step: Assume that every convex polygon with {mathSpan("n")} vertices
+          has {mathSpan("#frac{n(n-3)}{2}")} diagonals. Consider a convex polygon with {mathSpan("(n+1)")} vertices.
+          Choose one vertex, and consider the polygon that consists of the remaining vertices. This polygon is convex,
+          has {mathSpan("n")} vertices and by the induction hypothesis, has {mathSpan("#frac{n(n-3)}{2}")} diagonals.
+          Each of these diagonals is also a diagonal of the original {mathSpan("(n+1)")}-gon. In addition to that,
+          the line connecting the to neighbors of the selected vertex is a diagonal in the {mathSpan("(n+1)")}-gon.
+          Finally, for every vertex other than these neighbors, a diagonal can be found by connecting the sellected
+          vertex with one of the other {mathSpan("(n-2)")} non-neighbor vertices. Taken together, this makes
+        </p>
+        {mathDiv("#frac{n(n-3)}{2} + 1 + (n-2)")}
+        {mathDiv("= #frac{n(n-3)}{2} + #frac{2}{2} + #frac{2(n-2)}{2}")}
+        {mathDiv("= #frac{n(n-3) + 2 + 2(n-2)}{2}")}
+        {mathDiv("= #frac{n^2 - 3n + 2 + 2n - 4}{2}")}
+        {mathDiv("= #frac{n^2 - n - 2}{2}")}
+        {mathDiv("= #frac{(n+1)(n-2)}{2}")}
+        {mathDiv("= #frac{(n+1)((n+1)-3)}{2}")}
+      </>,
+    },
   ],
 };

@@ -15,6 +15,9 @@ export function ContentItemView(props: ItemViewProps) {
     setRevealed(true);
   }
   
+  if (!props.contentItem) {
+    return <>no such content item</>
+  }
   return <>
     <div>{props.contentItem.problem}</div>
     {!revealed && <div style={{textAlign: "center"}}>

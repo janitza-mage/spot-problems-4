@@ -119,7 +119,12 @@ export function selectContentItem(path: string[], numberOfContentItems: number):
   return newItemContentId;
 }
 
-export type AnswerQuality = 0 | 1 | 2 | 3;
+// answer quality 0 means "wrong", causing the content item to reappear without any delay, but randomly among other
+// content items. Higher answer qualities cause different kinds of delays and will eventually remove the item. The
+// special "remove" value causes the content item to be removed immediately, as if fully learned; We might consider
+// offering this option to the user, but right now, it is used when we discover a stale state record due to
+// changes in the content item array which the user has already started to learn.
+export type AnswerQuality = 0 | 1 | 2 | 3 | "remove";
 
 export function updateState(path: string[], contentItemId: ContentItemId, answerQuality: AnswerQuality) {
   const now = Math.round(Date.now() / 1000);

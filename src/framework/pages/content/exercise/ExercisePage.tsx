@@ -1,5 +1,5 @@
 import {type ContentItemId, type ExerciseNode} from "../../../content.tsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {
   useNavigateToContentNode
 } from "../../../technical-components/navigation/ContentNodeLink/useNavigateToContentNode";
@@ -47,6 +47,12 @@ export function ExercisePage(props: ExercisePageProps) {
     }
   }
 
+  useEffect(() => {
+    if (!props.exerciseNode.contentItems[contentItemId]) {
+      onClickGrade("remove");
+    }
+  }, [props.exerciseNode, props.exerciseNode.contentItems, contentItemId]);
+  
   return <>
     <Dialog open={exerciseControlModalOpen} onClose={() => setExerciseControlModalOpen(false)} fullWidth={true}>
       <ExerciseControlModal path={props.path} exerciseNode={props.exerciseNode} />

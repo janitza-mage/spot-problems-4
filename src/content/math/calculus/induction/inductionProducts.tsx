@@ -1,7 +1,6 @@
 import type {ExerciseNode} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {observeThat, standardFomulaInductionItem} from "./formula.tsx";
-import {TextSize} from "../../../../framework/technical-components/layout/TextSize.tsx";
 
 export const inductionProducts: ExerciseNode = {
   id: "products",
@@ -136,9 +135,5 @@ export const inductionProducts: ExerciseNode = {
           "= 2 - #frac{1}{(n+1)+1}",
         ],
     ),
-
-
-    // TODO
-
   ],
 };

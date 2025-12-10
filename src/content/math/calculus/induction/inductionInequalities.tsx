@@ -1,6 +1,4 @@
 import type {ExerciseNode} from "../../../../framework/content.tsx";
-import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
-import {isNatPlus, isNatPlusWithoutDefinition} from "../../util/math-atoms.tsx";
 import {observeThat, standardFomulaInductionItem} from "./formula.tsx";
 
 export const inductionInequalities: ExerciseNode = {
@@ -66,6 +64,57 @@ export const inductionInequalities: ExerciseNode = {
           "= (n+1)^3",
         ],
         {baseCase: 10}
+    ),
+    standardFomulaInductionItem(
+        observeThat("1 + #frac{1}{2} + #frac{1}{3} + #frac{1}{4} + ... + #frac{1}{2^n-1} = #sum_{i=1}^{2^n-1}#frac{1}{i}"),
+        "#sum_{i=1}^{2^n-1}#frac{1}{i} > #frac{n}{2}",
+        "#sum_{i=1}^{2^n-1}#frac{1}{i} = #sum_{i=1}^{2^1-1}#frac{1}{i} = #sum_{i=1}^{1}#frac{1}{i} = #frac{1}{1} = 1 > #frac{1}{2} = #frac{n}{2}",
+        "#sum_{i=1}^{2^{n+1}-1}#frac{1}{i} > #frac{n+1}{2}",
+        [
+          "#sum_{i=1}^{2^{n+1}-1}#frac{1}{i}",
+          "= (#sum_{i=1}^{2^n-1}#frac{1}{i}) + (#sum_{i=2^n}^{2^{n+1}-1}#frac{1}{i})",
+          <div>using the induction hypothesis:</div>,
+          "> #frac{n}{2} + (#sum_{i=2^n}^{2^{n+1}-1}#frac{1}{i})",
+          "> #frac{n}{2} + (#sum_{i=2^n}^{2^{n+1}-1}#frac{1}{2^{n+1}})",
+          "= #frac{n}{2} + #frac{2^n}{2^{n+1}}",
+          "= #frac{n}{2} + #frac{1}{2}",
+          "= #frac{n+1}{2}",
+        ],
+    ),
+    standardFomulaInductionItem(
+        observeThat("1 + #frac{1}{2} + #frac{1}{3} + #frac{1}{4} + ... + #frac{1}{2^n-1} = #sum_{i=1}^{2^n-1}#frac{1}{i}"),
+        "#sum_{i=1}^{2^n-1}#frac{1}{i} #leq n",
+        "#sum_{i=1}^{2^n-1}#frac{1}{i} = #sum_{i=1}^{2^1-1}#frac{1}{i} = #sum_{i=1}^{1}#frac{1}{i} = #frac{1}{1} = 1 #leq n",
+        "#sum_{i=1}^{2^{n+1}-1}#frac{1}{i} #leq n+1",
+        [
+          "#sum_{i=1}^{2^{n+1}-1}#frac{1}{i}",
+          "= (#sum_{i=1}^{2^n-1}#frac{1}{i}) + (#sum_{i=2^n}^{2^{n+1}-1}#frac{1}{i})",
+          <div>using the induction hypothesis:</div>,
+          "#leq n + (#sum_{i=2^n}^{2^{n+1}-1}#frac{1}{i})",
+          "#leq n + (#sum_{i=2^n}^{2^{n+1}-1}#frac{1}{2^n})",
+          "= n + #frac{2^n}{2^n}",
+          "= n + 1",
+        ],
+    ),
+
+
+
+// TODO
+
+    standardFomulaInductionItem(
+        observeThat("1 + #frac{1}{2} + #frac{1}{3} + #frac{1}{4} + ... + #frac{1}{2^n-1} = #sum_{i=1}^{2^n-1}#frac{1}{i}"),
+        "#sum_{i=1}^{2^n-1}#frac{1}{i} #leq n",
+        "#sum_{i=1}^{2^n-1}#frac{1}{i} = #sum_{i=1}^{2^1-1}#frac{1}{i} = #sum_{i=1}^{1}#frac{1}{i} = #frac{1}{1} = 1 #leq n",
+        "#sum_{i=1}^{2^{n+1}-1}#frac{1}{i} #leq n+1",
+        [
+          "#sum_{i=1}^{2^{n+1}-1}#frac{1}{i}",
+          "= (#sum_{i=1}^{2^n-1}#frac{1}{i}) + (#sum_{i=2^n}^{2^{n+1}-1}#frac{1}{i})",
+          <div>using the induction hypothesis:</div>,
+          "#leq n + (#sum_{i=2^n}^{2^{n+1}-1}#frac{1}{i})",
+          "#leq n + (#sum_{i=2^n}^{2^{n+1}-1}#frac{1}{2^n})",
+          "= n + #frac{2^n}{2^n}",
+          "= n + 1",
+        ],
     ),
   ],
 };

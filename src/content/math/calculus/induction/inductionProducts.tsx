@@ -1,6 +1,7 @@
 import type {ExerciseNode} from "../../../../framework/content.tsx";
-import {mathDiv} from "../../../../framework/technical-components/Math/Math.tsx";
+import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {observeThat, standardFomulaInductionItem} from "./formula.tsx";
+import {TextSize} from "../../../../framework/technical-components/layout/TextSize.tsx";
 
 export const inductionProducts: ExerciseNode = {
   id: "products",
@@ -98,9 +99,46 @@ export const inductionProducts: ExerciseNode = {
           "= #frac{(2^{2^n})^2 - 1^2}{2^{2^n+2^n-1}}",
           "= #frac{2^{2#cdot 2^n} - 1}{2^{2^{n+1}-1}}",
           "= #frac{2^{2^{n+1}}-1}{2^{2^{n+1}-1}}",
-            
         ],
-        {baseCase: 0}
     ),
+    standardFomulaInductionItem(
+        <>
+          <div style={{fontSize: "0.9em"}}>
+            {observeThat("(1 + #frac{1}{n+1})(1 + #frac{1}{n+2})(1 + #frac{1}{n+3})...(1 + #frac{1}{n+n}) = #prod_{i=1}^{n}(1 + #frac{1}{n+i})")}
+          </div>
+          <p>Note that this whole term depends on {mathSpan("n")} like before, but this time, {mathSpan("n")} appears
+            both in the bounds of the product <i>and</i> in the individual terms. In the following exercise, we can still
+            use induction, but during the induction step, we will have to take some extra steps until the formula is in
+            the right shape to apply the induction hypothesis.</p>
+        </>,
+        "#prod_{i=1}^{n}(1 + #frac{1}{n+i}) = 2 - #frac{1}{n+1}",
+        <>
+          {mathDiv("#prod_{i=1}^{n}(1 + #frac{1}{n+i}) = #prod_{i=1}^{1}(1 + #frac{1}{1+i}) = 1 + #frac{1}{1+1}")}
+          {mathDiv("= #frac{3}{2} = 2 - #frac{1}{2} = 2 - #frac{1}{n+1}")}
+        </>,
+        "#prod_{i=1}^{n+1}(1 + #frac{1}{(n+1)+i}) = 2 - #frac{1}{(n+1)+1}",
+        [
+          "#prod_{i=1}^{n+1}(1 + #frac{1}{(n+1)+i})",
+          "= #prod_{i=1}^{n+1}(1 + #frac{1}{n+i+1})",
+          <div>we will shift the index to get rid of the extra +1 inside the factors:</div>,
+          "= #prod_{i=2}^{n+2}(1 + #frac{1}{n+i})",
+          <div>next, we split off the {mathSpan("i=n+1")} and {mathSpan("i=n+2")} factors as well as the {mathSpan("i=1")} divisor:</div>,
+          "= (1 + #frac{1}{n+(n+1)})(1 + #frac{1}{n+(n+2)})#frac{1}{1 + #frac{1}{n+1}}#prod_{i=1}^{n}(1 + #frac{1}{n+i})",
+          <div>Now we can finally use the induction hypothesis:</div>,
+          "= (1 + #frac{1}{n+(n+1)})(1 + #frac{1}{n+(n+2)})(#frac{1}{1 + #frac{1}{n+1}})(2 - #frac{1}{n+1})",
+          "= (1 + #frac{1}{2n+1})(1 + #frac{1}{2n+2})(#frac{n+1}{n+1 + 1})(#frac{2(n+1)}{n+1} - #frac{1}{n+1})",
+          "= (#frac{2n+1}{2n+1} + #frac{1}{2n+1})(#frac{2n+2}{2n+2} + #frac{1}{2n+2})(#frac{n+1}{n+2})(#frac{2n+1}{n+1})",
+          "= #frac{2n+2}{2n+1} #cdot #frac{2n+3}{2n+2} #cdot #frac{n+1}{n+2} #cdot #frac{2n+1}{n+1}",
+          "= #frac{1}{1} #cdot #frac{2n+3}{1} #cdot #frac{1}{n+2} #cdot #frac{1}{1}",
+          "= #frac{2n+3}{n+2}",
+          "= #frac{2n+4}{n+2} - #frac{1}{n+2}",
+          "= 2 - #frac{1}{n+2}",
+          "= 2 - #frac{1}{(n+1)+1}",
+        ],
+    ),
+
+
+    // TODO
+
   ],
 };

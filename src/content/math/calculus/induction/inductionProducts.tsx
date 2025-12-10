@@ -26,5 +26,37 @@ export const inductionProducts: ExerciseNode = {
           "= 2^{(n + 1)(n + 2)}",
         ],
     ),
+    standardFomulaInductionItem(
+        observeThat("(1 - #frac{1}{2})(1 - #frac{1}{3})(1 - #frac{1}{4})...(1 - #frac{1}{n}) = #prod_{i=2}^{n}(1 - #frac{1}{i})"),
+        "#prod_{i=2}^{n}(1 - #frac{1}{i}) = #frac{1}{n}",
+        "#prod_{i=2}^{n}(1 - #frac{1}{i}) = #prod_{i=2}^{2}(1 - #frac{1}{i}) = (1 - #frac{1}{2}) = #frac{1}{2} = #frac{1}{n}",
+        "#prod_{i=2}^{n + 1}(1 - #frac{1}{i}) = #frac{1}{n + 1}",
+        [
+          "#prod_{i=2}^{n + 1}(1 - #frac{1}{i})",
+          "= (1 - #frac{1}{n+1})#prod_{i=2}^{n}(1 - #frac{1}{i})",
+          <div>using the induction hypothesis:</div>,
+          "= (#frac{n+1}{n+1} - #frac{1}{n+1})#frac{1}{n}",
+          "= #frac{n}{n+1}#cdot #frac{1}{n}",
+          "= #frac{1}{n+1}",
+        ],
+        {baseCase: 2}
+    ),
+    standardFomulaInductionItem(
+        observeThat("(1 - #frac{1}{2})(1 - #frac{2}{3})(1 - #frac{3}{4})...(1 - #frac{n-1}{n}) = #prod_{i=2}^{n}(1 - #frac{i-1}{i})"),
+        "#prod_{i=2}^{n}(1 - #frac{i-1}{i}) = #frac{1}{n!}",
+        "#prod_{i=2}^{n}(1 - #frac{i-1}{i}) = #prod_{i=2}^{2}(1 - #frac{i-1}{i}) = (1 - #frac{2-1}{2}) = #frac{1}{2} = #frac{1}{n!}",
+        "#prod_{i=2}^{n+1}(1 - #frac{i-1}{i}) = #frac{1}{(n+1)!}",
+        [
+          "#prod_{i=2}^{n+1}(1 - #frac{i-1}{i})",
+          "= (1 - #frac{(n+1)-1}{n+1})#prod_{i=2}^{n}(1 - #frac{i-1}{i})",
+          <div>using the induction hypothesis:</div>,
+          "= (1 - #frac{n}{n+1})#frac{1}{n!}",
+          "= (#frac{n+1}{n+1} - #frac{n}{n+1})#frac{1}{n!}",
+          "= #frac{1}{n+1}#cdot #frac{1}{n!}",
+          "= #frac{1}{(n+1)#cdot n!}",
+          "= #frac{1}{(n+1)!}",
+        ],
+        {baseCase: 2}
+    ),
   ],
 };

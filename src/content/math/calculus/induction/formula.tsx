@@ -10,10 +10,12 @@ import {mathSpan} from "../../../../framework/technical-components/Math/Math.tsx
 
 export interface StandardFomulaInductionItemExtraOptions {
   solutionFooter?: ReactNode | null | undefined;
+  baseCase: number | string,
 }
 
 const defaultExtraOptions: StandardFomulaInductionItemExtraOptions = {
   solutionFooter: <></>,
+  baseCase: 1,
 };
 
 export function observeThat(...formulas: (string | ReactNode)[]) {
@@ -39,10 +41,13 @@ export function standardFomulaInductionItem(
       {problemPrelude}
       <p>Use induction to show that</p>
       {equationToProveDiv}
-      <p>for {isNatPlus("n")}.</p>
+      <p>
+        {materializedExtraOptions.baseCase === 1 ? <>for </> : <><b>assuming that {mathSpan("n #geq " + materializedExtraOptions.baseCase)}</b>, </>}
+        {isNatPlus("n")}.
+      </p>
     </>,
     answer: <>
-      <p>Base case ({mathSpan("n = 1")}):</p>
+      <p>Base case ({mathSpan("n = " + materializedExtraOptions.baseCase)}):</p>
       {mathDivOrCustom(baseCaseProof)}
       <p>Induction step: Assume that</p>
       {equationToProveDiv}

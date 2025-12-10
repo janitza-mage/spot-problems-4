@@ -5,16 +5,18 @@ Utilities to prove formulas using induction, e.g. sums, products, ...
 import type {ReactNode} from "react";
 import {mathDivOrCustom} from "../../util/math-util.tsx";
 import type {ContentItem} from "../../../../framework/content.tsx";
-import {isNatPlus} from "../../util/math-atoms.tsx";
+import {isNat0, isNatPlus} from "../../util/math-atoms.tsx";
 import {mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 
 export interface StandardFomulaInductionItemExtraOptions {
+  problemFooter?: ReactNode | null | undefined;
   solutionFooter?: ReactNode | null | undefined;
   baseCase: number | string,
 }
 
 const defaultExtraOptions: StandardFomulaInductionItemExtraOptions = {
-  solutionFooter: <></>,
+  problemFooter: undefined,
+  solutionFooter: undefined,
   baseCase: 1,
 };
 
@@ -42,9 +44,10 @@ export function standardFomulaInductionItem(
       <p>Use induction to show that</p>
       {equationToProveDiv}
       <p>
-        {materializedExtraOptions.baseCase === 1 ? <>for </> : <><b>assuming that {mathSpan("n #geq " + materializedExtraOptions.baseCase)}</b>, </>}
-        {isNatPlus("n")}.
+        {(materializedExtraOptions.baseCase === 0 || materializedExtraOptions.baseCase === 1) ? <>for </> : <><b>assuming that {mathSpan("n #geq " + materializedExtraOptions.baseCase)}</b>, </>}
+        {materializedExtraOptions.baseCase === 0 ? isNat0("n") : isNatPlus("n")}.
       </p>
+      {materializedExtraOptions.problemFooter}
     </>,
     answer: <>
       <p>Base case ({mathSpan("n = " + materializedExtraOptions.baseCase)}):</p>

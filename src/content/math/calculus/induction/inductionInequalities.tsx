@@ -1,5 +1,6 @@
 import type {ExerciseNode} from "../../../../framework/content.tsx";
 import {observeThat, standardFomulaInductionItem} from "./formula.tsx";
+import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 
 export const inductionInequalities: ExerciseNode = {
   id: "inequalities",
@@ -96,25 +97,54 @@ export const inductionInequalities: ExerciseNode = {
           "= n + 1",
         ],
     ),
-
-
-
-// TODO
-
     standardFomulaInductionItem(
-        observeThat("1 + #frac{1}{2} + #frac{1}{3} + #frac{1}{4} + ... + #frac{1}{2^n-1} = #sum_{i=1}^{2^n-1}#frac{1}{i}"),
-        "#sum_{i=1}^{2^n-1}#frac{1}{i} #leq n",
-        "#sum_{i=1}^{2^n-1}#frac{1}{i} = #sum_{i=1}^{2^1-1}#frac{1}{i} = #sum_{i=1}^{1}#frac{1}{i} = #frac{1}{1} = 1 #leq n",
-        "#sum_{i=1}^{2^{n+1}-1}#frac{1}{i} #leq n+1",
+        observeThat("#frac{1}{#sqrt{1}} + #frac{1}{#sqrt{2}} + #frac{1}{#sqrt{3}} + ... + #frac{1}{#sqrt{n}} = #sum_{i=1}^{n}#frac{1}{#sqrt{i}}"),
+        "#sum_{i=1}^{n}#frac{1}{#sqrt{i}} > #sqrt{n}",
+        <>
+          {mathDiv("#sum_{i=1}^{n}#frac{1}{#sqrt{i}} = #sum_{1}^{2}#frac{1}{#sqrt{i}} = #frac{1}{#sqrt{1}} + #frac{1}{#sqrt{2}} = 1 + #frac{1}{#sqrt{2}}")}
+          <p>Since {mathSpan("#sqrt{2}>1")},</p>
+          {mathDiv("1 + #frac{1}{#sqrt{2}} = #frac{#sqrt{2}}{#sqrt{2}} + #frac{1}{#sqrt{2}} = #frac{#sqrt{2} + 1}{#sqrt{2}} > #frac{1+1}{#sqrt{2}} = #frac{2}{#sqrt{2}} = #sqrt{2}")}
+        </>,
+        "#sum_{i=1}^{n+1}#frac{1}{#sqrt{i}} > #sqrt{n+1}",
         [
-          "#sum_{i=1}^{2^{n+1}-1}#frac{1}{i}",
-          "= (#sum_{i=1}^{2^n-1}#frac{1}{i}) + (#sum_{i=2^n}^{2^{n+1}-1}#frac{1}{i})",
+          "#sum_{i=1}^{n+1}#frac{1}{#sqrt{i}}",
+          "= #frac{1}{#sqrt{n+1}} + #sum_{i=1}^{n}#frac{1}{#sqrt{i}}",
           <div>using the induction hypothesis:</div>,
-          "#leq n + (#sum_{i=2^n}^{2^{n+1}-1}#frac{1}{i})",
-          "#leq n + (#sum_{i=2^n}^{2^{n+1}-1}#frac{1}{2^n})",
-          "= n + #frac{2^n}{2^n}",
-          "= n + 1",
+          "> #frac{1}{#sqrt{n+1}} + #sqrt{n}",
+          "= #frac{1}{#sqrt{n+1}} + #frac{#sqrt{n}#sqrt{n+1}}{#sqrt{n+1}}",
+          "> #frac{1}{#sqrt{n+1}} + #frac{#sqrt{n}#sqrt{n}}{#sqrt{n+1}}",
+          "= #frac{n+1}{#sqrt{n+1}}",
+          "= #sqrt{n+1}",
         ],
+        {baseCase: 2}
+    ),
+    standardFomulaInductionItem(
+        null,
+        "n! > 2^n",
+        "n! = 4! = 4#cdot 3#cdot 2#cdot 1 = 24 > 16 = 2^4 = 2^n",
+        "(n+1)! > 2^{n+1}",
+        [
+          "(n+1)! = (n+1)#cdot n! > (n+1)#cdot 2^n > 2#cdot 2^n = 2^{n+1}",
+        ],
+        {baseCase: 4}
+    ),
+    standardFomulaInductionItem(
+        null,
+        "n#cdot #sqrt{n} > n + #sqrt{n}",
+        <>
+          {mathDiv("n#cdot #sqrt{n} = 3#cdot #sqrt{3} = 2#cdot #sqrt{3} + #sqrt{3}")}
+          {mathDiv("> #sqrt{3}#cdot #sqrt{3} + #sqrt{3} = 3 + #sqrt{3} = n + #sqrt{n}")}
+        </>,
+        "(n+1)#cdot #sqrt{n+1} > (n+1) + #sqrt{n+1}",
+        [
+          "(n+1)#cdot #sqrt{n+1}",
+          "= n#cdot #sqrt{n+1} + #sqrt{n+1}",
+          "> n#cdot #sqrt{n} + #sqrt{n+1}",
+          <div>using the induction hypothesis:</div>,
+          "> (n + #sqrt{n}) + #sqrt{n+1}",
+          "> (n + 1) + #sqrt{n+1}",
+        ],
+        {baseCase: 3}
     ),
   ],
 };

@@ -21,3 +21,6 @@ export const inductionSubtree: FolderNode = {
 // TODO new section -- working with ln(), is an induction exercise but fits better with ln() exercises
 //   https://www.emath.de/Referate/induktion-aufgaben-loesungen.pdf
 //     p.3; 28 
+
+// TODO unclear: p.3, D9
+

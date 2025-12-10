@@ -28,7 +28,7 @@ export function observeThat(...formulas: (string | ReactNode)[]) {
 }
 
 export function standardFomulaInductionItem(
-    problemPrelude: ReactNode, // not in ExtraOptions because in this section we need it almost everywhere
+    problemPrelude: ReactNode, // not in ExtraOptions because we need it almost everywhere
     equationToProve: string | ReactNode,
     baseCaseProof: string | ReactNode, // a string will be fed to mathDiv, a ReactNode will be used as-is
     nextEquationToProve: string | ReactNode,

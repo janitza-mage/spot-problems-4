@@ -2,12 +2,13 @@ import type {FolderNode} from "../../../../framework/content.tsx";
 import {inductionSums} from "./inductionSums.tsx";
 import {inductionDivisibility} from "./inductionDivisibility.tsx";
 import {inductionProducts} from "./inductionProducts.tsx";
+import {inductionInequalities} from "./inductionInequalities.tsx";
 
 export const inductionSubtree: FolderNode = {
   id: "induction",
   name: "Induction",
   type: "folder",
-  children: [inductionSums, inductionDivisibility, inductionProducts],
+  children: [inductionSums, inductionDivisibility, inductionProducts, inductionInequalities],
 };
 
 // TODO base case other than n=1

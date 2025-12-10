@@ -146,5 +146,22 @@ export const inductionInequalities: ExerciseNode = {
         ],
         {baseCase: 3}
     ),
+    standardFomulaInductionItem(
+        observeThat("1^1 + 2^2 + 3^3 + 4^4 + ... + n^n = #prod_{i=1}^{n}i^i"),
+        "#prod_{i=1}^{n}i^i #leq n^{#frac{n(n+1)}{2}}",
+        mathDiv("#prod_{i=1}^{n}i^i = #prod_{i=1}^{1}i^i = 1^1 = 1^{#frac{1#cdot 2}{2}} = n^{#frac{n(n+1)}{2}}"),
+        "#prod_{i=1}^{n+1}i^i #leq (n+1)^{#frac{(n+1)(n+2)}{2}}",
+        [
+          "#prod_{i=1}^{n+1}i^i",
+          "= (n+1)^{n+1}#cdot #prod_{i=1}^{n}i^i",
+          <div>using the induction hypothesis:</div>,
+          "#leq (n+1)^{n+1}#cdot n^{#frac{n(n+1)}{2}}",
+          "#leq (n+1)^{n+1}#cdot (n+1)^{#frac{n(n+1)}{2}}",
+          "= (n+1)^{n+1 + #frac{n(n+1)}{2}}",
+          "= (n+1)^{#frac{2(n+1)}{2} + #frac{n(n+1)}{2}}",
+          "= (n+1)^{#frac{2(n+1) + n(n+1)}{2}}",
+          "= (n+1)^{#frac{(n+1)(n+2)}{2}}",
+        ],
+    ),
   ],
 };

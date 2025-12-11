@@ -2,8 +2,6 @@ import type {ExerciseNode} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {isNat0, isNatPlus} from "../../util/math-atoms.tsx";
 
-// TODO review
-
 export const inductionVarious: ExerciseNode = {
   id: "various",
   name: "Various Exercises",
@@ -71,9 +69,8 @@ export const inductionVarious: ExerciseNode = {
           placed into this first container, and the principle is immediately true. In the second case, only one
           object is placed into this first container. Then there are {mathSpan("(n+1)")} objects left to be placed
           into the {mathSpan("n")} remaining containers. By the induction hypothesis, there must be at least one
-          container that contains at least two objects. This container must also contain at least two objects when
-          considering the {mathSpan("(n+2)")} objects. In the third case, no object is placed into this first
-          container, and again, at least one of the other containers must contain at least two objects.
+          of those containers that contains at least two objects. In the third case, no object is placed into this
+          first container, and again, at least one of the other containers must contain at least two objects.
         </p>
       </>,
     },
@@ -94,8 +91,8 @@ export const inductionVarious: ExerciseNode = {
           has {mathSpan("n")} vertices and by the induction hypothesis, has {mathSpan("#frac{n(n-3)}{2}")} diagonals.
           Each of these diagonals is also a diagonal of the original {mathSpan("(n+1)")}-gon. In addition to that,
           the line connecting the to neighbors of the selected vertex is a diagonal in the {mathSpan("(n+1)")}-gon.
-          Finally, for every vertex other than these neighbors, a diagonal can be found by connecting the sellected
-          vertex with one of the other {mathSpan("(n-2)")} non-neighbor vertices. Taken together, this makes
+          Finally, for every vertex other than these neighbors, a diagonal can be found by connecting it with the
+          previously selected vertex, adding another {mathSpan("(n-2)")} diagonals. Taken together, this makes
         </p>
         {mathDiv("#frac{n(n-3)}{2} + 1 + (n-2)")}
         {mathDiv("= #frac{n(n-3)}{2} + #frac{2}{2} + #frac{2(n-2)}{2}")}
@@ -138,7 +135,7 @@ export const inductionVarious: ExerciseNode = {
         <p>Proof:</p>
         {mathDiv("#sum_{i=1}^{n+1}2^{2i-1}")}
         {mathDiv("= 2^{2(n+1)-1} + #sum_{i=1}^{n}2^{2i-1}")}
-        <div>using the induction hypothesis:</div>,
+        <div>using the induction hypothesis:</div>
         {mathDiv("= 2^{2n+1} + #frac{2(4^n-1)}{3}")}
         {mathDiv("= #frac{3#cdot 2^{2n+1}}{3} + #frac{2(4^n-1)}{3}")}
         {mathDiv("= #frac{3#cdot 2^{2n+1} + 2(4^n-1)}{3}")}

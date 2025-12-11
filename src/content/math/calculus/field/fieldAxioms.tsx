@@ -52,5 +52,21 @@ export const fieldAxioms: ExerciseNode = {
         </p>
       </>,
     },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        Using the field axioms, prove that {mathSpan("-0 = 0")}.
+      </>,
+      answer: <>
+        <p>
+          Apply the zero axiom to {mathSpan("-0")} to get {mathDiv("-0 + 0 = -0")}
+          By commutativity, {mathDiv("0 + -0 = -0")}
+          By the negation axiom, {mathDiv("0 + -0 = 0")}
+          Therefore, {mathDiv("-0 = 0")}
+        </p>
+      </>,
+    },
   ],
 };

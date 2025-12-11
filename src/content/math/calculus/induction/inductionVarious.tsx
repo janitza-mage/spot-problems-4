@@ -1,5 +1,5 @@
 import type {ExerciseNode} from "../../../../framework/content.tsx";
-import {mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
+import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {isNat0, isNatPlus} from "../../util/math-atoms.tsx";
 
 // TODO review
@@ -104,6 +104,110 @@ export const inductionVarious: ExerciseNode = {
         {mathDiv("= #frac{n^2 - n - 2}{2}")}
         {mathDiv("= #frac{(n+1)(n-2)}{2}")}
         {mathDiv("= #frac{(n+1)((n+1)-3)}{2}")}
+      </>,
+    },
+    {
+      problem: <>
+        <p>
+          Let {isNatPlus("n")}. Let {isNatPlus("x")} be a number that is obtained by repeating, in binary (base-2)
+          notation, the digits {mathSpan("10")} for {mathSpan("n")} times. Examples:
+        </p>
+        <div style={{fontSize: "0.8em"}}>
+          <div>{mathSpan("n=1 #implies x=10_{(2)} = 1#cdot 2^1 + 0#cdot 2^0")}</div>
+          <div>{mathSpan("n=2 #implies x=1010_{(2)} = 1#cdot 2^3 + 0#cdot 2^2 + 1#cdot 2^1 + 0#cdot 2^0")}</div>
+          <div>{mathSpan("n=3 #implies x=101010_{(2)} = 1#cdot 2^5 + 0#cdot 2^4 + 1#cdot 2^3 + 0#cdot 2^2 + 1#cdot 2^1 + 0#cdot 2^0")}</div>
+          <div>{mathSpan("#ldots")}</div>
+        </div>
+        <p>
+          Use induction to prove that {mathSpan("x = #frac{2(4^n-1)}{3}")}.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          We first write {mathSpan("x")} as a sum:
+        </p>
+        {mathDiv("x = #sum_{i=1}^{n}2^{2i-1}")}
+        <p>Base case ({mathSpan("n = 1")}):</p>
+        {mathDiv("#sum_{i=1}^{n}2^{2i-1} = #sum_{i=1}^{1}2^{2i-1} = 2^{2#cdot 1-1} = 2^1 = 2")}
+        <p>and</p>
+        {mathDiv("#frac{2(4^n-1)}{3} = #frac{2(4^1-1)}{3} = #frac{2(4-1)}{3} = #frac{6}{3} = 2")}
+        <p>Induction step: Assume that</p>
+        {mathDiv("#sum_{i=1}^{n}2^{2i-1} = #frac{2(4^n-1)}{3}")}
+        <p>(induction hypothesis). Then show that</p>
+        {mathDiv("#sum_{i=1}^{n+1}2^{2i-1} = #frac{2(4^{n+1}-1)}{3}")}
+        <p>Proof:</p>
+        {mathDiv("#sum_{i=1}^{n+1}2^{2i-1}")}
+        {mathDiv("= 2^{2(n+1)-1} + #sum_{i=1}^{n}2^{2i-1}")}
+        <div>using the induction hypothesis:</div>,
+        {mathDiv("= 2^{2n+1} + #frac{2(4^n-1)}{3}")}
+        {mathDiv("= #frac{3#cdot 2^{2n+1}}{3} + #frac{2(4^n-1)}{3}")}
+        {mathDiv("= #frac{3#cdot 2^{2n+1} + 2(4^n-1)}{3}")}
+        {mathDiv("= #frac{6#cdot 2^{2n} + 2(4^n-1)}{3}")}
+        {mathDiv("= #frac{6#cdot 4^{n} + 2(4^n-1)}{3}")}
+        {mathDiv("= #frac{2#cdot (3#cdot 4^n + 4^n - 1)}{3}")}
+        {mathDiv("= #frac{2#cdot (4#cdot 4^n - 1)}{3}")}
+        {mathDiv("= #frac{2#cdot (4^{n+1} - 1)}{3}")}
+      </>,
+    },
+    {
+      problem: <>
+        <p>
+          Let {isNatPlus("n")}. Let
+        </p>
+        {mathDiv("x_1, x_2, ..., x_n #in #mathbb{R}, x_i>0")}
+        <p>
+          and
+        </p>
+        {mathDiv("x_1#cdot x_2#cdot x_3#cdot ...#cdot x_n=1")}
+        <p>
+          Use induction to prove that
+        </p>
+        {mathDiv("x_1+x_2+x_3+...+x_n #geq n")}
+      </>,
+      answer: <>
+        <p>
+          Base case ({mathSpan("n=1")}): There is only {mathSpan("x_1")} with the condition
+          that {mathSpan("x_1=1")}, so {mathSpan("x_1 = 1 #geq 1 = n")}.
+        </p>
+        <p>
+          Induction step: Let
+        </p>
+        {mathDiv("x_1, x_2, ..., x_n, n_{n+1} #in #mathbb{R}, x_i > 0")}
+        <p>
+          and
+        </p>
+        {mathDiv("x_1#cdot x_2#cdot x_3#cdot ...#cdot x_n#cdot x_{n+1}=1")}
+        <p>
+          We pick the smallest and largest of these numbers and call them {mathSpan("x_p")} and {mathSpan("x_q")}, respectively.
+          Then {mathSpan("x_p #leq 1")} and {mathSpan("x_q #geq 1")}, otherwise the product of
+          all {mathSpan("x_i")} cannot be {mathSpan("1")}.
+        </p>
+        <p>
+          Next, we define {mathSpan("n")} numbers called {mathSpan("y_i")} by setting
+        </p>
+        {mathDiv("y_1 = x_p#cdot x_q")}
+        <p>
+          and {mathSpan("y_{2..n}")} as the remaining {mathSpan("x_i")}. The product of all {mathSpan("y_i")} is
+          the same as that of the {mathSpan("x_i")}, and {mathSpan("y_i > 0")}. Using the induction hypothesis,
+        </p>
+        {mathDiv("y_1 + y_2 + y_3 + ... + y_n #geq n")}
+        {mathDiv("#iff y_2 + y_3 + ... + y_n #geq n - y_1")}
+        {mathDiv("#iff y_2 + y_3 + ... + y_n + x_p + x_q #geq n - y_1 + x_p + x_q")}
+        {mathDiv("#iff #sum_ix_i #geq n - y_1 + x_p + x_q")}
+        <p>
+          and
+        </p>
+        {mathDiv("n - y_1 + x_p + x_q")}
+        {mathDiv("= n - x_px_q + x_p + x_q")}
+        {mathDiv("= n + x_p(1 - x_q) + x_q")}
+        {mathDiv("= n - x_p(x_q - 1) + x_q - 1 + 1")}
+        {mathDiv("= n + (1 - x_p)(x_q - 1) + 1")}
+        <p>
+          Since {mathSpan("x_p #leq 1")}, {mathSpan("1 - x_p #geq 0")}.
+          Since {mathSpan("x_q #geq 1")}, {mathSpan("x_q - 1 #geq 0")}.
+          Therefore, the above is
+        </p>
+        {mathDiv("#geq n + 1")}
       </>,
     },
   ],

@@ -207,5 +207,59 @@ export const inductionVarious: ExerciseNode = {
         {mathDiv("#geq n + 1")}
       </>,
     },
+    {
+      problem: <>
+        <p>
+          This problem shows how wrong usage of induction can lead to seemingly "prove" a false claim. Your task
+          is to find the error in that "proof".
+        </p>
+        <p>
+          Claim: "All horses are the same color."
+        </p>
+        <p>
+          To write that claim more precisely, let {isNatPlus("n")}. This "proof" will use induction to show that for
+          every group of {mathSpan("n")} horses, all horses are the same color.
+        </p>
+        <p>
+          Base case: in a group of only one horse, all horses in that group obviously are the same color.
+        </p>
+        <p>
+          Induction step: Assume that for every group of {mathSpan("n")} horses, all those horses are the same color
+          (induction hypothesis). The induction step then has to show that for every group
+          of {mathSpan("(n+1)")} horses, all horses in that group are the same color.
+        </p>
+        <p>
+          Proof: Choose two horses from the group of {mathSpan("(n+1)")} horses -- call them A and B. The group of
+          horses that are remaining when A is exlcuded has {mathSpan("n")} horses, which by the induction hypothesis
+          all are the same color. Similarly, the group of horses that are remaining when B is excluded also
+          has {mathSpan("n")} horses, which by the induction hypothesis all are the same color. All horses other
+          than A and B therefore are the same color as both A and B, which implies that A and B also are that color,
+          and therefore all (n+1) horses are the same color.
+        </p>
+        <p>
+          Since the original claim is obviously false, the error must be in the reasoning. Find that error.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          The error is in the "proof" for the induction step. It <i>is</i> valid to choose two horses A and B
+          since the group of {mathSpan("(n+1)")} horses has at least two horses. Similarly, it is valid to state
+          that the groups of remaining horses when excluding either one are all the same color, by the
+          induction hypothesis.
+        </p>
+        <p>
+          However, the "proof" next says: "All horses other than A and B therefore are the same color as both A and B".
+          This <i>is</i> true, but it is important to note that if {mathSpan("n=1")}, then A and B are the only horses
+          in the group of {mathSpan("(n+1)")} horses, so the set of "all other horses" is the empty set. This does
+          not invalidate the above statement, since a statement about an element of the empty set is always true.
+        </p>
+        <p>
+          It does, however, invalidate the next conclusion, which is that "A and B also are that color". If A and B
+          are the only horses, then the subsets obtained by removing either one do not share any common element.
+          Without a common element -- that is, a third horse to choose which is both the same color as A and the
+          same color as B -- claiming that A and B must be the same color is wrong.
+        </p>
+      </>,
+    },
   ],
 };

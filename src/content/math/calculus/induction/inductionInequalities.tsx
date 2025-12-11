@@ -1,6 +1,59 @@
-import type {ExerciseNode} from "../../../../framework/content.tsx";
+import type {ContentItem, ExerciseNode} from "../../../../framework/content.tsx";
 import {observeThat, standardFomulaInductionItem} from "./formula.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
+
+export const inductionInequalitiesBeginnerItems: ContentItem[] = [
+  standardFomulaInductionItem(
+      null,
+      "2^n > n^2",
+      "2^n = 2^5 = 32 > 25 = 5^2 = n^2",
+      "2^{n+1} > (n+1)^2",
+      [
+        "2^{n+1}",
+        "= 2#cdot 2^n",
+        <div>using the induction hypothesis:</div>,
+        "> 2#cdot n^2",
+        "= n^2 + n^2",
+        "> n^2 + 5n",
+        "= n^2 + 2n + 3n",
+        "> n^2 + 2n + 3#cdot 5",
+        "= n^2 + 2n + 15",
+        "> n^2 + 2n + 1",
+        "= (n+1)^2",
+      ],
+      {baseCase: 5}
+  ),
+  standardFomulaInductionItem(
+      null,
+      "2^n > n^3",
+      "2^n = 2^{10} = 1024 > 1000 = 10^3 = n^3",
+      "2^{n+1} > (n+1)^3",
+      [
+        "2^{n+1}",
+        "= 2#cdot 2^n",
+        <div>using the induction hypothesis:</div>,
+        "> 2#cdot n^3",
+        "= n^3 + n^3",
+        "> n^3 + 10n^2",
+        "= n^3 + 3n^2 + 7n^2",
+        "> n^3 + 3n^2 + 70n",
+        "= n^3 + 3n^2 + 3n + 67n",
+        "> n^3 + 3n^2 + 3n + 1",
+        "= (n+1)^3",
+      ],
+      {baseCase: 10}
+  ),
+  standardFomulaInductionItem(
+      null,
+      "n! > 2^n",
+      "n! = 4! = 4#cdot 3#cdot 2#cdot 1 = 24 > 16 = 2^4 = 2^n",
+      "(n+1)! > 2^{n+1}",
+      [
+        "(n+1)! = (n+1)#cdot n! > (n+1)#cdot 2^n > 2#cdot 2^n = 2^{n+1}",
+      ],
+      {baseCase: 4}
+  ),
+];
 
 export const inductionInequalities: ExerciseNode = {
   id: "inequalities",
@@ -26,46 +79,7 @@ export const inductionInequalities: ExerciseNode = {
         ],
         {baseCase: 5}
     ),
-    standardFomulaInductionItem(
-        null,
-        "2^n > n^2",
-        "2^n = 2^5 = 32 > 25 = 5^2 = n^2",
-        "2^{n+1} > (n+1)^2",
-        [
-          "2^{n+1}",
-          "= 2#cdot 2^n",
-          <div>using the induction hypothesis:</div>,
-          "> 2#cdot n^2",
-          "= n^2 + n^2",
-          "> n^2 + 5n",
-          "= n^2 + 2n + 3n",
-          "> n^2 + 2n + 3#cdot 5",
-          "= n^2 + 2n + 15",
-          "> n^2 + 2n + 1",
-          "= (n+1)^2",
-        ],
-        {baseCase: 5}
-    ),
-    standardFomulaInductionItem(
-        null,
-        "2^n > n^3",
-        "2^n = 2^{10} = 1024 > 1000 = 10^3 = n^3",
-        "2^{n+1} > (n+1)^3",
-        [
-          "2^{n+1}",
-          "= 2#cdot 2^n",
-          <div>using the induction hypothesis:</div>,
-          "> 2#cdot n^3",
-          "= n^3 + n^3",
-          "> n^3 + 10n^2",
-          "= n^3 + 3n^2 + 7n^2",
-          "> n^3 + 3n^2 + 70n",
-          "= n^3 + 3n^2 + 3n + 67n",
-          "> n^3 + 3n^2 + 3n + 1",
-          "= (n+1)^3",
-        ],
-        {baseCase: 10}
-    ),
+
     standardFomulaInductionItem(
         observeThat("1 + #frac{1}{2} + #frac{1}{3} + #frac{1}{4} + ... + #frac{1}{2^n-1} = #sum_{i=1}^{2^n-1}#frac{1}{i}"),
         "#sum_{i=1}^{2^n-1}#frac{1}{i} > #frac{n}{2}",
@@ -117,16 +131,6 @@ export const inductionInequalities: ExerciseNode = {
           "= #sqrt{n+1}",
         ],
         {baseCase: 2}
-    ),
-    standardFomulaInductionItem(
-        null,
-        "n! > 2^n",
-        "n! = 4! = 4#cdot 3#cdot 2#cdot 1 = 24 > 16 = 2^4 = 2^n",
-        "(n+1)! > 2^{n+1}",
-        [
-          "(n+1)! = (n+1)#cdot n! > (n+1)#cdot 2^n > 2#cdot 2^n = 2^{n+1}",
-        ],
-        {baseCase: 4}
     ),
     standardFomulaInductionItem(
         null,

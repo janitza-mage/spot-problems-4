@@ -63,26 +63,22 @@ function firstSecondPartDivisible(divisorFormula: string | number): ReactNode {
     factor of {divisorSpan}. Therefore, the sum is divible by {divisorSpan} too.</div>;
 }
 
-export const inductionDivisibility: ExerciseNode = {
-  id: "divisibility",
-  name: "Divisibility",
-  type: "exercise",
-  contentItems: [
-    standardDivisibilityContentItem(
-        "n^2+n",
-        "(n+1)^2+(n+1)",
-        2,
-        "n^2+n = 1^2+1 = 1+1 = 2",
-        [
-          "(n+1)^2 + (n+1)",
-          "= n^2 + 2n + 1 + n + 1",
-          "= n^2 + 3n + 2",
-          "= (n^2 + n) + (2n + 2)",
-          "= (n^2 + n) + 2#cdot (n + 1)",
-        ],
-        firstSecondPartDivisible(2),
-    ),
-    standardDivisibilityContentItem(
+export const inductionDivisibilityBeginnerItems: ContentItem[] = [
+  standardDivisibilityContentItem(
+      "n^2+n",
+      "(n+1)^2+(n+1)",
+      2,
+      "n^2+n = 1^2+1 = 1+1 = 2",
+      [
+        "(n+1)^2 + (n+1)",
+        "= n^2 + 2n + 1 + n + 1",
+        "= n^2 + 3n + 2",
+        "= (n^2 + n) + (2n + 2)",
+        "= (n^2 + n) + 2#cdot (n + 1)",
+      ],
+      firstSecondPartDivisible(2),
+  ),
+  standardDivisibilityContentItem(
       "n^3+2n",
       "(n+1)^3 + 2#cdot (n+1)",
       3,
@@ -95,38 +91,45 @@ export const inductionDivisibility: ExerciseNode = {
         "= (n^3 + 2n) + 3#cdot (n^2 + n + 1)",
       ],
       firstSecondPartDivisible(3),
-    ),
-    standardDivisibilityContentItem(
-        "4n^3-n",
+  ),
+  standardDivisibilityContentItem(
+      "4n^3-n",
+      "4(n+1)^3-(n+1)",
+      3,
+      "4n^3-n = 4#cdot 1^3 - 1 = 4#cdot 1 - 1 = 4 - 1 = 3",
+      [
         "4(n+1)^3-(n+1)",
-        3,
-        "4n^3-n = 4#cdot 1^3 - 1 = 4#cdot 1 - 1 = 4 - 1 = 3",
-        [
-          "4(n+1)^3-(n+1)",
-          "= 4#cdot (n^3 + 3n^2 + 3n + 1) - n - 1",
-          "= 4n^3 + 12n^2 + 12n + 4 - n - 1",
-          <>(rearranging the terms)</>,
-          "= (4n^3 - n) + (12n^2 + 12n + 3)",
-          "= (4n^3 - n) + 3#cdot (4n^2 + 4n + 1)",
-        ],
-        firstSecondPartDivisible(3),
-    ),
-    standardDivisibilityContentItem(
-        "n^3-n",
+        "= 4#cdot (n^3 + 3n^2 + 3n + 1) - n - 1",
+        "= 4n^3 + 12n^2 + 12n + 4 - n - 1",
+        <>(rearranging the terms)</>,
+        "= (4n^3 - n) + (12n^2 + 12n + 3)",
+        "= (4n^3 - n) + 3#cdot (4n^2 + 4n + 1)",
+      ],
+      firstSecondPartDivisible(3),
+  ),
+  standardDivisibilityContentItem(
+      "n^3-n",
+      "(n+1)^3 - (n+1)",
+      6,
+      "n^3-n = 1^3-1 = 0",
+      [
         "(n+1)^3 - (n+1)",
-        6,
-        "n^3-n = 1^3-1 = 0",
-        [
-          "(n+1)^3 - (n+1)",
-          "= (n^3 + 3n^2 + 3n + 1) - (n + 1)",
-          <>(rearranging the terms)</>,
-          "= (n^3 - n) + (3n^2 + 3n)",
-          "= (n^3 - n) + 3n(n + 1)",
-        ],
-        <div>The first part is divisible by 6 by the induction hypothesis. The second part is divisible by 6 because
-            of the obvious factor of {mathSpan("3")}, as well as the fact that either {mathSpan("n")} or
-          {mathSpan("(n+1)")} is even.</div>
-    ),
+        "= (n^3 + 3n^2 + 3n + 1) - (n + 1)",
+        <>(rearranging the terms)</>,
+        "= (n^3 - n) + (3n^2 + 3n)",
+        "= (n^3 - n) + 3n(n + 1)",
+      ],
+      <div>The first part is divisible by 6 by the induction hypothesis. The second part is divisible by 6 because
+        of the obvious factor of {mathSpan("3")}, as well as the fact that either {mathSpan("n")} or
+        {mathSpan("(n+1)")} is even.</div>
+  ),
+];
+
+export const inductionDivisibility: ExerciseNode = {
+  id: "divisibility",
+  name: "Divisibility",
+  type: "exercise",
+  contentItems: [
     standardDivisibilityContentItem(
         "2n^3+3n^2+n",
         "2(n+1)^3+3(n+1)^2+(n+1)",

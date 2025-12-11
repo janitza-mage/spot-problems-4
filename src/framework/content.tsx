@@ -20,6 +20,7 @@ export interface FolderNode extends ContentNodeBase {
 export type ContentItemId = number;
 
 export interface ContentItem {
+  intro?: ReactNode; 
   problem: ReactNode;
   answer: ReactNode;
 }

@@ -19,6 +19,7 @@ export function ContentItemView(props: ItemViewProps) {
     return <>no such content item</>
   }
   return <div style={{margin: "0.2em"}}>
+    <div>{props.contentItem.intro}</div>
     <h2>Problem</h2>
     <div>{props.contentItem.problem}</div>
     {!revealed && <div style={{textAlign: "center"}}>

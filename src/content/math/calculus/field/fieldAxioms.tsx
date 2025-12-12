@@ -2,6 +2,8 @@ import type {ExerciseNode} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {CheatSheets} from "../../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
 import {FieldAxiomsCheatSheet} from "./FieldAxiomsCheatSheet.tsx";
+import {ExponentiationCheatSheet} from "./ExponentiationCheatSheet.tsx";
+import {isNat0} from "../../util/math-atoms.tsx";
 
 const letField = <>Let {mathSpan("F")} be a field.</>;
 
@@ -345,5 +347,119 @@ export const fieldAxioms: ExerciseNode = {
         {mathDiv("(ab)^{-1} = a^{-1}b^{-1}")}
       </>,
     },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <p>
+          {letField} Let {mathSpan("a, b, c #in #mathbb{F}")}. Prove that
+        </p>
+        {mathDiv("(a + b)c = ac + bc")}
+      </>,
+      answer: <>
+        <p>
+          This is just distributivity and commutativity combined:
+        </p>
+        {mathDiv("(a+b)c = c(a+b) = ca+cb = ac+bc")}
+      </>,
+    },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <p>
+          {letField} Let {mathSpan("a #in #mathbb{F}")}. Prove that {mathSpan("a#cdot 0 = 0")}.
+        </p>
+      </>,
+      answer: <>
+        {mathDiv("a#cdot 0 = a(1-1) = a#cdot 1 - a#cdot 1 = a - a = 0")}
+      </>,
+    },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <p>
+          {letField} Prove that if a product of two numbers is zero, then at least one of the factors is zero.
+          You can use the fact that {mathSpan("x#cdot 0 = 0")} for each {mathSpan("x #in F")}, which is left
+          for another exercise.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          Let {mathSpan("a, b #in F")} and {mathSpan("ab=0")}.
+        </p>
+        <p>
+          Case 1: {mathSpan("b=0")}. Then the claim is immediately true.
+        </p>
+        <p>
+          Case 2: {mathSpan("b #neq 0")}. Then
+        </p>
+        {mathDiv("a = a1 = a(bb^{-1}) = (ab)b^{-1} = 0b^{-1} = 0")}
+      </>,
+    },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <p>
+          {letField} Let {mathSpan("a #in F")}. Prove that {mathSpan("(-a) = (-1)a")}. 
+        </p>
+      </>,
+      answer: <>
+        <p>
+          Observe that {mathSpan("(-1)a")} is a negative to {mathSpan("a")}:
+        </p>
+        {mathDiv("a + (-1)a = 1a + (-1)a = (1-1)a = 0a = 0")}
+        <p>
+          Since the negative is unique, {mathSpan("(-a) = (-1)a")}.
+        </p>
+      </>,
+    },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <p>
+          {letField} Let {mathSpan("a,b #in F")}. Prove that {mathSpan("(-a)(-b) = ab")}. You can use the fact
+          that {mathSpan("(-x) = (-1)x")}, as well as {mathSpan("-(-x)=x")}, both of which are left for another
+          exercise.
+        </p>
+      </>,
+      answer: <>
+        {mathDiv("(-a)(-b) = (-a)((-1)b) = ((-1)(-a))b = (-(-a))b = ab")}
+      </>,
+    },
+
+
+      TODO
+
+
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+        <ExponentiationCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <p>
+          {letField} Let {mathSpan("a #in F")}, {isNat0("n")}. Use induction to prove that
+        </p>
+        {mathDiv("x^{-n} = (x^n)^{-1}")}
+        <p>
+          Note that by definition,
+        </p>
+        {mathDiv("x^{-n} = (x^{-1})^n")}
+      </>,
+      answer: <>
+        TODO
+      </>,
+    },
+
+
   ],
 };

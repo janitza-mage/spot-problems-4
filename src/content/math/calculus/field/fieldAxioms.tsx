@@ -259,7 +259,7 @@ export const fieldAxioms: ExerciseNode = {
         <p>
           First, observe that {mathSpan("x = a^{-1}b")} is a solution by applying the axioms:
         </p>
-        {mathDiv("a(a^{-1}b) = = (aa^{-1})b = 1b = b")}
+        {mathDiv("a(a^{-1}b) = (aa^{-1})b = 1b = b")}
         <p>
           Then, we will show that the solution is unique. Let {mathSpan("y")} be a (different or equal) solution, that is,
         </p>
@@ -287,8 +287,9 @@ export const fieldAxioms: ExerciseNode = {
       </CheatSheets>,
       problem: <>
         <p>
-          {letField} Prove that for {mathSpan("a #in #mathbb{F}")}, {mathSpan("(a^{-1})^{-1} = a")}. You can use the
-          fact that the inverse is unique, which is left for another exercise.
+          {letField} Let {mathSpan("a #in #mathbb{F}")}, {mathSpan("a #neq 0")}.
+          Prove that {mathSpan("(a^{-1})^{-1} = a")}. You can use the fact that the inverse is unique, which is left
+          for another exercise.
         </p>
       </>,
       answer: <>
@@ -315,10 +316,10 @@ export const fieldAxioms: ExerciseNode = {
       </CheatSheets>,
       problem: <>
         <p>
-          {letField} Prove that for {mathSpan("a, b #in #mathbb{F}")}, {mathSpan("(ab)^{-1} = a^{-1}b^{-1}")}. You can
-          use the fact that for any given {mathSpan("p, q #in #mathbb{F}")}, the
-          equation {mathSpan("px = q")} has {mathSpan("x = p^{-1}q")} as its unique solution. This is left for
-          another exercise.
+          {letField} Let {mathSpan("a, b #in #mathbb{F}")}; {mathSpan("a, b #neq 0")}. Prove
+          that {mathSpan("(ab)^{-1} = a^{-1}b^{-1}")}. You can use the fact that for any
+          given {mathSpan("p, q #in #mathbb{F}")}, the equation {mathSpan("px = q")} has {mathSpan("x = p^{-1}q")} as
+          its unique solution. This is left for another exercise.
         </p>
       </>,
       answer: <>

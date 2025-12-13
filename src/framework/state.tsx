@@ -143,6 +143,11 @@ export function updateState(path: string[], contentItemId: ContentItemId, answer
       return [item[0], -1, -1];
     }
     
+    // remove an item if explicitly requested
+    if (answerQuality === "remove") {
+      return null;
+    }
+    
     // Initialize for the first correct answer; Increase the spacing for another correct answer, and drop the item if
     // the spacing gets too large -- that is, the item is then considered "learned permanently".
     const oldSpacing = item[2] < 0 ? initialSpacing : item[2];

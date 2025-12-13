@@ -38,12 +38,16 @@ export function ExercisePage(props: ExercisePageProps) {
     }
   }
 
+  function leaveExercise() {
+    const parentPath = [...props.path];
+    parentPath.pop();
+    navigateToContentNode(parentPath);
+  }
+  
   function onClickCancel() {
     // eslint-disable-next-line no-restricted-globals
-    if (confirm("Really leave?")) {
-      const parentPath = [...props.path];
-      parentPath.pop();
-      navigateToContentNode(parentPath);
+    if (contentItemId === null || confirm("Really leave?")) {
+      leaveExercise();
     }
   }
 
@@ -85,7 +89,14 @@ export function ExercisePage(props: ExercisePageProps) {
           </h1>
         </>}
     >
-      {contentItemId === null && <>You finished this topic for now. Come back after some time to repeat what you have learned.</>}
+      {contentItemId === null && <>
+          <p>
+              You finished this topic for now. Come back after some time to repeat what you have learned.
+          </p>
+          <p style={{textAlign: "center"}}>
+              <Button onClick={leaveExercise} variant={"contained"}>Leave Exercise</Button>
+          </p>
+      </>}
       {contentItemId !== null && <>
           <ContentItemView key={instanceCounter} contentItem={props.exerciseNode.contentItems[contentItemId]} onClickGrade={onClickGrade} />
       </>}

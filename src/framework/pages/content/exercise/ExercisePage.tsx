@@ -47,11 +47,26 @@ export function ExercisePage(props: ExercisePageProps) {
     }
   }
 
+  // Remove stale state when the content tree changes. The code below handles the stale state case so it won't crash
+  // the application, but we still have to remove that state here to avoid a softlock.
   useEffect(() => {
-    if (!props.exerciseNode.contentItems[contentItemId]) {
+    if (contentItemId !== null && !props.exerciseNode.contentItems[contentItemId]) {
       onClickGrade("remove");
     }
   }, [props.exerciseNode, props.exerciseNode.contentItems, contentItemId]);
+
+  // add ctrl+alt+p shortcut to skip content items during development
+  useEffect(() => {
+    const keyHandler = (event: KeyboardEvent) => {
+      if (contentItemId !== null && event.ctrlKey && event.altKey && event.key.toLowerCase() === "p") {
+        onClickGrade(3);
+      }
+    };
+    window.addEventListener("keydown", keyHandler, { capture: true });
+    return () => {
+      window.removeEventListener("keydown", keyHandler, { capture: true });
+    };
+  });
   
   return <>
     <Dialog open={exerciseControlModalOpen} onClose={() => setExerciseControlModalOpen(false)} fullWidth={true}>

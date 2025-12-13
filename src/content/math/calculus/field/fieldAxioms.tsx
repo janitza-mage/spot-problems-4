@@ -2,8 +2,6 @@ import type {ExerciseNode} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {CheatSheets} from "../../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
 import {FieldAxiomsCheatSheet} from "./FieldAxiomsCheatSheet.tsx";
-import {ExponentiationCheatSheet} from "./ExponentiationCheatSheet.tsx";
-import {isNat0} from "../../util/math-atoms.tsx";
 
 const letField = <>Let {mathSpan("F")} be a field.</>;
 
@@ -435,31 +433,5 @@ export const fieldAxioms: ExerciseNode = {
         {mathDiv("(-a)(-b) = (-a)((-1)b) = ((-1)(-a))b = (-(-a))b = ab")}
       </>,
     },
-
-
-      TODO
-
-
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-        <ExponentiationCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        <p>
-          {letField} Let {mathSpan("a #in F")}, {isNat0("n")}. Use induction to prove that
-        </p>
-        {mathDiv("x^{-n} = (x^n)^{-1}")}
-        <p>
-          Note that by definition,
-        </p>
-        {mathDiv("x^{-n} = (x^{-1})^n")}
-      </>,
-      answer: <>
-        TODO
-      </>,
-    },
-
-
   ],
 };

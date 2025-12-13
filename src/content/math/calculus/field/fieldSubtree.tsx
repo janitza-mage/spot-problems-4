@@ -1,5 +1,6 @@
 import type {ExerciseNode, FolderNode} from "../../../../framework/content.tsx";
 import {fieldAxioms} from "./fieldAxioms.tsx";
+import {fieldExponentiation} from "./fieldExponentiation.tsx";
 
 export const fieldSubtree: FolderNode = {
   id: "fields",
@@ -7,5 +8,6 @@ export const fieldSubtree: FolderNode = {
   type: "folder",
   children: [
       fieldAxioms,
+      fieldExponentiation,
   ]
 };

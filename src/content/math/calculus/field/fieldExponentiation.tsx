@@ -26,6 +26,10 @@ export const fieldExponentiation: ExerciseNode = {
           Note that by definition,
         </p>
         {mathDiv("x^{-n} = (x^{-1})^n")}
+        <p>
+          You can use the fact that
+        </p>
+        {mathDiv("a^{-1}b^{-1}=(ab)^{-1}")}
       </>,
       answer: <>
         <p>
@@ -44,14 +48,21 @@ export const fieldExponentiation: ExerciseNode = {
           Proof:
         </p>
         {mathDiv("x^{-(n+1)}")}
-        {mathDiv("= x^{-(n+1)}")}
-
-
-
-        {mathDiv("= (x^{n+1})^{-1}")}
+        {mathDiv("(x^{-1})^{n+1}")}
+        {mathDiv("(x^{-1})^n(x^{-1})")}
+        {mathDiv("x^{-n}x^{-1}")}
+        <p>Using the induction hypothesis:</p>
+        {mathDiv("(x^n)^{-1}x^{-1}")}
+        {mathDiv("(x^nx)^{-1}")}
+        {mathDiv("(x^{n+1})^{-1}")}
       </>,
     },
 
+      
+      
+      // x^ax^b = x^{a+b}
+      // (x^a^b) = x^{ab}
+      // x^ay^a = (xy)^a
 
   ],
 };

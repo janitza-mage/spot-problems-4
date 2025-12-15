@@ -156,5 +156,120 @@ export const fieldExponentiation: ExerciseNode = {
         {mathDiv("a^{p}b^{p} = a^{p' + 1}b^{p' + 1} = a^{p'}ab^{p'}b = a^{p'}b^{p'}ab = (ab)^{p'}ab = (ab)^{p'+1}")}
       </>,
     },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+        <ExponentiationCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <p>
+          {letField} Let {mathSpan("a, b, c, d #in F")} and {mathSpan("b, d #neq 0")}. Prove that
+        </p>
+        {mathDiv("#frac{a}{b}=#frac{c}{d} #iff ad = bc")}
+      </>,
+      answer: <>
+        <p>
+          By applying the definition of the fraction bar, write the proposition as
+        </p>
+        {mathDiv("ab^{-1} = cd^{-1} #iff ad = bc")}
+        <p>
+          You can then immediately prove either direction by multiplying with {mathSpan("b")} and {mathSpan("d")} (left
+          to right) or {mathSpan("b^{-1}")} and {mathSpan("d{-1}")} (right to left).
+        </p>
+      </>,
+    },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+        <ExponentiationCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <p>
+          {letField} Let {mathSpan("a, b, c, d #in F")} and {mathSpan("b, d #neq 0")}. Prove that
+        </p>
+        {mathDiv("#frac{a}{b} #pm #frac{c}{d} = #frac{ad #pm bc}{bd}")}
+      </>,
+      answer: <>
+        {mathDiv("#frac{a}{b} #pm #frac{c}{d} = ab^{-1} #pm cd^{-1} = (ab^{-1} #pm cd^{-1})(bd)(bd)^{-1}")}
+        {mathDiv("= #frac{ab^{-1}bd #pm cd^{-1}bd}{bd} = #frac{ad #pm bc}{bd}")}
+      </>,
+    },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+        <ExponentiationCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <p>
+          {letField} Let {mathSpan("a, b, c, d #in F")} and {mathSpan("b, d #neq 0")}. Prove that
+        </p>
+        {mathDiv("#frac{a}{b} #cdot #frac{c}{d} = #frac{ac}{bd}")}
+        <p>
+          You can use the fact that
+        </p>
+        {mathDiv("(xy)^{-1} = x^{-1}y^{-1}")}
+        <p>
+          which is left for another exercise.
+        </p>
+      </>,
+      answer: <>
+        {mathDiv("#frac{a}{b} #cdot #frac{c}{d} = ab^{-1} #cdot cd^{-1} = acb^{-1}d^{-1} = (ac)(bd)^{-1} = #frac{ac}{bd}")}
+      </>,
+    },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+        <ExponentiationCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <p>
+          {letField} Let {mathSpan("a, b #in F")} and {mathSpan("a, b #neq 0")}. Prove that
+        </p>
+        {mathDiv("(#frac{a}{b})^{-1} = #frac{b}{a}")}
+        <p>
+          You can use the fact that
+        </p>
+        {mathDiv("(xy)^{-1} = x^{-1}y^{-1}")}
+        <p>
+          which is left for another exercise.
+        </p>
+      </>,
+      answer: <>
+        {mathDiv("(#frac{a}{b})^{-1} = (ab^{-1})^{-1} = a^{-1}(b^{-1})^{-1} = a^{-1}b = #frac{b}{a}")}
+      </>,
+    },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+        <ExponentiationCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <p>
+          {letField} Let {mathSpan("a, b, c, d #in F")} and {mathSpan("b, c, d #neq 0")}. Prove that
+        </p>
+        {mathDiv("#frac{#frac{a}{b}}{#frac{c}{d}} = #frac{ad}{bc}")}
+        <p>
+          You can use the fact that
+        </p>
+        {mathDiv("(xy)^{-1} = x^{-1}y^{-1}")}
+        <p>
+          and
+        </p>
+        {mathDiv("(#frac{a}{b})^{-1} = #frac{b}{a}")}
+        <p>
+          and
+        </p>
+        {mathDiv("#frac{a}{b} #cdot #frac{c}{d} = #frac{ac}{bd}")}
+        <p>
+          which are left for another exercise.
+        </p>
+      </>,
+      answer: <>
+        {mathDiv("#frac{#frac{a}{b}}{#frac{c}{d}} = (#frac{a}{b})(#frac{c}{d})^{-1} = #frac{a}{b} #cdot #frac{d}{c} = #frac{ad}{bc}")}
+      </>,
+    },
+      
+      
+      // TODO weiter 2.3
   ],
 };

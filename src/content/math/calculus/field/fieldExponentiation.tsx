@@ -64,7 +64,7 @@ export const fieldExponentiation: ExerciseNode = {
       </CheatSheets>,
       problem: <>
         <p>
-          {letField} Let {mathSpan("a #in F")}, {isNat0("p, q")}. Use induction to prove that
+          {letField} Let {mathSpan("a #in F")}; {isNat0("p, q")}. Use induction to prove that
         </p>
         {mathDiv("a^pa^q = a^{p+q}")}
       </>,
@@ -89,14 +89,6 @@ export const fieldExponentiation: ExerciseNode = {
         {mathDiv("=(a^{-1})^{p'-q} = a^{-(p'-q)} = a^{p+q}")}
       </>,
     },
-      
-      
-      
-      
-      
-      
-      
-      
     {
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
@@ -104,12 +96,38 @@ export const fieldExponentiation: ExerciseNode = {
       </CheatSheets>,
       problem: <>
         <p>
-          {letField} Let {mathSpan("a #in F")}, {isNat0("p, q")}. Use induction to prove that
+          {letField} Let {mathSpan("a #in F")}; {isNat0("p, q")}. Use induction to prove that
         </p>
         {mathDiv("(a^p)^q = a^{pq}")}
+        <p>
+          You can use the fact that 
+        </p>
+        {mathDiv("a^xa^y = a^{x+y}")}
+        <p>
+          and
+        </p>
+        {mathDiv("(a^{-1})^x = a^{-x} = (a^x)^{-1}")}
+        <p>
+          which are left for another exercise.
+        </p>
       </>,
       answer: <>
-        TODO
+        <p>
+          For {mathSpan("q=0")},
+        </p>
+        {mathDiv("(a^p)^0 = 1 = a^0 = a^{p#cdot 0} = a^{pq}")}
+        <p>
+          For {mathSpan("q>0")}, we use induction. Let {mathSpan("q=q'+1")} and
+        </p>
+        {mathDiv("(a^p)^{q'} = a^{pq'}")}
+        <p>
+          (induction hypothesis). Then
+        </p>
+        {mathDiv("(a^p)^q = (a^p)^{q'+1} = (a^p)^{q'}(a^p) = a^{pq'}a^p = a^{pq'+p} = a^{p(q'+1)} = a^{pq}")}
+        <p>
+          For {mathSpan("q<0")}, let {mathSpan("q=-q'")}. Then
+        </p>
+        {mathDiv("(a^p)^q = (a^p)^{-q'} = ((a^p)^{-1})^{q'} = (a^{-p})^{q'} = a^{(-p)#cdot q'} = a^{pq}")}
       </>,
     },
     {
@@ -119,12 +137,23 @@ export const fieldExponentiation: ExerciseNode = {
       </CheatSheets>,
       problem: <>
         <p>
-          {letField} Let {mathSpan("a #in F")}, {isNat0("p")}. Use induction to prove that
+          {letField} Let {mathSpan("a #in F")}; {isNat0("p")}. Use induction to prove that
         </p>
-        {mathDiv("a^pb^p = (ap)^p")}
+        {mathDiv("a^pb^p = (ab)^p")}
       </>,
       answer: <>
-        TODO
+        <p>
+          Base case (p=0):
+        </p>
+        {mathDiv("a^0b^0 = 1#cdot 1 = 1 = (ab)^0")}
+        <p>
+          Induction step: Let {mathSpan("p=p'+1")} and
+        </p>
+        {mathDiv("a^{p'}b^{p'} = (ab)^{p'}")}
+        <p>
+          Then,
+        </p>
+        {mathDiv("a^{p}b^{p} = a^{p' + 1}b^{p' + 1} = a^{p'}ab^{p'}b = a^{p'}b^{p'}ab = (ab)^{p'}ab = (ab)^{p'+1}")}
       </>,
     },
   ],

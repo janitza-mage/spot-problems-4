@@ -69,9 +69,34 @@ export const fieldExponentiation: ExerciseNode = {
         {mathDiv("a^pa^q = a^{p+q}")}
       </>,
       answer: <>
-        TODO
+        <p>
+          For {mathSpan("p=0")},
+        </p>
+        {mathDiv("a^0a^q = 1a^q = a^q = a^{0+q} = a^{p+q}")}
+        <p>
+          For {mathSpan("p>0")}, we use induction. Let {mathSpan("p=p'+1")} and
+        </p>
+        {mathDiv("a^{p'}a^q = a^{p'+q}")}
+        <p>
+          (induction hypothesis). Then
+        </p>
+        {mathDiv("a^pa^q = a^{p'+1}a^q = a^{p'}aa^q = a^{p'}a^qa = a^{p'+q}a = a^{p'+q + 1}")}
+        {mathDiv("= a^{p'+1+q} = a^{p+q}")}
+        <p>
+          For {mathSpan("p<0")}, let {mathSpan("p=-p'")}. Then
+        </p>
+        {mathDiv("a^pa^q = a^{-p'}a^{-(-q)} = (a^{-1})^{p'}(a^{-1})^{-q}")}
+        {mathDiv("=(a^{-1})^{p'-q} = a^{-(p'-q)} = a^{p+q}")}
       </>,
     },
+      
+      
+      
+      
+      
+      
+      
+      
     {
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />

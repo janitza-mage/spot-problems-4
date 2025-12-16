@@ -433,5 +433,121 @@ export const fieldAxioms: ExerciseNode = {
         {mathDiv("(-a)(-b) = (-a)((-1)b) = ((-1)(-a))b = (-(-a))b = ab")}
       </>,
     },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <p>
+          This exercise gives a counter-example that is <i>not</i> a field since it does not fulfil the field axioms.
+          Therefore, the conclusions made in other exercises cannot be assumed to hold for this counter-example.
+          Some of them may hold, but must be proven again since they relied on the field axioms.
+        </p>
+        <p>
+          The counter-example is based on
+        </p>
+        {mathDiv("#mathbb{N}^+_0 = #{0, 1, 2, 3, ...#}")}
+        <p>
+          but includes "infinity" as another element. Let
+        </p>
+        {mathDiv("F = #mathbb{N}^+_0 #cup #{ #infty #}")}
+        <p>
+          Addition and multiplication for natural numbers retain their original meaning, but we have to "extend" them
+          for that new element:
+        </p>
+        {mathDiv("a + #infty = #infty + a = #infty")}
+        {mathDiv("0 #cdot #infty = #infty #cdot 0 = 0")}
+        {mathDiv("a #cdot #infty = #infty #cdot a = #infty #text{ for } a #neq 0")}
+        <p>
+          Prove that this counter-example fulfils all field axioms except the negation and inverse axioms.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          For all finite elements, additive and multiplicative associativity, commutativity and neutral elements
+          are inherited from the natural numbers. There is no additive inverse since the natural numbers do not
+          include negative numbers, and no multiplicative inverse since they do not include fractions.
+        </p>
+        <p>
+          What is left to prove is, therefore, that the axioms (except inverses) <i>do</i> hold for the new "infinite"
+          element:
+        </p>
+        
+        <h3>Addition</h3>
+        <p>
+          Let {mathSpan("a, b #in F")}.
+        </p>
+        <p>
+          Associativity:
+        </p>
+        {mathDiv("a + (b + #infty) = a + #infty = #infty = (a + b) + #infty")}
+        {mathDiv("a + (#infty + b) = a + #infty = #infty = #infty + b = (a + #infty) + b")}
+        {mathDiv("#infty + (a + b) = #infty = #infty + b = (#infty + a) + b")}
+        <p>
+          Commutativity:
+        </p>
+        {mathDiv("a + #infty = #infty = #infty + a")}
+        <p>
+          Zero:
+        </p>
+        {mathDiv("0 + #infty = #infty = #infty + 0")}
+
+        <h3>Multiplication</h3>
+        <p>
+          Let {mathSpan("a, b #in F")}. We first show all cases involving zero (note
+          that {mathSpan("a, b")} <i>may</i> be {mathSpan("#infty")} here):
+        </p>
+        <p>
+          Associativity:
+        </p>
+        {mathDiv("a #cdot (b #cdot 0) = a #cdot 0 = 0 = (a #cdot b) #cdot 0")}
+        {mathDiv("a #cdot (0 #cdot b) = a #cdot 0 = 0 = 0 #cdot b = (a #cdot 0) #cdot b")}
+        {mathDiv("0 #cdot (a #cdot b) = 0 = 0 #cdot b = (0 #cdot a) #cdot b")}
+        <p>
+          Commutativity:
+        </p>
+        {mathDiv("a #cdot 0 = 0 = 0 #cdot a")}
+        <p>
+          One:
+        </p>
+        {mathDiv("1 #cdot 0 = 0 = 0 #cdot 1")}
+        <p>
+          Next, assume that {mathSpan("a, b #neq 0")}.
+        </p>
+        <p>
+          Associativity:
+        </p>
+        {mathDiv("a #cdot (b #cdot #infty) = a #cdot #infty = #infty = (a #cdot b) #cdot #infty")}
+        {mathDiv("a #cdot (#infty #cdot b) = a #cdot #infty = #infty = #infty #cdot b = (a #cdot #infty) #cdot b")}
+        {mathDiv("#infty #cdot (a #cdot b) = #infty = #infty #cdot b = (#infty #cdot a) #cdot b")}
+        <p>
+          Commutativity:
+        </p>
+        {mathDiv("a #cdot #infty = #infty = #infty #cdot a")}
+        <p>
+          One:
+        </p>
+        {mathDiv("1 #cdot #infty = #infty = #infty #cdot 1")}
+
+        <h3>Distributivity</h3>
+
+        <p>
+          We have to show that
+        </p>
+        {mathDiv("x(y + z) = xy + xz")}
+        <p>
+          We do this by going through all cases that can occur:
+        </p>
+        <ul>
+          <li>Case {mathSpan("x=0")}: {mathSpan("0(y+z) = 0 = 0+0 = 0y + 0z")}</li>
+          <li>Case {mathSpan("y=0")}: {mathSpan("x(0+z) = xz = x0 + xz")}</li>
+          <li>Case {mathSpan("z=0")}: {mathSpan("x(y+0) = xy = xy + x0")}</li>
+          <li>Case {mathSpan("x=#infty; y, z #neq 0")}: {mathSpan("#infty(y+z) = #infty = #infty+#infty = #infty y + #infty z")}</li>
+          <li>Case {mathSpan("y=#infty; x, z #neq 0")}: {mathSpan("x(#infty+z) = xz = x#infty + xz")}</li>
+          <li>Case {mathSpan("z=#infty; x, y #neq 0")}: {mathSpan("x(y+#infty) = xy = xy + x#infty")}</li>
+          <li>All other cases involve only natural numbers.</li>
+        </ul>
+      </>,
+    },
   ],
 };

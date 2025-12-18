@@ -2,437 +2,13 @@ import type {ExerciseNode} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {CheatSheets} from "../../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
 import {FieldAxiomsCheatSheet} from "./FieldAxiomsCheatSheet.tsx";
-
-const letField = <>Let {mathSpan("F")} be a field.</>;
+import {ComplexNumbersCheatSheet} from "../ComplexNumbersCheatSheet.tsx";
 
 export const fieldAxioms: ExerciseNode = {
   id: "axioms",
   name: "Axioms",
   type: "exercise",
   contentItems: [
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        {letField} Using the field axioms, prove that {mathSpan("0")} is unique.
-      </>,
-      answer: <>
-        <p>
-          First, note that the statement "{mathSpan("0")} is unique" can be worded as: "Given two zero
-          elements {mathSpan("0")} and {mathSpan("0'")}, {mathSpan("0 = 0'")}."
-        </p>
-        <p>
-          Proof:
-          <ul>
-            <li>{mathSpan("0")} is neutral with respect to addition, so {mathSpan("0' + 0 = 0'")}</li>
-            <li>{mathSpan("0'")} is neutral with respect to addition, so {mathSpan("0 + 0' = 0")}</li>
-            <li>Commutativity: {mathSpan("0' + 0 = 0 + 0'")}</li>
-            <li>Therefore, {mathSpan("0 = 0'")}</li>
-          </ul>
-        </p>
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        {letField} Using the field axioms, prove that the additive inverse is unique. That is,
-        given {mathSpan("a #in F")}, {mathSpan("-a")} is unique.
-      </>,
-      answer: <>
-        <p>
-          Let {mathSpan("a #in F")} and two additive inverses, {mathSpan("b")} and {mathSpan("c")}. That
-          is,
-        </p>
-        {mathDiv("a+b=0")}
-        {mathDiv("a+c=0")}
-        <p>
-          By commutativity,
-        </p>
-        {mathDiv("b+a=0")}
-        {mathDiv("c+a=0")}
-        <p>
-          Now take the equation {mathDiv("a+c=0")} and add {mathSpan("b")} to both sides (from the left). We
-          get {mathDiv("b+(a+c) = b+0")} By associativity, {mathDiv("(b+a)+c = b+0")}
-          Now apply {mathSpan("b+a=0")} from above: {mathDiv("0+c = b+0")} Due to
-          commutativity and the fact that 0 is neutral with respect to addition, {mathDiv("c = b")}
-        </p>
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        {letField} Using the field axioms, prove that {mathSpan("-0 = 0")}.
-      </>,
-      answer: <>
-        <p>
-          Apply the zero axiom to {mathSpan("-0")} to get {mathDiv("-0 + 0 = -0")}
-          By commutativity, {mathDiv("0 + -0 = -0")}
-          By the negation axiom, {mathDiv("0 + -0 = 0")}
-          Therefore, {mathDiv("-0 = 0")}
-        </p>
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        <p>
-          {letField} Let {mathSpan("a, b #in F")} be two known numbers, and {mathSpan("x #in F")} unknown with
-        </p>
-        {mathDiv("a + x = b")}
-        <p>
-          Use the field axioms to prove that {mathSpan("x = b - a")} is the unique solution.
-        </p>
-      </>,
-      answer: <>
-        <p>
-          First, observe that {mathSpan("x = b - a")} is a solution by applying the axioms:
-        </p>
-        {mathDiv("a + (b - a) = a + (b + -a) = a + (-a + b)")}
-        {mathDiv("= (a + -a) + b = 0 + b = b + 0 = b")}
-        <p>
-          Then, we will show that the solution is unique. Let {mathSpan("y")} be a (different or equal) solution, that is,
-        </p>
-        {mathDiv("a + y = b")}
-        <p>
-          Add {mathSpan("-a")} (from the left) on both sides:
-        </p>
-        {mathDiv("-a + (a + y) = -a + b")}
-        <p>
-          For the left side,
-        </p>
-        {mathDiv("-a + (a + y) = (-a + a) + y = 0 + y = y")}
-        <p>
-          For the right side,
-        </p>
-        {mathDiv("-a + b = b - a = x")}
-        <p>
-          so {mathSpan("y = x")}.
-        </p>
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        <p>
-          {letField} Prove that for {mathSpan("a #in #mathbb{F}")}, {mathSpan("-(-a)=a")}. You can use the fact that
-          the negative is unique, which is left for another exercise.
-        </p>
-      </>,
-      answer: <>
-        <p>
-          Apply the negation axiom to {mathSpan("a")} to get:
-        </p>
-        {mathDiv("a + (-a) = 0")}
-        <p>
-          and by commutativity,
-        </p>
-        {mathDiv("(-a) + a = 0")}
-        <p>
-          Apply the negation axiom to {mathSpan("(-a)")} to get:
-        </p>
-        {mathDiv("(-a) + -(-a) = 0")}
-        <p>
-          Since the negative of {mathSpan("(-a)")} is unique, {mathSpan("-(-a)=a")}.
-        </p>
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        <p>
-          {letField} Prove that for {mathSpan("a, b #in #mathbb{F}")}, {mathSpan("-(a+b) = (-a) + (-b)")}. You can
-          use the fact that for any given {mathSpan("p, q #in #mathbb{F}")}, the
-          equation {mathSpan("p + x = q")} has {mathSpan("x = q - p")} as its unique solution. This is left for
-          another exercise.
-        </p>
-      </>,
-      answer: <>
-        <p>
-          Apply the negation axiom to {mathSpan("(a+b)")} to get:
-        </p>
-        {mathDiv("(a+b) + (-(a+b)) = 0")}
-        <p>
-          Add {mathSpan("(-a)")} on both sides to get:
-        </p>
-        {mathDiv("(-a) + (a+b) + (-(a+b)) = -a")}
-        <p>
-          which simplifies to
-        </p>
-        {mathDiv("b + (-(a+b)) = -a")}
-        <p>
-          Compare this to the equation
-        </p>
-        {mathDiv("b + x = -a")}
-        <p>
-          which has {mathSpan("x = (-a) + (-b)")} as its unique solution. Since the solution is unique,
-        </p>
-        {mathDiv("-(a+b) = (-a) + (-b)")}
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        {letField} Using the field axioms, prove that {mathSpan("1")} is unique.
-      </>,
-      answer: <>
-        <p>
-          Let {mathSpan("1, 1' #in F")} be neutral elements with respect to multiplication. Then:
-        </p>
-        <div>{mathSpan("1' #cdot 1 = 1'")} ({mathSpan("1")} is neutral)</div>
-        <div>{mathSpan("1 #cdot 1' = 1")} ({mathSpan("1'")} is neutral)</div>
-        <div>{mathSpan("1' #cdot 1 = 1")} (commutativity)</div>
-        <div>Therefore, {mathSpan("1 = 1'")} (commutativity)</div>
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        {letField} Using the field axioms, prove that the multiplicative inverse is unique. That is,
-        given {mathSpan("a #in F, a #neq 0")}, {mathSpan("a^{-1}")} is unique.
-      </>,
-      answer: <>
-        <p>
-          Let {mathSpan("a #in F, a#neq 0")} and two multiplicative inverses, {mathSpan("b")} and {mathSpan("c")}.
-          That  is,
-        </p>
-        {mathDiv("a #cdot b = 1")}
-        {mathDiv("a #cdot c = 1")}
-        <p>
-          By commutativity,
-        </p>
-        {mathDiv("b #cdot a = 1")}
-        {mathDiv("c #cdot a = 1")}
-        <p>
-          Now take the equation {mathDiv("a #cdot c = 1")} and multiply {mathSpan("b")} to both sides (from the left).
-          We  get {mathDiv("b #cdot (a #cdot c) = b #cdot 1")} By associativity, {mathDiv("(b #cdot a) #cdot c = b #cdot 1")}
-          Now apply {mathSpan("b #cdot a = 1")} from above: {mathDiv("1 #cdot c = b #cdot 1")} Due to
-          commutativity and the fact that 1 is neutral with respect to multiplication, {mathDiv("c = b")}
-        </p>
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        {letField} Using the field axioms, prove that {mathSpan("1^{-1} = 1")}. Note that {mathSpan("1 #neq 0")} by
-        definition, so {mathSpan("1^{-1}")} is well-defined.
-      </>,
-      answer: <>
-        <p>
-          Apply the one axiom to {mathSpan("1^{-1}")} to get {mathDiv("1^{-1} #cdot 1 = 1^{-1}")}
-          By commutativity, {mathDiv("1 #cdot 1^{-1} = 1^{-1}")}
-          By the negation axiom, {mathDiv("1 #cdot 1^{-1} = 1")}
-          Therefore, {mathDiv("1^{-1} = 1")}
-        </p>
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        <p>
-          {letField} Let {mathSpan("a, b #in F")} be two known numbers with {mathSpan("a #neq 0")},
-          and {mathSpan("x #in F")} unknown with {mathSpan("ax = b")}.
-        </p>
-        <p>
-          Use the field axioms to prove that {mathSpan("x = a^{-1}b")} is the unique solution.
-        </p>
-      </>,
-      answer: <>
-        <p>
-          First, observe that {mathSpan("x = a^{-1}b")} is a solution by applying the axioms:
-        </p>
-        {mathDiv("a(a^{-1}b) = (aa^{-1})b = 1b = b")}
-        <p>
-          Then, we will show that the solution is unique. Let {mathSpan("y")} be a (different or equal) solution, that is,
-        </p>
-        {mathDiv("ay = b")}
-        <p>
-          Multiply {mathSpan("a^{-1}")} (from the left) on both sides:
-        </p>
-        {mathDiv("a^{-1}(ay) = a^{-1}b")}
-        <p>
-          For the left side,
-        </p>
-        {mathDiv("a^{-1}(ay) = (a^{-1}a)y + y = 1y = y")}
-        <p>
-          For the right side,
-        </p>
-        {mathDiv("a^{-1}b = x")}
-        <p>
-          so {mathSpan("y = x")}.
-        </p>
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        <p>
-          {letField} Let {mathSpan("a #in #mathbb{F}")}, {mathSpan("a #neq 0")}.
-          Prove that {mathSpan("(a^{-1})^{-1} = a")}. You can use the fact that the inverse is unique, which is left
-          for another exercise.
-        </p>
-      </>,
-      answer: <>
-        <p>
-          Apply the inverse axiom to {mathSpan("a")} to get:
-        </p>
-        {mathDiv("aa^{-1} = 1")}
-        <p>
-          and by commutativity,
-        </p>
-        {mathDiv("a^{-1}a = 0")}
-        <p>
-          Apply the inverse axiom to {mathSpan("a^{-1}")} to get:
-        </p>
-        {mathDiv("(a^{-1}) #cdot (a^{-1})^{-1} = 1")}
-        <p>
-          Since the inverse of {mathSpan("(a^{-1})")} is unique, {mathSpan("(a^{-1})^{-1} = a")}.
-        </p>
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        <p>
-          {letField} Let {mathSpan("a, b #in #mathbb{F}")}; {mathSpan("a, b #neq 0")}. Prove
-          that {mathSpan("(ab)^{-1} = a^{-1}b^{-1}")}. You can use the fact that for any
-          given {mathSpan("p, q #in #mathbb{F}")}, the equation {mathSpan("px = q")} has {mathSpan("x = p^{-1}q")} as
-          its unique solution. This is left for another exercise.
-        </p>
-      </>,
-      answer: <>
-        <p>
-          Apply the inverse axiom to {mathSpan("(ab)")} to get:
-        </p>
-        {mathDiv("(ab) #cdot (ab)^{-1} = 1")}
-        <p>
-          Multiply {mathSpan("a^{-1}")} on both sides to get:
-        </p>
-        {mathDiv("a^{-1} #cdot (ab) #cdot (ab)^{-1} = a^{-1}")}
-        <p>
-          which simplifies to
-        </p>
-        {mathDiv("b #cdot (ab)^{-1} = a^{-1}")}
-        <p>
-          Compare this to the equation
-        </p>
-        {mathDiv("bx = a^{-1}")}
-        <p>
-          which has {mathSpan("x = a^{-1}b^{-1}")} as its unique solution. Since the solution is unique,
-        </p>
-        {mathDiv("(ab)^{-1} = a^{-1}b^{-1}")}
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        <p>
-          {letField} Let {mathSpan("a, b, c #in #mathbb{F}")}. Prove that
-        </p>
-        {mathDiv("(a + b)c = ac + bc")}
-      </>,
-      answer: <>
-        <p>
-          This is just distributivity and commutativity combined:
-        </p>
-        {mathDiv("(a+b)c = c(a+b) = ca+cb = ac+bc")}
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        <p>
-          {letField} Let {mathSpan("a #in #mathbb{F}")}. Prove that {mathSpan("a#cdot 0 = 0")}.
-        </p>
-      </>,
-      answer: <>
-        {mathDiv("a#cdot 0 = a(1-1) = a#cdot 1 - a#cdot 1 = a - a = 0")}
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        <p>
-          {letField} Prove that if a product of two numbers is zero, then at least one of the factors is zero.
-          You can use the fact that {mathSpan("x#cdot 0 = 0")} for each {mathSpan("x #in F")}, which is left
-          for another exercise.
-        </p>
-      </>,
-      answer: <>
-        <p>
-          Let {mathSpan("a, b #in F")} and {mathSpan("ab=0")}.
-        </p>
-        <p>
-          Case 1: {mathSpan("b=0")}. Then the claim is immediately true.
-        </p>
-        <p>
-          Case 2: {mathSpan("b #neq 0")}. Then
-        </p>
-        {mathDiv("a = a1 = a(bb^{-1}) = (ab)b^{-1} = 0b^{-1} = 0")}
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        <p>
-          {letField} Let {mathSpan("a #in F")}. Prove that {mathSpan("(-a) = (-1)a")}. 
-        </p>
-      </>,
-      answer: <>
-        <p>
-          Observe that {mathSpan("(-1)a")} is a negative to {mathSpan("a")}:
-        </p>
-        {mathDiv("a + (-1)a = 1a + (-1)a = (1-1)a = 0a = 0")}
-        <p>
-          Since the negative is unique, {mathSpan("(-a) = (-1)a")}.
-        </p>
-      </>,
-    },
-    {
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
-      problem: <>
-        <p>
-          {letField} Let {mathSpan("a,b #in F")}. Prove that {mathSpan("(-a)(-b) = ab")}. You can use the fact
-          that {mathSpan("(-x) = (-1)x")}, as well as {mathSpan("-(-x)=x")}, both of which are left for another
-          exercise.
-        </p>
-      </>,
-      answer: <>
-        {mathDiv("(-a)(-b) = (-a)((-1)b) = ((-1)(-a))b = (-(-a))b = ab")}
-      </>,
-    },
     {
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
@@ -547,6 +123,97 @@ export const fieldAxioms: ExerciseNode = {
           <li>Case {mathSpan("z=#infty; x, y #neq 0")}: {mathSpan("x(y+#infty) = xy = xy + x#infty")}</li>
           <li>All other cases involve only natural numbers.</li>
         </ul>
+      </>,
+    },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <ComplexNumbersCheatSheet />
+        <p>
+          Use the above definition of the complex numbers to prove that they are a field by proving the individual
+          field axioms. Find a definition for the additive inverse (negative) and for the multiplicative inverse.
+        </p>
+      </>,
+      answer: <>
+        
+        <h3>Addition</h3>
+        <p>
+          associativity:
+        </p>
+        {mathDiv("((a_1, a_2) + (b_1, b_2)) + (c_1, c_2)")}
+        {mathDiv("= (a_1 + b_1, a_2 + b_2) + (c_1, c_2)")}
+        {mathDiv("= ((a_1 + b_1) + c_1, (a_2 + b_2) + c_2)")}
+        {mathDiv("= (a_1 + (b_1 + c_1), a_2 + (b_2 + c_2))")}
+        {mathDiv("= (a_1, a_2) + (b_1 + c_1, b_2 + c_2)")}
+        {mathDiv("= (a_1, a_2) + ((b_1, b_2) + (c_1, c_2))")}
+        <p>
+          commutativity:
+        </p>
+        {mathDiv("(a_1, a_2) + (b_1, b_2)")}
+        {mathDiv("= (a_1 + b_1, a_2 + b_2)")}
+        {mathDiv("= (b_1 + a_1, b_2 + a_2)")}
+        {mathDiv("= (b_1, b_2) + (a_1, a_2)")}
+        <p>
+          zero:
+        </p>
+        {mathDiv("(a_1, a_2) + (0, 0) = (a_1 + 0, a_2 + 0) = (a_1, a_2)")}
+        <p>
+          negative: Let {mathSpan("-(a_1, a_2) = (-a_1, -a_2)")}
+        </p>
+        {mathDiv("(a_1, a_2) + -(a_1, a_2) = (a_1, a_2) + (-a_1, -a_2)")}
+        {mathDiv("= (a_1 - a_1, a_2 - a_2) = (0, 0) = 0")}
+
+        <h3>Multiplication</h3>
+        <p>
+          associativity:
+        </p>
+        {mathDiv("((a_1, a_2) #cdot (b_1, b_2)) #cdot (c_1, c_2)")}
+        {mathDiv("= (a_1b_1 - a_2b_2, a_1b_2 + a_2b_1) #cdot (c_1, c_2)")}
+        {mathDiv("= ((a_1b_1 - a_2b_2)c_1 - (a_1b_2 + a_2b_1)c_2, (a_1b_1 - a_2b_2)c_2 + (a_1b_2 + a_2b_1)c_1)", 0.85)}
+        {mathDiv("= (a_1b_1c_1 - a_2b_2c_1 - a_1b_2c_2 - a_2b_1c_2, a_1b_1c_2 - a_2b_2c_2 + a_1b_2c_1 + a_2b_1c_1)", 0.85)}
+        {mathDiv("= (a_1b_1c_1 - a_1b_2c_2 - a_2b_2c_1 - a_2b_1c_2, a_1b_1c_2 + a_1b_2c_1 - a_2b_2c_2 + a_2b_1c_1)", 0.85)}
+        {mathDiv("= (a_1(b_1c_1 - b_2c_2) - a_2(b_2c_1 + b_1c_2), a_1(b_1c_2 + b_2c_1) + a_2(b_1c_1 - b_2c_2))", 0.85)}
+        {mathDiv("= (a_1, a_2) #cdot (b_1c_1 - b_2c_2), b_2c_1 + b_1c_2)")}
+        {mathDiv("= (a_1, a_2) #cdot ((b_1, b_2) #cdot (c_1, c_2))")}
+        <p>
+          commutativity:
+        </p>
+        {mathDiv("(a_1, a_2) #cdot (b_1, b_2)")}
+        {mathDiv("= (a_1b_1 - a_2b_2, a_1b_2 + a_2b_1)")}
+        {mathDiv("= (b_1a_1 - b_2a_2, b_2a_1 + b_1a_2)")}
+        {mathDiv("= (b_1a_1 - b_2a_2, b_1a_2 + b_2a_1)")}
+        {mathDiv("= (b_1, b_2) #cdot (a_1, a_2)")}
+        <p>
+          one:
+        </p>
+        {mathDiv("1 #cdot (a_1, a_2)")}
+        {mathDiv("= (1, 0) #cdot (a_1, a_2)")}
+        {mathDiv("= (1 #cdot a_1 - 0 #cdot a_2, 1 #cdot a_2 - 0 #cdot a_1)")}
+        {mathDiv("= (a_1, a_2)")}
+        <p>
+          inverse: Let 
+        </p>
+        {mathDiv("(a_1, a_2)^{-1} = (#frac{a_1}{a_1^2 + a_2^2}, -#frac{a_2}{a_1^2 + a_2^2})")}
+        <p>
+          Then,
+        </p>
+        {mathDiv("(a_1, a_2)(a_1, a_2)^{-1}")}
+        {mathDiv("= (a_1, a_2)(#frac{a_1}{a_1^2 + a_2^2}, -#frac{a_2}{a_1^2 + a_2^2})")}
+        {mathDiv("= (#frac{a_1^2}{a_1^2 + a_2^2} + #frac{a_2^2}{a_1^2 + a_2^2}, #frac{a_1a_2}{a_1^2 + a_2^2} - #frac{a_1a_2}{a_1^2 + a_2^2})")}
+        {mathDiv("= (#frac{a_1^2 + a_2^2}{a_1^2 + a_2^2}, #frac{a_1a_2 - a_1a_2}{a_1^2 + a_2^2})")}
+        {mathDiv("= (1, 0) = 1")}
+
+        <h3>Distributivity</h3>
+        {mathDiv("(x_1, x_2) #cdot ((y_1, y_2) + (z_1, z_2))")}
+        {mathDiv("= (x_1, x_2) #cdot (y_1 + z_1, y_2 + z_2)")}
+        {mathDiv("= (x_1(y_1 + z_1) - x_2(y_2 + z_2), x_1(y_2 + z_2) + x_2(y_1 + z_1))")}
+        {mathDiv("= (x_1y_1 + x_1z_1 - x_2y_2 - x_2z_2, x_1y_2 + x_1z_2 + x_2y_1 + x_2z_1)")}
+        {mathDiv("= (x_1y_1 - x_2y_2 + x_1z_1 - x_2z_2, x_1y_2 + x_2y_1 + x_1z_2 + x_2z_1)")}
+        {mathDiv("= (x_1y_1 - x_2y_2, x_1y_2 + x_2y_1) + (x_1z_1 - x_2z_2, x_1z_2 + x_2z_1)")}
+        {mathDiv("= (x_1, x_2)(y_1, y_2) + (x_1, x_2)(z_1, z_2)")}
+
       </>,
     },
   ],

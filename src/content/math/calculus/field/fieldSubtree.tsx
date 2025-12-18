@@ -1,4 +1,4 @@
-import type {ExerciseNode, FolderNode} from "../../../../framework/content.tsx";
+import type {FolderNode} from "../../../../framework/content.tsx";
 import {fieldAxioms} from "./fieldAxioms.tsx";
 import {fieldExponentiation} from "./fieldExponentiation.tsx";
 

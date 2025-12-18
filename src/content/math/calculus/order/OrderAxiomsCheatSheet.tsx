@@ -31,5 +31,22 @@ export function OrderAxiomsCheatSheet() {
       <li>{mathSpan("x #geq y")} means: {mathSpan("x>y")} or  {mathSpan("x=y")}</li>
       <li>{mathSpan("x #leq y")} means: {mathSpan("x<y")} or {mathSpan("x=y")}</li>
     </ul>
+    <p>
+      Consequences from the axioms:
+    </p>
+    <ul>
+      <li>Exactly one is true: {mathSpan("x<y, x=y, y<x")}.</li>
+      <li>{mathSpan("x<y, y<z #implies x<z")}</li>
+      <li>{mathSpan("x<y #implies a+x < a+y")}</li>
+      <li>{mathSpan("x<y #iff -x>-y")}</li>
+      <li>{mathSpan("x<y, a<b #implies x+a<y+b")}</li>
+      <li>{mathSpan("x<y, a>0 #implies ax<ay")}</li>
+      <li>{mathSpan("x<y, a<0 #implies ax>ay")}</li>
+      <li>{mathSpan("0 #leq x < y, 0 #leq a < b #implies ax<by")}</li>
+      <li>{mathSpan("x #neq 0 #implies x^2>0")}</li>
+      <li>{mathSpan("1 > 0")}</li>
+      <li>{mathSpan("x > 0 #implies x^{-1} > 0")}</li>
+      <li>{mathSpan("0 < x < y #implies x^{-1} > y^{-1}")}</li>
+    </ul>
   </CheatSheet>;
 }

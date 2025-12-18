@@ -27,5 +27,9 @@ export function ComplexNumbersCheatSheet() {
       We will occasionally use the second equation to write complex numbers as either of the following:
     </p>
     {mathDiv("(c_1, c_2) = c_1i + c_2")}
+    <p>
+      The absolute value of a complex number is defined as
+    </p>
+    {mathDiv("|(c_1, c_2)| = #sqrt{c_1^2 + c_2^2}")}
   </CheatSheet>;
 }

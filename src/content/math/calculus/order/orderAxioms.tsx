@@ -2,31 +2,8 @@ import type {ExerciseNode} from "../../../../framework/content.tsx";
 import {CheatSheets} from "../../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
 import {FieldAxiomsCheatSheet} from "../field/FieldAxiomsCheatSheet.tsx";
 import {OrderAxiomsCheatSheet} from "./OrderAxiomsCheatSheet.tsx";
-import {mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
-import type {ReactNode} from "react";
-
-const letOrderedField = <>Let {mathSpan("F")} be a field for which the order axioms are true.</>;
-function letOrderedFieldAnd(variables: string): ReactNode {
-  return <>{letOrderedField} Let {mathSpan(variables + " #in F")}.</>
-}
-
-const axiomConsequences = <>
-  The following consequences of the order axioms can be assumed to be true, and are left for other exercises:
-  <ul>
-    <li>Exactly one is true: {mathSpan("x<y, x=y, y<x")}.</li>
-    <li>{mathSpan("x<y, y<z #implies x<z")}</li>
-    <li>{mathSpan("x<y #implies a+x < a+y")}</li>
-    <li>{mathSpan("x<y #iff -x>-y")}</li>
-    <li>{mathSpan("x<y, a<b #implies x+a<y+b")}</li>
-    <li>{mathSpan("x<y, a>0 #implies ax<ay")}</li>
-    <li>{mathSpan("x<y, a<0 #implies ax>ay")}</li>
-    <li>{mathSpan("0 #leq x < y, 0 #leq a < b #implies ax<by")}</li>
-    <li>{mathSpan("x #neq 0 #implies x^2>0")}</li>
-    <li>{mathSpan("1 > 0")}</li>
-    <li>{mathSpan("x > 0 #implies x^{-1} > 0")}</li>
-    <li>{mathSpan("0 < x < y #implies x^{-1} > y^{-1}")}</li>
-  </ul>
-</>;
+import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
+import {ComplexNumbersCheatSheet} from "../ComplexNumbersCheatSheet.tsx";
 
 export const orderAxioms: ExerciseNode = {
   id: "axioms",
@@ -39,13 +16,43 @@ export const orderAxioms: ExerciseNode = {
         <OrderAxiomsCheatSheet />
       </CheatSheets>,
       problem: <>
+        <ComplexNumbersCheatSheet />
         <p>
-          aaa
+          Using the above definition of the complex numbers, one might try to define an order on complex numbers
+          by comparing their real part. That is,
+        </p>
+        {mathDiv("(a_1, a_2) < (b_1, b_2) #iff a_1 < b_1")}
+        <p>
+          Prove that this definition does <i>not</i> satisfy the order axioms.
         </p>
       </>,
       answer: <>
         <p>
-          bbb
+          For {mathSpan("c = (0, 1)")}, neither is {mathSpan("c>0")} nor {mathSpan("-c>0")}, so by the
+          axioms, {mathSpan("c=0")} should be true but isn't.
+        </p>
+      </>,
+    },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+        <OrderAxiomsCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <ComplexNumbersCheatSheet />
+        <p>
+          Using the above definition of the complex numbers, one might try to define an order on complex numbers
+          by comparing their absolute value. That is,
+        </p>
+        {mathDiv("(a_1, a_2) < (b_1, b_2) #iff |a_1| < |b_1|")}
+        <p>
+          Prove that this definition does <i>not</i> satisfy the order axioms.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          For {mathSpan("c = (0, 1)")}, {mathSpan("|c|=1>0")}, so {mathSpan("c>0")} by our definition of the order.
+          Then {mathSpan("-c<0")} should be true, but {mathSpan("|-c|=1")}.
         </p>
       </>,
     },

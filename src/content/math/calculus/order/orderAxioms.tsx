@@ -20,6 +20,19 @@ const axiomConsequences = <>
   </ul>
 </>;
 
+const axiomConsequences2 = <>
+  The following consequences of the order axioms can be assumed to be true, and are left for other exercises:
+  <ul>
+    <li>Exactly one is true: {mathSpan("x<y, x=y, y<x")}.</li>
+    <li>{mathSpan("x<y, y<z #implies x<z")}</li>
+    <li>{mathSpan("x<y #implies a+x < a+y")}</li>
+    <li>{mathSpan("x<y #iff -x>-y")}</li>
+    <li>{mathSpan("x<y, a<b #implies x+a<y+b")}</li>
+    <li>{mathSpan("x<y, a>0 #implies ax<ay")}</li>
+    <li>{mathSpan("0 #leq x < y, 0 #leq a < b #implies ax<by")}</li>
+  </ul>
+</>;
+
 export const orderAxioms: ExerciseNode = {
   id: "axioms",
   name: "Axioms",
@@ -189,9 +202,93 @@ export const orderAxioms: ExerciseNode = {
         {mathDiv("ax < by")}
       </>,
     },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+        <OrderAxiomsCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        {axiomConsequences2}
+        <p>
+          {letOrderedFieldAnd("x, y, a")} with {mathSpan("x < y")} and {mathSpan("a < 0")}. Prove that
+        </p>
+        {mathDiv("ax > ay")}
+        <p>
+          That is, multiplying an inequality by a negative number flips the inequality symbol.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          Start with
+        </p>
+        {mathDiv("x < y")}
+        <p>
+          Since {mathSpan("-a>0")}, multiplying by it does <i>not</i> flip the inequality symbol:
+        </p>
+        {mathDiv("(-a)#cdot x < (-a)#cdot y")}
+        {mathDiv("#iff -ax < -ay")}
+        {mathDiv("#iff (-ay) - (-ax) > 0")}
+        {mathDiv("#iff ax - ay > 0")}
+        {mathDiv("#iff ax > ay")}
+      </>,
+    },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+        <OrderAxiomsCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        {axiomConsequences2}
+        <p>
+          {letOrderedFieldAnd("x")} with {mathSpan("x #neq 0")}. Prove that {mathSpan("x^2 > 0")}.
+        </p>
+        <p>
+          In addition to the above consequences from the axioms, you can use the fact that
+        </p>
+        {mathDiv("x < y, a < 0 #implies ax>ay")}
+        <p>
+          which is left for another exercise.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          If {mathSpan("x>0")}, then {mathSpan("x^2>0")} follows directly from the third order axiom. Otherwise,
+          {mathSpan("x<0")} and multiplying that inequality by {mathSpan("x")} flips the symbol, so {mathSpan("x^2>0")}.
+        </p>
+      </>,
+    },
 
 
-TODO weiter 3.8
+
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+        <OrderAxiomsCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        {axiomConsequences2}
+        <p>
+          {letOrderedFieldAnd("x")} with {mathSpan("x > 0")}. Prove that {mathSpan("x^{-1} > 0")}.
+        </p>
+        <p>
+          In addition to the above consequences from the axioms, you can use the fact that
+        </p>
+        {mathDiv("x < y, a < 0 #implies ax>ay")}
+        {mathDiv("x #neq 0 #implies x^2>0")}
+        <p>
+          which are left for another exercise.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          If {mathSpan("x>0")}, then {mathSpan("x^2>0")} follows directly from the third order axiom. Otherwise,
+          {mathSpan("x<0")} and multiplying that inequality by {mathSpan("x")} flips the symbol, so {mathSpan("x^2>0")}.
+        </p>
+      </>,
+    },
+
+
+// TODO weiter 3.8
 
 
 

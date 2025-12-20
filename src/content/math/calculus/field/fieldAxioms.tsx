@@ -3,6 +3,40 @@ import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math
 import {CheatSheets} from "../../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
 import {FieldAxiomsCheatSheet} from "./FieldAxiomsCheatSheet.tsx";
 import {ComplexNumbersCheatSheet} from "../ComplexNumbersCheatSheet.tsx";
+import type {ReactNode} from "react";
+import {Grid} from "@mui/material";
+
+interface OperationTableCellProps {
+  color: string;
+  children: ReactNode;
+}
+
+function OperationTableCell(props: OperationTableCellProps) {
+  return <td style={{width: "2em", height: "2em", backgroundColor: props.color, border: "2px solid #888", textAlign: "center"}}>
+    {props.children}
+  </td>;
+}
+
+interface OperationTableProps {
+  operationSymbol: ReactNode;
+  elements: ReactNode[];
+  results: ReactNode[][];
+}
+
+function OperationTable(props: OperationTableProps) {
+  return <table style={{borderCollapse: "collapse"}}>
+    <tbody>
+      <tr>
+        <OperationTableCell color="#aaa" children={props.operationSymbol} />
+        {props.elements.map(element => <OperationTableCell color="#ccc" children={element} />)}
+      </tr>
+      {props.elements.map((elementLeft, indexLeft) => <tr>
+        <OperationTableCell color="#ccc" children={elementLeft} />
+        {props.results[indexLeft].map(result => <OperationTableCell color="#eee" children={result} />)}
+      </tr>)}
+    </tbody>
+  </table>;
+}
 
 export const fieldAxioms: ExerciseNode = {
   id: "axioms",
@@ -214,6 +248,50 @@ export const fieldAxioms: ExerciseNode = {
         {mathDiv("= (x_1y_1 - x_2y_2, x_1y_2 + x_2y_1) + (x_1z_1 - x_2z_2, x_1z_2 + x_2z_1)")}
         {mathDiv("= (x_1, x_2)(y_1, y_2) + (x_1, x_2)(z_1, z_2)")}
 
+      </>,
+    },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <p>
+          Let {mathSpan("F")} be a field that has exactly three elements. Since {mathSpan("0 #neq 1")}, two
+          of those three elements are already quite familiar to us. Let's call the third element #spadesuit.
+          We know that {mathSpan("F")} is a field, so we can use the field axioms to learn about that third
+          element. Use the axioms to fill out tables for the addition and multiplication of elements:
+        </p>
+        <Grid container spacing={2}>
+          <Grid size={6}>
+            <div style={{marginLeft: "auto", marginRight: "auto", width: "60%"}}>
+              <OperationTable
+                  operationSymbol={"+"}
+                  elements={["0", "1", "♠"]}
+                  results={[
+                    ["", "", ""],
+                    ["", "", ""],
+                    ["", "", ""],
+                  ]}
+              />
+            </div>
+          </Grid>
+          <Grid size={6}>
+            <div style={{marginLeft: "auto", marginRight: "auto", width: "60%"}}>
+              <OperationTable
+                  operationSymbol={"·"}
+                  elements={["0", "1", "♠"]}
+                  results={[
+                    ["", "", ""],
+                    ["", "", ""],
+                    ["", "", ""],
+                  ]}
+              />
+            </div>
+          </Grid>
+        </Grid>
+        <br />
+      </>,
+      answer: <>
       </>,
     },
   ],

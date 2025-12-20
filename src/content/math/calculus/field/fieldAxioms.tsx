@@ -257,7 +257,7 @@ export const fieldAxioms: ExerciseNode = {
       problem: <>
         <p>
           Let {mathSpan("F")} be a field that has exactly three elements. Since {mathSpan("0 #neq 1")}, two
-          of those three elements are already quite familiar to us. Let's call the third element #spadesuit.
+          of those three elements are already quite familiar to us. Let's call the third element ♠.
           We know that {mathSpan("F")} is a field, so we can use the field axioms to learn about that third
           element. Use the axioms to fill out tables for the addition and multiplication of elements:
         </p>
@@ -292,6 +292,156 @@ export const fieldAxioms: ExerciseNode = {
         <br />
       </>,
       answer: <>
+        <p>
+          We know that
+        </p>
+        {mathDiv("0+x = x+0 = x")}
+        {mathDiv("1#cdot x = x#cdot 1 = x")}
+        {mathDiv("0#cdot x = x#cdot 0 = 0")}
+        <Grid container spacing={2}>
+          <Grid size={6}>
+            <div style={{marginLeft: "auto", marginRight: "auto", width: "60%"}}>
+              <OperationTable
+                  operationSymbol={"+"}
+                  elements={["0", "1", "♠"]}
+                  results={[
+                    ["0", "1", "♠"],
+                    ["1", "", ""],
+                    ["♠", "", ""],
+                  ]}
+              />
+            </div>
+          </Grid>
+          <Grid size={6}>
+            <div style={{marginLeft: "auto", marginRight: "auto", width: "60%"}}>
+              <OperationTable
+                  operationSymbol={"·"}
+                  elements={["0", "1", "♠"]}
+                  results={[
+                    ["0", "0", "0"],
+                    ["0", "1", "♠"],
+                    ["0", "♠", ""],
+                  ]}
+              />
+            </div>
+          </Grid>
+        </Grid>
+        <br />
+        <p>
+          By the (multiplicative) inverse axiom, ♠ has an inverse ♠<sup>-1</sup> such that
+        </p>
+        {mathDiv("♠♠^{-1} = ♠^{-1}♠ = 1")}
+        <p>
+          The only blank cell left in the multiplication table is for ♠ itself, that is, ♠ is its own inverse and ♠♠=1.
+        </p>
+        <Grid container spacing={2}>
+          <Grid size={6}>
+            <div style={{marginLeft: "auto", marginRight: "auto", width: "60%"}}>
+              <OperationTable
+                  operationSymbol={"+"}
+                  elements={["0", "1", "♠"]}
+                  results={[
+                    ["0", "1", "♠"],
+                    ["1", "", ""],
+                    ["♠", "", ""],
+                  ]}
+              />
+            </div>
+          </Grid>
+          <Grid size={6}>
+            <div style={{marginLeft: "auto", marginRight: "auto", width: "60%"}}>
+              <OperationTable
+                  operationSymbol={"·"}
+                  elements={["0", "1", "♠"]}
+                  results={[
+                    ["0", "0", "0"],
+                    ["0", "1", "♠"],
+                    ["0", "♠", "1"],
+                  ]}
+              />
+            </div>
+          </Grid>
+        </Grid>
+        <br />
+        <p>
+          By applying distributivity and the above multiplication table,
+        </p>
+        {mathDiv("♠(1+♠) = ♠1 + ♠♠ = ♠ + 1 = 1 + ♠")}
+        <p>
+          According to the multiplication table, this is only the case if {mathSpan("1+♠=0")}.
+        </p>
+        <Grid container spacing={2}>
+          <Grid size={6}>
+            <div style={{marginLeft: "auto", marginRight: "auto", width: "60%"}}>
+              <OperationTable
+                  operationSymbol={"+"}
+                  elements={["0", "1", "♠"]}
+                  results={[
+                    ["0", "1", "♠"],
+                    ["1", "", "0"],
+                    ["♠", "0", ""],
+                  ]}
+              />
+            </div>
+          </Grid>
+          <Grid size={6}>
+            <div style={{marginLeft: "auto", marginRight: "auto", width: "60%"}}>
+              <OperationTable
+                  operationSymbol={"·"}
+                  elements={["0", "1", "♠"]}
+                  results={[
+                    ["0", "0", "0"],
+                    ["0", "1", "♠"],
+                    ["0", "♠", "1"],
+                  ]}
+              />
+            </div>
+          </Grid>
+        </Grid>
+        <br />
+        <p>
+          The uniqueness of the negative implies that
+        </p>
+        {mathDiv("1+1 #neq 0")}
+        {mathDiv("♠+♠ #neq 0")}
+        <p>
+          If {mathSpan("1+1=1")} were true, then
+        </p>
+        {mathDiv("1 = 1+0 = 1+(1-1) = (1+1)-1 = 1-1 = 0")}
+        <p>
+          in contradition to the field axiom that {mathSpan("1 #neq 0")}. Therefore,
+        </p>
+        {mathDiv("1+1=♠")}
+        {mathDiv("♠+♠ = ♠+1+1 = 0+1 = 1")}
+        <Grid container spacing={2}>
+          <Grid size={6}>
+            <div style={{marginLeft: "auto", marginRight: "auto", width: "60%"}}>
+              <OperationTable
+                  operationSymbol={"+"}
+                  elements={["0", "1", "♠"]}
+                  results={[
+                    ["0", "1", "♠"],
+                    ["1", "♠", "0"],
+                    ["♠", "0", "1"],
+                  ]}
+              />
+            </div>
+          </Grid>
+          <Grid size={6}>
+            <div style={{marginLeft: "auto", marginRight: "auto", width: "60%"}}>
+              <OperationTable
+                  operationSymbol={"·"}
+                  elements={["0", "1", "♠"]}
+                  results={[
+                    ["0", "0", "0"],
+                    ["0", "1", "♠"],
+                    ["0", "♠", "1"],
+                  ]}
+              />
+            </div>
+          </Grid>
+        </Grid>
+        <br />
       </>,
     },
   ],

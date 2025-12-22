@@ -56,5 +56,48 @@ export const orderAxioms: ExerciseNode = {
         </p>
       </>,
     },
+    {
+      intro: <CheatSheets>
+        <FieldAxiomsCheatSheet />
+        <OrderAxiomsCheatSheet />
+      </CheatSheets>,
+      problem: <>
+        <p>
+          Prove that every ordered field has an infinite number of elements.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          Closure allows us to produce elements as
+        </p>
+        {mathDiv("a_i=0")}
+        {mathDiv("a_{i+1} = a_i + 1")}
+        <p>
+          That is,
+        </p>
+        {mathDiv("a_0 = 0")}
+        {mathDiv("a_1 = 1")}
+        {mathDiv("a_2 = 1 + 1")}
+        {mathDiv("a_3 = 1 + 1 + 1")}
+        {mathDiv("...")}
+        <p>
+          but we have to prove that these actually produce an infinite number of new elements and not just
+          repeat a finite number of elements over and over again.
+        </p>
+        <p>
+          From the consequences of the order axioms,
+        </p>
+        {mathDiv("1 > 0")}
+        <p>
+          Add {mathSpan("a_n")} on both sides:
+        </p>
+        {mathDiv("a_{n+1} = a_n + 1 > a_n")}
+        <p>
+          Transitivity then allows us to say that each {mathSpan("a_n")} is greater than <i>all</i> preceding ones,
+          and therefore <i>different</i> from all preceding ones. So each {mathSpan("a_n")} must be a new element, and
+          therefore the field has an infinite number of elements.
+        </p>
+      </>,
+    },
   ],
 };

@@ -1,5 +1,5 @@
 import type {FolderNode} from "../../framework/content.tsx";
-import {ohmicResistorSubtree} from "./ohmicResistorSubtree.tsx";
+import {ohmicResistorSubtree} from "./ohmic/ohmicResistorSubtree.tsx";
 import {basicUnits} from "./basicUnits.tsx";
 
 export const electricalEngineeringSubtree: FolderNode = {

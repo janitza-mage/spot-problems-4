@@ -1,5 +1,6 @@
-import type {ExerciseNode} from "../../framework/content.tsx";
-import {mathDiv, mathSpan} from "../../framework/technical-components/Math/Math.tsx";
+import type {ExerciseNode} from "../../../framework/content.tsx";
+import {mathDiv, mathSpan} from "../../../framework/technical-components/Math/Math.tsx";
+import bridgeParallelImage from "./bridge-parallel.jpg";
 
 export const ohmicResistorSubtree: ExerciseNode = {
   id: "ohmicResistor",
@@ -149,6 +150,73 @@ export const ohmicResistorSubtree: ExerciseNode = {
       </>,
       answer: <>
         {mathDiv("R = #frac{1}{100} #cdot 345#Omega = 3.45#Omega")}
+      </>
+    },
+    {
+      problem: <>
+        <p>
+          A voltage source of {mathSpan("6V")} gets attached to two sub-circuits. Each one a series of two
+          resistors, like this:
+        </p>
+        <div><img src={bridgeParallelImage} /></div>
+        <p>
+          with the values
+        </p>
+        {mathDiv("R_1 = 10#Omega")}
+        {mathDiv("R_2 = 20#Omega")}
+        {mathDiv("R_3 = 60#Omega")}
+        {mathDiv("R_4 = 120#Omega")}
+        <p>
+          Calculate the voltage at the point between the two resistors on the left side against ground. Then do the
+          same for the right side.
+        </p>
+        <p>
+          Then suppose that the those two points are connected with a wire. This forces them to have the same voltage
+          against ground since the wire is assumed to have zero resistance. What is that voltage against ground?
+        </p>
+      </>,
+      answer: <>
+        <p>
+          On both sides, the resistors split the voltage into {mathSpan("#frac{1}{3}")} and {mathSpan("#frac{1}{3}")},
+          so the voltage against ground is {mathSpan("4V")} on both sides. Connecting them has therefore no effect.
+        </p>
+      </>
+    },
+    {
+      problem: <>
+        <p>
+          A voltage source of {mathSpan("10V")} gets attached to two sub-circuits. Each one a series of two
+          resistors, like this:
+        </p>
+        <div><img src={bridgeParallelImage} /></div>
+        <p>
+          with the values
+        </p>
+        {mathDiv("R_1 = 10#Omega")}
+        {mathDiv("R_2 = 90#Omega")}
+        {mathDiv("R_3 = 90#Omega")}
+        {mathDiv("R_4 = 10#Omega")}
+        <p>
+          Calculate the voltage at the point between the two resistors on the left side against ground. Then do the
+          same for the right side.
+        </p>
+        <p>
+          Then suppose that the those two points are connected with a wire. This forces them to have the same voltage
+          against ground since the wire is assumed to have zero resistance. What is that voltage against ground?
+        </p>
+      </>,
+      answer: <>
+        <p>
+          The resistors split the voltage into {mathSpan("#frac{1}{10}")} and {mathSpan("#frac{9}{10}")} on the left,
+          and vice versa on the right. The left-side voltage against ground is therefore {mathSpan("9V")},
+          and {mathSpan("1V")} on the right.
+        </p>
+        <p>
+          When the middle points are connected, the whole circuit is a series connection of two parts, each of which
+          is a parallel connection of a {mathSpan("10#Omega")} resistor and a {mathSpan("90#Omega")} resistor.
+          Since the combined resistance of the upper part is the same as for the lower part, the total voltage is split
+          in half, so the voltage of the connected middle points against ground is {mathSpan("5V")}.
+        </p>
       </>
     },
   ],

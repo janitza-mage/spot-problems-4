@@ -1,6 +1,21 @@
 import type {ExerciseNode} from "../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../framework/technical-components/Math/Math.tsx";
 import bridgeParallelImage from "./bridge-parallel.jpg";
+import largePieceImage from "./large-piece.jpg";
+import infiniteResistorLadderImage from "./infinite-resistor-ladder.jpg";
+
+function a(x: number, y: number) {
+  return 1/(1/x + 1/y);
+}
+
+const s = 0.02;
+const p = 1;
+
+let b = s + p;
+for (let i = 0; i < 100; i++) {
+  console.log(b);
+  b = s + a(p, b);
+}
 
 export const ohmicResistorSubtree: ExerciseNode = {
   id: "ohmicResistor",
@@ -217,6 +232,71 @@ export const ohmicResistorSubtree: ExerciseNode = {
           Since the combined resistance of the upper part is the same as for the lower part, the total voltage is split
           in half, so the voltage of the connected middle points against ground is {mathSpan("5V")}.
         </p>
+      </>
+    },
+    {
+      problem: <>
+        <p>
+          A voltage source gets attached to a large piece of somewhat-conductive material like so:
+        </p>
+        <div><img src={largePieceImage} style={{width: "100%"}} /></div>
+        <p>
+          The piece is large both in the distance between the terminals and the distance from the terminals to the
+          "far" end. "Large" means that we can simplify the formula for total resistance somewhat, as will be shown
+          below.
+        </p>
+        <p>
+          A thin strip of {mathSpan("1mm")} of this material between the source terminals has a resistance
+          of {mathSpan("1#Omega")}. The whole attached piece is known to be uniformly shaped, so it can be
+          thought of as a large number of these strips connected to each other. The material is also uniform
+          in its properties, in particular its resistivity, so there is a linear voltage drop across the whole length
+          of a strip.
+        </p>
+        <p>
+          Now our assumption of a "large" piece comes into play, and it does so in two ways:
+          <ul>
+            <li>Each strip is connected to the previous one at all points, through a path with a small resistance
+              of {mathSpan("0.01#Omega")}. However, the large distance between the terminals causes these connections
+              to contribute only small currents. We can therefore ignore the connections between "inner" points and
+              assume that strips are connected only at the ends, modeling each strip by
+              a {mathSpan("1#Omega")} resistance along the strip, and a {mathSpan("0.01#Omega")} resistance connecting
+              the ends of neighboring strips.</li>
+            <li>The large distance from the terminals to the "far" end adds up a lot of resistance along the way,
+              so each successive strip will contribute less and less current. This allows us to model the whole
+              piece as an infinite number of strips. </li>
+          </ul>
+        </p>
+        <p>
+          Both of these assumptions taken together allow us to model the whole piece of material as an infinite
+          resistor ladder:
+        </p>
+        <div><img src={infiniteResistorLadderImage} style={{width: "100%"}} /></div>
+        <p>
+          Note how, while there is no infinite resistor ladder in reality, "large" things can be modeled as "infinite"
+          when the numbers we know describe a sufficiently small part of it.
+        </p>
+        <p>
+          Determine the total resistance of this piece. Hint: An infinite chain has the
+          unexpected property that its resistance can be determined from a resistor network that contains <i>itself</i>.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          Let {mathSpan("R")} be the resistance of the whole infinite ladder. Then {mathSpan("R")} can be
+          expressed as a {mathSpan("0.02#Omega")} resistor (entering and leaving the first strip), connected in
+          series with a parallel connection of a {mathSpan("1#Omega")} resistor (resistance along a strip)
+          and {mathSpan("R")} itself (the rest of the infinite network, which is the infinite network itself):
+        </p>
+        {mathDiv("R = 0.02#Omega + #frac{1}{#frac{1}{1#Omega} + #frac{1}{R}}")}
+        {mathDiv("R = 0.02#Omega + #frac{R #cdot 1#Omega}{R + 1#Omega}")}
+        {mathDiv("R(R + 1#Omega) = 0.02#Omega #cdot (R + 1#Omega) + R #cdot 1#Omega")}
+        {mathDiv("R^2 + R#cdot 1#Omega = R#cdot 0.02#Omega + 0.02#Omega^2 + R #cdot 1#Omega")}
+        {mathDiv("R^2 - R#cdot 0.02#Omega - 0.02#Omega^2 = 0")}
+        {mathDiv("R = 0.01#Omega #pm 0.14177#Omega")}
+        <p>
+          Since we have a network of passive ohmic resistors, {mathSpan("R #geq 0")}:
+        </p>
+        {mathDiv("R = 0.01#Omega + 0.14177#Omega = 0,15177#Omega")}
       </>
     },
   ],

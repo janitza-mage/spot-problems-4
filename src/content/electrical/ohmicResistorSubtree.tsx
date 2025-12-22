@@ -101,8 +101,10 @@ export const ohmicResistorSubtree: ExerciseNode = {
           Which statement is correct?
         </p>
         <ul>
-          <li>When connecting nonzero resistances in series, the total resistance is always less than the smallest resistance.</li>
-          <li>When connecting nonzero resistances in series, the total resistance is always greater than the greatest resistance.</li>
+          <li>When connecting nonzero resistances in <b>series</b>, the total resistance is always <b>less</b> than the <b>smallest</b> resistance.</li>
+          <li>When connecting nonzero resistances in <b>series</b>, the total resistance is always <b>greater</b> than the <b>smallest</b> resistance.</li>
+          <li>When connecting nonzero resistances in <b>series</b>, the total resistance is always <b>less</b> than the <b>greatest</b> resistance.</li>
+          <li>When connecting nonzero resistances in <b>series</b>, the total resistance is always <b>greater</b> than the <b>greatest</b> resistance.</li>
         </ul>
       </>,
       answer: <>
@@ -117,13 +119,25 @@ export const ohmicResistorSubtree: ExerciseNode = {
           Which statement is correct?
         </p>
         <ul>
-          <li>When connecting nonzero resistances in parallel, the total resistance is always less than the smallest resistance.</li>
-          <li>When connecting nonzero resistances in parallel, the total resistance is always greater than the greatest resistance.</li>
+          <li>When connecting nonzero resistances in <b>parallel</b>, the total resistance is always <b>less</b> than the <b>smallest</b> resistance.</li>
+          <li>When connecting nonzero resistances in <b>parallel</b>, the total resistance is always <b>greater</b> than the <b>smallest</b> resistance.</li>
+          <li>When connecting nonzero resistances in <b>parallel</b>, the total resistance is always <b>less</b> than the <b>greatest</b> resistance.</li>
+          <li>When connecting nonzero resistances in <b>parallel</b>, the total resistance is always <b>greater</b> than the <b>greatest</b> resistance.</li>
         </ul>
       </>,
       answer: <>
         <p>
           In parallel, the inverse of the resistances adds up, so the total resistance is always less than the smallest resistance.
+        </p>
+      </>
+    },
+    {
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
         </p>
       </>
     },

@@ -269,5 +269,47 @@ export const basicUnits: ExerciseNode = {
         {mathDiv("t = #frac{E}{P} = #frac{E}{U#cdot I} = #frac{1kWh}{20V#cdot 10A} = #frac{1kWh}{200W} = 5h")}
       </>
     },
+    {
+      problem: <>
+        <p>
+          A copper wire with a diameter of {mathSpan("5mm")} and length of {mathSpan("100m")} is used to transmit a
+          current of {mathSpan("2A")}. Calculate the speed of electrons in the wire. After applying the current,
+          how long does it take until the current can be measured at the end of the wire (assuming that the wire
+          is part of a closed circuit, so current <i>can</i> flow at all)?
+        </p>
+        <p>
+          Copper has a free electron density of {mathSpan("8.47#cdot 10^{22}cm^{-3}")}.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          Each electron has a charge of {mathSpan("1e")}, so the charge density (charge per volume) in the wire is
+        </p>
+        {mathDiv("8.47#cdot 10^{22}cm^{-3}e")}
+        {mathDiv("= 8.47#cdot 10^{22}cm^{-3}e #cdot #frac{6.241509 #cdot 10^{18}e}{6.241509 #cdot 10^{18}e}")}
+        {mathDiv("= 8.47#cdot 10^{22}cm^{-3} #cdot #frac{1C}{6.241509 #cdot 10^{18}}")}
+        {mathDiv("= #frac{8.47#cdot 10^{22}}{6.241509 #cdot 10^{18}} #frac{C}{cm^3}")}
+        {mathDiv("= 1.357043625 #cdot 10^4 #frac{C}{cm^3}")}
+        <p>
+          Calculate the cross section of the wire:
+        </p>
+        {mathDiv("A = #pi (#frac{5mm}{2})^2 = 19.634954375 mm^2 = 0.19634954375 cm^2")}
+        <p>
+          The charge {mathSpan("q")} per length {mathSpan("x")} of wire is therefore:
+        </p>
+        {mathDiv("#frac{q}{x} = #frac{qA}{V} = A#cdot #frac{q}{V} = 0.266454897 #cdot 10^4 #frac{C}{cm}")}
+        <p>
+          The current is proportional to the charge density and the speed of the electrons. For a
+          length {mathSpan("x")} of wire,
+        </p>
+        {mathDiv("I = #frac{q}{t} = #frac{q #cdot x}{t #cdot x} = #frac{q}{x} #cdot #frac{x}{t} = #frac{q}{x} #cdot v")}
+        {mathDiv("v = #frac{I}{#frac{q}{x}} = #frac{2#frac{C}{s}}{0.266454897 #cdot 10^4 #frac{C}{cm}} = 7,506 #cdot 10^{-4} #frac{cm}{s}")}
+        <p>
+          Despite this low number, the current can be measured at the end of the wire almost instantly because the
+          speed of electrons is not relevant for this. Each electron pushes against the next one by means of the
+          electric field almost instantly, and this "push" propagates at roughly half the speed of light.
+        </p>
+      </>
+    },
   ],
 };

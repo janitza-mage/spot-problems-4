@@ -134,11 +134,21 @@ export const ohmicResistorSubtree: ExerciseNode = {
     {
       problem: <>
         <p>
+          What is the total resistance of connecting 100 resistors of {mathSpan("345#Omega")} each in series?
         </p>
       </>,
       answer: <>
+        {mathDiv("R = 100 #cdot 345#Omega = 34.5k#Omega")}
+      </>
+    },
+    {
+      problem: <>
         <p>
+          What is the total resistance of connecting 100 resistors of {mathSpan("345#Omega")} each in parallel?
         </p>
+      </>,
+      answer: <>
+        {mathDiv("R = #frac{1}{100} #cdot 345#Omega = 3.45#Omega")}
       </>
     },
   ],

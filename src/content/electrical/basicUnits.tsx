@@ -150,5 +150,101 @@ export const basicUnits: ExerciseNode = {
         <i>out</i> of the circuit.
       </>
     },
+    {
+      problem: <>
+        <p>
+          Alice says, "I'm transmitting a charge of {mathSpan("5C")} over this wire in one second.
+        </p>
+        <p>
+          Bob says, "I'll top that. I'm transmitting those {mathSpan("5C")} in only one tenth of a second.
+        </p>
+        <p>
+          Determine the electric current for both cases.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          {mathSpan("I=q/t")}, so the currents are
+        </p>
+        {mathDiv("I_{Alice} = #frac{5C}{1s} = 5A")}
+        {mathDiv("I_{Bob} = #frac{5C}{0.1s} = 50A")}
+        <p>
+          Bob needs 10 times the current to deliver the same charge in one tenth of the time.
+        </p>
+      </>
+    },
+    {
+      problem: <>
+        <p>
+          Alice says, "I'm transmitting a current of {mathSpan("5A")} over this wire for one second.
+        </p>
+        <p>
+          Bob says, "I'll top that. I'm transmitting those {mathSpan("5A")} in only one tenth of a second.
+        </p>
+        <p>
+          Determine the transmitted electric charge for both cases.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          {mathSpan("q=I#cdot t")}, so the charges are
+        </p>
+        {mathDiv("q_{Alice} = 5A #cdot 1s = 5C")}
+        {mathDiv("q_{Bob} = 5A #cdot 0.1s = 0.5C")}
+        <p>
+          Bob has actually not topped Alice at all. Since the electric <i>current</i> is the "speed" at which charge
+          gets transmitted, applying that same "speed" over one tenth of the time only transmits one tenth of the
+          charge.
+        </p>
+      </>
+    },
+    {
+      problem: <>
+        <p>
+          Alice says, "I'm transmitting {mathSpan("300J")} of electric energy over this wire in one second.
+        </p>
+        <p>
+          Bob says, "I'll top that. I'm transmitting those {mathSpan("300J")} in only one tenth of a second.
+        </p>
+        <p>
+          Determine the electric power for both cases.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          {mathSpan("P=E/t")}, so the powers are
+        </p>
+        {mathDiv("P_{Alice} = #frac{300J}{1s} = 300W")}
+        {mathDiv("P_{Bob} = #frac{300J}{0.1s} = 3kW")}
+        <p>
+          Bob needs 10 times the power to deliver the same energy in one tenth of the time.
+        </p>
+      </>
+    },
+    {
+      problem: <>
+        <p>
+          Alice says, "I'm transmitting {mathSpan("300W")} of power over this wire for one second.
+        </p>
+        <p>
+          Bob says, "I'll top that. I'm transmitting those {mathSpan("300W")} in only one tenth of a second.
+        </p>
+        <p>
+          Determine the transmitted electric energy for both cases.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          {mathSpan("E=P#cdot t")}, so the energies are
+        </p>
+        {mathDiv("E_{Alice} = 300W #cdot 1s = 300J")}
+        {mathDiv("E_{Bob} = 300W #cdot 0.1s = 30J")}
+        <p>
+          Bob has actually not topped Alice at all. Since the electric <i>power</i> is the "speed" at which energy
+          gets transmitted, applying that same "speed" over one tenth of the time only transmits one tenth of the
+          energy.
+        </p>
+      </>
+    },
   ],
 };

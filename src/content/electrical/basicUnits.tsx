@@ -311,5 +311,15 @@ export const basicUnits: ExerciseNode = {
         </p>
       </>
     },
+    {
+      problem: <>
+        <p>
+          Given a voltage source of {mathSpan("5V")}, determine the energy transmitted by a charge of {mathSpan("2C")}.
+        </p>
+      </>,
+      answer: <>
+        {mathDiv("E=U #cdot q = 5V #cdot 2C = 10J")}
+      </>
+    },
   ],
 };

@@ -146,17 +146,17 @@ export const basicUnits: ExerciseNode = {
         </p>
       </>,
       answer: <>
-        The charge has not increased at all, since the same current that flows <i>into</i> the circuit also flows
-        <i>out</i> of the circuit.
+        The charge has not increased at all, since the same current that flows <i>into</i> the circuit also
+        flows <i>out</i> of the circuit.
       </>
     },
     {
       problem: <>
         <p>
-          Alice says, "I'm transmitting a charge of {mathSpan("5C")} over this wire in one second.
+          Alice says, "I'm transmitting a charge of {mathSpan("5C")} over this wire in one second."
         </p>
         <p>
-          Bob says, "I'll top that. I'm transmitting those {mathSpan("5C")} in only one tenth of a second.
+          Bob says, "I'll top that. I'm transmitting those {mathSpan("5C")} in only one tenth of a second."
         </p>
         <p>
           Determine the electric current for both cases.
@@ -176,10 +176,10 @@ export const basicUnits: ExerciseNode = {
     {
       problem: <>
         <p>
-          Alice says, "I'm transmitting a current of {mathSpan("5A")} over this wire for one second.
+          Alice says, "I'm transmitting a current of {mathSpan("5A")} over this wire for one second."
         </p>
         <p>
-          Bob says, "I'll top that. I'm transmitting those {mathSpan("5A")} in only one tenth of a second.
+          Bob says, "I'll top that. I'm transmitting those {mathSpan("5A")} in only one tenth of a second."
         </p>
         <p>
           Determine the transmitted electric charge for both cases.
@@ -201,10 +201,10 @@ export const basicUnits: ExerciseNode = {
     {
       problem: <>
         <p>
-          Alice says, "I'm transmitting {mathSpan("300J")} of electric energy over this wire in one second.
+          Alice says, "I'm transmitting {mathSpan("300J")} of electric energy over this wire in one second."
         </p>
         <p>
-          Bob says, "I'll top that. I'm transmitting those {mathSpan("300J")} in only one tenth of a second.
+          Bob says, "I'll top that. I'm transmitting those {mathSpan("300J")} in only one tenth of a second."
         </p>
         <p>
           Determine the electric power for both cases.
@@ -224,10 +224,10 @@ export const basicUnits: ExerciseNode = {
     {
       problem: <>
         <p>
-          Alice says, "I'm transmitting {mathSpan("300W")} of power over this wire for one second.
+          Alice says, "I'm transmitting {mathSpan("300W")} of power over this wire for one second."
         </p>
         <p>
-          Bob says, "I'll top that. I'm transmitting those {mathSpan("300W")} in only one tenth of a second.
+          Bob says, "I'll top that. I'm transmitting those {mathSpan("300W")} in only one tenth of a second."
         </p>
         <p>
           Determine the transmitted electric energy for both cases.
@@ -244,6 +244,29 @@ export const basicUnits: ExerciseNode = {
           gets transmitted, applying that same "speed" over one tenth of the time only transmits one tenth of the
           energy.
         </p>
+      </>
+    },
+    {
+      problem: <>
+        <p>
+          A stationary battery is specified to be charged at {mathSpan("20V")}, with at most {mathSpan("10A")}, for a
+          total of {mathSpan("1kWh")}. Is it possible to charge this battery in two hours?
+        </p>
+      </>,
+      answer: <>
+        <p>
+          First, determine the power needed:
+        </p>
+        {mathDiv("P = #frac{E}{t} = #frac{1kWh}{2h} = 500W")}
+        <p>
+          Then, determine the current needed:
+        </p>
+        {mathDiv("I = #frac{P}{U} = #frac{500W}{20V} = 25A")}
+        <p>
+          This exceeds the maximum current of {mathSpan("10A")}, so it is not possible to charge the battery in two
+          hours. The minimum time needed is
+        </p>
+        {mathDiv("t = #frac{E}{P} = #frac{E}{U#cdot I} = #frac{1kWh}{20V#cdot 10A} = #frac{1kWh}{200W} = 5h")}
       </>
     },
   ],

@@ -11,3 +11,5 @@ export const electricalEngineeringSubtree: FolderNode = {
     ohmicResistorSubtree,
   ],
 };
+
+// electric field? magnetic field?

@@ -57,6 +57,18 @@ export const basicUnits: ExerciseNode = {
     {
       problem: <>
         <p>
+          What is the symbol, unit, and unit symbol for the electric charge?
+        </p>
+      </>,
+      answer: <>
+        <div>Symbol: q</div>
+        <div>Unit: coulomb</div>
+        <div>Unit Symbol: C</div>
+      </>
+    },
+    {
+      problem: <>
+        <p>
           A power of 100 watts is applied to a circuit for 5 seconds. How much energy is used?
         </p>
       </>,
@@ -113,6 +125,29 @@ export const basicUnits: ExerciseNode = {
           so the charging time is
         </p>
         {mathDiv("t = #frac{E}{P} = #frac{20Wh}{60W} = #frac{1}{3}h = 20min")}
+      </>
+    },
+    {
+      problem: <>
+        <p>
+          A current of {mathSpan("2A")} flows through a circuit for {mathSpan("3s")}. What electric charge flows
+          through the circuit?
+        </p>
+      </>,
+      answer: <>
+        {mathDiv("q = I #cdot t = 2A #cdot 3s = 6C")}
+      </>
+    },
+    {
+      problem: <>
+        <p>
+          A current of {mathSpan("5A")} flows through a circuit for {mathSpan("10s")}. By what amount has the charge
+          in the circuit increased after that time?
+        </p>
+      </>,
+      answer: <>
+        The charge has not increased at all, since the same current that flows <i>into</i> the circuit also flows
+        <i>out</i> of the circuit.
       </>
     },
   ],

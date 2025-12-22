@@ -5,6 +5,7 @@ import {inductionProducts} from "./inductionProducts.tsx";
 import {inductionInequalities} from "./inductionInequalities.tsx";
 import {inductionVarious} from "./inductionVarious.tsx";
 import {inductionBeginners} from "./inductionBeginners.tsx";
+import {inductionBinomialCoefficients} from "./inductionBinomialCoefficients.tsx";
 
 export const inductionSubtree: FolderNode = {
   id: "induction",
@@ -16,6 +17,7 @@ export const inductionSubtree: FolderNode = {
     inductionDivisibility,
     inductionProducts,
     inductionInequalities,
+    inductionBinomialCoefficients,
     inductionVarious
   ],
 };

@@ -6,8 +6,8 @@ import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math
 import {ComplexNumbersCheatSheet} from "../ComplexNumbersCheatSheet.tsx";
 
 export const orderAxioms: ExerciseNode = {
-  id: "axioms",
-  name: "Axioms",
+  id: "orderAxioms",
+  name: "Order Axioms",
   type: "exercise",
   contentItems: [
     {

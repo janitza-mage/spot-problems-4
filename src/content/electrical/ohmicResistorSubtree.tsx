@@ -66,5 +66,34 @@ export const ohmicResistorSubtree: ExerciseNode = {
         </p>
       </>
     },
+    {
+      problem: <>
+        <p>
+          A {mathSpan("5#Omega")} resistor and a {mathSpan("10#Omega")} resistor are connected in series. What is the
+          total resistance?
+        </p>
+      </>,
+      answer: <>
+        <p>
+          In series, the resistances add up:
+        </p>
+        {mathDiv("R = R_1 + R_2 = 5#Omega + 10#Omega = 15#Omega")}
+      </>
+    },
+    {
+      problem: <>
+        <p>
+          A {mathSpan("5#Omega")} resistor and a {mathSpan("10#Omega")} resistor are connected in parallel. What is the
+          total resistance?
+        </p>
+      </>,
+      answer: <>
+        <p>
+          In parallel, the inverse of the resistances adds up:
+        </p>
+        {mathDiv("#frac{1}{R} = #frac{1}{R_1} + #frac{1}{R_2} = #frac{1}{5#Omega} + #frac{1}{10#Omega} = #frac{3}{10#Omega}")}
+        {mathDiv("R = 3.33#Omega")}
+      </>
+    },
   ],
 };

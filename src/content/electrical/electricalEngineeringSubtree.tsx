@@ -12,4 +12,6 @@ export const electricalEngineeringSubtree: FolderNode = {
   ],
 };
 
+// Maschenregel, Knotenregel
+
 // electric field? magnetic field?

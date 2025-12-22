@@ -95,5 +95,37 @@ export const ohmicResistorSubtree: ExerciseNode = {
         {mathDiv("R = 3.33#Omega")}
       </>
     },
+    {
+      problem: <>
+        <p>
+          Which statement is correct?
+        </p>
+        <ul>
+          <li>When connecting nonzero resistances in series, the total resistance is always less than the smallest resistance.</li>
+          <li>When connecting nonzero resistances in series, the total resistance is always greater than the greatest resistance.</li>
+        </ul>
+      </>,
+      answer: <>
+        <p>
+          In series, the resistances add up, so the total resistance is always greater than the greatest resistance.
+        </p>
+      </>
+    },
+    {
+      problem: <>
+        <p>
+          Which statement is correct?
+        </p>
+        <ul>
+          <li>When connecting nonzero resistances in parallel, the total resistance is always less than the smallest resistance.</li>
+          <li>When connecting nonzero resistances in parallel, the total resistance is always greater than the greatest resistance.</li>
+        </ul>
+      </>,
+      answer: <>
+        <p>
+          In parallel, the inverse of the resistances adds up, so the total resistance is always less than the smallest resistance.
+        </p>
+      </>
+    },
   ],
 };

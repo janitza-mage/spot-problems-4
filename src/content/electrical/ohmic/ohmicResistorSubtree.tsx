@@ -320,5 +320,36 @@ export const ohmicResistorSubtree: ExerciseNode = {
         </p>
       </>
     },
+    {
+      problem: <>
+        <p>
+          Given a voltage source of {mathSpan("5V")}, a voltage of {mathSpan("3V")} relative to ground is generated
+          by a voltage divider using a {mathSpan("R_1 = 20#Omega")} and a {mathSpan("R_2 = 30#Omega")} resistor. This
+          is relatively wasteful: Determine the electrical power that gets wasted (converted to heat) when no
+          load is connected.
+        </p>
+        <p>
+          Next, a {mathSpan("R_{load} = 10k#Omega")} load is connected to the {mathSpan("3V")} voltage. Determine
+          how much the voltage drops from those {mathSpan("3V")}.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          The resistors add up to {mathSpan("50#Omega")}, so the no-load power consumption is
+        </p>
+        {mathDiv("P = U #cdot I = #frac{U^2}{R_1 + R_2} = #frac{(3V)^2}{50#Omega} = 180mW")}
+        <p>
+          With the load, the total voltage is split by the {mathSpan("20#Omega")} resistor and the combined resistance
+          of the load and the {mathSpan("30#Omega")} resistor:
+        </p>
+        {mathDiv("R_{2+load} = #frac{1}{#frac{1}{30#Omega} + #frac{1}{10k#Omega}}")}
+        {mathDiv("= #frac{300k#Omega^2}{10030#Omega} = 29.91#Omega")}
+        <p>
+          This is close to the original {mathSpan("30#Omega")} resistor, so the voltage drop from {mathSpan("3V")} is
+          expected to be small:
+        </p>
+        {mathDiv("V = 5V #cdot #frac{29.91#Omega}{29.91#Omega + 20#Omega} = 5V #cdot #frac{29.91}{49.91} = 2.9964V")}
+      </>
+    },
   ],
 };

@@ -299,5 +299,26 @@ export const ohmicResistorSubtree: ExerciseNode = {
         {mathDiv("R = 0.01#Omega + 0.14177#Omega = 0,15177#Omega")}
       </>
     },
+    {
+      problem: <>
+        <p>
+          Given a voltage source of {mathSpan("5V")}, describe how to use a voltage divider (using passive resistors)
+          to obtain a voltage of {mathSpan("3.3V")} against ground. Assume that only a negligible current is
+          drawn from that {mathSpan("3.3V")}.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          A voltage divider works by connecting two resistors in series from the source to ground, which split
+          the total voltage in the same ratio as their resistances. So we need to resistors in a ratio
+          of {mathSpan("#frac{3.3V}{5V-3.3V} = #frac{3.3V}{1.7V}")}, and connect the larger resistor to ground, and
+          the smaller one to the source. Since negligible current is drawn from the {mathSpan("3.3V")} output,
+          we can use high resistances to minimize the current through both resistors, which is otherwise wasted.
+          An example would be a {mathSpan("33k#Omega")} resistor and a {mathSpan("17k#Omega")} resistor. As long
+          as the ratio is correct (or within tolerance, which is typically specified in a real-world application),
+          a typical real-world consideration is which resistor components are readily available to be used.
+        </p>
+      </>
+    },
   ],
 };

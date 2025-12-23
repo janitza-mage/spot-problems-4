@@ -26,14 +26,18 @@ export const sourcesWithInternalResistance: ExerciseNode = {
         <p>
           A given voltage source is modeled as an ideal {mathSpan("5V")} source in series with a
           {mathSpan("10#Omega")} resistor. The source is connected to a load of {mathSpan("50#Omega")}. What is
-          the resulting current?
+          the resulting voltage and current at the load?
         </p>
       </>,
       answer: <>
         <p>
           The load and the internal resistance add up to {mathSpan("60#Omega")}. The current is then
-          {mathSpan("#frac{5V}{60#Omega} = 0.0833A")}.
         </p>
+        {mathDiv("I = #frac{5V}{60#Omega} = 0.0833A")}
+        <p>
+          and the voltage at the load is
+        </p>
+        {mathDiv("V_{load} = I #cdot R_{load} = #frac{5V}{60#Omega} #cdot 50#Omega = 4.17V")}
       </>
     },
     {
@@ -99,5 +103,62 @@ export const sourcesWithInternalResistance: ExerciseNode = {
         </p>
       </>
     },
+    {
+      problem: <>
+        <p>
+          A given current source is modeled as an ideal {mathSpan("0.2A")} source in parallel with
+          a {mathSpan("5#Omega")} resistor. What are the internal resistance and the short-circuit current of the source?
+        </p>
+      </>,
+      answer: <>
+        <p>
+          When a current source is modeled as an ideal source in parallel with a resistor, the short-circuit
+          current is equal to the current of the ideal source, in this case {mathSpan("0.2A")}, and the internal
+          resistance is that of the resistor, in this case {mathSpan("5#Omega")}.
+        </p>
+      </>
+    },
+    {
+      problem: <>
+        <p>
+          A given current source is modeled as an ideal {mathSpan("0.3A")} source in parallel with
+          a {mathSpan("10#Omega")} resistor. The source is connected to a load of {mathSpan("50#Omega")}. What is
+          the resulting current and voltage at the load?
+        </p>
+      </>,
+      TODO WRONG
+      answer: <>
+        <p>
+          The total resistance is
+        </p>
+        {mathDiv("R = #frac{1}{#frac{1}{10#Omega} + #frac{1}{50#Omega}} = #frac{500#Omega^2}{60#Omega} = 8.33#Omega")}
+        <p>
+          The voltage at both the internal resistance and the load is therefore
+        </p>
+        {mathDiv("U = 0.3A #cdot 8.33#Omega = 2.5V")}
+        <p>
+          and the current through the load is
+        </p>
+        {mathDiv("I_{load} = #frac{U}{R_{load}} = #frac{2.5V}{50#Omega} = 0.05A")}
+      </>
+    },
+
+
+
+
+
+    {
+      problem: <>
+        <p>
+          A given voltage source is modeled as an ideal {mathSpan("5V")} source in series with a
+          {mathSpan("10#Omega")} resistor. What is the short-circuit current of this source?
+        </p>
+      </>,
+      answer: <>
+        {mathDiv("#frac{5V}{10#Omega} = 0.5A")}
+      </>
+    },
+
+
   ],
 };

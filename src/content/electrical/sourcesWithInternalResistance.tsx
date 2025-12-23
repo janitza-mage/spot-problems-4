@@ -126,7 +126,6 @@ export const sourcesWithInternalResistance: ExerciseNode = {
           the resulting current and voltage at the load?
         </p>
       </>,
-      TODO WRONG
       answer: <>
         <p>
           The total resistance is
@@ -142,23 +141,16 @@ export const sourcesWithInternalResistance: ExerciseNode = {
         {mathDiv("I_{load} = #frac{U}{R_{load}} = #frac{2.5V}{50#Omega} = 0.05A")}
       </>
     },
-
-
-
-
-
     {
       problem: <>
         <p>
-          A given voltage source is modeled as an ideal {mathSpan("5V")} source in series with a
-          {mathSpan("10#Omega")} resistor. What is the short-circuit current of this source?
+          A given current source is modeled as an ideal {mathSpan("3A")} source in parallel with a
+          {mathSpan("10#Omega")} resistor. What is the open-circuit voltage of this source?
         </p>
       </>,
       answer: <>
-        {mathDiv("#frac{5V}{10#Omega} = 0.5A")}
+        {mathDiv("U = 3A #cdot 10#Omega = 30V")}
       </>
     },
-
-
   ],
 };

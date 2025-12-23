@@ -77,7 +77,7 @@ export const ohmicResistorSubtree: ExerciseNode = {
           easily get very high and damage the resistor by heating it.
         </p>
         <p>
-          An alternative way to measrue the resistance is to apply a known current and measure the voltage across
+          An alternative way to measure the resistance is to apply a known current and measure the voltage across
           the resistor.
         </p>
       </>

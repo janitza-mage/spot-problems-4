@@ -152,5 +152,32 @@ export const sourcesWithInternalResistance: ExerciseNode = {
         {mathDiv("U = 3A #cdot 10#Omega = 30V")}
       </>
     },
+    {
+      problem: <>
+        <p>
+          Assume a voltage source with a fixed voltage {mathSpan("U")}, fixed internal resistance {mathSpan("R_I")} and
+          a connected ohmic load {mathSpan("R_L")} of our choice. At which choice of {mathSpan("R_L")} does the
+          amount of power transferred from the source to {mathSpan("R_L")} become maximal?
+        </p>
+      </>,
+      answer: <>
+        <p>
+          The total resistance is {mathSpan("R = R_I+R_L")}, so the current is {mathSpan("I = #frac{U}{R_I+R_L}")} and
+          the amount of power transferred to {mathSpan("R_L")} is
+        </p>
+        {mathDiv("P_L = U_L #cdot I = I^2 #cdot R_L = #frac{U^2R_L}{(R_I+R_L)^2}")}
+        <p>
+          Finding the maximal power depending on {mathSpan("R_L")} means taking the derivative and looking for zeroes:
+        </p>
+        {mathDiv("#frac{dP}{dR_L} = #frac{U^2}{(R_I+R_L)^2} + -2#frac{U^2R_L}{(R_I+R_L)^3}")}
+        {mathDiv("= #frac{U^2(R_I+R_L) -2U^2R_L}{(R_I+R_L)^3} #stackrel!= 0")}
+        {mathDiv("#iff R_I + R_L -2R_L #stackrel!= 0")}
+        {mathDiv("#iff R_I = R_L")}
+        <p>
+          The amount of power transferred to an ohmic load is maximal when the load is equal to the internal resistance
+          if the source.
+        </p>
+      </>
+    },
   ],
 };

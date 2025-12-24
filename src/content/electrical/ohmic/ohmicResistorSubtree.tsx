@@ -3,6 +3,7 @@ import {mathDiv, mathSpan} from "../../../framework/technical-components/Math/Ma
 import bridgeParallelImage from "./bridge-parallel.jpg";
 import largePieceImage from "./large-piece.jpg";
 import infiniteResistorLadderImage from "./infinite-resistor-ladder.jpg";
+import bridgeMeasureImage from "./bridge-measure.jpg";
 
 function a(x: number, y: number) {
   return 1/(1/x + 1/y);
@@ -385,6 +386,56 @@ export const ohmicResistorSubtree: ExerciseNode = {
           This is the downside of using large resistors for the voltage divider: While little power gets wasted, the
           output can only sustain very small loads before its voltage drops.
         </p>
+      </>
+    },
+    {
+      problem: <>
+        <p>
+          A given temperature sensor acts as a temperature-dependent resistor. It is specified to have a resistance
+          of {mathSpan("10#Omega")} at {mathSpan("20^{#circ}C")} which varies over {mathSpan("#pm 1#Omega")} for the
+          allowed temperature range of {mathSpan("#pm 100^{#circ}C")}. The resistance gets measured by applying a
+          current through the resistor and measuring the resulting voltage. The voltage-meter used for this introduces
+          an error of up to 1% of the measured voltage.
+        </p>
+        <p>
+          First, assume that we naively attach a current source to the sensor and measure the voltage. Calculate the
+          error in {mathSpan("^{#circ}C")} introduced by the voltage-meter.
+        </p>
+        <p>
+          Next, we improve the measurement by using a Wheatstone bridge with three fixed {mathSpan("10#Omega")} resistors:
+        </p>
+        <div><img src={"bridgeMeasureImage"} /></div>
+        <p>
+          A voltage source with some defined supply voltage {mathSpan("U")} gets connected to this circuit and the
+          voltage-meter attached between the middle points. The voltage-meter now shows values that are very different
+          from the naive approach -- what is the right way to interpret them? Calculate the error
+          in {mathSpan("^{#circ}C")} introduced by the voltage-meter.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          In the naive approach, {mathSpan("R=#frac{U}{I}")}, so an error in the measured voltage causes the same
+          error, percentage-wise, in the inferred resistance. The resistance is {mathSpan("(10#pm 1)#Omega")}, so
+          the error is {mathSpan("(0.1#pm 0.01)#Omega")}, which translates to {mathSpan("(10#pm 1)^{#circ}C")} (that
+          is, the error is up to {mathSpan("9^{#circ}C")} at the lower end of the scale and up
+          to {mathSpan("11^{#circ}C")} at the upper end). 
+        </p>
+        <p>
+          In the bridge approach, the right voltage divider exactly splits the supply voltage {mathSpan("U")} in
+          half, while the divider on the left side ranges from 
+        </p>
+        {mathDiv("#frac{9#Omega}{10#Omega + 9#Omega}U = #frac{9}{19}U = 0.474U")}
+        <p>
+          to
+        </p>
+        {mathDiv("#frac{11#Omega}{10#Omega + 11#Omega}U = #frac{11}{21}U = 0.524U")}
+        <p>
+          Instead of voltages around the supply voltage, the volt-meter now measures voltages in the range
+        </p>
+        {mathDiv("(0.474U .. 0.524U) - 0.5U = (-0.26 .. 0.024)U")}
+        
+        
+        TODO das funzt doch gar nicht, der Fehler ist doch genauso groß!?
       </>
     },
   ],

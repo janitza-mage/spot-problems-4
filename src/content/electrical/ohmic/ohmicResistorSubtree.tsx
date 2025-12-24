@@ -174,7 +174,7 @@ export const ohmicResistorSubtree: ExerciseNode = {
           A voltage source of {mathSpan("6V")} gets attached to two sub-circuits. Each one a series of two
           resistors, like this:
         </p>
-        <div><img src={bridgeParallelImage} /></div>
+        <div><img src={bridgeParallelImage} style={{width: "100%"}} /></div>
         <p>
           with the values
         </p>
@@ -204,7 +204,7 @@ export const ohmicResistorSubtree: ExerciseNode = {
           A voltage source of {mathSpan("10V")} gets attached to two sub-circuits. Each one a series of two
           resistors, like this:
         </p>
-        <div><img src={bridgeParallelImage} /></div>
+        <div><img src={bridgeParallelImage} style={{width: "100%"}} /></div>
         <p>
           with the values
         </p>
@@ -404,7 +404,7 @@ export const ohmicResistorSubtree: ExerciseNode = {
         <p>
           Next, we improve the measurement by using a Wheatstone bridge with three fixed {mathSpan("10#Omega")} resistors:
         </p>
-        <div><img src={"bridgeMeasureImage"} /></div>
+        <div><img src={bridgeMeasureImage} style={{width: "100%"}} /></div>
         <p>
           A voltage source with some defined supply voltage {mathSpan("U")} gets connected to this circuit and the
           voltage-meter attached between the middle points. The voltage-meter now shows values that are very different
@@ -433,9 +433,14 @@ export const ohmicResistorSubtree: ExerciseNode = {
           Instead of voltages around the supply voltage, the volt-meter now measures voltages in the range
         </p>
         {mathDiv("(0.474U .. 0.524U) - 0.5U = (-0.26 .. 0.024)U")}
-        
-        
-        TODO das funzt doch gar nicht, der Fehler ist doch genauso groß!?
+        <p>
+          with the measured voltage being roughly proportional to the <i>difference</i> between the sensor's actual
+          resistance and {mathSpan("10#Omega")}. This means that the error introduced by the volt-meter is now
+          also proportional to that difference in resistance, and thus difference in temperature
+          from {mathSpan("20^{#circ}C")}. The error in {mathSpan("^{#circ}C")} is therefore up to 1%
+          of {mathSpan("100^{#circ}C")}, or {mathSpan("1^{#circ}C")}, at either end of the scale, and close to zero
+          when the temperature is close to {mathSpan("20^{#circ}C")}.
+        </p>
       </>
     },
   ],

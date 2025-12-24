@@ -2,6 +2,7 @@ import type {FolderNode} from "../../framework/content.tsx";
 import {ohmicResistorSubtree} from "./ohmic/ohmicResistorSubtree.tsx";
 import {basicUnits} from "./basicUnits.tsx";
 import {sourcesWithInternalResistance} from "./sourcesWithInternalResistance.tsx";
+import {kirchhoffsLawsSubtree} from "./kirchhoffsLawsSubtree.tsx";
 
 export const electricalEngineeringSubtree: FolderNode = {
   id: "electricalEngineering",
@@ -11,6 +12,7 @@ export const electricalEngineeringSubtree: FolderNode = {
     basicUnits,
     ohmicResistorSubtree,
     sourcesWithInternalResistance,
+    kirchhoffsLawsSubtree,
   ],
 };
 

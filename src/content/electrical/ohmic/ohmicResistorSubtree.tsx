@@ -351,5 +351,41 @@ export const ohmicResistorSubtree: ExerciseNode = {
         {mathDiv("V = 5V #cdot #frac{29.91#Omega}{29.91#Omega + 20#Omega} = 5V #cdot #frac{29.91}{49.91} = 2.9964V")}
       </>
     },
+    {
+      problem: <>
+        <p>
+          Given a voltage source of {mathSpan("5V")}, a voltage of {mathSpan("3V")} relative to ground is generated
+          by a voltage divider using a {mathSpan("R_1 = 400k#Omega")} and a {mathSpan("R_2 = 600k#Omega")} resistor.
+          The large resistors prevent too much power from being wasted (converted to heat) on this path from the
+          voltage source to ground. Determine that power.
+        </p>
+        <p>
+          Next, a {mathSpan("R_{load} = 10k#Omega")} load is connected to the {mathSpan("3V")} voltage. Determine
+          how much the voltage drops from those {mathSpan("3V")}.
+        </p>
+      </>,
+      answer: <>
+        <p>
+          The resistors add up to {mathSpan("1M#Omega")}, so the no-load power consumption is
+        </p>
+        {mathDiv("P = U #cdot I = #frac{U^2}{R_1 + R_2} = #frac{(3V)^2}{1M#Omega} = 9#mu W")}
+        <p>
+          With the load, the total voltage is split by the {mathSpan("400k#Omega")} resistor and the combined resistance
+          of the load and the {mathSpan("600k#Omega")} resistor:
+        </p>
+        {mathDiv("R_{2+load} = #frac{1}{#frac{1}{600k#Omega} + #frac{1}{10k#Omega}}")}
+        {mathDiv("= #frac{6000M#Omega^2}{610k#Omega} = 9.836k#Omega")}
+        <p>
+          This means that the combined resistance of the "lower" part of the voltage divider and the load is dominated
+          by the load, so we'd expect the voltage divider to stop working properly and the resulting voltage on the
+          load to drop significantly:
+        </p>
+        {mathDiv("V = 5V #cdot #frac{9.836k#Omega}{9.836k#Omega + 600k#Omega} = 5V #cdot #frac{9836}{609836} = 0.081V")}
+        <p>
+          This is the downside of using large resistors for the voltage divider: While little power gets wasted, the
+          output can only sustain very small loads before its voltage drops.
+        </p>
+      </>
+    },
   ],
 };

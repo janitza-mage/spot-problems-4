@@ -1,8 +1,8 @@
 import type {ExerciseNode} from "../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../framework/technical-components/Math/Math.tsx";
 
-export const kirchhoffsLawsSubtree: ExerciseNode = {
-  id: "kirchhoffsLawsSubtree",
+export const kirchhoffsLawsExercise: ExerciseNode = {
+  id: "kirchhoffsLawsExercise",
   name: "Kirchhoff's Laws",
   type: "exercise",
   contentItems: [

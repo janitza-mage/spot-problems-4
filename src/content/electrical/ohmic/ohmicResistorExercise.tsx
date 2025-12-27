@@ -18,7 +18,7 @@ for (let i = 0; i < 100; i++) {
   b = s + a(p, b);
 }
 
-export const ohmicResistorSubtree: ExerciseNode = {
+export const ohmicResistorExercise: ExerciseNode = {
   id: "ohmicResistor",
   name: "Ohmic Resistors",
   type: "exercise",

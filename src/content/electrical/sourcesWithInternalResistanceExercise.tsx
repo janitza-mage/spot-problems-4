@@ -1,8 +1,8 @@
 import type {ExerciseNode} from "../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../framework/technical-components/Math/Math.tsx";
 
-export const sourcesWithInternalResistance: ExerciseNode = {
-  id: "sourcesWithInternalResistance",
+export const sourcesWithInternalResistanceExercise: ExerciseNode = {
+  id: "sourcesWithInternalResistanceExercise",
   name: "Sources with internal resistance",
   type: "exercise",
   contentItems: [

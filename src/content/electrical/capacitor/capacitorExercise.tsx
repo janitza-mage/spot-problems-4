@@ -10,6 +10,17 @@ export const capacitorExercise: ExerciseNode = {
     {
       problem: <>
         <p>
+          A capacitor is intended to have a voltage of {mathSpan("U=5V")} when charged with a charge
+          of {mathSpan("0.1mC")}. What is the required capacitance?
+        </p>
+      </>,
+      answer: <>
+        {mathDiv("C = #frac{Q}{U} = #frac{0.1mC}{5V} = 20#mu F")}
+      </>
+    },
+    {
+      problem: <>
+        <p>
           A {mathSpan("150#mu F")} gets charged for {mathSpan("0.3s")} with a constant current of {mathSpan("20mA")}.
           What is the capcitor's voltage and energy after charging?
         </p>
@@ -151,9 +162,24 @@ export const capacitorExercise: ExerciseNode = {
         </p>
       </>
     },
-
-
-
+    {
+      problem: <>
+        <p>
+          A {mathSpan("250#mu F")} capacitor gets charged by a {mathSpan("5V")} voltage source through a resistor.
+          The capacitor is considered fully charged when no measurable current is flowing anymore. The capacitor
+          then gets discharged through another resistor with a resistance of {mathSpan("2k#Omega")}. What is
+          the initial current when starting to discharge the capacitor?
+        </p>
+      </>,
+      answer: <>
+        <p>
+          The initial current does not depend on the capacitance but only on the voltage of the capacitor. Since the
+          capacitor has been charged to {mathSpan("5V")} until the charging current stopped, its voltage
+          is {mathSpan("5V")}, so the initial current is 
+        </p>
+        {mathDiv("I_0 = #frac{U_0}{R} = #frac{5V}{2k#Omega} = 2.5mA")}
+      </>
+    },
     {
       problem: <>
         <p>
@@ -236,7 +262,7 @@ export const capacitorExercise: ExerciseNode = {
 
 
 
-
+TODO
 *** Energie berechnen aus R/C mit herleitung zu 1/2CU^2
       
        */

@@ -1,5 +1,5 @@
 import type {ExerciseNode} from "../../framework/content.tsx";
-import {mathDiv, mathSpan} from "../../framework/technical-components/Math/Math.tsx";
+import {mathDiv} from "../../framework/technical-components/Math/Math.tsx";
 
 export const kirchhoffsLawsExercise: ExerciseNode = {
   id: "kirchhoffsLawsExercise",

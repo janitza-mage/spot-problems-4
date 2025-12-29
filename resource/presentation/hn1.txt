@@ -1,0 +1,16 @@
+A collection of STEM problems with spaced repetition
+
+I built a collection of STEM problems as a web app that presents the problems with spaced repetition. I felt that
+exercises are neglected in uni courses, and even Khan Academy does not seem to give them the love they deserve.
+
+I first wanted to build a fully guided "practical exercise system" but realized that multiple issues are unsolved.
+First, the selection and scheduling of problems is very different based on the reason someone is using such an app.
+Second, automated grading is really hard at college/university level. 
+
+ 
+ 
+ This was originally intended as a complement for Khan Academy's
+"problems" sections, which I felt was lacking in size. I first wanted to exploit all of Javascript's capabilities to
+build problems as interactive as possible, but I realized that 
+
+

@@ -15,7 +15,9 @@ import {isNotNull} from "./util/isNotNull.ts";
 // repeat over and over again, not making progress.
 const wrongItemLimit = 10;
 
-// one day
+// Initial spacing is one day. What these numbers mean (in days):
+// constantly hard problems: 1.0, 1.3, 2.1, 2.8, 3.7, 4.8, 6.2, 8.1
+// constantly easy problems: 1.0, 3.0, 9.0
 const initialSpacing = 24 * 3600;
 const spacingFactors = [1.3, 1.8, 3.0];
 const maximumSpacing = 10 * 24 * 3600;

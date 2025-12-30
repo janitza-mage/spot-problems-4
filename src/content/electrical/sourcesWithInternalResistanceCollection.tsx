@@ -1,12 +1,14 @@
-import type {ExerciseNode} from "../../framework/content.tsx";
+import type {Collection} from "../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../framework/technical-components/Math/Math.tsx";
 
-export const sourcesWithInternalResistanceExercise: ExerciseNode = {
-  id: "sourcesWithInternalResistanceExercise",
+export const sourcesWithInternalResistanceCollection: Collection = {
+  id: "sourcesWithInternalResistance",
   name: "Sources with internal resistance",
-  type: "exercise",
-  contentItems: [
+  type: "collection",
+  exercises: [
     {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       problem: <>
         <p>
           A given voltage source is modeled as an ideal {mathSpan("5V")} source in series with a
@@ -22,6 +24,8 @@ export const sourcesWithInternalResistanceExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       problem: <>
         <p>
           A given voltage source is modeled as an ideal {mathSpan("5V")} source in series with a
@@ -41,6 +45,8 @@ export const sourcesWithInternalResistanceExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       problem: <>
         <p>
           A given voltage source is modeled as an ideal {mathSpan("5V")} source in series with a
@@ -52,6 +58,8 @@ export const sourcesWithInternalResistanceExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       problem: <>
         <p>
           Two voltage sources are simultaneously connected to the same load of {mathSpan("100k#Omega")}. Both sources
@@ -104,6 +112,8 @@ export const sourcesWithInternalResistanceExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       problem: <>
         <p>
           A given current source is modeled as an ideal {mathSpan("0.2A")} source in parallel with
@@ -119,6 +129,8 @@ export const sourcesWithInternalResistanceExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       problem: <>
         <p>
           A given current source is modeled as an ideal {mathSpan("0.3A")} source in parallel with
@@ -142,6 +154,8 @@ export const sourcesWithInternalResistanceExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       problem: <>
         <p>
           A given current source is modeled as an ideal {mathSpan("3A")} source in parallel with a
@@ -153,6 +167,8 @@ export const sourcesWithInternalResistanceExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       problem: <>
         <p>
           Assume a voltage source with a fixed voltage {mathSpan("U")}, fixed internal resistance {mathSpan("R_I")} and

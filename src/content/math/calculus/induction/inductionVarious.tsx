@@ -1,9 +1,11 @@
-import type {ContentItem, ExerciseNode} from "../../../../framework/content.tsx";
+import type {Exercise, Collection} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {isNat0, isNatPlus} from "../../util/math-atoms.tsx";
 
-export const inductionVariousBeginnerItems: ContentItem[] = [
+export const inductionVariousBeginnerItems: Exercise[] = [
   {
+    type: "exercise",
+    label: "Number of subsets",
     problem: <>
       Let {isNat0("n")}. Use induction to prove that every finite set of size {mathSpan("n")} has {mathSpan("2^n")} subsets.
     </>,
@@ -24,6 +26,8 @@ export const inductionVariousBeginnerItems: ContentItem[] = [
     </>,
   },
   {
+    type: "exercise",
+    label: "Number of arrangements",
     problem: <>
       Let {isNat0("n")}. Use induction to prove that the elements of every finite set of size {mathSpan("n")} can
       be arranged as an {mathSpan("n")}-tuple in {mathSpan("n!")} different ways. (note that {mathSpan("0! = 1")}).
@@ -46,12 +50,14 @@ export const inductionVariousBeginnerItems: ContentItem[] = [
     </>,
   },
   {
+    type: "exercise",
+    label: "Pigeonhole Principle",
     problem: <>
       Let {isNatPlus("n")}.
       The <i>Pigeonhole Principle</i> says that if you put {mathSpan("(n+1)")} objects
       into {mathSpan("n")} containers, then at least one container must contain at least two objects.
       Use induction to prove this principle. (Note that there are different ways to express this principle, as
-      well as generalizations. For this exercise, stick to the simple form as described.)
+      well as generalizations. For this problem, stick to the simple form as described.)
     </>,
     answer: <>
       <p>
@@ -71,6 +77,8 @@ export const inductionVariousBeginnerItems: ContentItem[] = [
     </>,
   },
   {
+    type: "exercise",
+    label: "Number of Diagonals",
     problem: <>
       Let {isNatPlus("n")}, {mathSpan("n #geq 3")}. Use induction to show that every convex polygon
       with {mathSpan("n")} vertices has {mathSpan("#frac{n(n-3)}{2}")} diagonals.
@@ -101,12 +109,14 @@ export const inductionVariousBeginnerItems: ContentItem[] = [
   },
 ];
 
-export const inductionVarious: ExerciseNode = {
+export const inductionVarious: Collection = {
   id: "various",
-  name: "Various Exercises",
-  type: "exercise",
-  contentItems: [
+  name: "Various Problems",
+  type: "collection",
+  exercises: [
     {
+      type: "exercise",
+      label: <>{mathSpan("101010..._2")}</>,
       problem: <>
         <p>
           Let {isNatPlus("n")}. Let {isNatPlus("x")} be a number that is obtained by repeating, in binary (base-2)
@@ -150,6 +160,8 @@ export const inductionVarious: ExerciseNode = {
       </>,
     },
     {
+      type: "exercise",
+      label: <>Sum of numbers whose product is {mathSpan("1")}</>,
       problem: <>
         <p>
           Let {isNatPlus("n")}. Let
@@ -211,6 +223,8 @@ export const inductionVarious: ExerciseNode = {
       </>,
     },
     {
+      type: "exercise",
+      label: <>"All horses are the same color."</>,
       problem: <>
         <p>
           This problem shows how wrong usage of induction can lead to seemingly "prove" a false claim. Your task

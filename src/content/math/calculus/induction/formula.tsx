@@ -3,8 +3,8 @@ Utilities to prove formulas using induction, e.g. sums, products, ...
  */
 
 import type {ReactNode} from "react";
-import {mathDivOrCustom} from "../../util/math-util.tsx";
-import type {ContentItem} from "../../../../framework/content.tsx";
+import {mathDivOrCustom, mathSpanOrCustom} from "../../util/math-util.tsx";
+import type {Exercise} from "../../../../framework/content.tsx";
 import {isNat0, isNatPlus} from "../../util/math-atoms.tsx";
 import {mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 
@@ -34,11 +34,13 @@ export function standardFomulaInductionItem(
     nextEquationToProve: string | ReactNode,
     nextEquationProof: (string | ReactNode)[],
     extraOptions?: StandardFomulaInductionItemExtraOptions | null | undefined,
-): ContentItem {
+): Exercise {
   const materializedExtraOptions: StandardFomulaInductionItemExtraOptions = {...defaultExtraOptions, ...extraOptions};
   const equationToProveDiv = mathDivOrCustom(equationToProve);
   const nextEquationToProveDiv = mathDivOrCustom(nextEquationToProve);
   return {
+    type: "exercise",
+    label: mathSpanOrCustom(equationToProve),
     problem: <>
       {problemPrelude}
       <p>Use induction to show that</p>

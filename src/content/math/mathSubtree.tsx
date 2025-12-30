@@ -1,11 +1,11 @@
 import {calculusSubtree} from "./calculus/calculusSubtree.tsx";
-import type {FolderNode} from "../../framework/content.tsx";
+import type {Folder} from "../../framework/content.tsx";
 
-export const mathSubtree: FolderNode = {
+export const mathSubtree: Folder = {
   id: "math",
   name: "Math",
   type: "folder",
-  children: [calculusSubtree],
+  elements: [calculusSubtree],
 };
 
 // TODO SChreibweisen: a^b (b in nat) + rechenregeln, Summe (auch Elemente rein/rausziehen, indexverschiebung, leere summe), Produkt, Fakultät, "q.e.d."

@@ -1,14 +1,24 @@
-import {type ContentNode, type FolderNode} from "./content.tsx";
+import {type ContentNode, type Folder} from "./content.tsx";
 import {contentTree} from "../content/contentTree.tsx";
 
 export function getContentNodeChildById(node: ContentNode, id: string): ContentNode | null {
-    if (node.type === "folder") {
-        let child = (node as FolderNode).children.find(child => child.id === id);
-        if (child) {
-            return child;
-        }
+  switch (node.type) {
+
+    case "folder": {
+      let child = (node as Folder).elements.find(child => child.id === id);
+      return child ?? null;
     }
-    return null;
+    
+    case "collection": {
+      let numericId: number = Number.parseInt(id, 10);
+      return node.exercises[numericId] ?? null;
+    }
+    
+    case "exercise":
+    default:
+      return null;
+
+  }
 }
 
 export function getContentNodeByPath(path: string[]): ContentNode | null {

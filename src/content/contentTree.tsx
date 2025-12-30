@@ -6,7 +6,7 @@ export const contentTree: ContentNode = {
     id: "root",
     name: "Topics",
     type: "folder",
-    children: [
+    elements: [
         mathSubtree,
         electricalEngineeringSubtree,
     ],

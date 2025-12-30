@@ -1,10 +1,12 @@
-import type {ContentItem, ExerciseNode} from "../../../../framework/content.tsx";
+import type {Exercise, Collection} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {isNatPlus, isNatPlusWithoutDefinition} from "../../util/math-atoms.tsx";
 import {observeThat, standardFomulaInductionItem} from "./formula.tsx";
 
-export const inductionSumsBeginnerItems: ContentItem[] = [
+export const inductionSumsBeginnerItems: Exercise[] = [
   {
+    type: "exercise",
+    label: <>Sum of the first {mathSpan("n")} positive integers</>,
     problem: <>
       Use induction to show that the sum of the first {mathSpan("n")} positive integers is equal to
       {mathSpan("#frac{n(n+1)}{2}")} for {isNatPlus("n")}.
@@ -39,6 +41,8 @@ export const inductionSumsBeginnerItems: ContentItem[] = [
     </>,
   },
   {
+    type: "exercise",
+    label: <>Sum of the first {mathSpan("n")} odd positive integers</>,
     problem: <>
       Use induction to show that the sum of the first {mathSpan("n")} <b>odd</b> positive integers is equal
       to {mathSpan("n^2")} for {isNatPlus("n")}.
@@ -96,12 +100,11 @@ export const inductionSumsBeginnerItems: ContentItem[] = [
   ),
 ];
 
-export const inductionSums: ExerciseNode = {
+export const inductionSums: Collection = {
   id: "sums",
   name: "Sums",
-  type: "exercise",
-  contentItems: [
-
+  type: "collection",
+  exercises: [
     standardFomulaInductionItem(
         observeThat("1^2 + 2^2 + 3^2 + ... + n^2 = #sum_{i=1}^ni^2"),
         "#sum_{i=1}^ni^2 = #frac{n(n+1)(2n+1)}6",

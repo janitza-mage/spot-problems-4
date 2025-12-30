@@ -1,12 +1,14 @@
-import type {ExerciseNode} from "../../framework/content.tsx";
+import type {Collection} from "../../framework/content.tsx";
 import {mathDiv} from "../../framework/technical-components/Math/Math.tsx";
 
-export const kirchhoffsLawsExercise: ExerciseNode = {
-  id: "kirchhoffsLawsExercise",
+export const kirchhoffsLawsCollection: Collection = {
+  id: "kirchhoffsLaws",
   name: "Kirchhoff's Laws",
-  type: "exercise",
-  contentItems: [
+  type: "collection",
+  exercises: [
     {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       problem: <>
         <p>
           Quote Kirchhoff's Laws.
@@ -25,6 +27,8 @@ export const kirchhoffsLawsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       problem: <>
         <p>
           Assume two 5V batteries with equal voltage and negligible internal resistance. The positive terminals

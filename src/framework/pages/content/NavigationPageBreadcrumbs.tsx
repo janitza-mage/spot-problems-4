@@ -1,13 +1,13 @@
-import {type ContentNode} from "../../../content.tsx";
-import {Breadcrumbs, type BreadcrumbsElement} from "../../../technical-components/navigation/Breadcrumbs/Breadcrumbs";
-import {buildUrlPathForContentPath, getContentNodeChildById} from "../../../paths.tsx";
-import {contentTree} from "../../../../content/contentTree";
+import {type ContentNode} from "../../content.tsx";
+import {Breadcrumbs, type BreadcrumbsElement} from "../../technical-components/navigation/Breadcrumbs/Breadcrumbs.tsx";
+import {buildUrlPathForContentPath, getContentNodeChildById} from "../../paths.tsx";
+import {contentTree} from "../../../content/contentTree.tsx";
 
-export interface FolderPageBreadcrumbsProps {
+export interface NavigationPageBreadcrumbsProps {
     path: string[];
 }
 
-export function FolderPageBreadcrumbs(props: FolderPageBreadcrumbsProps) {
+export function NavigationPageBreadcrumbs(props: NavigationPageBreadcrumbsProps) {
     const elements = buildElements(props);
     if (!elements) {
         return <div>ERROR</div>;
@@ -15,7 +15,7 @@ export function FolderPageBreadcrumbs(props: FolderPageBreadcrumbsProps) {
     return <Breadcrumbs elements={elements} trailingSeparator={elements.length > 0} />;
 }
 
-function buildElements(props: FolderPageBreadcrumbsProps): BreadcrumbsElement[] | null {
+function buildElements(props: NavigationPageBreadcrumbsProps): BreadcrumbsElement[] | null {
 
     // no breadcrumbs for the root node
     if (props.path.length === 0) {
@@ -45,10 +45,15 @@ function buildElements(props: FolderPageBreadcrumbsProps): BreadcrumbsElement[] 
         currentNode = child;
         accumulatedPath.push(pathSegment);
         result.push({
-            text: currentNode.name,
+            text: getNodeName(currentNode),
             to: buildUrlPathForContentPath(accumulatedPath),
         });
     }
     
     return result;
+}
+
+// since we're on a folder or collection page, this does not have to handle exercises
+function getNodeName(node: ContentNode): string {
+  return (node.type === "folder" || node.type === "collection") ? node.name : "?";
 }

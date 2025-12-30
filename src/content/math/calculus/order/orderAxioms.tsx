@@ -1,16 +1,18 @@
-import type {ExerciseNode} from "../../../../framework/content.tsx";
+import type {Collection} from "../../../../framework/content.tsx";
 import {CheatSheets} from "../../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
 import {FieldAxiomsCheatSheet} from "../field/FieldAxiomsCheatSheet.tsx";
 import {OrderAxiomsCheatSheet} from "./OrderAxiomsCheatSheet.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {ComplexNumbersCheatSheet} from "../ComplexNumbersCheatSheet.tsx";
 
-export const orderAxioms: ExerciseNode = {
+export const orderAxioms: Collection = {
   id: "orderAxioms",
   name: "Order Axioms",
-  type: "exercise",
-  contentItems: [
+  type: "collection",
+  exercises: [
     {
+      type: "exercise",
+      label: "real part of complex numbers as order",
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
         <OrderAxiomsCheatSheet />
@@ -34,6 +36,8 @@ export const orderAxioms: ExerciseNode = {
       </>,
     },
     {
+      type: "exercise",
+      label: "absolute of complex numbers as order",
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
         <OrderAxiomsCheatSheet />
@@ -57,6 +61,8 @@ export const orderAxioms: ExerciseNode = {
       </>,
     },
     {
+      type: "exercise",
+      label: "ordered field is infinite",
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
         <OrderAxiomsCheatSheet />

@@ -3,7 +3,7 @@ import {List, ListItem, ListItemButton, ListItemText} from "@mui/material";
 import {type ReactNode} from "react";
 
 export interface NavigationListElement {
-    label: string;
+    label: ReactNode;
     decoration?: ReactNode | undefined | null;
     onClick: () => void;
 }

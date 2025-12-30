@@ -1,12 +1,14 @@
-import type {ExerciseNode} from "../../framework/content.tsx";
+import type {Collection} from "../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../framework/technical-components/Math/Math.tsx";
 
-export const basicUnitsExercise: ExerciseNode = {
+export const basicUnitsCollection: Collection = {
   id: "basicUnits",
   name: "Basic Units",
-  type: "exercise",
-  contentItems: [
+  type: "collection",
+  exercises: [
     {
+      type: "exercise",
+      label: "Symbols and units: current",
       problem: <>
         <p>
           What is the symbol, unit, and unit symbol for the electric current?
@@ -19,6 +21,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Symbols and units: voltage",
       problem: <>
         <p>
           What is the symbol, unit, and unit symbol for the voltage?
@@ -31,6 +35,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Symbols and units: power",
       problem: <>
         <p>
           What is the symbol, unit, and unit symbol for the (electric) power?
@@ -43,6 +49,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Symbols and units: energy",
       problem: <>
         <p>
           What is the symbol, unit, and unit symbol for the (electric) energy?
@@ -55,6 +63,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Symbols and units: charge",
       problem: <>
         <p>
           What is the symbol, unit, and unit symbol for the electric charge?
@@ -67,6 +77,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Power and energy",
       problem: <>
         <p>
           A power of 100 watts is applied to a circuit for 5 seconds. How much energy is used?
@@ -77,6 +89,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Power, voltage and current",
       problem: <>
         <p>
           A voltage of {mathSpan("10V")} is applied to a circuit, resulting in a current of {mathSpan("5A")}. What
@@ -88,6 +102,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Charging a battery pack (1)",
       problem: <>
         <p>
           A battery pack is specified to require a charging voltage of {mathSpan("5V")}, but can be configured to
@@ -102,6 +118,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Charging a battery pack (2)",
       problem: <>
         <p>
           A large battery pack can be charged via USB at {mathSpan("5V")} and {mathSpan("1A")}. This takes 4 hours
@@ -128,6 +146,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Current and charge (1)",
       problem: <>
         <p>
           A current of {mathSpan("2A")} flows through a circuit for {mathSpan("3s")}. What electric charge flows
@@ -139,6 +159,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Current and charge (2)",
       problem: <>
         <p>
           A current of {mathSpan("5A")} flows through a circuit for {mathSpan("10s")}. By what amount has the charge
@@ -151,6 +173,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Current and charge (3)",
       problem: <>
         <p>
           Alice says, "I'm transmitting a charge of {mathSpan("5C")} over this wire in one second."
@@ -174,6 +198,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Current and charge (4)",
       problem: <>
         <p>
           Alice says, "I'm transmitting a current of {mathSpan("5A")} over this wire for one second."
@@ -199,6 +225,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Power and energy (2)",
       problem: <>
         <p>
           Alice says, "I'm transmitting {mathSpan("300J")} of electric energy over this wire in one second."
@@ -222,6 +250,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Power and energy (3)",
       problem: <>
         <p>
           Alice says, "I'm transmitting {mathSpan("300W")} of power over this wire for one second."
@@ -247,6 +277,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Power, energy, voltage and current",
       problem: <>
         <p>
           A stationary battery is specified to be charged at {mathSpan("20V")}, with at most {mathSpan("10A")}, for a
@@ -270,6 +302,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Drift velocity",
       problem: <>
         <p>
           A copper wire with a diameter of {mathSpan("5mm")} and length of {mathSpan("100m")} is used to transmit a
@@ -312,6 +346,8 @@ export const basicUnitsExercise: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Voltage, charge and energy",
       problem: <>
         <p>
           Given a voltage source of {mathSpan("5V")}, determine the energy transmitted by a charge of {mathSpan("2C")}.

@@ -1,0 +1,17 @@
+Struktur:
+/fach/bereich/unit
+Je unit gibt es (man muss die unit öffnen)
+  /a/ links unter "learn"
+  /e/ rights unter "practice"
+  /quiz/ als unterbrechung im Layout
+  /test/ am ende
+  ohne öffnen bekommt man die /a/ nicht zu sehen
+
+
+math (siehe auch screenshots-ordner):
+-> pre-algebra
+    -> unit 3
+
+
+
+

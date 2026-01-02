@@ -8,7 +8,7 @@ export const sourcesWithInternalResistanceCollection: Collection = {
   exercises: [
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Voltage source: No-load Voltage",
       problem: <>
         <p>
           A given voltage source is modeled as an ideal {mathSpan("5V")} source in series with a
@@ -25,7 +25,7 @@ export const sourcesWithInternalResistanceCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Voltage source: Internal Resistance and Load",
       problem: <>
         <p>
           A given voltage source is modeled as an ideal {mathSpan("5V")} source in series with a
@@ -46,7 +46,7 @@ export const sourcesWithInternalResistanceCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Voltage source: Short Circuit Current",
       problem: <>
         <p>
           A given voltage source is modeled as an ideal {mathSpan("5V")} source in series with a
@@ -59,7 +59,7 @@ export const sourcesWithInternalResistanceCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Two voltage sources at the same load",
       problem: <>
         <p>
           Two voltage sources are simultaneously connected to the same load of {mathSpan("100k#Omega")}. Both sources
@@ -113,7 +113,7 @@ export const sourcesWithInternalResistanceCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Current source: short-circuit current",
       problem: <>
         <p>
           A given current source is modeled as an ideal {mathSpan("0.2A")} source in parallel with
@@ -130,7 +130,7 @@ export const sourcesWithInternalResistanceCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Current source with load",
       problem: <>
         <p>
           A given current source is modeled as an ideal {mathSpan("0.3A")} source in parallel with
@@ -155,7 +155,7 @@ export const sourcesWithInternalResistanceCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Current source: open-circuit voltage",
       problem: <>
         <p>
           A given current source is modeled as an ideal {mathSpan("3A")} source in parallel with a
@@ -168,7 +168,7 @@ export const sourcesWithInternalResistanceCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Voltage source: Maximal power transfer",
       problem: <>
         <p>
           Assume a voltage source with a fixed voltage {mathSpan("U")}, fixed internal resistance {mathSpan("R_I")} and

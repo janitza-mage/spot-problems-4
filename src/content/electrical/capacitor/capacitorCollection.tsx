@@ -9,7 +9,7 @@ export const capacitorCollection: Collection = {
   exercises: [
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Capacitance, charge and voltage (1)",
       problem: <>
         <p>
           A capacitor is intended to have a voltage of {mathSpan("U=5V")} when charged with a charge
@@ -22,7 +22,7 @@ export const capacitorCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Capacitance, charge and voltage (2)",
       problem: <>
         <p>
           A {mathSpan("150#mu F")} gets charged for {mathSpan("0.3s")} with a constant current of {mathSpan("20mA")}.
@@ -36,7 +36,7 @@ export const capacitorCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Capacitance, charge and voltage (3)",
       problem: <>
         <p>
           A plate capacitor gets charged until a charge of {mathSpan("0.01C")} is on one plate of the capacitor.
@@ -51,7 +51,7 @@ export const capacitorCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Definition of a capacitor's charge (1)",
       problem: <>
         <p>
           A capacitor of {mathSpan("500#mu F")} is used in the following way: First, a current of {mathSpan("20mA")} flows
@@ -72,7 +72,7 @@ export const capacitorCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Definition of a capacitor's charge (2)",
       problem: <>
         <p>
           A capacitor gets charged with a current of {mathSpan("10mA")} for {mathSpan("0.1s")}. Alice argues that the
@@ -99,7 +99,7 @@ export const capacitorCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Energy stored in a capacitor",
       problem: <>
         <p>
           A {mathSpan("500#mu F")} gets charged for {mathSpan("0.2s")} with a constant current of {mathSpan("10mA")}.
@@ -131,7 +131,7 @@ export const capacitorCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Capacitor bank",
       problem: <>
         <p>
           A component catalog lists a one capacitor as {mathSpan("100#mu F")} with a maximum voltage
@@ -163,7 +163,7 @@ export const capacitorCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Charging a capacitor",
       problem: <>
         <p>
           A capacitor gets charged by connecting it to a voltage source. An additional component should be used for
@@ -180,7 +180,7 @@ export const capacitorCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Initial discharging current",
       problem: <>
         <p>
           A {mathSpan("250#mu F")} capacitor gets charged by a {mathSpan("5V")} voltage source through a resistor.
@@ -200,7 +200,7 @@ export const capacitorCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Charge as function over time",
       problem: <>
         <p>
           A {mathSpan("200#mu F")} capacitor and {mathSpan("1k#Omega")} resistor in series get connected to

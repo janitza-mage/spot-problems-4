@@ -8,7 +8,7 @@ export const kirchhoffsLawsCollection: Collection = {
   exercises: [
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Quote Kirchhoff's Laws",
       problem: <>
         <p>
           Quote Kirchhoff's Laws.
@@ -28,7 +28,7 @@ export const kirchhoffsLawsCollection: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      label: "Understanding the voltage law",
       problem: <>
         <p>
           Assume two 5V batteries with equal voltage and negligible internal resistance. The positive terminals

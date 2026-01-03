@@ -1,14 +1,81 @@
-// TODO SChreibweisen: a^b (b in nat) + rechenregeln, Summe (auch Elemente rein/rausziehen, indexverschiebung, leere summe), Produkt, Fakultät, "q.e.d."
-// TODO Grundlagen: Mengen, Beweisverfahren, wchtige Mengen zb nat, Funktionen, Relationen, Kreuzprodukt/Tupel
-// Quantoren, und/oder/implikation/äquivalenz
 
-/*
+natural numbers
+    definition
+        which of the following are natural numbers in n^+? which in n_0^+?
+        0, 1, 2, 3, 100^100, -1, -2, -100^100, 0.5, -0.5
+    exponentiation
+        what is 1^1, 2^1, 3^1, 4^1?
+        what is 1^2, 2^2, 3^2, 4^2?
+        what is 1^3, 2^3, 3^3, 4^3?
+        what is 10^1, 10^2, 10^3, 10^4?
+        what is 10^1, 10^2, 10^3, 10^4?
+        what is 0^1, 0^2, 0^3, 0^4?
+        what is 0^0? -> undefined because of mismatching limits
+        is it possible to write (a^n + b^n) in another way? which?
+        is it possible to write (a^n - b^n) in another way? which?
+        is it possible to write (a^n * b^n) in another way? which?
+        is it possible to write (a^n / b^n) in another way? which?
+        is it possible to write (a^p + a^q) in another way? which?
+        is it possible to write (a^p - a^q) in another way? which?
+        is it possible to write (a^p * a^q) in another way? which?
+        is it possible to write (a^p / a^q) in another way? which?
+        is it possible to write ((a^p)^q) in another way? which?
+        is it possible to write (a^(p^q)) in another way? which?
+    factorial
+        what is 1!, 2!, 3!, 4!
+        what is 0!? give an explanation.
+            (a) empty product, (b) 3! = 4!/4, 2! = 3!/3, 1!=2!/2, 0!=1!/1
+        is it possible to write ((a!) + (a+1)) in another way? which?
+        is it possible to write ((a!) - (a+1)) in another way? which?
+        is it possible to write ((a!) * (a+1)) in another way? which?
+        is it possible to write ((a!) / (a+1)) in another way? which?
+        is it possible to write ((a!) + a) in another way? which?
+        is it possible to write ((a!) - a) in another way? which?
+        is it possible to write ((a!) * a) in another way? which?
+        is it possible to write ((a!) / a) in another way? which?
+        is it possible to write (a! + b!) in another way? which?
+        is it possible to write (a! - b!) in another way? which?
+        is it possible to write (a! * b!) in another way? which?
+        is it possible to write (a! / b!) in another way? which?
+        
+exponentiation and real numbers
+    what is 10^-1, 10^-2, 10^-3?
+    what is 4.13*10^5?
+    what is 4.13*10^-5?
 
-5. Let the set A consist of the youths of a given group, and the
-set B o f the girls of the same group. Find A\JB, AO B, A\B . Also,
-consider the case when A or B is an empty set.
-"find" -> "what is the meaning of"
+sum symbol
+    sum_i=1^n{whatever}
+    sum_i=0^n{whatever}
+    sum_i=p^q{whatever}
+    extend and reduce at the bottom
+    extend and reduce at the top
+    empty sum
+    index shift
+    index mapping
 
+product symbol
+    (same as for sum)
 
+proofs
+    essentials of a proof -- cannot be wrong
+    "positive" proofs (e.g. over finite sets)
+    negative proofs
+    and/or, symbols
+    implication, reverse implication, equivalence
+    quantifiers
+    meaning of "q.e.d."
 
- */
+sets
+    definition
+    finite sets
+    comprehension
+    tuples, cartesian product
+    ...
+    problem: Let the set A consist of the youths of a given group, and the set B o f the girls of the same group. Find A\JB, AO B, A\B . Also,
+    consider the case when A or B is an empty set. "find" -> "what is the meaning of"
+
+relations
+    ...    
+
+functions / mappings
+    ...

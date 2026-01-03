@@ -1,0 +1,54 @@
+
+(vielleicht später)
+
+basic logic components (not, and, or, nand, nor, N-(n)(and/or))
+    truth tables
+    implement using each other
+    more complex combinations -> truth tables
+    more complex combinations -> reduce to simple
+    mux
+
+boolean logic formulas
+    describe basic elements
+    vs truth tables
+    rules (de morgan, distributivity)
+
+logic delays
+    single-gate delay
+    parallel delay
+    serial delay
+    glitches
+    shortest path
+    longest path
+    inverter ring
+    biased inverter ring, duty cycle
+
+storage components
+    D-latch
+    clock signals
+    disadv. pass through multiple stages
+    D-flipflop
+    SR latch
+    SR latches and glitches
+
+CMOS
+    n-type and p-type MOSFETs
+    switching 0s and 1s with 0s and 1s
+    inverter / not gate
+    NAND / NOR gates
+    AND / OR gates; "built-in inversion"
+    complex gates
+    mux
+    latch
+    flipflop
+    transmission gate
+    buffer
+
+...
+
+bidirectional buses
+    ...
+
+clock domains
+    meta-stability
+    synchronizers

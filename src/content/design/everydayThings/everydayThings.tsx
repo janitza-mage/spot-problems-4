@@ -397,4 +397,28 @@ found. You will probably start by looking at the lower and middle part of walls.
 
 ---
 
+The structure of memory
+
+The book presents three categories of memory:
+- memory for arbitrary things
+- memory for meaningful relationships
+- memory through explanation
+
+Imagine that a group of people are tasked to remember numbers, one number per person. Given the following numbers,
+which categories do they belong to?
+
+relationship:
+- ((javascript: current year)
+- 911 (Notruf)
+explanation:
+- 123456789
+- 100010001000
+arbitrary:
+- 6190723
+- 94100270
+
+---
+
+
+
  */

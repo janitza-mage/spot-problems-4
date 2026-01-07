@@ -347,6 +347,55 @@ been pressed.
 - Indirectly affected: Forming the intention. When entering the elevator, you cannot know whether the button for your
 destination has been pressed by somebody else already. You have to press it again to be sure.
 
+Note that since the seven stages are an approximate model, there is room for interpretation when discussing which
+stages exactly are affected. The key point is to have a tool to think about, and discuss, the effect of the missing
+indicator lights on the usability of the system.
+
+---
+
+The chapter about knowledge in your head and knowledge in the world lists four tools that will help you pick the
+correct pen for red:
+* Information is in the world
+* Great precision is not required
+* Natural constraints are present
+* Cultural constraints are present
+
+You are tasked with painting colors into a coloring picture. There is a traffic light in the picture that you
+are told is showing "red", so you fill the yellow and green lights with black color, then reach for red.
+
+Give examples how each of them can guide you towards the correct pen.
+
+Answer:
+- Information is in the world: The body of the pens are in the same color as they draw. The color can also be
+observed by looking at the tip. In addition, the names of the colors may be written on the pens, especially
+if the set of pens contains many different shades of red.
+- Great precision is not required: If the traffic light has a wrong tone of red, it will still be recognizable,
+and the somewhat-off color may be perceived as an artistic choice.
+- Natural constraints are present: If there is only one shade of red in the set, then you have to use it.
+- Cultural constraints are present: You know from your driving experience which shade of red is used for traffic lights.
+
+---
+
+The chapter about knowledge in your head and knowledge in the world lists four tools that will help you pick the
+correct pen for red:
+* Information is in the world
+* Great precision is not required
+* Natural constraints are present
+* Cultural constraints are present
+
+Imagine you are visiting another country that uses a different standard for electric outlets. You want to charge
+your phone, so you use an adapter you took with you and are now looking for an outlet. How do the above four tools
+help you?
+
+* Information is in the world: You can look up an image of the outlets for that country on the internet.
+* Great precision is not required: If you try to plug the charger into something that is not an outlet, nothing bad
+will happen. This is obviously not true when sticking something else into an actual outlet, but that's a
+different case.
+* Natural constraints are present: The outlet must match the adapter, so by looking at the adapter, you can guess
+what the outlet must look like.
+* Cultural constraints are present: With some exceptions, there are cultural expectations about where outlets can be
+found. You will probably start by looking at the lower and middle part of walls.
+
 ---
 
  */

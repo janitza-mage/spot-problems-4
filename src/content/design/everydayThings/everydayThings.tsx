@@ -353,8 +353,7 @@ indicator lights on the usability of the system.
 
 ---
 
-The chapter about knowledge in your head and knowledge in the world lists four tools that will help you pick the
-correct pen for red:
+The chapter about knowledge in your head and knowledge in the world lists four tools:
 * Information is in the world
 * Great precision is not required
 * Natural constraints are present
@@ -363,21 +362,21 @@ correct pen for red:
 You are tasked with painting colors into a coloring picture. There is a traffic light in the picture that you
 are told is showing "red", so you fill the yellow and green lights with black color, then reach for red.
 
-Give examples how each of them can guide you towards the correct pen.
+Give examples how each of them can guide you towards the correct pen, except for natural constraints -- there are
+no contraints in this example that prevent you from using the wrong color.
 
 Answer:
 - Information is in the world: The body of the pens are in the same color as they draw. The color can also be
 observed by looking at the tip. In addition, the names of the colors may be written on the pens, especially
 if the set of pens contains many different shades of red.
-- Great precision is not required: If the traffic light has a wrong tone of red, it will still be recognizable,
-and the somewhat-off color may be perceived as an artistic choice.
-- Natural constraints are present: If there is only one shade of red in the set, then you have to use it.
+- Great precision is not required: You only need to decide among the pens available. If there is only one shade of red
+in the set, then you have to use it. Furthermore, if the traffic light has a wrong tone of red, it will still be
+recognizable, and the somewhat-off color may be perceived as an artistic choice.
 - Cultural constraints are present: You know from your driving experience which shade of red is used for traffic lights.
 
 ---
 
-The chapter about knowledge in your head and knowledge in the world lists four tools that will help you pick the
-correct pen for red:
+The chapter about knowledge in your head and knowledge in the world lists four tools:
 * Information is in the world
 * Great precision is not required
 * Natural constraints are present

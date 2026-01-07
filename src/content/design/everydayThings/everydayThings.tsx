@@ -273,4 +273,59 @@ Answer:
 - Use errors as a source of information to improve the design.
 - Consider that users may try to hide errors to avoid blame, punishment, or embarrassment.
 
+----
+
+Alice's car has a system that combines, among other functions, the car's radio / music player and its navigation system.
+The music player and the navigation system have independent volume settings but only a single knob to change them:
+While the navigation system's voice is giving instructions, turning the knob changes the volume of the navigation
+system. The remaining time, it controls the music volume.
+
+Alice complains to Bob: My car's volume control is totally broken. Yesterday, I wanted the navigation system to guide
+me to the nearest gas station, but the voice was so quiet I couldn't understand it. I turned up the volume until my
+ears almost hurt from the loud music, but the voice was still too quiet to understand. Am I supposed to get
+hearing damage just to understand the directions?
+
+Explain the reason for Alice's frustration using the terminology of the book.
+
+Answer: Alice has the wrong mental model of the system. In her model, there is only a single volume setting that is
+shared by both the music player and the navigation system. Using this wrong model, she is trying to understand and
+predict the behavior of the system, which is doomed to fail.
+
+----
+
+Gulf of Execution:
+
+Consider a room door. There are only four actions to do: open, close, lock, and unlock. (We'll ignore maintenance
+for now). Explore the gulf of execution: What obstacles are there?
+
+- open/close: It may be unclear whether to push or pull.
+- open/close: The door might be locked, or "locked while open".
+- open/close: The door might be blocked by some object (kids' toys are notorious for this)
+- open: There might be a person on the other side. You might even hit them with the door.
+- lock/unlock: You might realize they don't have the key with them.
+- lock/unlock: You could confuse the key with another key.
+- lock/unlock: You could be unsure in which direction to turn the key. There might be conventions for this, but doors might violate them.
+- lock/unlock is harder when you came from outside, where it is cold, and your fingers are numb.
+- all four are harder when it is totally dark
+- all four are harder when you are carrying things
+
+----
+
+Gulf of Evaluation:
+
+Consider a room door. There are two independent variables of state, each with two states: Open or closed; locked or
+unlocked. (We'll ignore maintenance for now). Explore the gulf of evaluation: What obstacles are there?
+
+- open/closed: from a distance, it is often not possible to see if the door is closed or almost-closed
+- locked/unlocked: It is impossible to see whether the door is locked or unlocked. You have to either try to 
+lock/unlock or to open it. If the door is unlocked, opening it just for this purpose might disturb a person in the room.
+If the door is blocked by some object, it might appear locked when it is actually unlocked.
+- The state of the door must be felt if it is dark on both sides.
+
+---
+
+
+
+
+
  */

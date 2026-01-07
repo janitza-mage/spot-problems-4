@@ -324,8 +324,29 @@ If the door is blocked by some object, it might appear locked when it is actuall
 
 ---
 
+What are the design questions to ask for the seven stages of action?
+- How easily can one determine the function of the device?
+- How easily can one tell what actions are possible?
+- How easily can one determine the mapping from intention to physical movement?
+- How easily can one perform the action?
+- How easily can one tell what state the system is in?
+- How easily can one determine the mapping from system state to interpretation?
+- How easily can one tell if the system is in the desired state?
 
+---
 
+Inside an elevator for a 5-storey building, there are 7 buttons (ground floor, basement, and 5 storeys above).
+Pressing a button instructs the elevator to move to that floor; if multiple buttons get pressed in succession,
+the elevator will stop at each of them in order. However, for that particular elevator, there are no indicator
+lights that show which buttons have been pressed. Which of the seven stages of action are affected by the
+missing lights?
 
+Answer:
+- Directly and fully affected: Perceiving the state of the world. There is simply no way to know which buttons have
+been pressed.
+- Indirectly affected: Forming the intention. When entering the elevator, you cannot know whether the button for your
+destination has been pressed by somebody else already. You have to press it again to be sure.
+
+---
 
  */

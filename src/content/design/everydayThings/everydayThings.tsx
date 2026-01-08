@@ -578,7 +578,7 @@ is closed properly.
 
 Associate the following errors to the different mechanisms for errors.
 
-Mechanisms:
+(useMemo + shuffle)
 - capture errors
   - You play a new piece of music that starts similar to a piece you know, then unintentionally continue playing the well-known one.
   - You head towards an appointment near the grocery store that you frequent, but then enter the store instead
@@ -606,11 +606,26 @@ Mechanisms:
   - You are at a shooting range. You fire a single shot, then remove the magazine to place the pistol aside and
     inspect how well you aimed. You have been taught that a round may still be in the chamber, but you forget to remove
     it.
-    
+  - On the computer, you try to type your password. You are sure that you enter it correctly, but it fails three
+    times, permanently locking you out of your account. You then realize that the "caps lock" key was active.
 
+---
 
-Errors (useMemo + shuffle -> useShuffle? nee nicht nötig):
-- 
+Give some examples for how rules can help to avoid mistakes (that is, conscious errors -- not slips). Point out
+what is crucial for the rules to work.
+
+Answer:
+- Rules can make certain actions inappropriate in general. For example, in home wiring, bypassing a breaker is
+prohibited in many countries. An electrician cannot misjudge the conditions for when to bypass the breaker because
+there are no conditions. The crucial part is that no judgement is required to know whether the rule applies.
+- Rules can demand that operations on a system follow certain pre-defined scripts or checklists. Again, the
+crucial part is that no judgement is required to know whether the rule applies. In particular, a clear procedure to
+handle unforeseen events is needed, to prevent an error (which should be corrected) to be mistaken for a novel
+situation (that warrants deviating from the script).
+- Rules can demand that operations on a system are always reviewed by a second person. A crucial part here is that
+the second person can actually make an independent judgement, and not be pressured by the first person to accept
+an error as correct.
+
 
 ------------------------------------------------------------
 ------------------------------------------------------------

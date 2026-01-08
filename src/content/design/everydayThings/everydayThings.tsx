@@ -617,7 +617,9 @@ what is crucial for the rules to work.
 Answer:
 - Rules can make certain actions inappropriate in general. For example, in home wiring, bypassing a breaker is
 prohibited in many countries. An electrician cannot misjudge the conditions for when to bypass the breaker because
-there are no conditions. The crucial part is that no judgement is required to know whether the rule applies.
+there are no conditions. The crucial part is that no judgement is required to know whether the rule applies. Another
+crucial part is that breaking the rule is never required to complete the task, or that not completing the task due
+to circumstances is acceptable.
 - Rules can demand that operations on a system follow certain pre-defined scripts or checklists. Again, the
 crucial part is that no judgement is required to know whether the rule applies. In particular, a clear procedure to
 handle unforeseen events is needed, to prevent an error (which should be corrected) to be mistaken for a novel

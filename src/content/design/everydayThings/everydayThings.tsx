@@ -574,6 +574,44 @@ whether the oven is running.
 2. The oven's door makes a clicking noise when latching closed. The exact noise can be used to tell whether the door
 is closed properly.
 
+---
+
+Associate the following errors to the different mechanisms for errors.
+
+Mechanisms:
+- capture errors
+  - You play a new piece of music that starts similar to a piece you know, then unintentionally continue playing the well-known one.
+  - You head towards an appointment near the grocery store that you frequent, but then enter the store instead
+- description errors
+  - You throw your laundry into the toilet or garbage bin
+  - On your computer, you close the wrong one of several similarly-looking programs  
+- data-driven errors
+  - You try to call some customer service, ready to tell them your customer number that you have in your documents in
+    front of you, but dial your customer number instead of the phone number
+  - Suppose you have children. You are in the grocery store without your children, then hear a child call "mom" (or
+    "dad") and you answer even though it obviously can't be your child.
+  - You play hide-and-seek and you are one of the hiders. The seeker starts singing your favorite song and intuitively
+    you start singing along and reveal your location. 
+- associative activation errors
+  - You confuse the ringing of your office telephone with knocking on the door and answer the phone with "come in".
+- loss-of-activation errors
+  - You enter a room and forget why you went there.
+  - You want to add a note to one of your designs in a CAD program that has just come to your mind. You start the
+    program, but have to wait for it to load while the program only shows a splash screen. Loading takes long enough
+    that you start thinking about the groceries that you have to pick up later. When the CAD program finally finished
+    to load, you have difficulties remembering your idea that you wanted to add as a note.
+- mode errors
+  - You wait for your friend to text you a message, which you already expected an hour ago, only to discover that you
+    forgot to put your phone out of "do not disturb".
+  - You are at a shooting range. You fire a single shot, then remove the magazine to place the pistol aside and
+    inspect how well you aimed. You have been taught that a round may still be in the chamber, but you forget to remove
+    it.
+    
+
+
+Errors (useMemo + shuffle -> useShuffle? nee nicht nötig):
+- 
+
 ------------------------------------------------------------
 ------------------------------------------------------------
 

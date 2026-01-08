@@ -653,6 +653,32 @@ largely a convenience, not a safety feature -- it allows to know the level of da
 When it comes to evaluating the safety, these signs might as well be missing, because somebody who is about to
 make an error will not read them at that moment.
 
+---
+
+Assume a house with a fireplace that can be closed with a glass door. The house also has a kitchen hood above the
+stove. This presents a problem in well-insulated houses: The outer walls are sufficiently airtight to make the
+kitchen hood create an underpressure that pull smoke out of the fireplace and into the living room. This is
+usually just an annoyance, but can become dangerous when the problem is not noticed.
+
+A smoke detector is an obvious starting point to deal with the problem, but we want to look for other solutions:
+Suggest an interlock to prevent the problem altogether. (Such an interlock is required by code in some countries.)
+Point out problems with your design.
+
+Answer:
+One possible interlock is a magnetic sensor at one or more windows that control the power supply for the kitchen
+hood. One of those windows must be opened for the kitchen hood to work. The wiring can be done in such a way that
+only power to the fan is cut, not power to the lights.
+
+Problem with that approach:
+- Wiring. However, Solutions exist in which the power switch and the sensor are separated, with radio communication.
+- The sensor may fail, either turning of the kitchen hood even when the window is open, or allowing it to run with
+  the window closed (and possibly pull smoke into the living room).
+- One must open a specific window, not just any window. Multiple sensors can extend this to multiple windows, but there
+  is usually a limit, and doing so is more expensive.
+- The wireless communication may be unreliable, especially in a metal-clad house, or may interfere with similar
+  solutions in neighboring houses.
+- Some modern kitchen hoods misbehave when their power is cut off.
+
 ------------------------------------------------------------
 ------------------------------------------------------------
 

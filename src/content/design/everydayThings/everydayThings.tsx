@@ -224,6 +224,25 @@ direction.
 
 ----
 
+Many stoves have their burners and knobs arranged like this:
+
+(Bild)
+
+but the book argues for either of the following two arrangements:
+
+(Bilder)
+
+Point out two disavantages of these suggestions. One of the problems is solvable with one of the suggestions.
+
+Answer:
+
+Problem #1: Both take up more space than the original arrangement. Space is often a scarce resource in kitchens.
+Problem #2: Both suggest to place the knobs on top of the stove, in a place where it is easy to accidentally spill
+liquids. This problem is solvable with the second suggestion because the knobs are still arranged in a horizontal
+line and can be moved back to the front side of the stove.
+
+----
+
 Imagine a button that operates a machine: When the user presses the button, the machine performs a specific action.
 Alice and Bob are part of the team that builds the machine. Alice argues that there is no need for feedback: The user
 knows they just pressed the button. What could be Bob's counter-argument?
@@ -418,6 +437,220 @@ arbitrary:
 - 94100270
 
 ---
+
+The book presents three categories of memory:
+- memory for arbitrary things
+- memory for meaningful relationships
+- memory through explanation
+
+Write instructions that a person can learn and remember, to draw the following pixel-art image:
+
+(Bild:
+Ampel mit schwarzen linien, weißer Fläche, alle Lichter an.
+)
+
+The instructions should assume that an 8x(???) pixel grid is given, and the following colors to be available:
+black, white, red, green, blue, cyan, purple, yellow.
+
+Design the instructions in such a way that it is easy to draw a pixel-perfect replica from memory. Make use of
+relationships and explanation as much as possible, resorting to arbitrary instructions only when necessary.
+
+Answer:
+
+Sample instructions, first variant:
+Draw traffic lights with all three lights lit, with a black outline and white body. The outline is one pixel on the
+border of the image, and one pixel around each light. Each light is a 2x2 block of colored pixels. The lights' outlines
+should be the 8 pixels directly next to the light, excluding the diagonal corners.
+
+How this uses the different categories:
+- "traffic lights": relationship to a real-world object already known; indicates the colors red, yellow, green, and their arrangement.
+- "lit": relationship to the behavior of that object; needed to clarify the use of those colors.
+- the fact that all three lights are lit is arbitrary and not usually encountered in real-world traffic lights
+- "outline": relationship to another real-world object (coloring books); very concisely indicates the position of many pixels
+- "one pixel on the outside", "one pixel around", "2x2 block": short explanations for many actual pixels
+- "black", "white": mostly arbitrary colors, though again relate to the patterns found in coloring books
+- the exact way these shapes are matched to pixels must be remembered as an arbitrary thing, such as the exact
+shape of the outline around the lights.
+
+<br/>
+
+Sample instructions, second variant:
+Draw traffic lights with all three lights lit, with a white body, and a black outline on the image border and around
+each light. Each light is a 2x2 block of colored pixels. The outline should be enough so no white pixel touches the
+image border or a colored pixel, but no more than that.
+
+This variant removes the detailed instructions for the outline, and instead describes the constraints that the outline
+must fulfill. Even though the description is hardly shorter, it conveys meaning instead of arbitrary instructions.
+Furthermore, with a similar description, the outline for other shapes can be derived.
+
+---
+
+Consider a simple room door. What are examples for knowledge in the world about this door? What are examples for
+knowledge in the head?
+
+Answer:
+
+Knowledge in the world:
+- Looking at the frame and the hinges tells you whether to push or pull
+- The placement of the handle tells you whether to push/pull on the right or on the left
+- Whether the door is currently open or closed (unless it is almost-closed, then it is hard to tell)
+- If the door is closed: whether it is locked (by trying to open it).
+- <b>If</b> an appropriate sign or label is placed: Whether the door ought to be closed while nobody passes through it.
+
+Knowledge in the head:
+- Which room the door leads to, especially if closed
+- Which key is the right one
+- If the door is closed: whether it is locked (just by looking at it).
+- <b>If no<b> appropriate sign or label is placed: Whether the door ought to be closed while nobody passes through it.
+
+---
+
+Imagine an electronic device with a detachable power cord. How do you know what to do with the power cord?
+
+Answer:
+- Affordances:
+  - The power cord has plugs on both sides, and plugs afford ("are for") plugging them in.
+  - The device has a socket that affords pluggin a plug into it.
+  - The cord affords laying it across the room (among other things).
+- Constraints:
+  - Physical: The cord uses different types of plugs on its two ends. This constraint prevents the user from touching
+    the wires on the device side and getting electrocuted. The wall-side plug will not fit into the device-side
+    socket and vice versa.
+  - Physical: The wall-side plug can only be inserted in the correct way into the outlet. For some outlet types,
+    two orientations are possible (flipped by 180°), but either one will work. If the device is designed well, the
+    same is true for the device-side socket.
+  - Semantic: Electronic devices need power, so a power cord (or charger) is required for operation.
+  - Cultural: You know from experience what a power cord is and how to use it. You know the looks of a wall-side
+    plug, and that the device-side plug is something else.
+  - Logical: The power cord was in the box for the device, so you are supposed to use it.
+
+---
+
+(Bild vom Kinderspiel mit Holzklötzen und Löcherschablone)
+
+In this kids' toy, a physical constraint dictates which pieces can be placed in which holes. However, there is a
+second constraint at work. Which kind of constraint is it? What condition does this second constraint depend on?
+
+Answer:
+The second constraint is logical: There are holes in the same shapes as the pieces, so they are meant to be used
+for something. This second constraint indicates that it is wrong to put all pieces sideways through the square hole,
+even though they would fit. This constraint depends on the task to be accomplished: Are you meant to play with the
+toy the way it was intended, or are you meant to put all pieces into the box, no matter how?
+
+
+---
+
+With computers, a "splash screen" is an image that appears after commanding an application to start, and that stays
+visible while the application is loading. What problem does a splash screen solve? In what wqys is it imperfect?
+
+Answer:
+The splash screen gives feedback to the user's action to start the application. Typically this happens in addition
+to the operating system already acknowledging the command, for example by flashing the application's icon. The splash
+screen also makes it visible that the application is loading, and the splash screeen disappearing without any further
+controls becoming visible indicates a problem.
+
+The splash screen is imperfect in many ways:
+- There is still a visible gap between commanding the application to start and the splash screen appearing. This gap
+  originates from the time to load the splash screen.
+- The splash screen does not fix the fact that the time to load the application is time wasted for the user.
+- If the user misclicked and started the wrong application, most splash screens do not allow to cancel the loading
+  process. The user has to wait for the application to fully load, only to close it.
+- The splash screen disappearing without any controls becoming visible indicate a problem, but it would be better to
+  fix that problem instead (if it is a problem in the application'S program code), or tell the user how to fix it
+  (if it is a problem with the user's system). 
+
+---
+
+The simplest of microwave ovens use sound for "visibility" (in a broader sense): The make a beeping or a "ping" noise
+when they are done. There are at least two other, less obvious ways, in which they use sound for visibility -- which
+are they?
+
+Answer:
+
+1. The microwave oven makes a humming noise while it is running. This is accompanied by a light inside that shines only
+while running, but even with the light broken or the oven around a corner or behind you, the humming noise can tell
+whether the oven is running.
+
+2. The oven's door makes a clicking noise when latching closed. The exact noise can be used to tell whether the door
+is closed properly.
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+Imagine that you have to design the controls for a special-purpose lifting platform. The platform can be raised and
+lowered, but it can also be tilted sideways up to a certain angle (for this exercise, let's just assume that this
+is needed for some operation). The platform has flood lights on both sides to work in the dark, but they should
+be controllable independently to reduce thermal stress on the flood lights themselves when not needed. The control
+panel for this platform is supposed to be on the ground, operated by somebody who is not working on the platform.
+
+- Design the controls. Note that there may not be a single "correct" solution, but different approaches with tradeoffs.
+- Describe the affordances of the controls. Note that the platform itself has its own affordances that should be
+  considered out-of-scope for this exercise.
+- Describe the conceptual model you had in mind when designing the controls.
+- Does the number of functions exceed the number of controls? What are the consequences of this?
+- Describe the mapping between controls and functions, and between sensors / state and indicators. Which mappings
+  are natural mappings? Do they originate in physics, biology or culture? Do they properly bridge the gulf of
+  execution and the gulf of evaluation?
+- Does your solution give feedback? If so, how?
+- What instructions and labels are needed for your solution?
+- What contraints are set by your solution? 
+- What errors can you anticipate when using the controls? How can they be prevented?
+  - Not being able to center the platform -> indicate
+  - Not being able to tilt to a specific angle -> indicate
+  - Not being able to raise to a specific height -> indicate
+  - accidentally operate when bumping into the controls, ...
+  - Leave lights on, ... 
+  ---> Require to insert a key before operation. Removing the key is only possible if turned off, or alternatievly,
+    removing the key turns everything off.
+  - Tilt too much so things slide off -> railings should be used anyway; add no-slip floor to the platform.
+  (((
+    - As much as possible, make errors impossible by design.
+    - Minimize the chance for error.
+    - Minimize the effects of errors when they do occur.
+    - Make errors easy to detect and correct.
+    - Make errors easy to recover from.
+    - Use errors as a source of information to improve the design.
+    - Consider that users may try to hide errors to avoid blame, punishment, or embarrassment.
+  )))
+- The conceptual model formed by actual operators may be different. How can you find out their conceptual model?
+  - Let them use it. To make the process simpler, cheaper, and possible to perform *before* building the platform,
+    build the controls, and let them operate a simulated platform on a computer screen.
+  - Note that an operator may be unable to describe their conceptual model. Ask them questions like "what would happen
+    if I do this..." if that happens.
+- You might not know all tradeoffs involved with the different solution. How can you find out more about them?
+  - In advance: Use the simulated platform to ask operators about problems they anticipate.
+  - In advance: Let operators describe how they anticipate to use the platform, and work together to anticipate
+    problems. Make sure they describe, as much as possible, the context in which the platform will be used.
+- Ask the seven design questions, relating to the seven stages of action, about your design.
+  (((
+  - How easily can one determine the function of the device?
+  - How easily can one tell what actions are possible?
+  - How easily can one determine the mapping from intention to physical movement?
+  - How easily can one perform the action?
+  - How easily can one tell what state the system is in?
+  - How easily can one determine the mapping from system state to interpretation?
+  - How easily can one tell if the system is in the desired state?
+  )))
+  Which of the stages are impeded by something? Can you improve the design?
+- Apply the four tools to obtain knowledge. Do they work well for your design?
+  * Information is in the world
+  * Great precision is not required
+  * Natural constraints are present
+  * Cultural constraints are present
+- What must be kept in memory about your design? Associate each piece to remember with one of the three categories of
+  memory.
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+Idee für Gruppenaufgabe, separate App: Simulierte Fabrik, und dafür eine Steuerung bauen. Am Ende muss ein dritter,
+der nicht dabei war, das bedienen können. Inkl. Bauteile versagen usw. Sandboxed Javascript zum Bauen der Steuerung.
+
+Steuerung steuert auch die "Kamera" für die Fabrik.
+
+---
+
+Idee auch als physisches Spiel: Simulation auf dem Rechner; physische Controls, die programmierbar sind.
 
 
 

@@ -1,55 +1,58 @@
-import type {Folder} from "../../../framework/content.tsx";
+import type {Collection, Folder} from "../../../framework/content.tsx";
 
-export const everydayThings: Folder = {
+import doorHandleImage from "./doorHandle.jpg";
+
+export const everydayThings: Collection = {
   id: "everydayThings",
   name: "Book: The Design of Everyday Things",
-  type: "folder",
-  elements: [
+  type: "collection",
+  exercises: [
+    {
+      type: "exercise",
+      label: "Push or pull?",
+      problem: <>
+        <p>
+          Imagine you stand in front of a door inside a building. The door has a handle that has to be pressed down to
+          open the door. Make a list of possible clues that tell you whether you have to pull or push the door; not all clues
+          have to apply for all doors.
+        </p>
+        <div>
+          <img src={doorHandleImage} width="100%" />
+        </div>
+      </>,
+      answer: <>
+        <ul>
+          <li>the door has a sign that says "push" or "pull"</li>
+          <li>the door connects a corridor to a room and there is a convention that doors always open into the corridor</li>
+          <li>the door connects a corridor to a room and there is a convention that doors always open into the room</li>
+          <li>the inside of the door frame is visible and the hinges invisible, so the door must be pushed because it cannot open through the frame</li>
+          <li>the inside of the door frame is invisible and the hinges visible, so the door must be pulled because it cannot open through the frame</li>
+          <li>other doors next to it open the same way</li>
+        </ul>
+      </>,
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+    },
   ],
 };
 
 /*
-
-human error / blame people / blame yourself / coping, vs. bad design
-
-Design principles:
-- conceptual models
-- feedback. Beispiel Knopf der piept und versucht etwas zu tun, was schiefgehen kann (Aber wenns schiefgeht trotzdem piept!)
-- constraints: make "the wrong way" impossible, or make the wrong way right and work
-  "when instructions have to be pasted on something, it is badly designed"
-- affordances: make appropriate actions perceptible and inappropriate ones invisible
-  "percieved affordances"
-
-wording "operators who misdiagnosed the problems", read carefully
--> there were problems in the first place
--> always, "why?"
-
-Conceptual models:
-- nur Objekt+Anweisungen -> verstehen
-- Objekt, Anweisungen und Interna -> Probleme erkennen (aber Hinweis: echte Benutzer sind die sicherste Methode, erkennen
-  kann helfen wenn man noch keinen Zugriff auf echte Benutzer hat, oder um den Test mit echten Benutzern vorzubereiten)
-- Objekt+Interna -> Anweisungen schreiben, ohne das Objekt zu verändern
-- Objekt+Interna -> Anweisungen schreiben und ggf. das Objekt verändern
---> ähnliche Aufgabentypen für die anderen Kapitel
 
 
 -----------------------------------------------------------------------------------------------------------------------
 kap1
 -----------------------------------------------------------------------------------------------------------------------
 
-Imagine you stand in front of a door inside a building. The door has a handle that has to be pressed down to
-open the door. Make a list of possible clues that tell you whether you have to pull or push the door; not all clues
-have to apply for all doors.
-
-(Bild, damit man sich den Türgriff vorstellen kann und die Aufgabe nicht missversteht; in beiden Richtungen,
-damit das nicht als Hinweis mißverstanden wird)
-
-- the door has a sign that says "push" or "pull"
-- the door connects a corridor to a room and there is a convention that doors always open into the corridor
-- the door connects a corridor to a room and there is a convention that doors always open into the room
-- the inside of the door frame is visible and the hinges invisible, so the door must be pushed because it cannot open through the frame
-- the inside of the door frame is invisible and the hinges visible, so the door must be pulled because it cannot open through the frame
-- other doors next to it open the same way
 
 ---
 
@@ -700,84 +703,6 @@ actual user, let alone a relevant fraction of all users. Without further investi
 is to assume that everybody can easily look up the time of day on their phone or watch, or ask somebody. This is
 without even considering that setting the time of day, and keeping it up-to-date with DST changes, requires either
 additional controls or a connection to an NTP server.
-
-------------------------------------------------------------
-------------------------------------------------------------
-
-Imagine that you have to design the controls for a special-purpose lifting platform. The platform can be raised and
-lowered, but it can also be tilted sideways up to a certain angle (for this exercise, let's just assume that this
-is needed for some operation). The platform has flood lights on both sides to work in the dark, but they should
-be controllable independently to reduce thermal stress on the flood lights themselves when not needed. The control
-panel for this platform is supposed to be on the ground, operated by somebody who is not working on the platform.
-
-- Design the controls. Note that there may not be a single "correct" solution, but different approaches with tradeoffs.
-- Describe the affordances of the controls. Note that the platform itself has its own affordances that should be
-  considered out-of-scope for this exercise.
-- Describe the conceptual model you had in mind when designing the controls.
-- Does the number of functions exceed the number of controls? What are the consequences of this?
-- Describe the mapping between controls and functions, and between sensors / state and indicators. Which mappings
-  are natural mappings? Do they originate in physics, biology or culture? Do they properly bridge the gulf of
-  execution and the gulf of evaluation?
-- Does your solution give feedback? If so, how?
-- What instructions and labels are needed for your solution?
-- What contraints are set by your solution? 
-- What errors can you anticipate when using the controls? How can they be prevented?
-  - Not being able to center the platform -> indicate
-  - Not being able to tilt to a specific angle -> indicate
-  - Not being able to raise to a specific height -> indicate
-  - accidentally operate when bumping into the controls, ...
-  - Leave lights on, ... 
-  ---> Require to insert a key before operation. Removing the key is only possible if turned off, or alternatievly,
-    removing the key turns everything off.
-  - Tilt too much so things slide off -> railings should be used anyway; add no-slip floor to the platform.
-  (((
-    - As much as possible, make errors impossible by design.
-    - Minimize the chance for error.
-    - Minimize the effects of errors when they do occur.
-    - Make errors easy to detect and correct.
-    - Make errors easy to recover from.
-    - Use errors as a source of information to improve the design.
-    - Consider that users may try to hide errors to avoid blame, punishment, or embarrassment.
-  )))
-- The conceptual model formed by actual operators may be different. How can you find out their conceptual model?
-  - Let them use it. To make the process simpler, cheaper, and possible to perform *before* building the platform,
-    build the controls, and let them operate a simulated platform on a computer screen.
-  - Note that an operator may be unable to describe their conceptual model. Ask them questions like "what would happen
-    if I do this..." if that happens.
-- You might not know all tradeoffs involved with the different solution. How can you find out more about them?
-  - In advance: Use the simulated platform to ask operators about problems they anticipate.
-  - In advance: Let operators describe how they anticipate to use the platform, and work together to anticipate
-    problems. Make sure they describe, as much as possible, the context in which the platform will be used.
-- Ask the seven design questions, relating to the seven stages of action, about your design.
-  (((
-  - How easily can one determine the function of the device?
-  - How easily can one tell what actions are possible?
-  - How easily can one determine the mapping from intention to physical movement?
-  - How easily can one perform the action?
-  - How easily can one tell what state the system is in?
-  - How easily can one determine the mapping from system state to interpretation?
-  - How easily can one tell if the system is in the desired state?
-  )))
-  Which of the stages are impeded by something? Can you improve the design?
-- Apply the four tools to obtain knowledge. Do they work well for your design?
-  * Information is in the world
-  * Great precision is not required
-  * Natural constraints are present
-  * Cultural constraints are present
-- What must be kept in memory about your design? Associate each piece to remember with one of the three categories of
-  memory.
-
-------------------------------------------------------------
-------------------------------------------------------------
-
-Idee für Gruppenaufgabe, separate App: Simulierte Fabrik, und dafür eine Steuerung bauen. Am Ende muss ein dritter,
-der nicht dabei war, das bedienen können. Inkl. Bauteile versagen usw. Sandboxed Javascript zum Bauen der Steuerung.
-
-Steuerung steuert auch die "Kamera" für die Fabrik.
-
----
-
-Idee auch als physisches Spiel: Simulation auf dem Rechner; physische Controls, die programmierbar sind.
 
 
 

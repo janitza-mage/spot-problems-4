@@ -240,112 +240,122 @@ export const everydayThings: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Lifting Platforms",
       problem: <>
         <p>
+          Imagine three lifting platforms:
+          <ul>
+            <li>Platform one has two buttons (TODO Bild: Dreiecke hoch/runter)</li>
+            <li>Platform two has two buttons and two lights (TODO Bild: zwei runde Knöpfe mit Beschritung: move/change, dreieckige lichter
+              hoch/runter)</li>
+            <li>Platform three has two buttons and one light (TODO Bild: zwei runde Knöpfe mit Beschritung: move/change, ein rundes Licht)</li>
+          </ul>
+        </p>
+        <p>
+          Try to build and describe a conceptual model about how they work. What kind of state does the system have?
+          What open questions are left in your model?
         </p>
       </>,
       answer: <>
+        <h3>Platform One</h3>
         <p>
+          One button moves the lift up, the other moves it down. Releasing the button stops the lift.
+          The only state is the current position of the lift.
+        </p>
+        <p>
+          Open questions:
+          <ul>
+            <li>What happens if you press both buttons simultaneously?</li>
+            <li>What happens if you try to move the lift beyond its lower or upper limit?</li>
+          </ul>
+        </p>
+        <h3>Platform Two</h3>
+        <p>
+          The system has additional state in that it remembers the direction the lift should move. The "move" button moves the
+          lift in that direction; the "change" button changes the direction. The lights indicate the current direction, with
+          one light lit and the other dark.
+        </p>
+        <p>
+          Open questions:
+          <ul>
+            <li>What happens if you press both buttons simultaneously?</li>
+            <li>What happens if you try to move the lift beyond its lower or upper limit?</li>
+            <li>What happens if you press the "change" button while the lift is moving?</li>
+          </ul>
+        </p>
+        <h3>Platform Three</h3>
+        <p>
+          The buttons and lights do not suggest a clear conceptual model. The lift <i>might</i> work similar to the
+          second one, with the light being lit indicating "up" and dark indicating "down" -- or the other way round,
+          or something entirely different.
         </p>
       </>,
-      /*
-Imagine three lifting platforms:
-- Platform one has two buttons (Bild: Dreiecke hoch/runter)
-- Platform two has two buttons and two lights (Bild: zwei runde Knöpfe mit Beschritung: move/change, dreieckige lichter
-  hoch/runter)
-- Platform three has two buttons and one light (Bild: zwei runde Knöpfe mit Beschritung: move/change, ein rundes Licht)
-
-Try to build and describe a conceptual model about how they work. What kind of state does the system have?
-What open questions are left in your model?
-
-->
-
-Bild 1:
-One button moves the lift up, the other moves it down. Releasing the button stops the lift. The only state is
-the current position of the lift. Open questions:
-- what happens if you press both buttons simultaneously?
-- what happens if you try to move the lift beyond its lower or upper limit?
-
-Bild 2: 
-The system has additional state in that it remembers the direction the lift should move. The "move" button moves the
-lift in that direction; the "change" button changes the direction. The lights indicate the current direction, with
-one light lit and the other dark. Open
-questions:
-- what happens if you press both buttons simultaneously?
-- what happens if you try to move the lift beyond its lower or upper limit?
-- what happens if you press the "change" button while the lift is moving?
-
-Bild 3:
-The buttons and lights do not suggest a clear conceptual model. The lift _might_ work similar to the second one, with
-the light being lit indicating "up" and dark indicating "down" -- or the other way round, or something entirely different.
-       */
     },
     {
       type: "exercise",
       label: "xxxxxxxxxxxxxxx",
       problem: <>
         <p>
+          What statement is made in the book about the number of controls and the number of functions of an object?
         </p>
       </>,
       answer: <>
         <p>
+          If the number of controls equals the number of functions, each control can be specialized, and mapped to
+          exactly one function. The controls can be labeled according to their function. If, OTOH, the number of
+          functions is greater than the number of controls, then at least some controls will be associated with more
+          than one function, and the object will be more difficult to use.
         </p>
       </>,
-      /*
-What statement is made in the book about the number of controls and the number of functions of an object?
-- If the number of controls equals the number of functions, each control can be specialized, and mapped to exactly
-one function. The controls can be labeled according to their function. If, OTOH, the number of functions is greater
-than the number of controls, then at least some controls will be associated with more than one function, and
-the object will be more difficult to use.
-       */
     },
     {
       type: "exercise",
       label: "xxxxxxxxxxxxxxx",
       problem: <>
         <p>
+          A machine is intended to treat each of multiple workpieces with three different treatments: Apply a coat of
+          paint, blow hot air to evaporate the solvent, then shine a UV light to cure the paint. The machine has three
+          buttons, one for each step.
         </p>
+        <p>
+          TODO (Bild: Drei Knöpfe in waagrechter Reihe)
+        </p>
+        <p>
+          There is a natural mapping between the buttons and the steps (in the sense the book defines "natural
+          mapping"). Which button operates the first treatment (aply paint)? Does the mapping originate in physics,
+          biology or culture?
+        </p>
+        <Hint label={"Hint"}>
+          Try to explain how and why you identified the first button.
+        </Hint>
       </>,
       answer: <>
         <p>
+          The leftmost button operates the first treatment. The mapping originates in culture, as it is based on the
+          convention of reading and writing from left to right. Users from countries with right-to-left writing will
+          likely have more difficulties operating the machine. The problem can be moderated by labeling the buttons with
+          their function and/or the order in which they should be operated, but the risk of using them in the wrong
+          order by intuition remains.
         </p>
       </>,
-      /*
-A machine is intended to treat each of multiple workpieces with three different treatments: Apply a coat of paint,
-blow hot air to evaporate the solvent, then shine a UV light to cure the paint. The machine has three buttons, one for
-each step. (Bild: Drei Knöpfe in waagrechter Reihe) There is a natural mapping between the buttons and the steps (in
-the sense the book defines "natural mapping"). Which button operates the first treatment (aply paint)? Does the mapping
-originate in physics, biology or culture?
-
-Hint: Try to explain how and why you identified the first button.
-
-Answer: The leftmost button operates the first treatment. The mapping originates in culture, as it is
-based on the convention of reading and writing from left to right. Users from countries with right-to-left writing
-will likely have more difficulties operating the machine. The problem can be moderated by labeling the buttons with
-their function and/or the order in which they should be operated, but the risk of using them in the wrong order
-by intuition remains.
-       */
     },
     {
       type: "exercise",
       label: "xxxxxxxxxxxxxxx",
       problem: <>
+        TODO (Bild: Dreiecks-Tasten, Rücken an Rücken).
         <p>
+          An elevator has two buttons, one for going up and one for going down. Can you identify the button for
+          going up? How did you know? Does the mapping originate in physics, biology or culture?
         </p>
       </>,
       answer: <>
         <p>
+          The mapping is in part physics, in part culture. The physical part of the mapping is that the button for going
+          up is on the top. The cultural part is the triangular shape, which is a case of using arrow symbols to
+          indicate direction.
         </p>
       </>,
-      /*
-An elevator has two buttons, one for going up and one for going down. (Bild: Dreiecks-Tasten, Rücken an Rücken).
-Can you identify the button for going up? How did you know? Does the mapping originate in physics, biology or culture?
-
-Answer: The mapping is in part physics, in part culture. The physical part of the mapping is that the button for going
-up is on the top. The cultural part is the triangular shape, which is a case of using arrow symbols to indicate
-direction.
-       */
     },
     {
       type: "exercise",

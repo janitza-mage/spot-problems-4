@@ -1,6 +1,7 @@
 import type {Collection} from "../../../framework/content.tsx";
 
 import doorHandleImage from "./doorHandle.jpg";
+import {Hint} from "../../../framework/technical-components/Hint/Hint.tsx";
 
 export const everydayThings: Collection = {
   id: "everydayThings",
@@ -33,209 +34,209 @@ export const everydayThings: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Salt and Pepper Shakers",
       problem: <>
         <p>
+          Imagine you are at a restaurant. How can you tell the salt shaker and the pepper shaker apart?
         </p>
       </>,
       answer: <>
-        <p>
-        </p>
+        <ul>
+          <li>the salt shaker has an "S" on it and the pepper shaker has a "P" on it</li>
+          <li>the salt shaker has fewer holes than the pepper shaker (because salt is considered unhealthy)</li>
+          <li>the pepper shaker has fewer holes than the salt shaker (because pepper was historically considered an expensive spice)</li>
+          <li>the salt shaker is white and the pepper shaker is black</li>
+          <li>the shakers are transparent</li>
+        </ul>
       </>,
-      /*
-      Imagine you are at a restaurant. How can you tell the salt shaker and the pepper shaker apart?
-- the salt shaker has an "S" on it and the pepper shaker has a "P" on it
-- the salt shaker has fewer holes than the pepper shaker (because salt is considered unhealthy)
-- the pepper shaker has fewer holes than the salt shaker (because pepper was historically considered an expensive spice)
-- the salt shaker is white and the pepper shaker is black
-- the shakers are transparent
-
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Light Switch Direction",
       problem: <>
+        TODO: Bilder
         <p>
+          A light switch -- toggle or rocker switch -- does not provide clues about which side turns the light on and
+          which side turns the light off. Worse, if multiple switches are connected, then flipping one switch reverses
+          the direction of the other switches. Yet, this is not a huge problem in practice. Why? When does it become
+          a problem?
         </p>
       </>,
       answer: <>
         <p>
+          It is not a problem because
+          <ul>
+            <li>it is visible to the user whether the light is currently on or off</li>
+            <li>either the light is in the state it should be, then nothing must be done. Or the light is in the wrong
+              state, then the switch must be flipped. That is, there are only two states, and in each of them the
+              action is obvious.</li>
+            <li>even though the switch can be pressed at the top or bottom, only one of these has an effect -- flipping
+              the switch -- and there is tangible feedback when the switch is flipped</li>
+          </ul>
+        </p>
+        <p>
+          It becomes a problem when
+          <ul>
+            <li>it becomes a problem when there are multiple lights and multiple switches. The user must then try all
+              switches to see which switch connects to which light.</li>
+            <li>it becomes a problem when the light is broken, because there is no longer feedback about the state of
+              the light. Then the switch cannot be relied on to safely turn the power off. (Note that this is not the
+              only reason why one should not rely on the switch to safely turn the power off, making this problem less
+              relevant.)</li>
+          </ul>
         </p>
       </>,
-      /*
-A light switch -- toggle or rocker switch (Bilder) -- does not provide clues about which side turns the light on and which
-side turns the light off. Worse, if multiple switches are connected, then flipping one switch reverses the direction
-of the other switches. Yet, this is not a huge problem in practice. Why? When does it become a problem?
-
-- it is visible to the user whether the light is currently on or off
-- either the light is in the state it should be, then nothing must be done. Or the light is in the wrong state, then
-the switch must be flipped. That is, there are only two states, and in each of them the action is obvious.
-- even though the switch can be pressed at the top or bottom, only one of these has an effect -- flipping the switch --
-and there is tangible feedback when the switch is flipped
-
-- it becomes a problem when there are multiple lights and multiple switches. The user must then try all switches
-to see which switch connects to which light.
-- it becomes a problem when the light is broken, because there is no longer feedback about the state of the light.
-Then the switch cannot be relied on to safely turn the power off. (Note that this is not the only reason why one
-should not rely on the switch to safely turn the power off, making this problem less relevant.)
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Definition: Affordance",
       problem: <>
         <p>
+          What does "affordance" mean?
         </p>
       </>,
       answer: <>
         <p>
+          It means what a thing seems to exist for, and how it seems intended to be used. Affordances can or cannot
+          match the actual purpose of that thing, leaing people to use it the right or wrong way.
         </p>
       </>,
-      /*
-What does "affordance" mean?
-- it means what a thing seems to exist for, and how it seems intended to be used. Affordances can or cannot match
-the actual purpose of that thing, leaing people to use it the right or wrong way.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Affordances and Instructions",
       problem: <>
         <p>
+          How do affordances relate to instructions?
         </p>
       </>,
       answer: <>
         <p>
+          If used right, affordances can make some instructions unnecessary: In particular, those instructions that
+          tell the user what to do with an object. If used wrong, affordances can make <li>additional</li> instructions
+          necessary.
         </p>
       </>,
-      /*
-How do affordances relate to instructions?
-- If used right, affordances can make some instructions unnecessary: In particular, those instructions that tell the
-user what to do with an object. If used wrong, affordances can make _additional_ instructions necessary.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Affordances of Objects",
       problem: <>
         <p>
+          What are the afforances of
+          <ul>
+            <li>a button</li>
+            <li>a chair</li>
+            <li>a cup</li>
+          </ul>
         </p>
       </>,
       answer: <>
-        <p>
-        </p>
+        <ul>
+          <li>Button: to press it.</li>
+          <li>Chair: to sit down; to place things on top of it; to move it around.</li>
+          <li>Cup: to fill liquids in it; to drink from it.</li>
+        </ul>
       </>,
-      /*
-What is the afforance of
-- a button
-  - to press it
-- a chair
-  - to sit down
-- a cup
-  - to fill liquids in and drink from it
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Poisonous Liquid",
       problem: <>
         <p>
+          Suppose you have a small measure of poisonous liquid and have to store it somewhere. Evaporation is not a
+          concern. Based on afforance, which container is <b>least</b> suited?
+          <ul>
+            <li>a glass bottle</li>
+            <li>a plastic bottle</li>
+            <li>a metal can</li>
+            <li>a coffee cup</li>
+            <li>a glass jar</li>
+          </ul>
         </p>
       </>,
       answer: <>
         <p>
+          The coffee cup, because part of its afforances is to drink from it. This is not generally true for the other
+          containers. Note however, that drinking from the other containers is not universally wrong either, which is
+          why not using a coffee cup alone is not sufficient as a safety measure.
         </p>
       </>,
-      /*
-Suppose you have a small measure of poisonous liquid and have to store it somewhere. Evaporation is not a concern.
-Based on afforance, which container is LEAST suited? 
-- a glass bottle
-- a plastic bottle
-- a metal can
-- a coffee cup
-- a glass jar
-
-Answer: The coffee cup, because part of its afforances is to drink from it. This is not generally true for the
-other containers. Note however, that drinking from the other containers is not universally wrong either, which is
-why not using a coffee cup alone is not sufficient as a safety measure. 
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Clothes Drier Button",
       problem: <>
         <p>
+          This problem was a real-world case, not a made up example: A clothes drier has a button to start it. Alice
+          presses the button, but the drier does not start. Alice presses the button harder, assuming that the button
+          might be just hard to press, or maybe (partially) broken, but no effect. Alice starts considering that she
+          has to do "something else first", that is, that the drier's controls have invisible internal state that must
+          be set up correctly first.
         </p>
+        <p>
+          That happens every time Alice tries to start the drier. Each time, she tries multiple times, and eventually
+          it "somehow" works, leaving her confused and unsure what the problem was.
+        </p>
+        <p>
+          Try to guess what the problem was, then look up what it actually was.
+        </p>
+        <Hint label={"Hint 1"}>
+          Bob comes by and notices that the button does not seem to move by a perceptible amount when pressed. He
+          concludes that the button is either broken, or blocked by an internal mechanism. He then gives up, giving a remark
+          that he does not have a clue about technical things anayway.
+        </Hint>
+        <Hint label={"Hint 2"}>
+          The button was not broken at all -- Alice and Bob were using it wrong, misled by its affordances.
+        </Hint>
       </>,
       answer: <>
         <p>
+          Answer: The button was operated by touching it, not by pressing it -- that is why it did not move. However,
+          whether the button is being touched is sampled roughly once per second only, so you have to touch it for
+          longer than a second to make sure the drier acknowledged the touch. Since pressing a mechanical button
+          happens instantly, users usually do not touch a button for that long.
+        </p>
+        <p>
+          There are two problems here that work together to make the design user-unfriendly. The first is that the
+          button's afforances -- to press it -- do not match how the button has to be operated. The second is that
+          the button is sampled only once per second, making it almost impossible to discover the proper way to use
+          it. Fortunately, the designers did one thing right: The button was rigid enough so pressing it hard does not
+          break it. An easy way to solve the problem is to sample the button more frequently -- a drier is connected to
+          the power grid, so there is no need to save a tiny amount of energy by sampling the button infrequently.
         </p>
       </>,
-      /*
-Real-world case: A clothes drier has a button to start it. Alice presses the button, but the drier does not start.
-Alice presses the button harder, assuming that the button might be just hard to press, or maybe (partially) broken,
-but no effect. Alice starts considering that she has to do "something else first", that is, that the drier's
-controls have invisible internal state that must be set up correctly first.
-
-That happens every time Alice tries to start the drier. Each time, she tries multiple times, and eventually it
-"somehow" works, leaving her confused and unsure what the problem was.
-
-Try to guess what the problem was, then look up what it actually was.
-
-(Hint) Bob comes by and notices that the button does not seem to move by a perceptible amount when pressed. He
-concludes that the button is either broken, or blocked by an internal mechanism. He then gives up, giving a remark
-that he does not have a clue about technical things anayway.
-
-(Hint) The button was not broken at all -- Alice and Bob were using it wrong, misled by its affordances.
-
-Answer: The button was operated by touching it, not by pressing it -- that is why it did not move. However, whether the
-button is being touched is sampled roughly once per second only, so you have to touch it for longer than a second to
-make sure the drier acknowledged the touch. Since pressing a mechanical button happens instantly, users usually do not
-touch a button for that long. 
-
-There are two problems here that work together to make the design user-unfriendly. The first is that the button's
-afforances -- to press it -- do not match how the button has to be operated. The second is that the button is sampled
-only once per second, making it almost impossible to discover the proper way to use it. Fortunately, the designers did
-one thing right: The button was rigid enough so pressing it hard does not break it. An easy way to solve the problem
-is to sample the button more frequently -- a drier is connected to the power grid, so there is no need to save a tiny
-amount of energy by sampling the button infrequently.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Psychology of Causality",
       problem: <>
         <p>
+          What is the "psychology of causality" the book refers to?
         </p>
       </>,
       answer: <>
-        <p>
-        </p>
+        <ul>
+          <li>if you perform an action, and something happens, you tend to believe that your action caused that effect,
+            even if the effect was caused by something else. </li>
+          <li>if you perform an action, and nothing happens, you tend to believe that your action had no effect, even
+            if the effect might be invisible. </li>
+        </ul>
       </>,
-      /*
-What is the "psychology of causality" the book refers to?
-- if you perform an action, and something happens, you tend to believe that your action caused that effect, even
-if the effect was caused by something else.
-- if you perform an action, and nothing happens, you tend to believe that your action had no effect, even if the
-effect might be invisible.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Definition: Conceptual Model",
       problem: <>
         <p>
+          What does the term "conceptual model" mean?
         </p>
       </>,
       answer: <>
         <p>
+          It means "what the user thinks how the system works and behaves".
         </p>
       </>,
-      /*
-What does the term "conceptual model" mean?
-- It means "what the user thinks how the system works and behaves".
-       */
     },
     {
       type: "exercise",

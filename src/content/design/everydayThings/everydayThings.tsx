@@ -679,6 +679,28 @@ Problem with that approach:
   solutions in neighboring houses.
 - Some modern kitchen hoods misbehave when their power is cut off.
 
+---
+
+Alice describes the design of a microwave oven to Bob. The design was prompted by difficulties in sourcing the turning
+knobs for power and cooking time in an older model. The new knobs are incremental rotary encoders: They do not have
+an abolute position, but can only sense the direction and amount when turning them. In consequence, a numeric display
+is needed to show the resulting power and cooking time when turning them. In our example, assume that the problems
+with obtaining the old knobs are so severe that even using a display is a more viable solution.
+
+Bob responds: So the display will show the selected power when turning the power knob, the selected time when turning
+the time knob, and the remaining time when the oven is running, right? Then when the microwave is not running, the
+display can be used to show the time of day. Knowing the time of day is useful for most people, and the rest can just
+ignore it. The user can easily see and hear that the oven is not running, so it won't be mistaken for cooking time.
+
+What should be Alice's response?
+
+Answer: 
+Alice should question the need for this feature. After all, it was just Bob's idea, not a feature requested by an
+actual user, let alone a relevant fraction of all users. Without further investigation, a reasonable starting point
+is to assume that everybody can easily look up the time of day on their phone or watch, or ask somebody. This is
+without even considering that setting the time of day, and keeping it up-to-date with DST changes, requires either
+additional controls or a connection to an NTP server.
+
 ------------------------------------------------------------
 ------------------------------------------------------------
 

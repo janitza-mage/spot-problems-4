@@ -4,6 +4,46 @@ import doorHandleImage from "./doorHandle.jpg";
 import {Hint} from "../../../framework/technical-components/Hint/Hint.tsx";
 import {Shuffled} from "../../../framework/technical-components/layout/Shuffled.tsx";
 
+/*
+TODO (Bild vom Kinderspiel mit Holzklötzen und Löcherschablone)
+
+TODO: Bilder: toggle switch, rocker switch
+
+Imagine three lifting platforms:
+  <ul>
+    <li>Platform one has two buttons (TODO Bild: Dreiecke hoch/runter)</li>
+    <li>Platform two has two buttons and two lights (TODO Bild: zwei runde Knöpfe mit Beschritung: move/change, dreieckige lichter
+      hoch/runter)</li>
+    <li>Platform three has two buttons and one light (TODO Bild: zwei runde Knöpfe mit Beschritung: move/change, ein rundes Licht)</li>
+  </ul>
+
+    <p>
+      A machine is intended to treat each of multiple workpieces with three different treatments: Apply a coat of
+      paint, blow hot air to evaporate the solvent, then shine a UV light to cure the paint. The machine has three
+      buttons, one for each step.
+    </p>
+    <p>
+      TODO (Bild: Drei Knöpfe in waagrechter Reihe)
+    </p>
+
+    TODO (Bild: Dreiecks-Tasten für Aufzug, Rücken an Rücken).
+
+    <p>
+      Many stoves have their burners and knobs arranged like this:
+    </p>
+    TODO: bild
+    <p>
+    but the book argues for either of the following two arrangements:
+        </p>
+    TODO bild mit 2
+
+    <p>
+    Write instructions that a person can learn and remember, to draw the following pixel-art image:
+        </p>
+    TODO (Bild: Ampel mit schwarzen linien, weißer Fläche, alle Lichter an.)
+
+ */
+
 export const everydayThings: Collection = {
   id: "everydayThings",
   name: "Book: The Design of Everyday Things",

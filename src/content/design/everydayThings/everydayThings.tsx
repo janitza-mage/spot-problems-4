@@ -799,7 +799,7 @@ export const everydayThings: Collection = {
     },
     {
       type: "exercise",
-      label: "Knowing what to do",
+      label: "Knowing what to do (1)",
       problem: <>
         <p>
           Imagine an electronic device with a detachable power cord. How do you know what to do with the power cord?
@@ -829,267 +829,309 @@ export const everydayThings: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Knowing what to do (2)",
       problem: <>
+        TODO (Bild vom Kinderspiel mit Holzklötzen und Löcherschablone)
         <p>
+          In this kids' toy, a physical constraint dictates which pieces can be placed in which holes. However, there
+          is a second constraint at work. Which kind of constraint is it? What condition does this second constraint
+          depend on?
         </p>
       </>,
       answer: <>
         <p>
+          The second constraint is logical: There are holes in the same shapes as the pieces, so they are meant to be
+          used for something. This second constraint indicates that it is wrong to put all pieces sideways through the
+          square hole, even though they would fit. This constraint depends on the task to be accomplished: Are you
+          meant to play with the toy the way it was intended, or are you meant to put all pieces into the box, no
+          matter how?
         </p>
       </>,
-      /*
-(Bild vom Kinderspiel mit Holzklötzen und Löcherschablone)
-
-In this kids' toy, a physical constraint dictates which pieces can be placed in which holes. However, there is a
-second constraint at work. Which kind of constraint is it? What condition does this second constraint depend on?
-
-Answer:
-The second constraint is logical: There are holes in the same shapes as the pieces, so they are meant to be used
-for something. This second constraint indicates that it is wrong to put all pieces sideways through the square hole,
-even though they would fit. This constraint depends on the task to be accomplished: Are you meant to play with the
-toy the way it was intended, or are you meant to put all pieces into the box, no matter how?
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Splash Screen",
       problem: <>
         <p>
+          With computers, a "splash screen" is an image that appears after commanding an application to start, and that
+          stays visible while the application is loading. What problem does a splash screen solve? In what ways is it
+          imperfect?
         </p>
       </>,
       answer: <>
         <p>
+          The splash screen gives feedback to the user's action to start the application. Typically this happens in addition
+          to the operating system already acknowledging the command, for example by flashing the application's icon. The splash
+          screen also makes it visible that the application is loading, and the splash screeen disappearing without any further
+          controls becoming visible indicates a problem.
+        </p>
+        <p>
+          The splash screen is imperfect in many ways:
+          <ul>
+            <li>There is still a visible gap between commanding the application to start and the splash screen
+              appearing. This gap originates from the time to load the splash screen and the program code that displays
+              it.</li>
+            <li>The splash screen does not fix the fact that the time to load the application is time wasted for the
+              user.</li>
+            <li>If the user misclicked and started the wrong application, most splash screens do not allow to cancel the
+              loading process. The user has to wait for the application to fully load, only to close it.</li>
+            <li>The splash screen disappearing without any controls becoming visible indicate a problem, but it would
+              be better to fix that problem instead (if it is a problem in the application's program code), or tell the
+              user how to fix it (if it is a problem with the user's system).</li>
+          </ul>
         </p>
       </>,
-      /*
-With computers, a "splash screen" is an image that appears after commanding an application to start, and that stays
-visible while the application is loading. What problem does a splash screen solve? In what wqys is it imperfect?
-
-Answer:
-The splash screen gives feedback to the user's action to start the application. Typically this happens in addition
-to the operating system already acknowledging the command, for example by flashing the application's icon. The splash
-screen also makes it visible that the application is loading, and the splash screeen disappearing without any further
-controls becoming visible indicates a problem.
-
-The splash screen is imperfect in many ways:
-- There is still a visible gap between commanding the application to start and the splash screen appearing. This gap
-  originates from the time to load the splash screen.
-- The splash screen does not fix the fact that the time to load the application is time wasted for the user.
-- If the user misclicked and started the wrong application, most splash screens do not allow to cancel the loading
-  process. The user has to wait for the application to fully load, only to close it.
-- The splash screen disappearing without any controls becoming visible indicate a problem, but it would be better to
-  fix that problem instead (if it is a problem in the application'S program code), or tell the user how to fix it
-  (if it is a problem with the user's system). 
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Sound for Visibility",
       problem: <>
         <p>
+          The simplest of microwave ovens use sound for "visibility" (in a broader sense): The make a beeping or a
+          "ping" noise when they are done. There are at least two other, less obvious ways, in which they use sound for
+          visibility -- which are they?
         </p>
       </>,
       answer: <>
         <p>
+          1. The microwave oven makes a humming noise while it is running. This is accompanied by a light inside that
+          shines only while running, but even with the light broken or the oven around a corner or behind you, the
+          humming noise can tell whether the oven is running.
+        </p>
+        <p>
+          2. The oven's door makes a clicking noise when latching closed. The exact noise can be used to tell whether
+          the door is closed properly.
         </p>
       </>,
-      /*
-The simplest of microwave ovens use sound for "visibility" (in a broader sense): The make a beeping or a "ping" noise
-when they are done. There are at least two other, less obvious ways, in which they use sound for visibility -- which
-are they?
-
-Answer:
-
-1. The microwave oven makes a humming noise while it is running. This is accompanied by a light inside that shines only
-while running, but even with the light broken or the oven around a corner or behind you, the humming noise can tell
-whether the oven is running.
-
-2. The oven's door makes a clicking noise when latching closed. The exact noise can be used to tell whether the door
-is closed properly.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Errors (3)",
       problem: <>
         <p>
+          Associate the following errors to the different mechanisms for errors.
+          <ul>
+            <Shuffled>
+              <li>You play a new piece of music that starts similar to a piece you know, then unintentionally continue
+                playing the well-known one.</li>
+              <li>You head towards an appointment near the grocery store that you frequent, but then enter the store
+                instead</li>
+              <li>You throw your laundry into the toilet or garbage bin</li>
+              <li>On your computer, you close the wrong one of several similarly-looking programs</li>
+              <li>You try to call some customer service, ready to tell them your customer number that you have in your
+                documents in
+                front of you, but dial your customer number instead of the phone number</li>
+              <li>Suppose you have children. You are in the grocery store without your children, then hear a child call
+                "mom" (or "dad") and you answer even though it obviously can't be your child.</li>
+              <li>You play hide-and-seek and you are one of the hiders. The seeker starts singing your favorite song and
+                intuitively you start singing along and reveal your location.</li>
+              <li>You confuse the ringing of your office telephone with knocking on the door and answer the phone with
+                "come in".</li>
+              <li>You enter a room and forget why you went there.</li>
+              <li>You want to add a note to one of your designs in a CAD program that has just come to your mind. You
+                start the program, but have to wait for it to load while the program only shows a splash screen. Loading
+                takes long enough that you start thinking about the groceries that you have to pick up later. When the
+                CAD program finally finished to load, you have difficulties remembering your idea that you wanted to add
+                as a note.</li>
+              <li>You wait for your friend to text you a message, which you already expected an hour ago, only to
+                discover that you forgot to put your phone out of "do not disturb".</li>
+              <li>You are at a shooting range. You fire a single shot, then remove the magazine to place the pistol
+                aside and inspect how well you aimed. You have been taught that a round may still be in the chamber,
+                but you forget to remove it.</li>
+              <li>On the computer, you try to type your password. You are sure that you enter it correctly, but it fails
+                three times, permanently locking you out of your account. You then realize that the "caps lock" key was
+                active.</li>
+            </Shuffled>
+          </ul>
         </p>
       </>,
       answer: <>
-        <p>
-        </p>
+        <li>capture errors:
+          <ul>
+            <li>You play a new piece of music that starts similar to a piece you know, then unintentionally continue
+              playing the well-known one.</li>
+            <li>You head towards an appointment near the grocery store that you frequent, but then enter the store
+              instead</li>
+          </ul>
+        </li>
+        <li>description errors:
+          <ul>
+            <li>You throw your laundry into the toilet or garbage bin</li>
+            <li>On your computer, you close the wrong one of several similarly-looking programs</li>
+          </ul>
+        </li>
+        <li>data-driven errors:
+          <ul>
+            <li>You try to call some customer service, ready to tell them your customer number that you have in your
+              documents in front of you, but dial your customer number instead of the phone number</li>
+            <li>Suppose you have children. You are in the grocery store without your children, then hear a child call
+              "mom" (or "dad") and you answer even though it obviously can't be your child.</li>
+            <li>You play hide-and-seek and you are one of the hiders. The seeker starts singing your favorite song and
+              intuitively you start singing along and reveal your location. </li>
+          </ul>
+        </li>
+        <li>associative activation errors:
+          <ul>
+            <li>You confuse the ringing of your office telephone with knocking on the door and answer the phone with
+              "come in".</li>
+          </ul>
+        </li>
+        <li>loss-of-activation errors:
+          <ul>
+            <li>You enter a room and forget why you went there.</li>
+            <li>You want to add a note to one of your designs in a CAD program that has just come to your mind. You
+              start the program, but have to wait for it to load while the program only shows a splash screen. Loading
+              takes long enough that you start thinking about the groceries that you have to pick up later. When the
+              CAD program finally finished to load, you have difficulties remembering your idea that you wanted to add
+              as a note.</li>
+          </ul>
+        </li>
+        <li>mode errors:
+          <ul>
+            <li>You wait for your friend to text you a message, which you already expected an hour ago, only to discover
+              that you forgot to put your phone out of "do not disturb".</li>
+            <li>You are at a shooting range. You fire a single shot, then remove the magazine to place the pistol aside
+              and inspect how well you aimed. You have been taught that a round may still be in the chamber, but you
+              forget to remove it.</li>
+            <li>On the computer, you try to type your password. You are sure that you enter it correctly, but it fails
+              three times, permanently locking you out of your account. You then realize that the "caps lock" key was
+              active.</li>
+          </ul>
+        </li>
       </>,
-      /*
-Associate the following errors to the different mechanisms for errors.
-
-(useMemo + shuffle)
-- capture errors
-  - You play a new piece of music that starts similar to a piece you know, then unintentionally continue playing the well-known one.
-  - You head towards an appointment near the grocery store that you frequent, but then enter the store instead
-- description errors
-  - You throw your laundry into the toilet or garbage bin
-  - On your computer, you close the wrong one of several similarly-looking programs  
-- data-driven errors
-  - You try to call some customer service, ready to tell them your customer number that you have in your documents in
-    front of you, but dial your customer number instead of the phone number
-  - Suppose you have children. You are in the grocery store without your children, then hear a child call "mom" (or
-    "dad") and you answer even though it obviously can't be your child.
-  - You play hide-and-seek and you are one of the hiders. The seeker starts singing your favorite song and intuitively
-    you start singing along and reveal your location. 
-- associative activation errors
-  - You confuse the ringing of your office telephone with knocking on the door and answer the phone with "come in".
-- loss-of-activation errors
-  - You enter a room and forget why you went there.
-  - You want to add a note to one of your designs in a CAD program that has just come to your mind. You start the
-    program, but have to wait for it to load while the program only shows a splash screen. Loading takes long enough
-    that you start thinking about the groceries that you have to pick up later. When the CAD program finally finished
-    to load, you have difficulties remembering your idea that you wanted to add as a note.
-- mode errors
-  - You wait for your friend to text you a message, which you already expected an hour ago, only to discover that you
-    forgot to put your phone out of "do not disturb".
-  - You are at a shooting range. You fire a single shot, then remove the magazine to place the pistol aside and
-    inspect how well you aimed. You have been taught that a round may still be in the chamber, but you forget to remove
-    it.
-  - On the computer, you try to type your password. You are sure that you enter it correctly, but it fails three
-    times, permanently locking you out of your account. You then realize that the "caps lock" key was active.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Avoiding Mistakes With Rules",
       problem: <>
         <p>
+          Give some examples for how rules can help to avoid mistakes (that is, conscious errors -- not slips). Point
+          out what is crucial for the rules to work.
         </p>
       </>,
       answer: <>
-        <p>
-        </p>
+        <ul>
+          <li>Rules can make certain actions inappropriate in general. For example, in home wiring, bypassing a breaker
+            is prohibited in many countries. An electrician cannot misjudge the conditions for when to bypass the
+            breaker because there are no conditions. The crucial part is that no judgement is required to know whether
+            the rule applies. This also helps a lot in preventing social pressure from enforcing a dangerous
+            "judgement". Another crucial part is that breaking the rule is never required to complete the task, or that
+            not completing the task due to circumstances is acceptable.</li>
+          <li>Rules can demand that operations on a system follow certain pre-defined scripts or checklists. Again, the
+            crucial part is that no judgement is required to know whether the rule applies. In particular, a clear
+            procedure to handle unforeseen events is needed, to prevent an error (which should be corrected) to be
+            mistaken for a novel situation (that warrants deviating from the script).</li>
+          <li>Rules can demand that operations on a system are always reviewed by a second person. A crucial part here
+            is that the second person can actually make an independent judgement, and not be pressured by the first
+            person to accept an error as correct.</li>
+        </ul>
       </>,
-      /*
-Give some examples for how rules can help to avoid mistakes (that is, conscious errors -- not slips). Point out
-what is crucial for the rules to work.
-
-Answer:
-- Rules can make certain actions inappropriate in general. For example, in home wiring, bypassing a breaker is
-prohibited in many countries. An electrician cannot misjudge the conditions for when to bypass the breaker because
-there are no conditions. The crucial part is that no judgement is required to know whether the rule applies. This
-also helps a lot in preventing social pressure from enforcing a dangerous "judgement". Another crucial part is that
-breaking the rule is never required to complete the task, or that not completing the task due to circumstances is
-acceptable.
-- Rules can demand that operations on a system follow certain pre-defined scripts or checklists. Again, the
-crucial part is that no judgement is required to know whether the rule applies. In particular, a clear procedure to
-handle unforeseen events is needed, to prevent an error (which should be corrected) to be mistaken for a novel
-situation (that warrants deviating from the script).
-- Rules can demand that operations on a system are always reviewed by a second person. A crucial part here is that
-the second person can actually make an independent judgement, and not be pressured by the first person to accept
-an error as correct.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Biolab Example",
       problem: <>
         <p>
+          A biolab deals with several pathogens, from rhinovirus (common cold) to coronavirus, to Marburg virus (a very
+          dangerous virus). Every room that deals with the pathogens has to be entered through an airlock, and the doors
+          marked with the biohazard symbol. Non-lab rooms are not marked and do not use an airlock.
+        </p>
+        <p>
+          Point out a flaw with this scheme, and suggest a solution.
         </p>
       </>,
       answer: <>
         <p>
+          The warning symbols do not distinguish between the different levels of danger: The same biohazard symbol is
+          being used for deadly viruses and for those that are mostly just annoying. Other perceptible signals are
+          needed to understand the level of danger. Since the biohazard symbols are often required by law, this means
+          adding <i>more</i> signs or signals, while not overloading workers with too much information.
+        </p>
+        <p>
+          A solution is to present the biohazard symbol and the additional signals at different times. The airlocks may
+          be a place do to this: Present the biohazard symbol on the outer door to make the worker aware that a lab room
+          is being entered, then use wall colors inside the airlock to indicate the level of danger. Make sure that the
+          colors are clearly distinguishable even by the colorblind (this can be done through the use of different
+          levels of brightness).
+        </p>
+        <p>
+          Note that the level of danger may be indicated on the outside too, together with the biohazard sign, but this
+          is largely a convenience, not a safety feature -- it allows to know the level of danger without entering the
+          airlock. When it comes to evaluating the safety, these signs might as well be absent, because somebody who
+          is about to make an error will not read them at that moment.
         </p>
       </>,
-      /*
-A biolab deals with several pathogens, from rhinovirus (common cold) to coronavirus, to Marburg virus (a very
-dangerous virus). Every room that deals with the pathogens has to be entered through an airlock, and the doors
-marked with the biohazard symbol. Non-lab rooms are not marked and do not use an airlock.
-
-Point out a flaw with this scheme, and suggest a solution.
-
-Answer:
-The warning symbols do not distinguish between the different levels of danger: The same biohazard symbol is
-being used for deadly viruses and for those that are mostly just annoying. Other perceptible signals are
-needed to understand the level of danger. Since the biohazard symbols are often required by law, this means adding
-_more_ signs or signals, while not overloading workers with too much information. 
-
-A solution is to present the biohazard symbol and the additional signals at different times. The airlocks may be a
-place do to this: Present the biohazard symbol on the outer door to make the worker aware that a lab room is being
-entered, then use wall colors inside the airlock to indicate the level of danger. Make sure that the colors are
-clearly distinguishable even by the colorblind (this can be done through the use of different levels of brightness).
-
-Note that the level of danger may be indicated on the outside too, together with the biohazard sign, but this is
-largely a convenience, not a safety feature -- it allows to know the level of danger without entering the airlock.
-When it comes to evaluating the safety, these signs might as well be missing, because somebody who is about to
-make an error will not read them at that moment.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Fireplace and Kitchen Hood",
       problem: <>
         <p>
+          Assume a house with a fireplace that can be closed with a glass door. The house also has a kitchen hood above
+          the stove. This presents a problem in well-insulated houses: The outer walls are sufficiently airtight to make
+          the kitchen hood create an underpressure that pull smoke out of the fireplace and into the living room. This
+          is usually just an annoyance, but can become dangerous when the problem is not noticed.
+        </p>
+        <p>
+          A smoke detector is an obvious starting point to deal with the problem, but we want to look for other
+          solutions: Suggest an interlock to prevent the problem altogether. (Such an interlock is required by code in
+          some countries.) Point out problems with your design.
         </p>
       </>,
       answer: <>
         <p>
+          One possible interlock is a magnetic sensor at one or more windows that control the power supply for the
+          kitchen hood. One of those windows must be opened for the kitchen hood to work. The wiring can be done in such
+          a way that only power to the fan is cut, not power to the lights.
+        </p>
+        <p>
+          Problem with that approach:
+          <ul>
+            <li>Wiring. However, Solutions exist in which the power switch and the sensor are separated, with radio
+              communication.</li>
+            <li>The sensor may fail, either turning of the kitchen hood even when the window is open, or allowing it to
+              run with the window closed (and possibly pull smoke into the living room).</li>
+            <li>One must open a specific window, not just any window. Multiple sensors can extend this to multiple
+              windows, but there is usually a limit, and doing so is more expensive.</li>
+            <li>The wireless communication may be unreliable, especially in a metal-clad house, or may interfere with
+              similar solutions in neighboring houses.</li>
+            <li>Some modern kitchen hoods misbehave when their power is cut off.</li>
+          </ul>
         </p>
       </>,
-      /*
-Assume a house with a fireplace that can be closed with a glass door. The house also has a kitchen hood above the
-stove. This presents a problem in well-insulated houses: The outer walls are sufficiently airtight to make the
-kitchen hood create an underpressure that pull smoke out of the fireplace and into the living room. This is
-usually just an annoyance, but can become dangerous when the problem is not noticed.
-
-A smoke detector is an obvious starting point to deal with the problem, but we want to look for other solutions:
-Suggest an interlock to prevent the problem altogether. (Such an interlock is required by code in some countries.)
-Point out problems with your design.
-
-Answer:
-One possible interlock is a magnetic sensor at one or more windows that control the power supply for the kitchen
-hood. One of those windows must be opened for the kitchen hood to work. The wiring can be done in such a way that
-only power to the fan is cut, not power to the lights.
-
-Problem with that approach:
-- Wiring. However, Solutions exist in which the power switch and the sensor are separated, with radio communication.
-- The sensor may fail, either turning of the kitchen hood even when the window is open, or allowing it to run with
-  the window closed (and possibly pull smoke into the living room).
-- One must open a specific window, not just any window. Multiple sensors can extend this to multiple windows, but there
-  is usually a limit, and doing so is more expensive.
-- The wireless communication may be unreliable, especially in a metal-clad house, or may interfere with similar
-  solutions in neighboring houses.
-- Some modern kitchen hoods misbehave when their power is cut off.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Microwave with Display",
       problem: <>
         <p>
+          Alice describes the design of a microwave oven to Bob. The design was prompted by difficulties in sourcing the
+          turning knobs for power and cooking time in an older model. The new knobs are incremental rotary encoders:
+          They do not have an abolute position, but can only sense the direction and amount when turning them. In
+          consequence, a numeric display is needed to show the resulting power and cooking time when turning them. In
+          our example, assume that the problems with obtaining the old knobs are so severe that even using a display is
+          a more viable solution.
+        </p>
+        <p>
+          Bob responds: So the display will show the selected power when turning the power knob, the selected time when
+          turning the time knob, and the remaining time when the oven is running, right? Then when the microwave is not
+          running, the display can be used to show the time of day. Knowing the time of day is useful for most people,
+          and the rest can just ignore it. The user can easily see and hear that the oven is not running, so it won't be
+          mistaken for cooking time.
+        </p>
+        <p>
+          What should be Alice's response?
         </p>
       </>,
       answer: <>
         <p>
+          Alice should question the need for this feature. After all, it was just Bob's idea, not a feature requested by
+          an actual user, let alone a relevant fraction of all users. Without further investigation, a reasonable
+          starting point is to assume that everybody can easily look up the time of day on their phone or watch, or ask
+          somebody. This is without even considering that setting the time of day, and keeping it up-to-date with DST
+          changes, requires either additional controls or a connection to an NTP server.
         </p>
       </>,
-      /*
-Alice describes the design of a microwave oven to Bob. The design was prompted by difficulties in sourcing the turning
-knobs for power and cooking time in an older model. The new knobs are incremental rotary encoders: They do not have
-an abolute position, but can only sense the direction and amount when turning them. In consequence, a numeric display
-is needed to show the resulting power and cooking time when turning them. In our example, assume that the problems
-with obtaining the old knobs are so severe that even using a display is a more viable solution.
-
-Bob responds: So the display will show the selected power when turning the power knob, the selected time when turning
-the time knob, and the remaining time when the oven is running, right? Then when the microwave is not running, the
-display can be used to show the time of day. Knowing the time of day is useful for most people, and the rest can just
-ignore it. The user can easily see and hear that the oven is not running, so it won't be mistaken for cooking time.
-
-What should be Alice's response?
-
-Answer: 
-Alice should question the need for this feature. After all, it was just Bob's idea, not a feature requested by an
-actual user, let alone a relevant fraction of all users. Without further investigation, a reasonable starting point
-is to assume that everybody can easily look up the time of day on their phone or watch, or ask somebody. This is
-without even considering that setting the time of day, and keeping it up-to-date with DST changes, requires either
-additional controls or a connection to an NTP server.
-       */
     },
   ],
 };

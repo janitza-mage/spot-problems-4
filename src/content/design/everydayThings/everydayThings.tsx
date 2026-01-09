@@ -2,6 +2,7 @@ import type {Collection} from "../../../framework/content.tsx";
 
 import doorHandleImage from "./doorHandle.jpg";
 import {Hint} from "../../../framework/technical-components/Hint/Hint.tsx";
+import {Shuffled} from "../../../framework/technical-components/layout/Shuffled.tsx";
 
 export const everydayThings: Collection = {
   id: "everydayThings",
@@ -293,7 +294,7 @@ export const everydayThings: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Number of controls and functions",
       problem: <>
         <p>
           What statement is made in the book about the number of controls and the number of functions of an object?
@@ -310,7 +311,7 @@ export const everydayThings: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Natural Mapping (1)",
       problem: <>
         <p>
           A machine is intended to treat each of multiple workpieces with three different treatments: Apply a coat of
@@ -341,7 +342,7 @@ export const everydayThings: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Natural Mapping (2)",
       problem: <>
         TODO (Bild: Dreiecks-Tasten, Rücken an Rücken).
         <p>
@@ -359,470 +360,472 @@ export const everydayThings: Collection = {
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Natural Mapping (3)",
       problem: <>
         <p>
+          Many stoves have their burners and knobs arranged like this:
+        </p>
+        TODO: bild
+        <p>
+          but the book argues for either of the following two arrangements:
+        </p>
+        TODO bild mit 2
+        <p>
+          Point out two disavantages of these suggestions. For one suggestion, one of the problems is solvable.
         </p>
       </>,
       answer: <>
         <p>
+          Problem #1: Both take up more space than the original arrangement. Space is often a scarce resource in kitchens.
+        </p>
+        <p>
+          Problem #2: Both suggest to place the knobs on top of the stove, in a place where it is easy to accidentally spill
+          liquids. This problem is solvable with the second suggestion because the knobs are still arranged in a horizontal
+          line and can be moved back to the front side of the stove.
         </p>
       </>,
-      /*
-Many stoves have their burners and knobs arranged like this:
-
-(Bild)
-
-but the book argues for either of the following two arrangements:
-
-(Bilder)
-
-Point out two disavantages of these suggestions. One of the problems is solvable with one of the suggestions.
-
-Answer:
-
-Problem #1: Both take up more space than the original arrangement. Space is often a scarce resource in kitchens.
-Problem #2: Both suggest to place the knobs on top of the stove, in a place where it is easy to accidentally spill
-liquids. This problem is solvable with the second suggestion because the knobs are still arranged in a horizontal
-line and can be moved back to the front side of the stove.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Feedback (1)",
       problem: <>
         <p>
+          Imagine a button that operates a machine: When the user presses the button, the machine performs a specific
+          action. Alice and Bob are part of the team that builds the machine. Alice argues that there is no need for
+          feedback: The user knows they just pressed the button. What could be Bob's counter-argument?
         </p>
       </>,
       answer: <>
-        <p>
-        </p>
+        <ul>
+          <li>The user might press the button halfway before changing their mind. For example, the user might remember
+            that something else needs to be done first. Feedback is then useful to indicate whether that halfway-press
+            was registered or not.</li>
+          <li>The machine might be used in an environment in which machines are used with gloves. In such an
+            environment, the user might not be able to feel whether the button was pressed properly or not.</li>
+          <li>The machine might be used in an environment in which machines get dirty from dust, grease or other
+            substances. Feedback is useful to make sure the button is still working as intended.
+          </li>
+        </ul>
       </>,
-      /*
-Imagine a button that operates a machine: When the user presses the button, the machine performs a specific action.
-Alice and Bob are part of the team that builds the machine. Alice argues that there is no need for feedback: The user
-knows they just pressed the button. What could be Bob's counter-argument?
-
-Answer:
-- The user might press the button halfway before changing their mind. For example, the user might remember that
-something else needs to be done first. Feedback is then useful to indicate whether that halfway-press was registered
-or not.
-- The machine might be used in an environment in which machines are used with gloves. In such an environment, the
-user might not be able to feel whether the button was pressed properly or not.
-- The machine might be used in an environment in which machines get dirty from dust, grease or other substances.
-Feedback is useful to make sure the button is still working as intended.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Feedback (2)",
       problem: <>
         <p>
+          Imagine a button that operates a machine: When the user presses the button, the machine performs a specific
+          action. The button makes a beeping noise as feedback. In some of the possible states of the machine, the
+          button's operation is dangerous or impossible, and the machine's specification states that the button should
+          not operate the machine in this case.
+        </p>
+        <p>
+          What are two possible problems that should be avoided when designing this button? Suggest a solution that
+          avoids both problems.
         </p>
       </>,
       answer: <>
         <p>
+          Consider the situation in which the button's operation is prohibited. Should the beeping noise occur when the
+          button is pressed?
+          <ul>
+            <li>Problem #1. If the beeping noise does occur, then the user may falsely believe that the machine is
+              performing the intended action, when in reality it is not.</li>
+            <li>Problem #2. If the beeping noise does not occur, then the user may falsely believe that the button is
+              not working properly, i.e. broken or blocked by dirt.</li>
+          </ul>
+        </p>
+        <p>
+          A solution that avoids both problems is to make a distinct beeping noice in this case, preferably one that
+          obviously different from the "normal" one, and which suggests an abnormal situation. One possibility would be
+          a sequence of short beeps. Note that such a solution should be tested with users to ensure that it is
+          understood: Confront the user with the abnormal situation without giving instructions, and observe their
+          reaction.
         </p>
       </>,
-      /*
-Imagine a button that operates a machine: When the user presses the button, the machine performs a specific action.
-The button makes a beeping noise as feedback. In some of the possible states of the machine, the button's operation
-is dangerous or impossible, and the machine's specification states that the button should not operate the machine
-in this case.
-
-What are two possible problems that should be avoided when designing this button? Suggest a solution that avoids
-both problems.
-
-Answer: Consider the situation in which the button's operation is prohibited. Should the beeping noise occur when the
-button is pressed?
-- Problem #1. If the beeping noise does occur, then the user may falsely believe that the machine is performing the
-intended action, when in reality it is not.
-- Problem #2. If the beeping noise does not occur, then the user may falsely believe that the button is not working
-properly, i.e. broken or blocked by dirt. 
-
-A solution that avoids both problems is to make a distinct beeping noice in this case, preferably one that obviously
-different from the "normal" one, and which suggests an abnormal situation. One possibility would be a sequence of
-short beeps. Note that such a solution should be tested with users to ensure that it is understood: Confront the
-user with the abnormal situation without giving instructions, and observe their reaction.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Errors (1)",
       problem: <>
         <p>
+          To deal with human error, training, manuals and instructions seem like an obvious solution. What other steps
+          should a design take to deal with the possibility of human error?
         </p>
       </>,
       answer: <>
-        <p>
-        </p>
+        <ul>
+          <li>As much as possible, make errors impossible by design.</li>
+          <li>Minimize the chance for error.</li>
+          <li>Minimize the effects of errors when they do occur.</li>
+          <li>Make errors easy to detect and correct.</li>
+          <li>Make errors easy to recover from.</li>
+          <li>Use errors as a source of information to improve the design.</li>
+          <li>Consider that users may try to hide errors to avoid blame, punishment, or embarrassment.</li>
+        </ul>
       </>,
-      /*
-To deal with human error, training, manuals and instructions seem like an obvious solution. What other steps should a
-design take to deal with the possibility of human error?
-
-Answer:
-- As much as possible, make errors impossible by design.
-- Minimize the chance for error.
-- Minimize the effects of errors when they do occur.
-- Make errors easy to detect and correct.
-- Make errors easy to recover from.
-- Use errors as a source of information to improve the design.
-- Consider that users may try to hide errors to avoid blame, punishment, or embarrassment.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Errors (2)",
       problem: <>
         <p>
+          Alice's car has a system that combines, among other functions, the car's radio / music player and its
+          navigation system. The music player and the navigation system have independent volume settings but only a
+          single knob to change them: While the navigation system's voice is giving instructions, turning the knob
+          changes the volume of the navigation system. The remaining time, it controls the music volume.
+        </p>
+        <p>
+          Alice complains to Bob: My car's volume control is totally broken. Yesterday, I wanted the navigation system
+          to guide me to the nearest gas station, but the voice was so quiet I couldn't understand it. I turned up the
+          volume until my ears almost hurt from the loud music, but the voice was still too quiet to understand. Am I
+          supposed to get hearing damage just to understand the directions?
+        </p>
+        <p>
+          Explain the reason for Alice's frustration using the terminology of the book.
         </p>
       </>,
       answer: <>
         <p>
+          Alice has the wrong mental model of the system. In her model, there is only a single volume setting that is
+          shared by both the music player and the navigation system. Using this wrong model, she is trying to understand
+          and predict the behavior of the system, which is doomed to fail.
         </p>
       </>,
-      /*
-Alice's car has a system that combines, among other functions, the car's radio / music player and its navigation system.
-The music player and the navigation system have independent volume settings but only a single knob to change them:
-While the navigation system's voice is giving instructions, turning the knob changes the volume of the navigation
-system. The remaining time, it controls the music volume.
-
-Alice complains to Bob: My car's volume control is totally broken. Yesterday, I wanted the navigation system to guide
-me to the nearest gas station, but the voice was so quiet I couldn't understand it. I turned up the volume until my
-ears almost hurt from the loud music, but the voice was still too quiet to understand. Am I supposed to get
-hearing damage just to understand the directions?
-
-Explain the reason for Alice's frustration using the terminology of the book.
-
-Answer: Alice has the wrong mental model of the system. In her model, there is only a single volume setting that is
-shared by both the music player and the navigation system. Using this wrong model, she is trying to understand and
-predict the behavior of the system, which is doomed to fail.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Gulf of Execution",
       problem: <>
         <p>
+          Consider a room door. There are only four actions to do: open, close, lock, and unlock. (We'll ignore
+          maintenance for now). Explore the gulf of execution: What obstacles are there?
         </p>
       </>,
       answer: <>
-        <p>
-        </p>
+        <ul>
+          <li>open/close: It may be unclear whether to push or pull.</li>
+          <li>open/close: The door might be locked, or "locked while open".</li>
+          <li>open/close: The door might be blocked by some object (kids' toys are notorious for this)</li>
+          <li>open: There might be a person on the other side. You might even hit them with the door.</li>
+          <li>lock/unlock: You might realize they don't have the key with them.</li>
+          <li>lock/unlock: You could confuse the key with another key.</li>
+          <li>lock/unlock: You could be unsure in which direction to turn the key. There might be conventions for this,
+            but doors might violate them.</li>
+          <li>lock/unlock is harder when you came from outside, where it is cold, and your fingers are numb.</li>
+          <li>all four are harder when it is totally dark</li>
+          <li>all four are harder when you are carrying things</li>
+        </ul>
       </>,
-      /*
-Gulf of Execution:
-
-Consider a room door. There are only four actions to do: open, close, lock, and unlock. (We'll ignore maintenance
-for now). Explore the gulf of execution: What obstacles are there?
-
-- open/close: It may be unclear whether to push or pull.
-- open/close: The door might be locked, or "locked while open".
-- open/close: The door might be blocked by some object (kids' toys are notorious for this)
-- open: There might be a person on the other side. You might even hit them with the door.
-- lock/unlock: You might realize they don't have the key with them.
-- lock/unlock: You could confuse the key with another key.
-- lock/unlock: You could be unsure in which direction to turn the key. There might be conventions for this, but doors might violate them.
-- lock/unlock is harder when you came from outside, where it is cold, and your fingers are numb.
-- all four are harder when it is totally dark
-- all four are harder when you are carrying things
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Gulf of Evaluation",
       problem: <>
         <p>
+          Consider a room door. There are two independent variables of state, each with two states: Open or closed;
+          locked or unlocked. (We'll ignore maintenance for now). Explore the gulf of evaluation: What obstacles are
+          there?
         </p>
       </>,
       answer: <>
-        <p>
-        </p>
+        <ul>
+          <li>open/closed: from a distance, it is often not possible to see if the door is closed or almost-closed</li>
+          <li>locked/unlocked: It is impossible to see whether the door is locked or unlocked. You have to either try to
+            lock/unlock or to open it. If the door is unlocked, opening it just for this purpose might disturb a person
+            in the room. If the door is blocked by some object, it might appear locked when it is actually unlocked.</li>
+          <li>The state of the door must be felt if it is dark on both sides.</li>
+        </ul>
       </>,
-      /*
-Gulf of Evaluation:
-
-Consider a room door. There are two independent variables of state, each with two states: Open or closed; locked or
-unlocked. (We'll ignore maintenance for now). Explore the gulf of evaluation: What obstacles are there?
-
-- open/closed: from a distance, it is often not possible to see if the door is closed or almost-closed
-- locked/unlocked: It is impossible to see whether the door is locked or unlocked. You have to either try to 
-lock/unlock or to open it. If the door is unlocked, opening it just for this purpose might disturb a person in the room.
-If the door is blocked by some object, it might appear locked when it is actually unlocked.
-- The state of the door must be felt if it is dark on both sides.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Seven Stages of Action (1)",
       problem: <>
         <p>
+          What are the design questions to ask for the seven stages of action?
         </p>
       </>,
       answer: <>
-        <p>
-        </p>
+        <ul>
+          <li>How easily can one determine the function of the device?</li>
+          <li>How easily can one tell what actions are possible?</li>
+          <li>How easily can one determine the mapping from intention to physical movement?</li>
+          <li>How easily can one perform the action?</li>
+          <li>How easily can one tell what state the system is in?</li>
+          <li>How easily can one determine the mapping from system state to interpretation?</li>
+          <li>How easily can one tell if the system is in the desired state?</li>
+        </ul>
       </>,
-      /*
-What are the design questions to ask for the seven stages of action?
-- How easily can one determine the function of the device?
-- How easily can one tell what actions are possible?
-- How easily can one determine the mapping from intention to physical movement?
-- How easily can one perform the action?
-- How easily can one tell what state the system is in?
-- How easily can one determine the mapping from system state to interpretation?
-- How easily can one tell if the system is in the desired state?
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Seven Stages of Action (2)",
       problem: <>
         <p>
+          Inside an elevator for a 5-storey building, there are 7 buttons (ground floor, basement, and 5 storeys above).
+          Pressing a button instructs the elevator to move to that floor; if multiple buttons get pressed in succession,
+          the elevator will stop at each of them in order. However, for that particular elevator, there are no indicator
+          lights that show which buttons have been pressed. Which of the seven stages of action are affected by the
+          missing lights?
         </p>
       </>,
       answer: <>
+        <ul>
+          <li>Directly and fully affected: Perceiving the state of the world. There is simply no way to know which
+            buttons have been pressed.</li>
+          <li>Indirectly affected: Forming the intention. When entering the elevator, you cannot know whether the button
+            for your destination has been pressed by somebody else already. You have to press it again to be sure.</li>
+        </ul>
         <p>
+          Note that since the seven stages are an approximate model, there is room for interpretation when discussing
+          which stages exactly are affected. The key point is to have a tool to think about, and discuss, the effect of
+          the missing indicator lights on the usability of the system.
         </p>
       </>,
-      /*
-Inside an elevator for a 5-storey building, there are 7 buttons (ground floor, basement, and 5 storeys above).
-Pressing a button instructs the elevator to move to that floor; if multiple buttons get pressed in succession,
-the elevator will stop at each of them in order. However, for that particular elevator, there are no indicator
-lights that show which buttons have been pressed. Which of the seven stages of action are affected by the
-missing lights?
-
-Answer:
-- Directly and fully affected: Perceiving the state of the world. There is simply no way to know which buttons have
-been pressed.
-- Indirectly affected: Forming the intention. When entering the elevator, you cannot know whether the button for your
-destination has been pressed by somebody else already. You have to press it again to be sure.
-
-Note that since the seven stages are an approximate model, there is room for interpretation when discussing which
-stages exactly are affected. The key point is to have a tool to think about, and discuss, the effect of the missing
-indicator lights on the usability of the system.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Knowledge in Your Head and In the World (1)",
       problem: <>
         <p>
+          The chapter about knowledge in your head and knowledge in the world lists four tools:
+          <ul>
+            <li>Information is in the world</li>
+            <li>Great precision is not required</li>
+            <li>Natural constraints are present</li>
+            <li>Cultural constraints are present</li>
+          </ul>
+        </p>
+        <p>
+          You are tasked with painting colors into a coloring picture. There is a traffic light in the picture that you
+          are told is showing "red", so you fill the yellow and green lights with black color, then reach for red.
+        </p>
+        <p>
+          Give examples how each of them can guide you towards the correct pen, except for natural constraints -- there
+          are no contraints in this example that prevent you from using the wrong color.
         </p>
       </>,
       answer: <>
-        <p>
-        </p>
+        <ul>
+          <li>Information is in the world: The body of the pens are in the same color as they draw. The color can also
+            be observed by looking at the tip. In addition, the names of the colors may be written on the pens,
+            especially if the set of pens contains many different shades of red.</li>
+          <li>Great precision is not required: You only need to decide among the pens available. If there is only one
+            shade of red in the set, then you have to use it. Furthermore, if the traffic light has a wrong tone of red,
+            it will still be recognizable, and the somewhat-off color may be perceived as an artistic choice.</li>
+          <li>Cultural constraints are present: You know from your driving experience which shade of red is used for
+            traffic lights.</li>
+        </ul>
       </>,
-      /*
-The chapter about knowledge in your head and knowledge in the world lists four tools:
-* Information is in the world
-* Great precision is not required
-* Natural constraints are present
-* Cultural constraints are present
-
-You are tasked with painting colors into a coloring picture. There is a traffic light in the picture that you
-are told is showing "red", so you fill the yellow and green lights with black color, then reach for red.
-
-Give examples how each of them can guide you towards the correct pen, except for natural constraints -- there are
-no contraints in this example that prevent you from using the wrong color.
-
-Answer:
-- Information is in the world: The body of the pens are in the same color as they draw. The color can also be
-observed by looking at the tip. In addition, the names of the colors may be written on the pens, especially
-if the set of pens contains many different shades of red.
-- Great precision is not required: You only need to decide among the pens available. If there is only one shade of red
-in the set, then you have to use it. Furthermore, if the traffic light has a wrong tone of red, it will still be
-recognizable, and the somewhat-off color may be perceived as an artistic choice.
-- Cultural constraints are present: You know from your driving experience which shade of red is used for traffic lights.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Knowledge in Your Head and In the World (2)",
       problem: <>
         <p>
+          The chapter about knowledge in your head and knowledge in the world lists four tools:
+          <ul>
+            <li>Information is in the world</li>
+            <li>Great precision is not required</li>
+            <li>Natural constraints are present</li>
+            <li>Cultural constraints are present</li>
+          </ul>
+        </p>
+        <p>
+          Imagine you are visiting another country that uses a different standard for electric outlets. You want to
+          charge your phone, so you use an adapter you took with you and are now looking for an outlet. How do the above
+          four tools help you?
         </p>
       </>,
       answer: <>
-        <p>
-        </p>
+        <ul>
+          <li>Information is in the world: You can look up an image of the outlets for that country on the
+            internet.</li>
+          <li>Great precision is not required: If you try to plug the charger into something that is not an outlet,
+            nothing bad will happen. This is obviously not true when sticking something else into an actual outlet, but
+            that's a different case.</li>
+          <li>Natural constraints are present: The outlet must match the adapter, so by looking at the adapter, you can
+            guess what the outlet must look like.</li>
+          <li>Cultural constraints are present: With some exceptions, there are cultural expectations about where
+            outlets can be found. You will probably start by looking at the lower and middle part of walls.</li>
+        </ul>
       </>,
-      /*
-The chapter about knowledge in your head and knowledge in the world lists four tools:
-* Information is in the world
-* Great precision is not required
-* Natural constraints are present
-* Cultural constraints are present
-
-Imagine you are visiting another country that uses a different standard for electric outlets. You want to charge
-your phone, so you use an adapter you took with you and are now looking for an outlet. How do the above four tools
-help you?
-
-* Information is in the world: You can look up an image of the outlets for that country on the internet.
-* Great precision is not required: If you try to plug the charger into something that is not an outlet, nothing bad
-will happen. This is obviously not true when sticking something else into an actual outlet, but that's a
-different case.
-* Natural constraints are present: The outlet must match the adapter, so by looking at the adapter, you can guess
-what the outlet must look like.
-* Cultural constraints are present: With some exceptions, there are cultural expectations about where outlets can be
-found. You will probably start by looking at the lower and middle part of walls.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Knowledge in Your Head and In the World (3)",
       problem: <>
         <p>
+          Consider a simple room door. What are examples for knowledge in the world about using this door? What are
+          examples for knowledge in the head?
         </p>
       </>,
       answer: <>
         <p>
+          Knowledge in the world:
+          <ul>
+            <li>Looking at the frame and the hinges tells you whether to push or pull.</li>
+            <li>The placement of the handle tells you whether to push/pull on the right or on the left.</li>
+            <li>Whether the door is currently open or closed (unless it is almost-closed, then it is hard to tell).</li>
+            <li>If the door is closed: whether it is locked (by trying to open it).</li>
+            <li><b>If</b> an appropriate sign or label is placed: Whether the door ought to be closed while nobody
+              passes through it.</li>
+          </ul>
+        </p>
+        <p>
+          Knowledge in the head:
+          <ul>
+            <li>Which room the door leads to, especially if closed.</li>
+            <li>Which key is the right one.</li>
+            <li>If the door is closed: whether it is locked (just by looking at it).</li>
+            <li><b>If no</b> appropriate sign or label is placed: Whether the door ought to be closed while nobody
+              passes through it.</li>
+          </ul>
+        </p>
+        <p>
+          Note that the knowledge in the world can be internalized and become knowledge in the head. This can lead
+          to confusion if the world changes and the two pieces of information conflict.
         </p>
       </>,
-      /*
-The structure of memory
-
-The book presents three categories of memory:
-- memory for arbitrary things
-- memory for meaningful relationships
-- memory through explanation
-
-Imagine that a group of people are tasked to remember numbers, one number per person. Given the following numbers,
-which categories do they belong to?
-
-relationship:
-- ((javascript: current year)
-- 911 (Notruf)
-explanation:
-- 123456789
-- 100010001000
-arbitrary:
-- 6190723
-- 94100270
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "The Structure of Memory (1)",
       problem: <>
         <p>
+          The book presents three categories of memory:
+          <ul>
+            <li>memory for arbitrary things</li>
+            <li>memory for meaningful relationships</li>
+            <li>memory through explanation</li>
+          </ul>
+        </p>
+        <p>
+          Imagine that a group of people are tasked to remember numbers, one number per person. Given the following numbers,
+          which categories do they belong to?
+          <ul>
+            <Shuffled>
+              <li>{new Date().getFullYear()}</li>
+              <li>911</li>
+              <li>123456789</li>
+              <li>100010001000</li>
+              <li>6190723</li>
+              <li>94100270</li>
+            </Shuffled>
+          </ul>
         </p>
       </>,
       answer: <>
         <p>
+          Relationship:
+          <ul>
+            <li>{new Date().getFullYear()} (current year)</li>
+            <li>911 (emergency phone number)</li>
+          </ul>
+        </p>
+        <p>
+          Explanation:
+          <ul>
+            <li>123456789 (the digits 1 to 9 in sequence)</li>
+            <li>100010001000 (the digits 1000, repeated three times)</li>
+          </ul>
+        </p>
+        <p>
+          Arbitrary:
+          <ul>
+            <li>6190723</li>
+            <li>94100270</li>
+          </ul>
         </p>
       </>,
-      /*
-The book presents three categories of memory:
-- memory for arbitrary things
-- memory for meaningful relationships
-- memory through explanation
-
-Write instructions that a person can learn and remember, to draw the following pixel-art image:
-
-(Bild:
-Ampel mit schwarzen linien, weißer Fläche, alle Lichter an.
-)
-
-The instructions should assume that an 8x(???) pixel grid is given, and the following colors to be available:
-black, white, red, green, blue, cyan, purple, yellow.
-
-Design the instructions in such a way that it is easy to draw a pixel-perfect replica from memory. Make use of
-relationships and explanation as much as possible, resorting to arbitrary instructions only when necessary.
-
-Answer:
-
-Sample instructions, first variant:
-Draw traffic lights with all three lights lit, with a black outline and white body. The outline is one pixel on the
-border of the image, and one pixel around each light. Each light is a 2x2 block of colored pixels. The lights' outlines
-should be the 8 pixels directly next to the light, excluding the diagonal corners.
-
-How this uses the different categories:
-- "traffic lights": relationship to a real-world object already known; indicates the colors red, yellow, green, and their arrangement.
-- "lit": relationship to the behavior of that object; needed to clarify the use of those colors.
-- the fact that all three lights are lit is arbitrary and not usually encountered in real-world traffic lights
-- "outline": relationship to another real-world object (coloring books); very concisely indicates the position of many pixels
-- "one pixel on the outside", "one pixel around", "2x2 block": short explanations for many actual pixels
-- "black", "white": mostly arbitrary colors, though again relate to the patterns found in coloring books
-- the exact way these shapes are matched to pixels must be remembered as an arbitrary thing, such as the exact
-shape of the outline around the lights.
-
-<br/>
-
-Sample instructions, second variant:
-Draw traffic lights with all three lights lit, with a white body, and a black outline on the image border and around
-each light. Each light is a 2x2 block of colored pixels. The outline should be enough so no white pixel touches the
-image border or a colored pixel, but no more than that.
-
-This variant removes the detailed instructions for the outline, and instead describes the constraints that the outline
-must fulfill. Even though the description is hardly shorter, it conveys meaning instead of arbitrary instructions.
-Furthermore, with a similar description, the outline for other shapes can be derived.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "The Structure of Memory (2)",
       problem: <>
         <p>
+          The book presents three categories of memory:
+          <ul>
+            <li>memory for arbitrary things</li>
+            <li>memory for meaningful relationships</li>
+            <li>memory through explanation</li>
+          </ul>
+        </p>
+        <p>
+          Write instructions that a person can learn and remember, to draw the following pixel-art image:
+        </p>
+        TODO (Bild: Ampel mit schwarzen linien, weißer Fläche, alle Lichter an.)
+        <p>
+          The instructions should assume that an 8x(???) pixel grid is given, and the following colors to be available:
+          black, white, red, green, blue, cyan, purple, yellow.
+        </p>
+        <p>
+          Design the instructions in such a way that it is easy to draw a pixel-perfect replica from memory. Make use of
+          relationships and explanation as much as possible, resorting to arbitrary instructions only when necessary.
         </p>
       </>,
       answer: <>
         <p>
+          <b>Sample instructions, first variant:</b> Draw traffic lights with all three lights lit, with a black outline
+          and white body. The outline is one pixel on the border of the image, and one pixel around each light. Each
+          light is a 2x2 block of colored pixels. The lights' outlines should be the 8 pixels directly next to the
+          light, excluding the diagonal corners.
+        </p>
+        <p>
+          How this uses the different categories:
+          <ul>
+            <li>"traffic lights": relationship to a real-world object already known; indicates the colors red, yellow, green, and their arrangement.</li>
+            <li>"lit": relationship to the behavior of that object; needed to clarify the use of those colors.</li>
+            <li>the fact that all three lights are lit is arbitrary and not usually encountered in real-world traffic lights</li>
+            <li>"outline": relationship to another real-world object (coloring books); very concisely indicates the position of many pixels</li>
+            <li>"one pixel on the outside", "one pixel around", "2x2 block": short explanations for many actual pixels</li>
+            <li>"black", "white": mostly arbitrary colors, though again relate to the patterns found in coloring books</li>
+            <li>the exact way these shapes are matched to pixels must be remembered as an arbitrary thing, such as the exact
+              shape of the outline around the lights.</li>
+          </ul>
+        </p>
+        <p>
+          <b>Sample instructions, second variant:</b> Draw traffic lights with all three lights lit, with a white body,
+          and a black outline on the image border and around each light. Each light is a 2x2 block of colored pixels.
+          The outline should be enough so no white pixel touches the image border or a colored pixel, but no more than
+          that.
+        </p>
+        <p>
+          This variant removes the detailed instructions for the outline, and instead describes the constraints that the
+          outline must fulfill. Even though the description is hardly shorter, it conveys meaning instead of arbitrary
+          instructions. Furthermore, with a similar description, the outline for other shapes can be derived.
         </p>
       </>,
-      /*
-Consider a simple room door. What are examples for knowledge in the world about this door? What are examples for
-knowledge in the head?
-
-Answer:
-
-Knowledge in the world:
-- Looking at the frame and the hinges tells you whether to push or pull
-- The placement of the handle tells you whether to push/pull on the right or on the left
-- Whether the door is currently open or closed (unless it is almost-closed, then it is hard to tell)
-- If the door is closed: whether it is locked (by trying to open it).
-- <b>If</b> an appropriate sign or label is placed: Whether the door ought to be closed while nobody passes through it.
-
-Knowledge in the head:
-- Which room the door leads to, especially if closed
-- Which key is the right one
-- If the door is closed: whether it is locked (just by looking at it).
-- <b>If no<b> appropriate sign or label is placed: Whether the door ought to be closed while nobody passes through it.
-       */
     },
     {
       type: "exercise",
-      label: "xxxxxxxxxxxxxxx",
+      label: "Knowing what to do",
       problem: <>
         <p>
+          Imagine an electronic device with a detachable power cord. How do you know what to do with the power cord?
         </p>
       </>,
       answer: <>
-        <p>
-        </p>
+        <h3>Affordances</h3>
+        <ul>
+          <li>The power cord has plugs on both sides, and plugs afford ("are for") plugging them in.</li>
+          <li>The device has a socket that affords pluggin a plug into it.</li>
+          <li>The cord affords laying it across the room (among other things).</li>
+        </ul>
+        <h3>Constraints</h3>
+        <ul>
+          <li>Physical: The cord uses different types of plugs on its two ends. This constraint prevents the user from
+            touching the wires on the device side and getting electrocuted. The wall-side plug will not fit into the
+            device-side socket and vice versa.</li>
+          <li>Physical: The wall-side plug can only be inserted in the correct way into the outlet. For some outlet
+            types, two orientations are possible (flipped by 180°), but either one will work. If the device is designed
+            well, the same is true for the device-side socket.</li>
+          <li>Semantic: Electronic devices need power, so a power cord (or charger) is required for operation.</li>
+          <li>Cultural: You know from experience what a power cord is and how to use it. You know the looks of a
+            wall-side plug, and that the device-side plug is something else.</li>
+          <li>Logical: The power cord was in the box for the device, so you are supposed to use it.</li>
+        </ul>
       </>,
-      /*
-Imagine an electronic device with a detachable power cord. How do you know what to do with the power cord?
-
-Answer:
-- Affordances:
-  - The power cord has plugs on both sides, and plugs afford ("are for") plugging them in.
-  - The device has a socket that affords pluggin a plug into it.
-  - The cord affords laying it across the room (among other things).
-- Constraints:
-  - Physical: The cord uses different types of plugs on its two ends. This constraint prevents the user from touching
-    the wires on the device side and getting electrocuted. The wall-side plug will not fit into the device-side
-    socket and vice versa.
-  - Physical: The wall-side plug can only be inserted in the correct way into the outlet. For some outlet types,
-    two orientations are possible (flipped by 180°), but either one will work. If the device is designed well, the
-    same is true for the device-side socket.
-  - Semantic: Electronic devices need power, so a power cord (or charger) is required for operation.
-  - Cultural: You know from experience what a power cord is and how to use it. You know the looks of a wall-side
-    plug, and that the device-side plug is something else.
-  - Logical: The power cord was in the box for the device, so you are supposed to use it.
-       */
     },
     {
       type: "exercise",

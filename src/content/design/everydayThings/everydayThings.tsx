@@ -1,4 +1,4 @@
-import type {Collection, Folder} from "../../../framework/content.tsx";
+import type {Collection} from "../../../framework/content.tsx";
 
 import doorHandleImage from "./doorHandle.jpg";
 
@@ -42,29 +42,28 @@ export const everydayThings: Collection = {
         <p>
         </p>
       </>,
-    },
-  ],
-};
-
-/*
-
-
------------------------------------------------------------------------------------------------------------------------
-kap1
------------------------------------------------------------------------------------------------------------------------
-
-
----
-
-Imagine you are at a restaurant. How can you tell the salt shaker and the pepper shaker apart?
+      /*
+      Imagine you are at a restaurant. How can you tell the salt shaker and the pepper shaker apart?
 - the salt shaker has an "S" on it and the pepper shaker has a "P" on it
 - the salt shaker has fewer holes than the pepper shaker (because salt is considered unhealthy)
 - the pepper shaker has fewer holes than the salt shaker (because pepper was historically considered an expensive spice)
 - the salt shaker is white and the pepper shaker is black
 - the shakers are transparent
 
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 A light switch -- toggle or rocker switch (Bilder) -- does not provide clues about which side turns the light on and which
 side turns the light off. Worse, if multiple switches are connected, then flipping one switch reverses the direction
 of the other switches. Yet, this is not a huge problem in practice. Why? When does it become a problem?
@@ -80,21 +79,54 @@ to see which switch connects to which light.
 - it becomes a problem when the light is broken, because there is no longer feedback about the state of the light.
 Then the switch cannot be relied on to safely turn the power off. (Note that this is not the only reason why one
 should not rely on the switch to safely turn the power off, making this problem less relevant.)
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 What does "affordance" mean?
 - it means what a thing seems to exist for, and how it seems intended to be used. Affordances can or cannot match
 the actual purpose of that thing, leaing people to use it the right or wrong way.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 How do affordances relate to instructions?
 - If used right, affordances can make some instructions unnecessary: In particular, those instructions that tell the
 user what to do with an object. If used wrong, affordances can make _additional_ instructions necessary.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 What is the afforance of
 - a button
   - to press it
@@ -102,9 +134,20 @@ What is the afforance of
   - to sit down
 - a cup
   - to fill liquids in and drink from it
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Suppose you have a small measure of poisonous liquid and have to store it somewhere. Evaporation is not a concern.
 Based on afforance, which container is LEAST suited? 
 - a glass bottle
@@ -116,9 +159,20 @@ Based on afforance, which container is LEAST suited?
 Answer: The coffee cup, because part of its afforances is to drink from it. This is not generally true for the
 other containers. Note however, that drinking from the other containers is not universally wrong either, which is
 why not using a coffee cup alone is not sufficient as a safety measure. 
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Real-world case: A clothes drier has a button to start it. Alice presses the button, but the drier does not start.
 Alice presses the button harder, assuming that the button might be just hard to press, or maybe (partially) broken,
 but no effect. Alice starts considering that she has to do "something else first", that is, that the drier's
@@ -146,22 +200,55 @@ only once per second, making it almost impossible to discover the proper way to 
 one thing right: The button was rigid enough so pressing it hard does not break it. An easy way to solve the problem
 is to sample the button more frequently -- a drier is connected to the power grid, so there is no need to save a tiny
 amount of energy by sampling the button infrequently.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 What is the "psychology of causality" the book refers to?
 - if you perform an action, and something happens, you tend to believe that your action caused that effect, even
 if the effect was caused by something else.
 - if you perform an action, and nothing happens, you tend to believe that your action had no effect, even if the
 effect might be invisible.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 What does the term "conceptual model" mean?
 - It means "what the user thinks how the system works and behaves".
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Imagine three lifting platforms:
 - Platform one has two buttons (Bild: Dreiecke hoch/runter)
 - Platform two has two buttons and two lights (Bild: zwei runde Knöpfe mit Beschritung: move/change, dreieckige lichter
@@ -191,17 +278,39 @@ questions:
 Bild 3:
 The buttons and lights do not suggest a clear conceptual model. The lift _might_ work similar to the second one, with
 the light being lit indicating "up" and dark indicating "down" -- or the other way round, or something entirely different.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 What statement is made in the book about the number of controls and the number of functions of an object?
 - If the number of controls equals the number of functions, each control can be specialized, and mapped to exactly
 one function. The controls can be labeled according to their function. If, OTOH, the number of functions is greater
 than the number of controls, then at least some controls will be associated with more than one function, and
 the object will be more difficult to use.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 A machine is intended to treat each of multiple workpieces with three different treatments: Apply a coat of paint,
 blow hot air to evaporate the solvent, then shine a UV light to cure the paint. The machine has three buttons, one for
 each step. (Bild: Drei Knöpfe in waagrechter Reihe) There is a natural mapping between the buttons and the steps (in
@@ -215,18 +324,40 @@ based on the convention of reading and writing from left to right. Users from co
 will likely have more difficulties operating the machine. The problem can be moderated by labeling the buttons with
 their function and/or the order in which they should be operated, but the risk of using them in the wrong order
 by intuition remains.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 An elevator has two buttons, one for going up and one for going down. (Bild: Dreiecks-Tasten, Rücken an Rücken).
 Can you identify the button for going up? How did you know? Does the mapping originate in physics, biology or culture?
 
 Answer: The mapping is in part physics, in part culture. The physical part of the mapping is that the button for going
 up is on the top. The cultural part is the triangular shape, which is a case of using arrow symbols to indicate
 direction.
-
-----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Many stoves have their burners and knobs arranged like this:
 
 (Bild)
@@ -243,9 +374,20 @@ Problem #1: Both take up more space than the original arrangement. Space is ofte
 Problem #2: Both suggest to place the knobs on top of the stove, in a place where it is easy to accidentally spill
 liquids. This problem is solvable with the second suggestion because the knobs are still arranged in a horizontal
 line and can be moved back to the front side of the stove.
-
-----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Imagine a button that operates a machine: When the user presses the button, the machine performs a specific action.
 Alice and Bob are part of the team that builds the machine. Alice argues that there is no need for feedback: The user
 knows they just pressed the button. What could be Bob's counter-argument?
@@ -258,9 +400,20 @@ or not.
 user might not be able to feel whether the button was pressed properly or not.
 - The machine might be used in an environment in which machines get dirty from dust, grease or other substances.
 Feedback is useful to make sure the button is still working as intended.
-
-----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Imagine a button that operates a machine: When the user presses the button, the machine performs a specific action.
 The button makes a beeping noise as feedback. In some of the possible states of the machine, the button's operation
 is dangerous or impossible, and the machine's specification states that the button should not operate the machine
@@ -280,9 +433,20 @@ A solution that avoids both problems is to make a distinct beeping noice in this
 different from the "normal" one, and which suggests an abnormal situation. One possibility would be a sequence of
 short beeps. Note that such a solution should be tested with users to ensure that it is understood: Confront the
 user with the abnormal situation without giving instructions, and observe their reaction.
-
-----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 To deal with human error, training, manuals and instructions seem like an obvious solution. What other steps should a
 design take to deal with the possibility of human error?
 
@@ -294,9 +458,20 @@ Answer:
 - Make errors easy to recover from.
 - Use errors as a source of information to improve the design.
 - Consider that users may try to hide errors to avoid blame, punishment, or embarrassment.
-
-----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Alice's car has a system that combines, among other functions, the car's radio / music player and its navigation system.
 The music player and the navigation system have independent volume settings but only a single knob to change them:
 While the navigation system's voice is giving instructions, turning the knob changes the volume of the navigation
@@ -312,9 +487,20 @@ Explain the reason for Alice's frustration using the terminology of the book.
 Answer: Alice has the wrong mental model of the system. In her model, there is only a single volume setting that is
 shared by both the music player and the navigation system. Using this wrong model, she is trying to understand and
 predict the behavior of the system, which is doomed to fail.
-
-----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Gulf of Execution:
 
 Consider a room door. There are only four actions to do: open, close, lock, and unlock. (We'll ignore maintenance
@@ -330,9 +516,20 @@ for now). Explore the gulf of execution: What obstacles are there?
 - lock/unlock is harder when you came from outside, where it is cold, and your fingers are numb.
 - all four are harder when it is totally dark
 - all four are harder when you are carrying things
-
-----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Gulf of Evaluation:
 
 Consider a room door. There are two independent variables of state, each with two states: Open or closed; locked or
@@ -343,9 +540,20 @@ unlocked. (We'll ignore maintenance for now). Explore the gulf of evaluation: Wh
 lock/unlock or to open it. If the door is unlocked, opening it just for this purpose might disturb a person in the room.
 If the door is blocked by some object, it might appear locked when it is actually unlocked.
 - The state of the door must be felt if it is dark on both sides.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 What are the design questions to ask for the seven stages of action?
 - How easily can one determine the function of the device?
 - How easily can one tell what actions are possible?
@@ -354,9 +562,20 @@ What are the design questions to ask for the seven stages of action?
 - How easily can one tell what state the system is in?
 - How easily can one determine the mapping from system state to interpretation?
 - How easily can one tell if the system is in the desired state?
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Inside an elevator for a 5-storey building, there are 7 buttons (ground floor, basement, and 5 storeys above).
 Pressing a button instructs the elevator to move to that floor; if multiple buttons get pressed in succession,
 the elevator will stop at each of them in order. However, for that particular elevator, there are no indicator
@@ -372,9 +591,20 @@ destination has been pressed by somebody else already. You have to press it agai
 Note that since the seven stages are an approximate model, there is room for interpretation when discussing which
 stages exactly are affected. The key point is to have a tool to think about, and discuss, the effect of the missing
 indicator lights on the usability of the system.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 The chapter about knowledge in your head and knowledge in the world lists four tools:
 * Information is in the world
 * Great precision is not required
@@ -395,9 +625,20 @@ if the set of pens contains many different shades of red.
 in the set, then you have to use it. Furthermore, if the traffic light has a wrong tone of red, it will still be
 recognizable, and the somewhat-off color may be perceived as an artistic choice.
 - Cultural constraints are present: You know from your driving experience which shade of red is used for traffic lights.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 The chapter about knowledge in your head and knowledge in the world lists four tools:
 * Information is in the world
 * Great precision is not required
@@ -416,9 +657,20 @@ different case.
 what the outlet must look like.
 * Cultural constraints are present: With some exceptions, there are cultural expectations about where outlets can be
 found. You will probably start by looking at the lower and middle part of walls.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 The structure of memory
 
 The book presents three categories of memory:
@@ -438,9 +690,20 @@ explanation:
 arbitrary:
 - 6190723
 - 94100270
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 The book presents three categories of memory:
 - memory for arbitrary things
 - memory for meaningful relationships
@@ -485,9 +748,20 @@ image border or a colored pixel, but no more than that.
 This variant removes the detailed instructions for the outline, and instead describes the constraints that the outline
 must fulfill. Even though the description is hardly shorter, it conveys meaning instead of arbitrary instructions.
 Furthermore, with a similar description, the outline for other shapes can be derived.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Consider a simple room door. What are examples for knowledge in the world about this door? What are examples for
 knowledge in the head?
 
@@ -505,9 +779,20 @@ Knowledge in the head:
 - Which key is the right one
 - If the door is closed: whether it is locked (just by looking at it).
 - <b>If no<b> appropriate sign or label is placed: Whether the door ought to be closed while nobody passes through it.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Imagine an electronic device with a detachable power cord. How do you know what to do with the power cord?
 
 Answer:
@@ -526,9 +811,20 @@ Answer:
   - Cultural: You know from experience what a power cord is and how to use it. You know the looks of a wall-side
     plug, and that the device-side plug is something else.
   - Logical: The power cord was in the box for the device, so you are supposed to use it.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 (Bild vom Kinderspiel mit Holzklötzen und Löcherschablone)
 
 In this kids' toy, a physical constraint dictates which pieces can be placed in which holes. However, there is a
@@ -539,10 +835,20 @@ The second constraint is logical: There are holes in the same shapes as the piec
 for something. This second constraint indicates that it is wrong to put all pieces sideways through the square hole,
 even though they would fit. This constraint depends on the task to be accomplished: Are you meant to play with the
 toy the way it was intended, or are you meant to put all pieces into the box, no matter how?
-
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 With computers, a "splash screen" is an image that appears after commanding an application to start, and that stays
 visible while the application is loading. What problem does a splash screen solve? In what wqys is it imperfect?
 
@@ -561,9 +867,20 @@ The splash screen is imperfect in many ways:
 - The splash screen disappearing without any controls becoming visible indicate a problem, but it would be better to
   fix that problem instead (if it is a problem in the application'S program code), or tell the user how to fix it
   (if it is a problem with the user's system). 
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 The simplest of microwave ovens use sound for "visibility" (in a broader sense): The make a beeping or a "ping" noise
 when they are done. There are at least two other, less obvious ways, in which they use sound for visibility -- which
 are they?
@@ -576,9 +893,20 @@ whether the oven is running.
 
 2. The oven's door makes a clicking noise when latching closed. The exact noise can be used to tell whether the door
 is closed properly.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Associate the following errors to the different mechanisms for errors.
 
 (useMemo + shuffle)
@@ -611,9 +939,20 @@ Associate the following errors to the different mechanisms for errors.
     it.
   - On the computer, you try to type your password. You are sure that you enter it correctly, but it fails three
     times, permanently locking you out of your account. You then realize that the "caps lock" key was active.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Give some examples for how rules can help to avoid mistakes (that is, conscious errors -- not slips). Point out
 what is crucial for the rules to work.
 
@@ -631,9 +970,20 @@ situation (that warrants deviating from the script).
 - Rules can demand that operations on a system are always reviewed by a second person. A crucial part here is that
 the second person can actually make an independent judgement, and not be pressured by the first person to accept
 an error as correct.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 A biolab deals with several pathogens, from rhinovirus (common cold) to coronavirus, to Marburg virus (a very
 dangerous virus). Every room that deals with the pathogens has to be entered through an airlock, and the doors
 marked with the biohazard symbol. Non-lab rooms are not marked and do not use an airlock.
@@ -655,9 +1005,20 @@ Note that the level of danger may be indicated on the outside too, together with
 largely a convenience, not a safety feature -- it allows to know the level of danger without entering the airlock.
 When it comes to evaluating the safety, these signs might as well be missing, because somebody who is about to
 make an error will not read them at that moment.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Assume a house with a fireplace that can be closed with a glass door. The house also has a kitchen hood above the
 stove. This presents a problem in well-insulated houses: The outer walls are sufficiently airtight to make the
 kitchen hood create an underpressure that pull smoke out of the fireplace and into the living room. This is
@@ -681,9 +1042,20 @@ Problem with that approach:
 - The wireless communication may be unreliable, especially in a metal-clad house, or may interfere with similar
   solutions in neighboring houses.
 - Some modern kitchen hoods misbehave when their power is cut off.
-
----
-
+       */
+    },
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
 Alice describes the design of a microwave oven to Bob. The design was prompted by difficulties in sourcing the turning
 knobs for power and cooking time in an older model. The new knobs are incremental rotary encoders: They do not have
 an abolute position, but can only sense the direction and amount when turning them. In consequence, a numeric display
@@ -703,7 +1075,7 @@ actual user, let alone a relevant fraction of all users. Without further investi
 is to assume that everybody can easily look up the time of day on their phone or watch, or ask somebody. This is
 without even considering that setting the time of day, and keeping it up-to-date with DST changes, requires either
 additional controls or a connection to an NTP server.
-
-
-
- */
+       */
+    },
+  ],
+};

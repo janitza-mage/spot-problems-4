@@ -1,0 +1,15 @@
+    {
+      type: "exercise",
+      label: "xxxxxxxxxxxxxxx",
+      problem: <>
+        <p>
+        </p>
+      </>,
+      answer: <>
+        <p>
+        </p>
+      </>,
+      /*
+      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+       */
+    },

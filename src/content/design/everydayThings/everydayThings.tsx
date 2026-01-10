@@ -293,13 +293,15 @@ export const everydayThings: Collection = {
       type: "exercise",
       label: "Lifting Platforms",
       problem: <>
+        <img src={triangleButtonsImage} style={{width: "33%"}} />
+        <img src={platformImage1} style={{width: "33%"}} />
+        <img src={platformImage2} style={{width: "33%"}} />
         <p>
-          Imagine three lifting platforms:
+          Imagine three different control panels for a lifting platform:
           <ul>
-            <li>Platform one has two buttons (TODO Bild: Dreiecke hoch/runter)</li>
-            <li>Platform two has two buttons and two lights (TODO Bild: zwei runde Knöpfe mit Beschritung: move/change, dreieckige lichter
-              hoch/runter)</li>
-            <li>Platform three has two buttons and one light (TODO Bild: zwei runde Knöpfe mit Beschritung: move/change, ein rundes Licht)</li>
+            <li>Control panel one has two buttons</li>
+            <li>Control panel two has two buttons and two lights</li>
+            <li>Control panel three has two buttons and one light</li>
           </ul>
         </p>
         <p>

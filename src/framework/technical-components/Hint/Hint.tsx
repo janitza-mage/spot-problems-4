@@ -13,8 +13,7 @@ export function Hint(props: HintProps) {
       {props.label}
     </AccordionSummary>
     <AccordionDetails>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-      malesuada lacus ex, sit amet blandit leo lobortis eget.
+      {props.children}
     </AccordionDetails>
   </Accordion>;
 }

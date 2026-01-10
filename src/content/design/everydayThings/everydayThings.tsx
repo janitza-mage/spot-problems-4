@@ -395,7 +395,7 @@ export const everydayThings: Collection = {
       type: "exercise",
       label: "Natural Mapping (2)",
       problem: <>
-        TODO (Bild: Dreiecks-Tasten, Rücken an Rücken).
+        <img src={triangleButtonsImage} style={{width: "100%"}} />
         <p>
           An elevator has two buttons, one for going up and one for going down. Can you identify the button for
           going up? How did you know? Does the mapping originate in physics, biology or culture?
@@ -416,11 +416,12 @@ export const everydayThings: Collection = {
         <p>
           Many stoves have their burners and knobs arranged like this:
         </p>
-        TODO: bild
+        <img src={stoveImage1} style={{width: "100%"}} />
         <p>
           but the book argues for either of the following two arrangements:
         </p>
-        TODO bild mit 2
+        <img src={stoveImage2} style={{width: "49%"}} />
+        <img src={stoveImage3} style={{width: "49%"}} />
         <p>
           Point out two disavantages of these suggestions. For one suggestion, one of the problems is solvable.
         </p>
@@ -805,9 +806,11 @@ export const everydayThings: Collection = {
         <p>
           Write instructions that a person can learn and remember, to draw the following pixel-art image:
         </p>
-        TODO (Bild: Ampel mit schwarzen linien, weißer Fläche, alle Lichter an.)
+        <div style={{textAlign: "center"}}>
+          <img src={trafficLightsImage} style={{width: "30%"}} />
+        </div>
         <p>
-          The instructions should assume that an 8x(???) pixel grid is given, and the following colors to be available:
+          The instructions should assume that an 8x18 pixel grid is given, and the following colors to be available:
           black, white, red, green, blue, cyan, purple, yellow.
         </p>
         <p>

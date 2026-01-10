@@ -1,6 +1,16 @@
 import type {Collection} from "../../../framework/content.tsx";
 
 import doorHandleImage from "./doorHandle.jpg";
+import lightSwitchImage from "./lightSwitch.jpg";
+import machineImage from "./machine.jpg";
+import platformImage1 from "./platform1.jpg";
+import platformImage2 from "./platform2.jpg";
+import stoveImage1 from "./stove1.jpg";
+import stoveImage2 from "./stove2.jpg";
+import stoveImage3 from "./stove3.jpg";
+import threeButtonsImage from "./threeButtons.jpg";
+import trafficLightsImage from "./trafficLights.png";
+import triangleButtonsImage from "./triangleButtons.jpg";
 import {Hint} from "../../../framework/technical-components/Hint/Hint.tsx";
 import {Shuffled} from "../../../framework/technical-components/layout/Shuffled.tsx";
 
@@ -59,7 +69,7 @@ export const everydayThings: Collection = {
           have to apply for all doors.
         </p>
         <div>
-          <img src={doorHandleImage} width="100%" />
+          <img src={doorHandleImage} style={{width: "100%"}} />
         </div>
       </>,
       answer: <>
@@ -95,7 +105,7 @@ export const everydayThings: Collection = {
       type: "exercise",
       label: "Light Switch Direction",
       problem: <>
-        TODO: Bilder
+        <img src={lightSwitchImage} style={{width: "100%"}} />
         <p>
           A light switch -- toggle or rocker switch -- does not provide clues about which side turns the light on and
           which side turns the light off. Worse, if multiple switches are connected, then flipping one switch reverses

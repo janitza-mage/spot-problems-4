@@ -370,12 +370,11 @@ export const everydayThings: Collection = {
           paint, blow hot air to evaporate the solvent, then shine a UV light to cure the paint. The machine has three
           buttons, one for each step.
         </p>
-        <p>
-          TODO (Bild: Drei Knöpfe in waagrechter Reihe)
-        </p>
+        <img src={machineImage} style={{width: "49%"}} />
+        <img src={threeButtonsImage} style={{width: "49%"}} />
         <p>
           There is a natural mapping between the buttons and the steps (in the sense the book defines "natural
-          mapping"). Which button operates the first treatment (aply paint)? Does the mapping originate in physics,
+          mapping"). Which button operates the first treatment (apply paint)? Does the mapping originate in physics,
           biology or culture?
         </p>
         <Hint label={"Hint"}>

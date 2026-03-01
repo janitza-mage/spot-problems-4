@@ -1,0 +1,3 @@
+bsp:
+https://ocw.mit.edu/courses/7-05-general-biochemistry-spring-2020/download/
+https://ocw.mit.edu/search/

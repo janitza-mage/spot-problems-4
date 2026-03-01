@@ -1,5 +1,6 @@
 import {Route, Routes, useParams} from "react-router-dom";
 import {ContentPathPage} from "../../pages/content/ContentPathPage";
+import {PrintAllPage} from "../../pages/PrintAllPage.tsx";
 
 function removeTrailingSlashes(s: string): string {
     while (s.endsWith("/")) {
@@ -16,6 +17,7 @@ function ContentPathPageWrapper() {
 
 export function AppRoutes() {
     return <Routes>
+        <Route path={"_/printAll"} element={<PrintAllPage />} />;
         <Route path={"*"} element={<ContentPathPageWrapper />} />;
     </Routes>;
 }

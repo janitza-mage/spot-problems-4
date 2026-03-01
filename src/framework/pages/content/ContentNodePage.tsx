@@ -1,6 +1,7 @@
-import {type ContentNode, type ExerciseNode, type FolderNode} from "../../content.tsx";
-import {FolderPage} from "./folder/FolderPage";
-import {ExercisePage} from "./exercise/ExercisePage";
+import {type ContentNode} from "../../content.tsx";
+import {FolderPage} from "./FolderPage.tsx";
+import {ExercisePage} from "./ExercisePage.tsx";
+import {CollectionPage} from "./CollectionPage.tsx";
 
 export interface ContentNodePageProps {
     node: ContentNode;
@@ -10,8 +11,10 @@ export interface ContentNodePageProps {
 export function ContentNodePage(props: ContentNodePageProps) {
     switch (props.node.type) {
         case "folder":
-            return <FolderPage folder={props.node as FolderNode} path={props.path} />;
+            return <FolderPage folder={props.node} path={props.path} />;
+        case "collection":
+            return <CollectionPage collection={props.node} path={props.path} />;
         case "exercise":
-            return <ExercisePage exerciseNode={props.node as ExerciseNode} path={props.path} />;
+            return <ExercisePage exercise={props.node} path={props.path} />;
     }
 }

@@ -1,0 +1,44 @@
+
+#
+# R^n
+#
+
+(0) calculation rules in R^n (except dot product -- needed for analytical geometry, not LA)
+
+(1) theorems and definitions in R^n (correspond to vector space axioms and conclusions) 
+
+#
+# vector spaces
+#
+
+(2) real VS axioms
+
+(a) dot product
+
+...
+
+#
+# complex vector spaces
+#
+
+(g) complex VS axioms
+
+(h) complex dot product
+
+...
+
+#
+# arbitrary-field vector spaces
+#
+
+(p) arbitrary-field VS axioms
+
+(q) dot product
+
+...
+
+#
+# infinite-dimensional vector spaces
+#
+
+

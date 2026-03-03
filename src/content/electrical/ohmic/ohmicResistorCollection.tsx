@@ -1,29 +1,17 @@
-import type {ExerciseNode} from "../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../framework/technical-components/Math/Math.tsx";
 import bridgeParallelImage from "./bridge-parallel.jpg";
 import largePieceImage from "./large-piece.jpg";
 import infiniteResistorLadderImage from "./infinite-resistor-ladder.jpg";
 import bridgeMeasureImage from "./bridge-measure.jpg";
 
-function a(x: number, y: number) {
-  return 1/(1/x + 1/y);
-}
-
-const s = 0.02;
-const p = 1;
-
-let b = s + p;
-for (let i = 0; i < 100; i++) {
-  console.log(b);
-  b = s + a(p, b);
-}
-
-export const ohmicResistorCollection: ExerciseNode = {
+export const ohmicResistorCollection: Collection = {
   id: "ohmicResistor",
   name: "Ohmic Resistors",
-  type: "exercise",
-  contentItems: [
+  type: "collection",
+  exercises: [
     {
+  type: "exercise",
+      label: "Voltage, current and resistance (1)",
       problem: <>
         <p>
           A voltage of {mathSpan("U=5V")} is applied to a resistor with resistance of {mathSpan("R=10#Omega")}.
@@ -37,6 +25,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Voltage, current and resistance (2)",
       problem: <>
         <p>
           A current of {mathSpan("I=2A")} is applied to a resistor with resistance of {mathSpan("R=40#Omega")}.
@@ -50,6 +40,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Voltage, current and resistance (3)",
       problem: <>
         <p>
           A voltage of {mathSpan("U=10V")} is applied to a resistor, resulting in a current of {mathSpan("I=4A")}.
@@ -63,6 +55,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Measuring resistance",
       problem: <>
         <p>
           The marking on a resistor is scratched and unreadable. Suggest a method to determine its resistance.
@@ -84,6 +78,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Resistors in series",
       problem: <>
         <p>
           A {mathSpan("5#Omega")} resistor and a {mathSpan("10#Omega")} resistor are connected in series. What is the
@@ -98,6 +94,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Resistors in parallel",
       problem: <>
         <p>
           A {mathSpan("5#Omega")} resistor and a {mathSpan("10#Omega")} resistor are connected in parallel. What is the
@@ -113,6 +111,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Resistors in series (2)",
       problem: <>
         <p>
           Which statement is correct?
@@ -131,6 +131,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Resistors in parallel (2)",
       problem: <>
         <p>
           Which statement is correct?
@@ -149,6 +151,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Resistors in series (3)",
       problem: <>
         <p>
           What is the total resistance of connecting 100 resistors of {mathSpan("345#Omega")} each in series?
@@ -159,6 +163,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Resistors in parallel (3)",
       problem: <>
         <p>
           What is the total resistance of connecting 100 resistors of {mathSpan("345#Omega")} each in parallel?
@@ -169,6 +175,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Voltage dividers (1)",
       problem: <>
         <p>
           A voltage source of {mathSpan("6V")} gets attached to two sub-circuits. Each one a series of two
@@ -199,6 +207,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Voltage dividers (2)",
       problem: <>
         <p>
           A voltage source of {mathSpan("10V")} gets attached to two sub-circuits. Each one a series of two
@@ -236,6 +246,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Resistor ladder",
       problem: <>
         <p>
           A voltage source gets attached to a large piece of somewhat-conductive material like so:
@@ -301,6 +313,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Voltage dividers (3)",
       problem: <>
         <p>
           Given a voltage source of {mathSpan("5V")}, describe how to use a voltage divider (using passive resistors)
@@ -322,6 +336,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Voltage dividers (4)",
       problem: <>
         <p>
           Given a voltage source of {mathSpan("5V")}, a voltage of {mathSpan("3V")} relative to ground is generated
@@ -353,6 +369,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Voltage dividers (5)",
       problem: <>
         <p>
           Given a voltage source of {mathSpan("5V")}, a voltage of {mathSpan("3V")} relative to ground is generated
@@ -389,6 +407,8 @@ export const ohmicResistorCollection: ExerciseNode = {
       </>
     },
     {
+      type: "exercise",
+      label: "Wheatstone Bridge",
       problem: <>
         <p>
           A given temperature sensor acts as a temperature-dependent resistor. It is specified to have a resistance

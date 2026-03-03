@@ -1,7 +1,7 @@
 import type {ExerciseNode} from "../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../framework/technical-components/Math/Math.tsx";
 
-export const basicUnitsExercise: ExerciseNode = {
+export const basicUnitsCollection: ExerciseNode = {
   id: "basicUnits",
   name: "Basic Units",
   type: "exercise",

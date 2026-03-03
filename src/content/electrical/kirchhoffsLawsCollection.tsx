@@ -1,8 +1,8 @@
 import type {ExerciseNode} from "../../framework/content.tsx";
 import {mathDiv} from "../../framework/technical-components/Math/Math.tsx";
 
-export const kirchhoffsLawsExercise: ExerciseNode = {
-  id: "kirchhoffsLawsExercise",
+export const kirchhoffsLawsCollection: ExerciseNode = {
+  id: "kirchhoffsLawsCollection",
   name: "Kirchhoff's Laws",
   type: "exercise",
   contentItems: [

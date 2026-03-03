@@ -1,3 +1,4 @@
+import type {Collection} from "../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../framework/technical-components/Math/Math.tsx";
 import bridgeParallelImage from "./bridge-parallel.jpg";
 import largePieceImage from "./large-piece.jpg";
@@ -10,7 +11,7 @@ export const ohmicResistorCollection: Collection = {
   type: "collection",
   exercises: [
     {
-  type: "exercise",
+      type: "exercise",
       label: "Voltage, current and resistance (1)",
       problem: <>
         <p>

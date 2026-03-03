@@ -1,11 +1,11 @@
-import {checkForDuplicateChildIds, type FolderNode} from "../../../content.tsx";
+import {checkForDuplicateChildIds, type FolderNode} from "../../content.tsx";
 import {FolderPageBreadcrumbs} from "./FolderPageBreadcrumbs";
-import {NavigationList} from "../../../technical-components/navigation/NavigationList/NavigationList";
+import {NavigationList} from "../../technical-components/navigation/NavigationList/NavigationList.tsx";
 import {
   useNavigateToContentNode
-} from "../../../technical-components/navigation/ContentNodeLink/useNavigateToContentNode";
+} from "../../technical-components/navigation/ContentNodeLink/useNavigateToContentNode.ts";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import {WithHeader} from "../../../technical-components/layout/WithHeader";
+import {WithHeader} from "../../technical-components/layout/WithHeader.tsx";
 
 export interface FolderPageProps {
     folder: FolderNode;

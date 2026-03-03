@@ -1,7 +1,6 @@
 import {type ContentNode} from "../../content.tsx";
 import {FolderPage} from "./FolderPage.tsx";
 import {ExercisePage} from "./ExercisePage.tsx";
-import {CollectionPage} from "./CollectionPage.tsx";
 
 export interface ContentNodePageProps {
     node: ContentNode;

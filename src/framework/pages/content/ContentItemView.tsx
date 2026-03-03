@@ -1,6 +1,6 @@
 import {Button} from "@mui/material";
 import {useState} from "react";
-import type {ContentItem} from "../../../content.tsx";
+import type {ContentItem} from "../../content.tsx";
 import type {AnswerQuality} from "../../../state.tsx";
 
 export interface ItemViewProps {

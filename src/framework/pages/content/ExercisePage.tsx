@@ -1,10 +1,10 @@
-import {type ContentItemId, type ExerciseNode} from "../../../content.tsx";
+import {type ContentItemId, type ExerciseNode} from "../../content.tsx";
 import {useEffect, useState} from "react";
 import {
   useNavigateToContentNode
-} from "../../../technical-components/navigation/ContentNodeLink/useNavigateToContentNode";
+} from "../../technical-components/navigation/ContentNodeLink/useNavigateToContentNode.ts";
 import {type AnswerQuality, selectContentItem, updateState} from "../../../state.tsx";
-import {PageWithHeader} from "../../../technical-components/layout/PageWithHeader.tsx";
+import {PageWithHeader} from "../../technical-components/layout/PageWithHeader.tsx";
 import {Button, Dialog, IconButton} from "@mui/material";
 import CancelIcon from "@mui/icons-material/Cancel";
 import {ContentItemView} from "./ContentItemView.tsx";

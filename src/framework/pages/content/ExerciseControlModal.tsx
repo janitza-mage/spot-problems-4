@@ -1,6 +1,4 @@
-import type {ExerciseNode} from "../../../content.tsx";
 import {Button} from "@mui/material";
-import {resetExerciseState} from "../../../state.tsx";
 
 export interface ExerciseControlModalProps {
   path: string[];

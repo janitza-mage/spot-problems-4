@@ -1,13 +1,13 @@
 import {inductionSubtree} from "./induction/inductionSubtree.tsx";
-import type {FolderNode} from "../../../framework/content.tsx";
+import type {Folder} from "../../../framework/content.tsx";
 import {fieldSubtree} from "./field/fieldSubtree.tsx";
 import {orderSubtree} from "./order/orderSubtree.tsx";
 
-export const calculusSubtree: FolderNode = {
+export const calculusSubtree: Folder = {
   id: "calculus",
   name: "Calculus",
   type: "folder",
-  children: [
+  elements: [
       inductionSubtree,
       fieldSubtree,
       orderSubtree,

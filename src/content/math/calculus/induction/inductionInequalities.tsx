@@ -1,8 +1,8 @@
-import type {ContentItem, ExerciseNode} from "../../../../framework/content.tsx";
+import type {Exercise, Collection} from "../../../../framework/content.tsx";
 import {observeThat, standardFomulaInductionItem} from "./formula.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 
-export const inductionInequalitiesBeginnerItems: ContentItem[] = [
+export const inductionInequalitiesBeginnerItems: Exercise[] = [
   standardFomulaInductionItem(
       null,
       "2^n > n^2",
@@ -55,11 +55,11 @@ export const inductionInequalitiesBeginnerItems: ContentItem[] = [
   ),
 ];
 
-export const inductionInequalities: ExerciseNode = {
+export const inductionInequalities: Collection = {
   id: "inequalities",
   name: "Inequalities",
-  type: "exercise",
-  contentItems: [
+  type: "collection",
+  exercises: [
     standardFomulaInductionItem(
         null,
         "n^2 - 5n + 3 > 0",

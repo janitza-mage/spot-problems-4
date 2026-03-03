@@ -1,4 +1,4 @@
-import type {FolderNode} from "../../../../framework/content.tsx";
+import type {Folder} from "../../../../framework/content.tsx";
 import {inductionSums} from "./inductionSums.tsx";
 import {inductionDivisibility} from "./inductionDivisibility.tsx";
 import {inductionProducts} from "./inductionProducts.tsx";
@@ -6,11 +6,11 @@ import {inductionInequalities} from "./inductionInequalities.tsx";
 import {inductionVarious} from "./inductionVarious.tsx";
 import {inductionBeginners} from "./inductionBeginners.tsx";
 
-export const inductionSubtree: FolderNode = {
+export const inductionSubtree: Folder = {
   id: "induction",
   name: "Induction",
   type: "folder",
-  children: [
+  elements: [
   inductionBeginners,
     inductionSums,
     inductionDivisibility,
@@ -27,7 +27,7 @@ export const inductionSubtree: FolderNode = {
 //   https://www.emath.de/Referate/induktion-aufgaben-loesungen.pdf
 //     p.3; 26, 31, 32
 
-// TODO new section -- working with ln(), is an induction exercise but fits better with ln() exercises
+// TODO new section -- working with ln(), is an induction problem but fits better with ln() problems
 //   https://www.emath.de/Referate/induktion-aufgaben-loesungen.pdf
 //     p.3; 28 
 

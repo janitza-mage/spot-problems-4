@@ -1,4 +1,4 @@
-import type {ContentItem, ExerciseNode} from "../../../../framework/content.tsx";
+import type {Exercise, Collection} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {isNatPlus, isNatPlusWithoutDefinition} from "../../util/math-atoms.tsx";
 import type {ReactNode} from "react";
@@ -24,13 +24,15 @@ function standardDivisibilityContentItem(
     inductionStepProofFormulas: (string | ReactNode)[],
     inductionStepConclusion: ReactNode,
     extraOptions?: Partial<ExtraOptions>,
-): ContentItem {
+): Exercise {
   const materializedExtraOptions: ExtraOptions = {...defaultExtraOptions, ...extraOptions};
   const dividendMapper = materializedExtraOptions.useDivsForDividend ? mathDivOrCustom : mathSpanOrCustom;
   const mappedDividend = dividendMapper(dividendFormula);
   const mappedNextDividend = dividendMapper(nextDividendFormula);
   const divisorSpan = mathSpan(String(divisorFormula));
   return {
+    type: "exercise",
+    label: <>{mathSpan(String(divisorFormula))} | {mathSpanOrCustom(dividendFormula)}</>,
     problem: <>
       {materializedExtraOptions.problemPrelude}
       Use induction to show that {mappedDividend} is divisible by {divisorSpan} for {isNatPlus("n")}.
@@ -63,7 +65,7 @@ function firstSecondPartDivisible(divisorFormula: string | number): ReactNode {
     factor of {divisorSpan}. Therefore, the sum is divible by {divisorSpan} too.</div>;
 }
 
-export const inductionDivisibilityBeginnerItems: ContentItem[] = [
+export const inductionDivisibilityBeginnerItems: Exercise[] = [
   standardDivisibilityContentItem(
       "n^2+n",
       "(n+1)^2+(n+1)",
@@ -125,11 +127,11 @@ export const inductionDivisibilityBeginnerItems: ContentItem[] = [
   ),
 ];
 
-export const inductionDivisibility: ExerciseNode = {
+export const inductionDivisibility: Collection = {
   id: "divisibility",
   name: "Divisibility",
-  type: "exercise",
-  contentItems: [
+  type: "collection",
+  exercises: [
     standardDivisibilityContentItem(
         "2n^3+3n^2+n",
         "2(n+1)^3+3(n+1)^2+(n+1)",

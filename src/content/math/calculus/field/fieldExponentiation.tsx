@@ -1,4 +1,4 @@
-import type {ExerciseNode} from "../../../../framework/content.tsx";
+import type {Collection} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {CheatSheets} from "../../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
 import {FieldAxiomsCheatSheet} from "./FieldAxiomsCheatSheet.tsx";
@@ -7,12 +7,14 @@ import {isNat0} from "../../util/math-atoms.tsx";
 
 const letField = <>Let {mathSpan("F")} be a field.</>;
 
-export const fieldExponentiation: ExerciseNode = {
+export const fieldExponentiation: Collection = {
   id: "exponentiation",
   name: "Exponentiation",
-  type: "exercise",
-  contentItems: [
+  type: "collection",
+  exercises: [
     {
+      type: "exercise",
+      label: mathSpan("a^{-n} = (a^n)^{-1}"),
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
         <ExponentiationCheatSheet />
@@ -58,6 +60,8 @@ export const fieldExponentiation: ExerciseNode = {
       </>,
     },
     {
+      type: "exercise",
+      label: mathSpan("a^pa^q = a^{p+q}"),
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
         <ExponentiationCheatSheet />
@@ -90,6 +94,8 @@ export const fieldExponentiation: ExerciseNode = {
       </>,
     },
     {
+      type: "exercise",
+      label: mathSpan("(a^p)^q = a^{pq}"),
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
         <ExponentiationCheatSheet />
@@ -108,7 +114,7 @@ export const fieldExponentiation: ExerciseNode = {
         </p>
         {mathDiv("(a^{-1})^x = a^{-x} = (a^x)^{-1}")}
         <p>
-          which are left for another exercise.
+          which are left for another problem.
         </p>
       </>,
       answer: <>
@@ -131,6 +137,8 @@ export const fieldExponentiation: ExerciseNode = {
       </>,
     },
     {
+      type: "exercise",
+      label: mathSpan("a^pb^p = (ab)^p"),
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
         <ExponentiationCheatSheet />

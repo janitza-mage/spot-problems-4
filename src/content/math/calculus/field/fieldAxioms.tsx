@@ -1,4 +1,4 @@
-import type {ExerciseNode} from "../../../../framework/content.tsx";
+import type {Collection} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {CheatSheets} from "../../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
 import {FieldAxiomsCheatSheet} from "./FieldAxiomsCheatSheet.tsx";
@@ -38,19 +38,21 @@ function OperationTable(props: OperationTableProps) {
   </table>;
 }
 
-export const fieldAxioms: ExerciseNode = {
+export const fieldAxioms: Collection = {
   id: "axioms",
   name: "Axioms",
-  type: "exercise",
-  contentItems: [
+  type: "collection",
+  exercises: [
     {
+      type: "exercise",
+      label: "Not a field: Natural numbers including infinity",
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
       </CheatSheets>,
       problem: <>
         <p>
-          This exercise gives a counter-example that is <i>not</i> a field since it does not fulfil the field axioms.
-          Therefore, the conclusions made in other exercises cannot be assumed to hold for this counter-example.
+          This problem gives a counter-example that is <i>not</i> a field since it does not fulfil the field axioms.
+          Therefore, the conclusions made in other problems cannot be assumed to hold for this counter-example.
           Some of them may hold, but must be proven again since they relied on the field axioms.
         </p>
         <p>
@@ -160,6 +162,8 @@ export const fieldAxioms: ExerciseNode = {
       </>,
     },
     {
+      type: "exercise",
+      label: "Complex numbers are a field",
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
       </CheatSheets>,
@@ -251,6 +255,8 @@ export const fieldAxioms: ExerciseNode = {
       </>,
     },
     {
+      type: "exercise",
+      label: "Field with three elements",
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
       </CheatSheets>,

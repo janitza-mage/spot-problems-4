@@ -1,4 +1,4 @@
-import type {ExerciseNode} from "../../../../framework/content.tsx";
+import type {Collection} from "../../../../framework/content.tsx";
 import {CheatSheets} from "../../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
 import {FieldAxiomsCheatSheet} from "../field/FieldAxiomsCheatSheet.tsx";
 import {OrderAxiomsCheatSheet} from "./OrderAxiomsCheatSheet.tsx";
@@ -18,12 +18,14 @@ const letBinomial = <>
   {mathDiv(`#binom{n}{k} = 0 #text{\u00a0\u00a0\u00a0for all special cases}`)}
 </>;
 
-export const additionalAxioms: ExerciseNode = {
+export const additionalAxioms: Collection = {
   id: "additionalAxioms",
   name: "Absolute and Archimedean Axioms",
-  type: "exercise",
-  contentItems: [
+  type: "collection",
+  exercises: [
     {
+      type: "exercise",
+      label: mathSpan("#binom{n}{k}#frac{1}{n^k} #leq #frac{1}{k!}"),
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
         <OrderAxiomsCheatSheet />
@@ -47,6 +49,8 @@ export const additionalAxioms: ExerciseNode = {
       </>,
     },
     {
+      type: "exercise",
+      label: mathSpan("(1 + #frac{1}{n})^n #leq #sum_{k=0}^{n}#frac{1}{k!}"),
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
         <OrderAxiomsCheatSheet />
@@ -66,6 +70,8 @@ export const additionalAxioms: ExerciseNode = {
       </>,
     },
     {
+      type: "exercise",
+      label: mathSpan("#sum_{k=0}^{n}#frac{1}{k!} < 3"),
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
         <OrderAxiomsCheatSheet />
@@ -85,6 +91,8 @@ export const additionalAxioms: ExerciseNode = {
       </>,
     },
     {
+      type: "exercise",
+      label: mathSpan("(#frac{n}{3})^n #leq #frac{n!}{3}"),
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
         <OrderAxiomsCheatSheet />
@@ -104,6 +112,8 @@ export const additionalAxioms: ExerciseNode = {
       </>,
     },
     {
+      type: "exercise",
+      label: "define min/max using absolute",
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
         <OrderAxiomsCheatSheet />
@@ -124,6 +134,8 @@ export const additionalAxioms: ExerciseNode = {
       </>,
     },
     {
+      type: "exercise",
+      label: <>{mathSpan("#lfloor x #rfloor")} and {mathSpan("#lceil x #rceil")} with negation</>,
       intro: <CheatSheets>
         <FieldAxiomsCheatSheet />
         <OrderAxiomsCheatSheet />

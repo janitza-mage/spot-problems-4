@@ -1,12 +1,12 @@
-import type {ExerciseNode} from "../../../../framework/content.tsx";
+import type {Collection} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {observeThat, standardFomulaInductionItem} from "./formula.tsx";
 
-export const inductionProducts: ExerciseNode = {
+export const inductionProducts: Collection = {
   id: "products",
   name: "Products",
-  type: "exercise",
-  contentItems: [
+  type: "collection",
+  exercises: [
     standardFomulaInductionItem(
         observeThat("4^1#cdot 4^2#cdot 4^3#cdot ...#cdot 4^n = #prod_{i=1}^{n}4^i"),
         "#prod_{i=1}^{n}4^i = 2^{n(n+1)}",
@@ -106,7 +106,7 @@ export const inductionProducts: ExerciseNode = {
             {observeThat("(1 + #frac{1}{n+1})(1 + #frac{1}{n+2})(1 + #frac{1}{n+3})...(1 + #frac{1}{n+n}) = #prod_{i=1}^{n}(1 + #frac{1}{n+i})")}
           </div>
           <p>Note that this whole term depends on {mathSpan("n")} like before, but this time, {mathSpan("n")} appears
-            both in the bounds of the product <i>and</i> in the individual terms. In the following exercise, we can still
+            both in the bounds of the product <i>and</i> in the individual terms. In the following problem, we can still
             use induction, but during the induction step, we will have to take some extra steps until the formula is in
             the right shape to apply the induction hypothesis.</p>
         </>,

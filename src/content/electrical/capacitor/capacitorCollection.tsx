@@ -2,7 +2,7 @@ import type {ExerciseNode} from "../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../framework/technical-components/Math/Math.tsx";
 import capacitorBankImage from "./capacitor-bank.jpg";
 
-export const capacitorExercise: ExerciseNode = {
+export const capacitorCollection: ExerciseNode = {
   id: "capacitor",
   name: "Capacitors",
   type: "exercise",

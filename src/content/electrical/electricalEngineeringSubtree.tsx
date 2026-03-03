@@ -1,9 +1,9 @@
 import type {FolderNode} from "../../framework/content.tsx";
-import {ohmicResistorExercise} from "./ohmic/ohmicResistorExercise.tsx";
+import {ohmicResistorCollection} from "./ohmic/ohmicResistorCollection.tsx";
 import {basicUnitsExercise} from "./basicUnitsExercise.tsx";
 import {sourcesWithInternalResistanceExercise} from "./sourcesWithInternalResistanceExercise.tsx";
 import {kirchhoffsLawsExercise} from "./kirchhoffsLawsExercise.tsx";
-import {capacitorExercise} from "./capacitor/capacitorExercise.tsx";
+import {capacitorCollection} from "./capacitor/capacitorCollection.tsx";
 
 export const electricalEngineeringSubtree: FolderNode = {
   id: "electricalEngineering",
@@ -11,10 +11,10 @@ export const electricalEngineeringSubtree: FolderNode = {
   type: "folder",
   children: [
     basicUnitsExercise,
-    ohmicResistorExercise,
+    ohmicResistorCollection,
     sourcesWithInternalResistanceExercise,
     // TODO diodeExercise,
-    capacitorExercise,
+    capacitorCollection,
     kirchhoffsLawsExercise,
   ],
 };

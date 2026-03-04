@@ -14,38 +14,6 @@ consider the case when A or B is an empty set.
 
  */
 
-natural numbers
-    factorial
-        what is 1!, 2!, 3!, 4!
-        what is 0!? give an explanation.
-            (a) empty product, (b) 3! = 4!/4, 2! = 3!/3, 1!=2!/2, 0!=1!/1
-        is it possible to write ((a!) + (a+1)) in another way? which?
-        is it possible to write ((a!) - (a+1)) in another way? which?
-        is it possible to write ((a!) * (a+1)) in another way? which?
-        is it possible to write ((a!) / (a+1)) in another way? which?
-        is it possible to write ((a!) + a) in another way? which?
-        is it possible to write ((a!) - a) in another way? which?
-        is it possible to write ((a!) * a) in another way? which?
-        is it possible to write ((a!) / a) in another way? which?
-        is it possible to write (a! + b!) in another way? which?
-        is it possible to write (a! - b!) in another way? which?
-        is it possible to write (a! * b!) in another way? which?
-        is it possible to write (a! / b!) in another way? which?
-        
-exponentiation and real numbers
-    what is 10^-1, 10^-2, 10^-3?
-    what is 4.13*10^5?
-    what is 4.13*10^-5?
-
-sum symbol
-    sum_i=1^n{whatever}
-    sum_i=0^n{whatever}
-    sum_i=p^q{whatever}
-    extend and reduce at the bottom
-    extend and reduce at the top
-    empty sum
-    index shift
-    index mapping
 
 product symbol
     (same as for sum)

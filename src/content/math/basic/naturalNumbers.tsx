@@ -39,7 +39,7 @@ const factorialCheatSheet = <CheatSheet label={"Factorial"}>
     Rules:
   </p>
   {mathDiv("0! = 1")}
-  {mathDiv("n! #cdot n = (n + 1)!")}
+  {mathDiv("n! #cdot (n + 1) = (n + 1)!")}
 </CheatSheet>;
 
 const intro1 = <CheatSheets>
@@ -53,15 +53,14 @@ const intro2 = <CheatSheets>
 
 const intro3 = <CheatSheets>
   {naturalNumbersDefinitionCheatSheet}
-  {exponentiationCheatSheet}
   {factorialCheatSheet}
 </CheatSheets>;
 
-function solveExp(label: ReactNode, terms: string[], results: string[]): Exercise {
+function solve(intro: ReactNode, label: ReactNode, terms: string[], results: string[]): Exercise {
   return {
     type: "exercise",
     label,
-    intro: intro2,
+    intro,
     problem: <>
       <p>
         Solve:
@@ -72,6 +71,14 @@ function solveExp(label: ReactNode, terms: string[], results: string[]): Exercis
       {terms.map((term, i) => mathDiv(`${term} = ${results[i]}`))}
     </>,
   };
+}
+
+function solveExp(label: ReactNode, terms: string[], results: string[]): Exercise {
+  return solve(intro2, label, terms, results);
+}
+
+function solveFac(label: ReactNode, terms: string[], results: string[]): Exercise {
+  return solve(intro3, label, terms, results);
 }
 
 function rewriteExp(term: string, other: string | null): Exercise {
@@ -146,5 +153,9 @@ export const naturalNumbers: Collection = {
     rewriteExp("#frac{a^p}{a^q}", "a^{p-q}"),
     rewriteExp("(a^p)^q", "a^{p#cdot q}"),
     rewriteExp("a^{p^q}", null),
+    solveFac("Factorial",
+        ["0!", "1!", "2!", "3!", "4!"],
+        ["1", "1", "1#cdot 2 = 2", "1#cdot 2#cdot 3 = 6", "1#cdot 2#cdot 3#cdot 4 = 24"]
+    ),
   ],
 };

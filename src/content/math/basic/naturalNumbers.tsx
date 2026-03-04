@@ -4,38 +4,64 @@ import {CheatSheets} from "../../../framework/technical-components/CheatSheet/Ch
 import {CheatSheet} from "../../../framework/technical-components/CheatSheet/CheatSheet.tsx";
 import type {ReactNode} from "react";
 
-const intro = <CheatSheets>
-  <CheatSheet label={"Natural Numbers -- Definition"}>
-    {mathDiv("#mathbb{N}^+ = {1, 2, 3, ...}")}
-    {mathDiv("#mathbb{N}^+_0 = {0, 1, 2, 3, ...}")}
-    <p>
-      When working on problems from other sources, watch out for whether the definition of the natural numbers include
-      zero.
-    </p>
-    <p>
-      The basic arithmetic operations ({mathSpan("+")}, {mathSpan("-")}, {mathSpan("#cdot")} and {mathSpan("#div")}
-      are defined on the natural numbers. {mathSpan("-")} and {mathSpan("#div")} are not <i>closed</i>, that is,
-      they are not defined for all operands: Negative numbers and fractions are not natural numbers, and division by
-      zero is not defined.
-    </p>
-  </CheatSheet>
-  <CheatSheet label={"Exponentiation"}>
-    <p>
-      Exponentiation using two natural numbers is defined as usual, and with the usual rules:
-    </p>
-    {mathDiv("a^n = #underbrace{a #cdot a #cdot #dots #cdot a}_{n#text{ times}}")}
-    {mathDiv("a^0 = 1 #text{ for } a #neq 0")}
-    {mathDiv("0^0 #text{ is not defined }")}
-    {mathDiv("a^{n + m} = a^n #cdot a^m")}
-    {mathDiv("(a^n)^m = a^{n #cdot m}")}
-  </CheatSheet>
+const naturalNumbersDefinitionCheatSheet = <CheatSheet label={"Natural Numbers -- Definition"}>
+  {mathDiv("#mathbb{N}^+ = {1, 2, 3, ...}")}
+  {mathDiv("#mathbb{N}^+_0 = {0, 1, 2, 3, ...}")}
+  <p>
+    When working on problems from other sources, watch out for whether the definition of the natural numbers include
+    zero.
+  </p>
+  <p>
+    The basic arithmetic operations ({mathSpan("+")}, {mathSpan("-")}, {mathSpan("#cdot")} and {mathSpan("#div")}
+    are defined on the natural numbers. {mathSpan("-")} and {mathSpan("#div")} are not <i>closed</i>, that is,
+    they are not defined for all operands: Negative numbers and fractions are not natural numbers, and division by
+    zero is not defined.
+  </p>
+</CheatSheet>;
+  
+const exponentiationCheatSheet = <CheatSheet label={"Exponentiation"}>
+  <p>
+    Exponentiation using two natural numbers is defined as usual, and with the usual rules:
+  </p>
+  {mathDiv("a^n = #underbrace{a #cdot a #cdot #dots #cdot a}_{n#text{ times}}")}
+  {mathDiv("a^0 = 1 #text{ for } a #neq 0")}
+  {mathDiv("0^0 #text{ is not defined }")}
+  {mathDiv("a^{n + m} = a^n #cdot a^m")}
+  {mathDiv("(a^n)^m = a^{n #cdot m}")}
+</CheatSheet>;
+
+const factorialCheatSheet = <CheatSheet label={"Factorial"}>
+  <p>
+    The factorial of a natural number is defined as:
+  </p>
+  {mathDiv("n! = 1 #cdot 2 #cdot #dots #cdot n")}
+  <p>
+    Rules:
+  </p>
+  {mathDiv("0! = 1")}
+  {mathDiv("n! #cdot n = (n + 1)!")}
+</CheatSheet>;
+
+const intro1 = <CheatSheets>
+  {naturalNumbersDefinitionCheatSheet}
 </CheatSheets>;
 
-function solve(label: ReactNode, terms: string[], results: string[]): Exercise {
+const intro2 = <CheatSheets>
+  {naturalNumbersDefinitionCheatSheet}
+  {exponentiationCheatSheet}
+</CheatSheets>;
+
+const intro3 = <CheatSheets>
+  {naturalNumbersDefinitionCheatSheet}
+  {exponentiationCheatSheet}
+  {factorialCheatSheet}
+</CheatSheets>;
+
+function solveExp(label: ReactNode, terms: string[], results: string[]): Exercise {
   return {
     type: "exercise",
     label,
-    intro,
+    intro: intro2,
     problem: <>
       <p>
         Solve:
@@ -48,11 +74,11 @@ function solve(label: ReactNode, terms: string[], results: string[]): Exercise {
   };
 }
 
-function rewrite(term: string, other: string | null): Exercise {
+function rewriteExp(term: string, other: string | null): Exercise {
   return {
     type: "exercise",
     label: <>Rewrite {mathSpan(term)}</>,
-    intro,
+    intro: intro2,
     problem: <>
       <p>
         Is it possible to write {mathSpan("(" + term + ")")} in another way? Which?
@@ -75,7 +101,7 @@ export const naturalNumbers: Collection = {
     {
       type: "exercise",
       label: "Natural Numbers -- Definition",
-      intro,
+      intro: intro1,
       problem: <>
         <p>
           Which of the following are natural numbers in {mathSpan("#mathbb{N}^+")}?
@@ -104,21 +130,21 @@ export const naturalNumbers: Collection = {
         </p>
       </>,
     },
-    solve("Exponentiation (1)", ["1^1", "2^1", "3^1", "4^1"], ["1", "2", "3", "4"]),
-    solve("Exponentiation (2)", ["1^2", "2^2", "3^2", "4^2"], ["1", "4", "9", "16"]),
-    solve("Exponentiation (3)", ["1^3", "2^3", "3^3", "4^3"], ["1", "8", "27", "64"]),
-    solve("Exponentiation (4)", ["1^0", "2^0", "3^0", "4^0"], ["1", "1", "1", "1"]),
-    solve("Exponentiation (5)", ["10^0", "10^1", "10^2", "10^3", "10^4"], ["1", "10", "100", "1000", "10000"]),
-    solve("Exponentiation (6)", ["0^1", "0^2", "0^3", "0^4"], ["0", "0", "0", "0"]),
-    rewrite("a^n + b^n", null),
-    rewrite("a^n - b^n", null),
-    rewrite("a^n #cdot b^n", "(ab)^n"),
-    rewrite("#frac{a^n}{b^n}", "(#frac{a}{b})^n"),
-    rewrite("a^p + a^q", "a^p(1 + a^{q-p})"),
-    rewrite("a^p - a^q", "a^p(1 - a^{q-p})"),
-    rewrite("a^p #cdot a^q", "a^{p+q}"),
-    rewrite("#frac{a^p}{a^q}", "a^{p-q}"),
-    rewrite("(a^p)^q", "a^{p#cdot q}"),
-    rewrite("a^{p^q}", null),
+    solveExp("Exponentiation (1)", ["1^1", "2^1", "3^1", "4^1"], ["1", "2", "3", "4"]),
+    solveExp("Exponentiation (2)", ["1^2", "2^2", "3^2", "4^2"], ["1", "4", "9", "16"]),
+    solveExp("Exponentiation (3)", ["1^3", "2^3", "3^3", "4^3"], ["1", "8", "27", "64"]),
+    solveExp("Exponentiation (4)", ["1^0", "2^0", "3^0", "4^0"], ["1", "1", "1", "1"]),
+    solveExp("Exponentiation (5)", ["10^0", "10^1", "10^2", "10^3", "10^4"], ["1", "10", "100", "1000", "10000"]),
+    solveExp("Exponentiation (6)", ["0^1", "0^2", "0^3", "0^4"], ["0", "0", "0", "0"]),
+    rewriteExp("a^n + b^n", null),
+    rewriteExp("a^n - b^n", null),
+    rewriteExp("a^n #cdot b^n", "(ab)^n"),
+    rewriteExp("#frac{a^n}{b^n}", "(#frac{a}{b})^n"),
+    rewriteExp("a^p + a^q", "a^p(1 + a^{q-p})"),
+    rewriteExp("a^p - a^q", "a^p(1 - a^{q-p})"),
+    rewriteExp("a^p #cdot a^q", "a^{p+q}"),
+    rewriteExp("#frac{a^p}{a^q}", "a^{p-q}"),
+    rewriteExp("(a^p)^q", "a^{p#cdot q}"),
+    rewriteExp("a^{p^q}", null),
   ],
 };

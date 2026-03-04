@@ -15,17 +15,6 @@ consider the case when A or B is an empty set.
  */
 
 natural numbers
-    exponentiation
-        is it possible to write (a^n + b^n) in another way? which?
-        is it possible to write (a^n - b^n) in another way? which?
-        is it possible to write (a^n * b^n) in another way? which?
-        is it possible to write (a^n / b^n) in another way? which?
-        is it possible to write (a^p + a^q) in another way? which?
-        is it possible to write (a^p - a^q) in another way? which?
-        is it possible to write (a^p * a^q) in another way? which?
-        is it possible to write (a^p / a^q) in another way? which?
-        is it possible to write ((a^p)^q) in another way? which?
-        is it possible to write (a^(p^q)) in another way? which?
     factorial
         what is 1!, 2!, 3!, 4!
         what is 0!? give an explanation.

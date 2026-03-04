@@ -1,8 +1,5 @@
-import type {Collection, Exercise} from "../../../framework/content.tsx";
+import type {Collection} from "../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../framework/technical-components/Math/Math.tsx";
-import {CheatSheets} from "../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
-import {CheatSheet} from "../../../framework/technical-components/CheatSheet/CheatSheet.tsx";
-import type {ReactNode} from "react";
 
 export const sums: Collection = {
   id: "sums",
@@ -138,48 +135,16 @@ export const sums: Collection = {
         {mathDiv("(#sum_{i=1}^{2n} i) + (2n + 1) = (#sum_{i=1}^{2n + 2} i) + (-2n - 2)")}
       </>,
     },
-
-
-
-
-
-
-
-
-
-
-
-    /*
-    TODO
-    sum symbol
-        index shift
-        index mapping
-     
-     */
     {
       type: "exercise",
-      label: <></>,
-      problem: <></>,
-      answer: <></>,
-    },
-    {
-      type: "exercise",
-      label: <></>,
-      problem: <></>,
-      answer: <></>,
-    },
-    {
-      type: "exercise",
-      label: <></>,
-      problem: <></>,
-      answer: <></>,
-    },
-    {
-      type: "exercise",
-      label: <></>,
-      problem: <></>,
-      answer: <></>,
+      label: <>Index shift</>,
+      problem: <>
+        <p>Rewrite the left side as a single sum starting at {mathSpan("i=1")}.</p>
+        {mathDiv("#sum_{i=3}^{n} i^2 = #underline{#hspace{2cm}}")}
+      </>,
+      answer: <>
+        {mathDiv("#sum_{i=3}^{n} i^2 = #sum_{i=1}^{n-2} (i + 2)^2")}
+      </>,
     },
   ],
 };
-

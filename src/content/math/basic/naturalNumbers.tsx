@@ -1,0 +1,95 @@
+import type {Collection, Exercise} from "../../../framework/content.tsx";
+import {mathDiv, mathSpan} from "../../../framework/technical-components/Math/Math.tsx";
+import {CheatSheets} from "../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
+import {CheatSheet} from "../../../framework/technical-components/CheatSheet/CheatSheet.tsx";
+import type {ReactNode} from "react";
+
+const intro = <CheatSheets>
+  <CheatSheet label={"Natural Numbers -- Definition"}>
+    {mathDiv("#mathbb{N}^+ = {1, 2, 3, ...}")}
+    {mathDiv("#mathbb{N}^+_0 = {0, 1, 2, 3, ...}")}
+    <p>
+      When working on problems from other sources, watch out for whether the definition of the natural numbers include
+      zero.
+    </p>
+    <p>
+      The basic arithmetic operations ({mathSpan("+")}, {mathSpan("-")}, {mathSpan("#cdot")} and {mathSpan("#div")}
+      are defined on the natural numbers. {mathSpan("-")} and {mathSpan("#div")} are not <i>closed</i>, that is,
+      they are not defined for all operands: Negative numbers and fractions are not natural numbers, and division by
+      zero is not defined.
+    </p>
+  </CheatSheet>
+  <CheatSheet label={"Exponentiation"}>
+    <p>
+      Exponentiation using two natural numbers is defined as usual, and with the usual rules:
+    </p>
+    {mathDiv("a^n = #underbrace{a #cdot a #cdot #dots #cdot a}_{n#text{ times}}")}
+    {mathDiv("a^0 = 1 #text{ for } a #neq 0")}
+    {mathDiv("0^0 #text{ is not defined }")}
+    {mathDiv("a^{n + m} = a^n #cdot a^m")}
+    {mathDiv("(a^n)^m = a^{n #cdot m}")}
+  </CheatSheet>
+</CheatSheets>;
+
+function solve(label: ReactNode, terms: string[], results: string[]): Exercise {
+  return {
+    type: "exercise",
+    label,
+    intro,
+    problem: <>
+      <p>
+        Solve:
+      </p>
+      {terms.map(term => mathDiv(`${term} = #underline{#hspace{2cm}}`))}
+    </>,
+    answer: <>
+      {terms.map((term, i) => mathDiv(`${term} = ${results[i]}`))}
+    </>,
+  };
+}
+
+export const naturalNumbers: Collection = {
+  id: "naturalNumbers",
+  name: "Natural Numbers",
+  type: "collection",
+  exercises: [
+    {
+      type: "exercise",
+      label: "Natural Numbers -- Definition",
+      intro,
+      problem: <>
+        <p>
+          Which of the following are natural numbers in {mathSpan("#mathbb{N}^+")}?
+          Which are in {mathSpan("#mathbb{N}^+_0")}?
+        </p>
+        <p>
+          0, 1, 2, 3, 100^100, -1, -2, -100^100, 0.5, -0.5
+        </p>
+      </>,
+      answer: <>
+        <p>
+          These are both in {mathSpan("#mathbb{N}^+")} and {mathSpan("#mathbb{N}^+_0")}:
+        </p>
+        <p>
+          1, 2, 3, 100^100
+        </p>
+        <p>
+          These are neither in {mathSpan("#mathbb{N}^+")} nor in {mathSpan("#mathbb{N}^+_0")}:
+        </p>
+        <ul>
+          <li>-1, -2, -100^100 (because they are negative, and the natural numbers do not include negative numbers</li>
+          <li>0.5, -0.5 (because they are not integers, and the natural numbers do not include any non-integers</li>
+        </ul>
+        <p>
+          The number 0 is in {mathSpan("#mathbb{N}^+_0")}, but not in {mathSpan("#mathbb{N}^+")}.
+        </p>
+      </>,
+    },
+    solve("Exponentiation (1)", ["1^1", "2^1", "3^1", "4^1"], ["1", "2", "3", "4"]),
+    solve("Exponentiation (2)", ["1^2", "2^2", "3^2", "4^2"], ["1", "4", "9", "16"]),
+    solve("Exponentiation (3)", ["1^3", "2^3", "3^3", "4^3"], ["1", "8", "27", "64"]),
+    solve("Exponentiation (4)", ["1^0", "2^0", "3^0", "4^0"], ["1", "1", "1", "1"]),
+    solve("Exponentiation (5)", ["10^0", "10^1", "10^2", "10^3", "10^4"], ["1", "10", "100", "1000", "10000"]),
+    solve("Exponentiation (6)", ["0^1", "0^2", "0^3", "0^4"], ["0", "0", "0", "0"]),
+  ],
+};

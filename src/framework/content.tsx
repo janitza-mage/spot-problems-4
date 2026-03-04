@@ -12,6 +12,7 @@ export interface ContentNodeBase {
 
 export interface Exercise extends ContentNodeBase {
   type: "exercise";
+  // the "intro" places content above the "Problem" headline
   intro?: ReactNode;
   label?: ReactNode;
   problem: ReactNode;

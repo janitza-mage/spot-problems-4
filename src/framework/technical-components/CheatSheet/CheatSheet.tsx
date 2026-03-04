@@ -9,9 +9,11 @@ export interface CheatSheetProps {
 export function CheatSheet(props: CheatSheetProps) {
   const [open, setOpen] = useState(false);
   return <>
-    <Button onClick={() => setOpen(true)}>
-      {props.label}
-    </Button>
+    <div>
+      <Button onClick={() => setOpen(true)}>
+        {props.label}
+      </Button>
+    </div>
     <Dialog open={open} onClose={() => setOpen(false)} fullWidth={true} maxWidth={"xl"}>
       <div style={{margin: "1em"}}>
         <h3>{props.label}</h3>

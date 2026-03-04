@@ -15,17 +15,7 @@ consider the case when A or B is an empty set.
  */
 
 natural numbers
-    definition
-        which of the following are natural numbers in n^+? which in n_0^+?
-        0, 1, 2, 3, 100^100, -1, -2, -100^100, 0.5, -0.5
     exponentiation
-        what is 1^1, 2^1, 3^1, 4^1?
-        what is 1^2, 2^2, 3^2, 4^2?
-        what is 1^3, 2^3, 3^3, 4^3?
-        what is 10^1, 10^2, 10^3, 10^4?
-        what is 10^1, 10^2, 10^3, 10^4?
-        what is 0^1, 0^2, 0^3, 0^4?
-        what is 0^0? -> undefined because of mismatching limits
         is it possible to write (a^n + b^n) in another way? which?
         is it possible to write (a^n - b^n) in another way? which?
         is it possible to write (a^n * b^n) in another way? which?

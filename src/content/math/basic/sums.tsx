@@ -1,5 +1,6 @@
 import type {Collection} from "../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../framework/technical-components/Math/Math.tsx";
+import tetrahedronImage from "./tetrahedron.png";
 
 export const sums: Collection = {
   id: "sums",
@@ -144,6 +145,23 @@ export const sums: Collection = {
       </>,
       answer: <>
         {mathDiv("#sum_{i=3}^{n} i^2 = #sum_{i=1}^{n-2} (i + 2)^2")}
+      </>,
+    },
+    {
+      type: "exercise",
+      label: <>Double Sums</>,
+      problem: <>
+        <p>Suppose a tetrahedron gets build out of spheres like this:</p>
+        <div><img src={tetrahedronImage} /></div>
+        <p>How many spheres are needed to build a tetrahedron with {mathSpan("n")} layers? Write as a double sum.</p>
+      </>,
+      answer: <>
+        <p>
+          Each layer is made up of rows of spheres from length {mathSpan("1")} to a length that is equal to the
+          layer number. To get the number of spheres for one layer, add all numbers from {mathSpan("1")} to the
+          layer number. To get the total number, add all layers:
+        </p>
+        {mathDiv("#sum_{i=1}^{n} #sum_{j=1}^{i} j")}
       </>,
     },
   ],

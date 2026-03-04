@@ -20,7 +20,9 @@ export const inductionSubtree: Folder = {
   ],
 };
 
-// TODO base case other than n=1
+// TODO base case other than n=1 --> this is now explained in the beginners section. Rewrite the other exercises
+// to use that -- some are written in an awkward way to keep n=1 as the base case
+
 // TODO cases where induction fails / is used wrong
 
 // TODO new section -- binomial coefficients and pascal's triangle; prob fits into induction chapter

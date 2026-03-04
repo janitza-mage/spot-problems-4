@@ -48,6 +48,25 @@ function solve(label: ReactNode, terms: string[], results: string[]): Exercise {
   };
 }
 
+function rewrite(term: string, other: string | null): Exercise {
+  return {
+    type: "exercise",
+    label: <>Rewrite {mathSpan(term)}</>,
+    intro,
+    problem: <>
+      <p>
+        Is it possible to write {mathSpan("(" + term + ")")} in another way? Which?
+      </p>
+    </>,
+    answer: other ? <>
+      <p>Yes:</p>
+      {mathDiv(term + " = " + other)}
+    </> : <>
+      No, at least not without any further information about the value of those variables.
+    </>,
+  };
+}
+
 export const naturalNumbers: Collection = {
   id: "naturalNumbers",
   name: "Natural Numbers",
@@ -91,5 +110,15 @@ export const naturalNumbers: Collection = {
     solve("Exponentiation (4)", ["1^0", "2^0", "3^0", "4^0"], ["1", "1", "1", "1"]),
     solve("Exponentiation (5)", ["10^0", "10^1", "10^2", "10^3", "10^4"], ["1", "10", "100", "1000", "10000"]),
     solve("Exponentiation (6)", ["0^1", "0^2", "0^3", "0^4"], ["0", "0", "0", "0"]),
+    rewrite("a^n + b^n", null),
+    rewrite("a^n - b^n", null),
+    rewrite("a^n #cdot b^n", "(ab)^n"),
+    rewrite("#frac{a^n}{b^n}", "(#frac{a}{b})^n"),
+    rewrite("a^p + a^q", "a^p(1 + a^{q-p})"),
+    rewrite("a^p - a^q", "a^p(1 - a^{q-p})"),
+    rewrite("a^p #cdot a^q", "a^{p+q}"),
+    rewrite("#frac{a^p}{a^q}", "a^{p-q}"),
+    rewrite("(a^p)^q", "a^{p#cdot q}"),
+    rewrite("a^{p^q}", null),
   ],
 };

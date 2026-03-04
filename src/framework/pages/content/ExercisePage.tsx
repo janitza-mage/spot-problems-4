@@ -67,6 +67,10 @@ export function ExercisePage(props: ExercisePageProps) {
         onClickCancel();
         break;
 
+      case "r":
+        setRevealed(true);
+        break;
+
     }
   });
 

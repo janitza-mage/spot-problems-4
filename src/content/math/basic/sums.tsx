@@ -1,6 +1,7 @@
 import type {Collection} from "../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../framework/technical-components/Math/Math.tsx";
 import tetrahedronImage from "./tetrahedron.png";
+import {Quote} from "../../../framework/technical-components/layout/Quote.tsx";
 
 export const sums: Collection = {
   id: "sums",
@@ -149,7 +150,7 @@ export const sums: Collection = {
     },
     {
       type: "exercise",
-      label: <>Double Sums</>,
+      label: <>Double Sums (1)</>,
       problem: <>
         <p>Suppose a tetrahedron gets build out of spheres like this:</p>
         <div><img src={tetrahedronImage} /></div>
@@ -162,6 +163,66 @@ export const sums: Collection = {
           layer number. To get the total number, add all layers:
         </p>
         {mathDiv("#sum_{i=1}^{n} #sum_{j=1}^{i} j")}
+      </>,
+    },
+    {
+      type: "exercise",
+      label: <>Double Sums (2)</>,
+      problem: <>
+        <p>Write the sum of all products that can be made from the numbers {mathSpan("1")} to {mathSpan("n")} as a
+          sum-of-products. In this exercise, products like {mathSpan("3#cdot 5")} and {mathSpan("5#cdot 3")} are
+          considered different and so should both be added, but swapping the factors of {mathSpan("3#cdot 3")} results
+          in the same product and so should be counted only once.</p>
+      </>,
+      answer: <>
+        {mathDiv("#sum_{i=1}^n #sum_{j=1}^n (i #cdot j)")}
+      </>,
+    },
+    {
+      type: "exercise",
+      label: <>Double Sums (3)</>,
+      problem: <>
+        <p>Write the sum of all products that can be made from the numbers {mathSpan("1")} to {mathSpan("n")} as a
+          sum-of-products. In this exercise, products like {mathSpan("3#cdot 5")} and {mathSpan("5#cdot 3")} are
+          considered the same and should be counted only once.</p>
+      </>,
+      answer: <>
+        {mathDiv("#sum_{i=1}^n #sum_{j=1}^i (i #cdot j)")}
+      </>,
+    },
+    {
+      type: "exercise",
+      label: <>Double Sums (4)</>,
+      problem: <>
+        <p>Suppose somebody is solving this exercise:</p>
+        <Quote>Write the sum of all products that can be made from the numbers {mathSpan("1")} to {mathSpan("n")} as a
+          sum-of-products. In this exercise, products like {mathSpan("3#cdot 5")} and {mathSpan("5#cdot 3")} are
+          considered different and so should both be added, but swapping the factors of {mathSpan("3#cdot 3")} results
+          in the same product and so should be counted only once.</Quote>
+        <p>and this is the proposed solution:</p>
+        {mathDiv("#sum_{i=1}^n #sum_{i=1}^n (i #cdot i)")}
+        <p>This looks like adding squares instead of <i>all</i> products, but something worse is wrong. What is it?</p>
+      </>,
+      answer: <>
+        Both sums use {mathSpan("i")} as the counting index. This is not allowed since {mathSpan("i")} now refers to
+        two different numbers at the same time.
+      </>,
+    },
+    {
+      type: "exercise",
+      label: <>Double Sums (5)</>,
+      problem: <>
+        <p>Suppose somebody is solving this exercise:</p>
+        <Quote>Write a formula for the result of multiplying two numbers. The first is the sum of the
+          first {mathSpan("n")} square numbers. The second is the sum of the first {mathSpan("n")} cube numbers.</Quote>
+        <p>and this is the proposed solution:</p>
+        {mathDiv("(#sum_{i=1}^n i^2) #cdot (#sum_{i=1}^n i^3)")}
+        <p>Assess this solution.</p>
+      </>,
+      answer: <>
+        <p>The solution is correct. One might think that there is a problem because both sums use {mathSpan("i")} as
+        the counting index. However, this is not a problem because the sums are not nested: Without nesting,
+        there is no part of the formula where {mathSpan("i")} refers to two values at once.</p>
       </>,
     },
   ],

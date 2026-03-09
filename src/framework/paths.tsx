@@ -22,7 +22,7 @@ export function getContentNodeChildById(node: ContentNode, id: string): ContentN
 }
 
 export function getContentNodeByPath(path: string[]): ContentNode | null {
-    let currentNode = contentTree;
+    let currentNode: ContentNode = contentTree;
     for (const segment of path) {
         const child = getContentNodeChildById(currentNode, segment);
         if (!child) {

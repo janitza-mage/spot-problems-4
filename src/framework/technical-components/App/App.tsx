@@ -3,7 +3,7 @@ import {AppFrame} from "./AppFrame";
 import {AppRoutes} from "./AppRoutes";
 
 export function App() {
-    return <BrowserRouter basename="/spot-problems-2">
+    return <BrowserRouter basename="/spot-problems-4">
         <AppFrame>
             <AppRoutes/>
         </AppFrame>

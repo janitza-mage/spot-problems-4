@@ -7,5 +7,5 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  base: "/spot-problems-2"
+  base: "/spot-problems-4"
 })

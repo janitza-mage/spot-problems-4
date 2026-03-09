@@ -91,5 +91,25 @@ export const sets: Collection = {
           In all other cases, the set has four elements.</p>
       </>,
     },
+    {
+      type: "exercise",
+      label: <>Set Comprehension</>,
+      problem: <>
+        <p>Determine the elements of the following sets.</p>
+        {mathDiv("#{x #in #mathbb{N}^+_0 | x < 10 #land x #text{ is even }#}")}
+      </>,
+      answer: <>
+      </>,
+    },
   ],
 };
+
+// circle the best description of union(A, B): "C and D" (???), C but not D, D but not C, C or D or both
+// same for intersection
+// "and" logical operator vs "and" which could mean union or intersection
+// A = 1, 2, 3, 4, 5
+// B = 3, 4, 5, 6, 7
+// union(A, B) = 1, 2, 3, 4, 5, 6, 7
+// intersection(A, B) = 3, 4, 5
+// same with \
+

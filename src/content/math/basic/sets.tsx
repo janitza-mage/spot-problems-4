@@ -192,12 +192,32 @@ export const sets: Collection = {
         {mathDiv("#{#} #times #{#} = #{#}")}
       </>,
     },
+    {
+      type: "exercise",
+      label: <>Cartesian Product</>,
+      problem: <>
+        <p>Let</p>
+        {mathDiv("A = #{1, 2, 3#}")}
+        <p>Determine {mathSpan("A^0")}, {mathSpan("A^1")} and {mathSpan("A^2")}.</p>
+      </>,
+      answer: <>
+        {mathDiv("A^0 = #{#}")}
+        {mathDiv("A^1 = A = #{1, 2, 3#}")}
+        {mathDiv("A^2 = A #times A = ## #{(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3)#}")}
+      </>,
+    },
+    {
+      type: "exercise",
+      label: <>Cartesian Product</>,
+      problem: <>
+        <p>Let</p>
+        {mathDiv("A = #{1, 2#}")}
+        <p>Determine {mathSpan("A^3")} and {mathSpan("A^*")}.</p>
+      </>,
+      answer: <>
+        {mathDiv("A^3 = A #times A #times A = ## #{(1, 1, 1), (1, 1, 2), (1, 2, 1), (1, 2, 2), ## (2, 1, 1), (2, 1, 2), (2, 2, 1), (2, 2, 2)#}")}
+        {mathDiv("A^* = A^0 #cup A^1 #cup A^2 #cup A^3 #cup A^4 #cup #dots ## = #{#{#}, #{1#}, #{2#}, ## #{1, 1#}, #{1, 2#}, #{2, 1#}, #{2, 2#}, #{1, 1, 1#}, #dots#}")}
+      </>,
+    },
   ],
 };
-
-/*
-TODO sets
- 
-    infinite
-
- */

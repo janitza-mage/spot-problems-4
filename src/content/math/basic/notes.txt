@@ -1,10 +1,4 @@
 
-// TODO Grundlagen: Beweisverfahren, wchtige Mengen zb nat, Funktionen, Relationen, Kreuzprodukt/Tupel
-// Quantoren, und/oder/implikation/äquivalenz
-
-
-
-
 proofs
     essentials of a proof -- cannot be wrong
     "positive" proofs (e.g. over finite sets)
@@ -24,7 +18,5 @@ functions / mappings
 
 
 
-Summenzeichen / Produktzeichen über Mengen; Problem mit Reihenfolge bei unendlichen Mengen
-* Wiederholung als lim einer Folge im Kapitel Folgen, umordnen für verschiedene Grenzwerte
 
 

@@ -1,0 +1,3 @@
+Summenzeichen / Produktzeichen über Mengen; Problem mit Reihenfolge bei unendlichen Mengen
+* Wiederholung als lim einer Folge im Kapitel Folgen, umordnen für verschiedene Grenzwerte
+

@@ -3,6 +3,7 @@ import {naturalNumbers} from "./naturalNumbers.tsx";
 import {sums} from "./sums.tsx";
 import {products} from "./products.tsx";
 import {sets} from "./sets.tsx";
+import {sumsOverSets} from "./sumsOverSets.tsx";
 
 export const mathBasicsSubtree: Folder = {
   id: "matheBasics",
@@ -13,5 +14,6 @@ export const mathBasicsSubtree: Folder = {
     sums,
     products,
     sets,
+    sumsOverSets,
   ],
 };

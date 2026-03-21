@@ -75,7 +75,7 @@ export const relationsSameSet: Collection = {
       problem: <>
         <p>Let</p>
         {mathDiv("A = #{1, 2, 3#}")}
-        <p>Which of the following relations are reflexive?</p>
+        <p>Which of the following relations are reflexive, which are irreflexive, and which are neither?</p>
         {mathDiv("R_1 = #{#}")}
         {mathDiv("R_2 = #{(1, 1)#}")}
         {mathDiv("R_3 = #{(1, 1), (2, 2), (3, 3)#}")}
@@ -83,23 +83,32 @@ export const relationsSameSet: Collection = {
         {mathDiv("R_5 = #{(1, 1), (1, 2), (2, 2), (2, 3), (3, 3)#}")}
         {mathDiv("R_6 = (>)")}
         {mathDiv("R_7 = (#geq)")}
+        {mathDiv("R_8 = #{(1, 2), (2, 3), (3, 1)#}")}
       </>,
       answer: <>
         <p>A relation is reflexive if every element in the set is related to itself.</p>
+        <p>A relation is irreflexive if no element in the set is related to itself.</p>
+        <p>A relation is neither reflexive nor irreflexive if some, but not all, elements in the set are related to
+          themselves.</p>
+        <p>A relation cannot be reflexive and irreflexive at the same time, except for the special case when the
+          underlying set A is the empty set -- which is not the case here.</p>
         <ul>
-          <li>{mathSpan("R_1")} is not reflexive because it does not contain {mathSpan("(1, 1)")}</li>
-          <li>{mathSpan("R_2")} is not reflexive because it does not contain {mathSpan("(2, 2)")}</li>
-          <li>{mathSpan("R_3")} is reflexive.</li>
-          <li>{mathSpan("R_4")} is not reflexive because it does not contain {mathSpan("(3, 3)")}</li>
-          <li>{mathSpan("R_5")} is reflexive.</li>
+          <li>{mathSpan("R_1")} is not reflexive because it does not contain {mathSpan("(1, 1)")}, but it is irreflexive.</li>
+          <li>{mathSpan("R_2")} is not reflexive because it does not contain {mathSpan("(2, 2)")}. It is also not
+          irreflexive because it contains {mathSpan("(1, 1)")}.</li>
+          <li>{mathSpan("R_3")} is reflexive but not irreflexive.</li>
+          <li>{mathSpan("R_4")} is not reflexive because it does not contain {mathSpan("(3, 3)")}. It is also not
+            irreflexive because it contains {mathSpan("(1, 1)")}.</li>
+          <li>{mathSpan("R_5")} is reflexive but not irreflexive.</li>
           <li>{mathSpan("R_6")} is not reflexive because it does not contain {mathSpan("(1, 1)")}. In other words, 1 is
-            not greater than 1, so the greater-than relation is not reflexive.</li>
-          <li>{mathSpan("R_7")} is reflexive, because each number is greater-than-or-equal itself.</li>
+            not greater than 1, so the greater-than relation is not reflexive. It is irreflexive because no number
+            is greater than itself.</li>
+          <li>{mathSpan("R_7")} is reflexive, because each number is greater-than-or-equal itself. It is not
+            irreflexive.</li>
         </ul>
       </>,
     },
       
-      // TODO irreflexive (vs. "not reflexive")
       // TODO symmetric
       // TODO asymmetric if xRy implies that yRx is impossible (vs. not symmetric)
       // TODO antisymmetric

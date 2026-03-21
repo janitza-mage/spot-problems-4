@@ -1,12 +1,4 @@
 
-proofs
-    essentials of a proof -- cannot be wrong
-    "positive" proofs (e.g. over finite sets)
-    negative proofs
-    and/or, symbols
-    implication, reverse implication, equivalence
-    quantifiers
-    meaning of "q.e.d."
 
 
 relations

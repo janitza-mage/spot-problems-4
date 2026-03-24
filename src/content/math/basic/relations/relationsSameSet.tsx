@@ -228,7 +228,10 @@ export const relationsSameSet: Collection = {
         {mathDiv("x #geq y - 3")}
         {mathDiv("y #geq x - 3")}
         <p>The first two conditions imply that {mathSpan("x=y")}</p>
-        <p>Not transitive: TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO</p>
+        <p>Not transitive:</p>
+        {mathDiv("1 #leq' 4 #leq' 7")}
+        <p>but</p>
+        {mathDiv("1 #nleq' 7")}
       </>,
     },
       

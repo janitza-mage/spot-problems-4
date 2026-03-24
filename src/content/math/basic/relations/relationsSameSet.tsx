@@ -208,13 +208,29 @@ export const relationsSameSet: Collection = {
         If {mathSpan("(x, y) #in R")} and {mathSpan("(y, z) #in R")}, then {mathSpan("(x, z) #in R")}.
       </p>,
     },
-      
-      // TODO welche der (hier aufgezählten) Relationen sind (jeweils ja/nein) reflexiv, irreflexiv, symmetrisch, 
-      // asymmetrisch, antisymmetrisch, transitiv?
-      // TODO examples: > >= < <= = andere äquivalenzklassen z.B. Rest beim Teilen durch 3
-      
-      
-      // TODO transitive. Beispiel nicht-transitives >= : >= aber höchstens 3 größer
+    {
+      type: "exercise",
+      label: <>...</>,
+      problem: <>
+        <p>The {mathSpan("#leq")} relation on natural numbers are reflexive, transitive
+          and antisymmetric. Now consider the relation {mathSpan("#leq'")} that is defined as</p>
+        {mathDiv("x #leq' y #iff x #leq y #land x #geq y - 3")}
+        <p>That is, {mathSpan("x #leq' y")} if x is equal to y or less than y, but not <i>much</i> less (at most
+          3). Show that {mathSpan("#leq'")} is reflexive and antisymmetric, but not transitive.</p>
+      </>,
+      answer: <>
+        <p>Reflexive:</p>
+        {mathDiv("x #leq' x #iff x #leq x #land x #geq x - 3")}
+        <p>Both conditions are obviously true.</p>
+        <p>Antisymmetric: Assume that {mathSpan("x #leq' y")} and {mathSpan("y #leq' x")}. Then four conditions hold:</p>
+        {mathDiv("x #leq y")}
+        {mathDiv("y #leq x")}
+        {mathDiv("x #geq y - 3")}
+        {mathDiv("y #geq x - 3")}
+        <p>The first two conditions imply that {mathSpan("x=y")}</p>
+        <p>Not transitive: TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO</p>
+      </>,
+    },
       
 
       // TODO partial order, total order, strict and nonstrict order (> vs >=)

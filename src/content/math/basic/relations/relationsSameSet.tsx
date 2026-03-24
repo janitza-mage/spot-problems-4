@@ -108,13 +108,116 @@ export const relationsSameSet: Collection = {
         </ul>
       </>,
     },
+    {
+      type: "exercise",
+      label: <>...</>,
+      problem: <>
+        <p>Note that an <i>irreflexive</i> relation is also called <i>strict</i></p>.
+        <p>Let</p>
+        {mathDiv("A = #{1, 2, 3#}")}
+        <p>Given a relation R between elements on A, that relation can be made reflexive by including all missing pairs:</p>
+        {mathDiv("R #cup #{(x, y) | x #in A#}")}
+        <p>Similarly, R can be made irreflexive (strict) by removing all present pairs:</p>
+        {mathDiv("R #setminus #{(x, y) | x #in A#}")}
+        <p>What happens with the following relations when making them reflexive or
+          irreflexive (strict): {mathSpan(">")}, {mathSpan("#geq")}, {mathSpan("<")}, {mathSpan("#leq")}</p>
+      </>,
+      answer: <>
+        <p>Making {mathSpan(">")} reflexive gives {mathSpan("#geq")}</p>
+        <p>Making {mathSpan(">")} strict has no effect since it is already strict</p>
+        <p>Making {mathSpan("#geq")} reflexive has no effect since it is already reflexive</p>
+        <p>Making {mathSpan("#geq")} strict gives {mathSpan(">")}</p>
+        <p>Making {mathSpan("<")} reflexive gives {mathSpan("#leq")}</p>
+        <p>Making {mathSpan("<")} strict has no effect since it is already strict</p>
+        <p>Making {mathSpan("#leq")} reflexive has no effect since it is already reflexive</p>
+        <p>Making {mathSpan("#leq")} strict gives {mathSpan("<")}</p>
+      </>,
+    },
+    {
+      type: "exercise",
+      label: <>...</>,
+      problem: <>
+        <p>The following six terms mean six different things. Give their definition in terms of element pairs.</p>
+        <ul>
+          <li>symmetric</li>
+          <li>not symmetric</li>
+          <li>asymmetric</li>
+          <li>not asymmetric</li>
+          <li>antisymmetric</li>
+          <li>not antisymmetric</li>
+        </ul>
+      </>,
+      answer: <>
+        <p>This answer uses the term "flipped" pair as follows: Flipping {mathSpan("(x, y)")} gives {mathSpan("(y, x)")}.</p>
+        <ul>
+          <li>symmetric: If a pair is present in R, then the flipped pair is also present. </li>
+          <li>not symmetric: R contains a pair for which it is missing the flipped pair. </li>
+          <li>asymmetric: If a pair is present in R, then the flipped pair is missing. </li>
+          <li>not asymmetric: R contains both a pair and the flipped pair. </li>
+          <li>antisymmetric: If a pair with unequal sides is present in R, then the flipped pair is missing. </li>
+          <li>not antisymmetric: R contains a pair with unequal sides and the flipped pair. </li>
+        </ul>
+        <p></p>
+      </>,
+    },
+    {
+      type: "exercise",
+      label: <>...</>,
+      problem: <>
+        <p>Let A be a set, and R a relation between elements of A. </p>
+        <p>Explain the difference between the terms <i>symmetric</i>, <i>asymmetric</i> and <i>antisymmetric</i>
+        in terms of an arbitrary element {mathSpan("(x, y) #in R")}.</p>
+      </>,
+      answer: <>
+        <ul>
+          <li>symmetric: {mathSpan("(y, x) #in R")}</li>
+          <li>asymmetric: {mathSpan("(y, x) #notin R")}</li>
+          <li>antisymmetric: {mathSpan("(y, x) #in R #implies x = y")}</li>
+        </ul>
+      </>,
+    },
+    {
+      type: "exercise",
+      label: <>...</>,
+      problem: <>
+        <p>Let A be a set and {mathSpan("#lhd")}, {mathSpan("#unlhd")}, {mathSpan("#rhd")}, {mathSpan("#unrhd")}, {mathSpan("#bowtie")} relations
+          between elements of A. What properties can you expect from these relations <i>by convention</i>, based on the
+          symbols used for them?</p>
+        <p>Note that convention does not replace a formal definition. Rather, when choosing symbols to use, one
+          should choose symbols that match the formal definition of the relations.</p>
+      </>,
+      answer: <>
+        <p>By convention, a flipped symbol is used for a flipped (or "inverted") relation, and a symmetric symbol is
+        used for a symmetric relation. An equals sign (or at least a horizontal line) below a symbol typically
+        indicates the reflexive closure of another relation.</p>
+        {mathDiv("#forall x, y #in A. #hskip 1em x #lhd y #iff y #rhd x")}
+        {mathDiv("#forall x, y #in A. #hskip 1em x #unlhd y #iff y #unrhd x")}
+        {mathDiv("#forall x, y #in A. #hskip 1em x #unlhd y #iff x #lhd y #lor x = y")}
+        {mathDiv("#forall x, y #in A. #hskip 1em x #unrhd y #iff x #rhd y #lor x = y")}
+        {mathDiv("#forall x, y #in A. #hskip 1em x #bowtie y #iff y #bowtie x")}
+      </>,
+    },
+    {
+      type: "exercise",
+      label: <>...</>,
+      problem: <>
+        <p>Let A be a set and R be a relation between elements of A. Give a definition for the term <i>transitive</i> in
+        terms of element pairs.</p>
+      </>,
+      answer: <p>
+        If {mathSpan("(x, y) #in R")} and {mathSpan("(y, z) #in R")}, then {mathSpan("(x, z) #in R")}.
+      </p>,
+    },
       
-      // TODO symmetric
-      // TODO asymmetric if xRy implies that yRx is impossible (vs. not symmetric)
-      // TODO antisymmetric
-      // TODO transitive
+      // TODO welche der (hier aufgezählten) Relationen sind (jeweils ja/nein) reflexiv, irreflexiv, symmetrisch, 
+      // asymmetrisch, antisymmetrisch, transitiv?
       // TODO examples: > >= < <= = andere äquivalenzklassen z.B. Rest beim Teilen durch 3
-      // TODO partial order, total order, strict and nonstrict order (> vs >=)
       
+      
+      // TODO transitive. Beispiel nicht-transitives >= : >= aber höchstens 3 größer
+      
+
+      // TODO partial order, total order, strict and nonstrict order (> vs >=)
+
   ],
 };

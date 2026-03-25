@@ -5,6 +5,7 @@ import {products} from "./products.tsx";
 import {sets} from "./sets.tsx";
 import {sumsOverSets} from "./sumsOverSets.tsx";
 import {relationsSubtree} from "./relations/relationsSubtree.tsx";
+import {functionsSubtree} from "./functions/functionsSubtree.tsx";
 
 export const mathBasicsSubtree: Folder = {
   id: "matheBasics",
@@ -17,6 +18,7 @@ export const mathBasicsSubtree: Folder = {
     sets,
     sumsOverSets,
     relationsSubtree,
+    functionsSubtree,
       
       /*
       TODO: proofs

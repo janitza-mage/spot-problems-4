@@ -234,12 +234,6 @@ export const relationsSameSet: Collection = {
         {mathDiv("1 #nleq' 7")}
       </>,
     },
-      
-      
-      
-      
-      
-      
     {
       type: "exercise",
       label: <>...</>,
@@ -272,9 +266,23 @@ export const relationsSameSet: Collection = {
         {mathDiv("#forall p #in A. p #in y #implies p #in z")}
         <p>We can merge these two:</p>
         {mathDiv("#forall p #in A. (p #in x #implies p #in y) #land (p #in y #implies p #in z )")}
-
-        TODO antisymmetry
-        TODO not total
+        <p>From this follows</p>
+        {mathDiv("#forall p #in A. (p #in x #implies p #in z)")}
+        <p>which means</p>
+        {mathDiv("x #subseteq z")}
+        
+        <p>Antisymmetry: Let {mathSpan("x #subseteq y")} and {mathSpan("y #subseteq x")}. That is,</p>
+        {mathDiv("#forall p #in A. p #in x #implies p #in y")}
+        {mathDiv("#forall p #in A. p #in y #implies p #in x")}
+        <p>Again we combine the two:</p>
+        {mathDiv("#forall p #in A. (p #in x #implies p #in y) #land (p #in y #implies p #in x)")}
+        <p>or shorter,</p>
+        {mathDiv("#forall p #in A. (p #in x #iff p #in y)")}
+        <p>which means</p>
+        {mathDiv("x = y")}
+        
+        <p>Not total: A counterexample is the sets {mathSpan("#{1#}")} and {mathSpan("#{2#}")}, neither of which
+        is a subset of the other.</p>
       </>,
     },
   ],

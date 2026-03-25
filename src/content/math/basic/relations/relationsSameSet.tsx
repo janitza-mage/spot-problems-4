@@ -235,8 +235,47 @@ export const relationsSameSet: Collection = {
       </>,
     },
       
+      
+      
+      
+      
+      
+    {
+      type: "exercise",
+      label: <>...</>,
+      problem: <>
+        <p>Let</p>
+        {mathDiv("A = #{1, 2, 3#}")}
+        <p>Let {mathSpan("B")} be the <i>power set</i> of {mathSpan("A")}, that is, the set of subsets of {mathSpan("A")}:</p>
+        {mathDiv("B = #{#{#}, #{1#}, #{2#}, #{3#}, #{1, 2#}, #dots, #{1, 2, 3#}#}")}
+        <p>Consider the (non-strict, i.e. irreflexive) is-subset-of relation ({mathSpan("#subseteq")}) on the elements
+          of {mathSpan("B")}, i.e. on the subsets of {mathSpan("A")}.</p>
+        <p>First, give a formal definition of this relation.</p>
+        <p>Next, show that this relation is reflexive, transitive and antisymmetric. This makes it a <i>partial
+          order</i>.</p>
+        <p>Finally, show that it is not a total order by giving a counterexample of two elements
+          of {mathSpan("B")} that are not related in either direction.</p>
+      </>,
+      answer: <>
+        <p>Definition as a set of pairs:</p>
+        {mathDiv("#subseteq = #{(x, y) #in B #times B | #forall p #in A. p #in x #implies p #in y  #}")}
+        
+        <p>Definition in terms of related elements:</p>
+        {mathDiv("x #subseteq y #iff #forall p #in A. p #in x #implies p #in y  #}")}
+        
+        <p>Reflexivity: We have to show that {mathSpan("x #subseteq x")}, that is,</p>
+        {mathDiv("#forall p #in A. p #in x #implies p #in x")}
+        <p>which is obviously true.</p>
+          
+        <p>Transitivity: Let {mathSpan("x #subseteq y")} and {mathSpan("y #subseteq z")}. That is,</p>
+        {mathDiv("#forall p #in A. p #in x #implies p #in y")}
+        {mathDiv("#forall p #in A. p #in y #implies p #in z")}
+        <p>We can merge these two:</p>
+        {mathDiv("#forall p #in A. (p #in x #implies p #in y) #land (p #in y #implies p #in z )")}
 
-      // TODO partial order, total order, strict and nonstrict order (> vs >=)
-
+        TODO antisymmetry
+        TODO not total
+      </>,
+    },
   ],
 };

@@ -29,16 +29,9 @@ export const convergence: Collection = {
       0, 1, 0, 0, 1, 0, 0, 0, 1, ... how many converging subsequences? 2, the increasing distance does not matter since you can alwaays skip a finite number of elements
       0, 1/1, 0, 1/2, 0, 1/3, ... how many converging subsequences? infinite, every subsequence of 1/n also converges
       
-      red, green, blue, red, red, red, red, ... converges to red? no, no notion of distance. Define distance (1 or 0) then converges
-      // TODO:
-      // Menge (rot, grün, blau), Folge RGBRRRRR, konvergiert die? -> nein, kein Abstand definiert, aber
-      // man könnte einen Abstand definieren, der die Folge konvergieren lässt: d(x, y) = 0, falls x = y, sonst 1
-      
       // TODO
       // konvergenz gegen x (noch ohne Cauchy-Folge)
-      // beschränktheit
-      // monotonie
-      // Teilfolge, Konvergenz von Teilfolgen https://de.wikipedia.org/wiki/Teilfolge
+      // Konvergenz von Teilfolgen https://de.wikipedia.org/wiki/Teilfolge
       // Häufungspunkt, auch vs. grenzwert (Von einem Grenzwert wird gefordert, dass in jeder Umgebung fast alle Folgenglieder liegen. Bei einem Häufungspunkt müssen dies nur unendlich viele sein)
       // ... 
 

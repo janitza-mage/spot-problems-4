@@ -2,20 +2,25 @@ import {useMemo} from "react";
 import {collectAllExercises} from "../util/collectAllExercises.ts";
 import type {Exercise} from "../content.tsx";
 import {renderToStaticMarkup} from "react-dom/server";
+import {renderModeContext} from "../RenderMode.tsx";
 
 function renderExerciseToCsvLine(exercise: Exercise): string {
   
-  const front = <div style={{margin: "0.2em"}}>
-    <h1>{exercise.label}</h1>
-    <div>{exercise.intro}</div>
-    <h2>Problem</h2>
-    <div>{exercise.problem}</div>
-  </div>;
+  const front = <renderModeContext.Provider value="anki">
+    <div style={{margin: "0.2em"}}>
+      <h1>{exercise.label}</h1>
+      <div>{exercise.intro}</div>
+      <h2>Problem</h2>
+      <div>{exercise.problem}</div>
+    </div>
+  </renderModeContext.Provider>;
   
-  const back = <div style={{margin: "0.2em"}}>
-    <h2>Solution</h2>
-    <div>{exercise.answer}</div>
-  </div>;
+  const back = <renderModeContext.Provider value="anki">
+    <div style={{margin: "0.2em"}}>
+      <h2>Solution</h2>
+      <div>{exercise.answer}</div>
+    </div>
+  </renderModeContext.Provider>;
   
   const frontHtml = renderToStaticMarkup(front);
   const backHtml = renderToStaticMarkup(back);
@@ -23,7 +28,9 @@ function renderExerciseToCsvLine(exercise: Exercise): string {
   const frontCsv = frontHtml.replace(/"/g, '""');
   const backCsv = backHtml.replace(/"/g, '""');
   
-  return `"Basic"|"${frontCsv}"|"${backCsv}"`;
+  // for some reason the "Basic"| prefix (first row as card type) is no longer recognized by Anki
+  // return `"Basic"|"${frontCsv}"|"${backCsv}"`;
+  return `"${frontCsv}"|"${backCsv}"`;
 }
 
 export function AnkiExportAllPage() {
@@ -33,6 +40,7 @@ export function AnkiExportAllPage() {
     <pre style={{userSelect: "all"}}>
       {renderExerciseToCsvLine(exercises[0])}{"\n"}
       {renderExerciseToCsvLine(exercises[1])}{"\n"}
+      {"\n"}
     </pre>
   </div>;
 }

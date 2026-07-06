@@ -1,8 +1,8 @@
-import {CheatSheet} from "../../../../framework/technical-components/CheatSheet/CheatSheet.tsx";
 import {mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
+import type {CheatSheet} from "../../../../framework/content.tsx";
 
-export function FieldAxiomsCheatSheet() {
-  return <CheatSheet label={"Field Axioms"}>
+export function FieldAxiomsCheatSheetContent() {
+  return <>
     <p>
       A <i>Field</i> consists of a set S of elements and two operations, <i>addition</i> (denoted by {mathSpan("+")}),
       and <i>multiplication</i> (denoted by {mathSpan("#cdot")}). Addition and multiplication satisfy the following axioms:
@@ -62,5 +62,10 @@ export function FieldAxiomsCheatSheet() {
     <p>
       We will write {mathSpan("abc")} to mean {mathSpan("a(bc)")} or {mathSpan("(ab)c")} since the two are equal.
     </p>
-  </CheatSheet>;
+  </>;
+}
+
+export const fieldAxiomsCheatSheet: CheatSheet = {
+  label: "Field Axioms",
+  content: <FieldAxiomsCheatSheetContent />,
 }

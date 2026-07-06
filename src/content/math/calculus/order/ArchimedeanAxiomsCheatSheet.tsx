@@ -1,8 +1,8 @@
-import {CheatSheet} from "../../../../framework/technical-components/CheatSheet/CheatSheet.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
+import type {CheatSheet} from "../../../../framework/content.tsx";
 
-export function ArchimedeanAxiomsCheatSheet() {
-  return <CheatSheet label={"Archimedean Axioms"}>
+export function ArchimedeanAxiomsCheatSheetContent() {
+  return <>
 
     <p>
       Let {mathSpan("F")} be an ordered field. {mathSpan("F")} is called
@@ -46,5 +46,10 @@ export function ArchimedeanAxiomsCheatSheet() {
     </p>
     {mathDiv("a^n < #varepsilon")}
     
-  </CheatSheet>;
+  </>;
+}
+
+export const archimedeanAxiomsCheatSheet: CheatSheet = {
+  label: "Archimedean Axioms",
+  content: <ArchimedeanAxiomsCheatSheetContent />,
 }

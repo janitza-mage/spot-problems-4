@@ -1,8 +1,8 @@
-import {CheatSheet} from "../../../../framework/technical-components/CheatSheet/CheatSheet.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
+import type {CheatSheet} from "../../../../framework/content.tsx";
 
-export function AbsoluteAxiomsCheatSheet() {
-  return <CheatSheet label={"Absolute"}>
+export function AbsoluteAxiomsCheatSheetContent() {
+  return <>
 
     <p>
       Let {mathSpan("F")} be a field and {mathSpan("x, y #in F")}. The <i>absolute</i> of an element {mathSpan("x")},
@@ -27,5 +27,10 @@ export function AbsoluteAxiomsCheatSheet() {
     {mathDiv("|x+y| #geq |x|-|y|")}
     {mathDiv("|x-y| #geq |x|-|y|")}
     
-  </CheatSheet>;
+  </>;
+}
+
+export const absoluteAxiomsCheatSheet: CheatSheet = {
+  label: "Absolute",
+  content: <AbsoluteAxiomsCheatSheetContent />,
 }

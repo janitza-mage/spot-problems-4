@@ -1,8 +1,8 @@
-import {CheatSheet} from "../../../../framework/technical-components/CheatSheet/CheatSheet.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
+import type {CheatSheet} from "../../../../framework/content.tsx";
 
-export function OrderAxiomsCheatSheet() {
-  return <CheatSheet label={"Order Axioms"}>
+export function OrderAxiomsCheatSheetContent() {
+  return <>
     <p>
       Let {mathSpan("F")} be a field and {mathSpan("x, y #in F")}.
     </p>
@@ -48,5 +48,10 @@ export function OrderAxiomsCheatSheet() {
       <li>{mathSpan("x > 0 #implies x^{-1} > 0")}</li>
       <li>{mathSpan("0 < x < y #implies x^{-1} > y^{-1}")}</li>
     </ul>
-  </CheatSheet>;
+  </>;
+}
+
+export const orderAxiomsCheatSheet: CheatSheet = {
+  label: "Order Axioms",
+  content: <OrderAxiomsCheatSheetContent />,
 }

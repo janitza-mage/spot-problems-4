@@ -10,10 +10,14 @@ export interface ContentNodeBase {
   type: ContentNodeType;
 }
 
+export interface CheatSheet {
+  label: string;
+  content: ReactNode;
+}
+
 export interface Exercise extends ContentNodeBase {
   type: "exercise";
-  // the "intro" places content above the "Problem" headline
-  intro?: ReactNode;
+  cheatSheets?: CheatSheet[];
   label?: ReactNode;
   problem: ReactNode;
   answer: ReactNode;

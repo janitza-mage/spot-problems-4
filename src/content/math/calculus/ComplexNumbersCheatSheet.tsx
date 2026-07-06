@@ -1,8 +1,8 @@
 import {mathDiv, mathSpan} from "../../../framework/technical-components/Math/Math.tsx";
-import {CheatSheet} from "../../../framework/technical-components/CheatSheet/CheatSheet.tsx";
+import type {CheatSheet} from "../../../framework/content.tsx";
 
-export function ComplexNumbersCheatSheet() {
-  return <CheatSheet label={"Definition: Complex Numbers"}>
+export function ComplexNumbersCheatSheetContent() {
+  return <>
     <p>
       The <i>Complex Numbers</i> {mathSpan("#mathbb{C}")} can be defined as the set of pairs of real
       numbers {mathSpan("(c_1, c_2)")}, {mathSpan("c_1, c_2 #in #mathbb{R}")}, with the following operations:
@@ -31,5 +31,10 @@ export function ComplexNumbersCheatSheet() {
       The absolute value of a complex number is defined as
     </p>
     {mathDiv("|(c_1, c_2)| = #sqrt{c_1^2 + c_2^2}")}
-  </CheatSheet>;
+  </>;
+}
+
+export const complexNumbersCheatSheet: CheatSheet = {
+  label: "Definition: Complex Numbers",
+  content: <ComplexNumbersCheatSheetContent />,
 }

@@ -1,10 +1,10 @@
-import type {Collection, Exercise} from "../../../framework/content.tsx";
+import type {CheatSheet, Collection, Exercise} from "../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../framework/technical-components/Math/Math.tsx";
-import {CheatSheets} from "../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
-import {CheatSheet} from "../../../framework/technical-components/CheatSheet/CheatSheet.tsx";
 import type {ReactNode} from "react";
 
-const naturalNumbersDefinitionCheatSheet = <CheatSheet label={"Natural Numbers -- Definition"}>
+// --------------------------------------------------------------------------------------------------------------------
+
+const naturalNumbersDefinitionCheatSheetContent = <>
   {mathDiv("#mathbb{N}^+ = {1, 2, 3, ...}")}
   {mathDiv("#mathbb{N}^+_0 = {0, 1, 2, 3, ...}")}
   <p>
@@ -17,9 +17,16 @@ const naturalNumbersDefinitionCheatSheet = <CheatSheet label={"Natural Numbers -
     they are not defined for all operands: Negative numbers and fractions are not natural numbers, and division by
     zero is not defined.
   </p>
-</CheatSheet>;
-  
-const exponentiationCheatSheet = <CheatSheet label={"Exponentiation"}>
+</>;
+
+const naturalNumbersDefinitionCheatSheet: CheatSheet = {
+  label: "Natural Numbers -- Definition",
+  content: naturalNumbersDefinitionCheatSheetContent,
+};
+
+// --------------------------------------------------------------------------------------------------------------------
+
+const exponentiationCheatSheetContent = <>
   <p>
     Exponentiation using two natural numbers is defined as usual, and with the usual rules:
   </p>
@@ -28,9 +35,15 @@ const exponentiationCheatSheet = <CheatSheet label={"Exponentiation"}>
   {mathDiv("0^0 #text{ is not defined }")}
   {mathDiv("a^{n + m} = a^n #cdot a^m")}
   {mathDiv("(a^n)^m = a^{n #cdot m}")}
-</CheatSheet>;
+</>;
+const exponentiationCheatSheet: CheatSheet = {
+  label: "Exponentiation",
+  content: exponentiationCheatSheetContent,
+};
 
-const factorialCheatSheet = <CheatSheet label={"Factorial"}>
+// --------------------------------------------------------------------------------------------------------------------
+
+const factorialCheatSheetContent = <>
   <p>
     The factorial of a natural number is defined as:
   </p>
@@ -40,27 +53,25 @@ const factorialCheatSheet = <CheatSheet label={"Factorial"}>
   </p>
   {mathDiv("0! = 1")}
   {mathDiv("n! #cdot (n + 1) = (n + 1)!")}
-</CheatSheet>;
+</>;
+const factorialCheatSheet = {
+  label: "Factorial",
+  content: factorialCheatSheetContent,
+};
 
-const intro1 = <CheatSheets>
-  {naturalNumbersDefinitionCheatSheet}
-</CheatSheets>;
+// --------------------------------------------------------------------------------------------------------------------
 
-const intro2 = <CheatSheets>
-  {naturalNumbersDefinitionCheatSheet}
-  {exponentiationCheatSheet}
-</CheatSheets>;
+const cheatSheets1 = [naturalNumbersDefinitionCheatSheet];
 
-const intro3 = <CheatSheets>
-  {naturalNumbersDefinitionCheatSheet}
-  {factorialCheatSheet}
-</CheatSheets>;
+const cheatSheets2 = [naturalNumbersDefinitionCheatSheet, exponentiationCheatSheet];
 
-function solve(intro: ReactNode, label: ReactNode, terms: string[], results: string[]): Exercise {
+const cheatSheets3 = [naturalNumbersDefinitionCheatSheet, factorialCheatSheet];
+
+function solve(cheatSheets: CheatSheet[], label: ReactNode, terms: string[], results: string[]): Exercise {
   return {
     type: "exercise",
     label,
-    intro,
+    cheatSheets,
     problem: <>
       <p>
         Solve:
@@ -74,18 +85,20 @@ function solve(intro: ReactNode, label: ReactNode, terms: string[], results: str
 }
 
 function solveExp(label: ReactNode, terms: string[], results: string[]): Exercise {
-  return solve(intro2, label, terms, results);
+  return solve(cheatSheets2, label, terms, results);
 }
 
 function solveFac(label: ReactNode, terms: string[], results: string[]): Exercise {
-  return solve(intro3, label, terms, results);
+  return solve(cheatSheets3, label, terms, results);
 }
+
+// --------------------------------------------------------------------------------------------------------------------
 
 function rewriteExp(term: string, other: string | null): Exercise {
   return {
     type: "exercise",
     label: <>Rewrite {mathSpan(term)}</>,
-    intro: intro2,
+    cheatSheets: cheatSheets2,
     problem: <>
       <p>
         Is it possible to write {mathSpan("(" + term + ")")} in another way? Which?
@@ -108,7 +121,7 @@ export const naturalNumbers: Collection = {
     {
       type: "exercise",
       label: "Natural Numbers -- Definition",
-      intro: intro1,
+      cheatSheets: cheatSheets1,
       problem: <>
         <p>
           Which of the following are natural numbers in {mathSpan("#mathbb{N}^+")}?

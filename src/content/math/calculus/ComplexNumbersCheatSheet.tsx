@@ -34,7 +34,10 @@ export function ComplexNumbersCheatSheetContent() {
   </>;
 }
 
+const complexNumbersCheatSheetDeduplicationToken = {};
+
 export const complexNumbersCheatSheet: CheatSheet = {
   label: "Definition: Complex Numbers",
   content: <ComplexNumbersCheatSheetContent />,
+  deduplicationToken: complexNumbersCheatSheetDeduplicationToken,
 }

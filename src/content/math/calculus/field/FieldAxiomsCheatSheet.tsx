@@ -65,7 +65,10 @@ export function FieldAxiomsCheatSheetContent() {
   </>;
 }
 
+const fieldAxiomsCheatSheetDeduplicationToken = {};
+
 export const fieldAxiomsCheatSheet: CheatSheet = {
   label: "Field Axioms",
   content: <FieldAxiomsCheatSheetContent />,
+  deduplicationToken: fieldAxiomsCheatSheetDeduplicationToken,
 }

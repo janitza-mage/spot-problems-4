@@ -13,6 +13,7 @@ export interface ContentNodeBase {
 export interface CheatSheet {
   label: string;
   content: ReactNode;
+  deduplicationToken: object;
 }
 
 export interface Exercise extends ContentNodeBase {

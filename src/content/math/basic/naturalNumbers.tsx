@@ -19,9 +19,12 @@ const naturalNumbersDefinitionCheatSheetContent = <>
   </p>
 </>;
 
+const naturalNumbersDefinitionCheatSheetDeduplicationToken = {};
+
 const naturalNumbersDefinitionCheatSheet: CheatSheet = {
   label: "Natural Numbers -- Definition",
   content: naturalNumbersDefinitionCheatSheetContent,
+  deduplicationToken: naturalNumbersDefinitionCheatSheetDeduplicationToken,
 };
 
 // --------------------------------------------------------------------------------------------------------------------
@@ -36,9 +39,13 @@ const exponentiationCheatSheetContent = <>
   {mathDiv("a^{n + m} = a^n #cdot a^m")}
   {mathDiv("(a^n)^m = a^{n #cdot m}")}
 </>;
+  
+const exponentiationCheatSheetContentDeduplicationToken = {};
+
 const exponentiationCheatSheet: CheatSheet = {
   label: "Exponentiation",
   content: exponentiationCheatSheetContent,
+  deduplicationToken: exponentiationCheatSheetContentDeduplicationToken,
 };
 
 // --------------------------------------------------------------------------------------------------------------------
@@ -54,9 +61,13 @@ const factorialCheatSheetContent = <>
   {mathDiv("0! = 1")}
   {mathDiv("n! #cdot (n + 1) = (n + 1)!")}
 </>;
+  
+const factorialCheatSheetContentDeduplicationToken = {};
+
 const factorialCheatSheet = {
   label: "Factorial",
   content: factorialCheatSheetContent,
+  deduplicationToken: factorialCheatSheetContentDeduplicationToken,
 };
 
 // --------------------------------------------------------------------------------------------------------------------

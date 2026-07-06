@@ -30,7 +30,10 @@ export function AbsoluteAxiomsCheatSheetContent() {
   </>;
 }
 
+const absoluteAxiomsCheatSheetDeduplicationToken = {};
+
 export const absoluteAxiomsCheatSheet: CheatSheet = {
   label: "Absolute",
   content: <AbsoluteAxiomsCheatSheetContent />,
+  deduplicationToken: absoluteAxiomsCheatSheetDeduplicationToken,
 }

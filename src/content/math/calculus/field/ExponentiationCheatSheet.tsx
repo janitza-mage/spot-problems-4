@@ -16,7 +16,10 @@ export function ExponentiationCheatSheetContent() {
   </>;
 }
 
+const exponentiationCheatSheetDeduplicationToken = {};
+
 export const exponentiationCheatSheet: CheatSheet = {
   label: "Exponentiation",
   content: <ExponentiationCheatSheetContent />,
+  deduplicationToken: exponentiationCheatSheetDeduplicationToken,
 }

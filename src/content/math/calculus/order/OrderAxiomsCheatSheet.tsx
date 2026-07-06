@@ -51,7 +51,10 @@ export function OrderAxiomsCheatSheetContent() {
   </>;
 }
 
+const orderAxiomsCheatSheetDeduplicationToken = {};
+
 export const orderAxiomsCheatSheet: CheatSheet = {
   label: "Order Axioms",
   content: <OrderAxiomsCheatSheetContent />,
+  deduplicationToken: orderAxiomsCheatSheetDeduplicationToken,
 }

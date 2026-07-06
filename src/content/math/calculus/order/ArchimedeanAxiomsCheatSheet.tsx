@@ -49,7 +49,10 @@ export function ArchimedeanAxiomsCheatSheetContent() {
   </>;
 }
 
+const archimedeanAxiomsCheatSheetDeduplicationToken = {};
+
 export const archimedeanAxiomsCheatSheet: CheatSheet = {
   label: "Archimedean Axioms",
   content: <ArchimedeanAxiomsCheatSheetContent />,
+  deduplicationToken: archimedeanAxiomsCheatSheetDeduplicationToken,
 }

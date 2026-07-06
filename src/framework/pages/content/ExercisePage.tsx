@@ -11,6 +11,8 @@ import RightIcon from "@mui/icons-material/ChevronRight";
 import {getExerciseLabel} from "../../getExerciseLabel.tsx";
 import {getContentNodeByPath} from "../../paths.tsx";
 import {useGlobalHotkeyListener} from "../../technical-components/util/useGlobalKeyEventListener.tsx";
+import {CheatSheetsModalButtons} from "../../technical-components/CheatSheet/CheatSheetsModalButtons.tsx";
+import {CheatSheetModalButton} from "../../technical-components/CheatSheet/CheatSheetModalButton.tsx";
 
 export interface ExercisePageProps {
   path: string[];
@@ -74,6 +76,7 @@ export function ExercisePage(props: ExercisePageProps) {
     }
   });
 
+  const cheatSheets = props.exercise.cheatSheets ?? [];
   return <>
     <PageWithHeader
         header={<>
@@ -92,7 +95,9 @@ export function ExercisePage(props: ExercisePageProps) {
         </>}
     >
       <div style={{margin: "0.2em"}}>
-        <div>{props.exercise.intro}</div>
+        {cheatSheets.length > 0 && <CheatSheetsModalButtons>
+          {cheatSheets.map((cheatSheet) => <CheatSheetModalButton label={cheatSheet.label} children={cheatSheet.content} />)}
+        </CheatSheetsModalButtons>}
         <h2>Problem</h2>
         <div>{props.exercise.problem}</div>
         {!revealed && <div style={{textAlign: "center"}}>

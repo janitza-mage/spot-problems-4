@@ -1,11 +1,11 @@
 import type {ReactNode} from "react";
 import {useRenderMode} from "../../RenderMode.tsx";
 
-export interface CheatSheetProps {
+export interface CheatSheetsModalButtonsProps {
   children: ReactNode;
 }
 
-export function CheatSheets(props: CheatSheetProps) {
+export function CheatSheetsModalButtons(props: CheatSheetsModalButtonsProps) {
   const renderMode = useRenderMode();
   if (renderMode === "anki") {
     return <>

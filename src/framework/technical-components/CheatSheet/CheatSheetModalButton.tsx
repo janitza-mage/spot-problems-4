@@ -2,12 +2,12 @@ import {type ReactNode, useState} from "react";
 import {Button, Dialog} from "@mui/material";
 import {useRenderMode} from "../../RenderMode.tsx";
 
-export interface CheatSheetProps {
+export interface CheatSheetModalButtonProps {
   label: ReactNode;
   children: ReactNode;
 }
 
-export function CheatSheet(props: CheatSheetProps) {
+export function CheatSheetModalButton(props: CheatSheetModalButtonProps) {
   const renderMode = useRenderMode();
   const [open, setOpen] = useState(false);
   if (renderMode === "anki") {

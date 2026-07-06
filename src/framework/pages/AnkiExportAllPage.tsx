@@ -43,6 +43,7 @@ export function AnkiExportAllPage() {
     setTimeout(initializeTextarea, 500);
   }, []);
 
+  // TODO: cheat sheets, images
   // we use visibility:hidden since display:none might interfere with the workings of the content
   return <div style={{position: "absolute", top: "0", left: "0", right: "0", bottom: "0", overflow: "scroll"}}>
     <textarea ref={textareaRef} style={{userSelect: "all", width: "300px", height: "300px"}} />
@@ -52,7 +53,6 @@ export function AnkiExportAllPage() {
         {exercises.map(exercise => <div>
           <div>
             <h1>{exercise.label}</h1>
-            <div>{exercise.intro}</div>
             <h2>Problem</h2>
             <div>{exercise.problem}</div>
           </div>

@@ -7,7 +7,7 @@ import {renderModeContext} from "../RenderMode.tsx";
 export function PrintAllPage() {
   const exercises = useMemo(collectAllExercises, []);
   
-  return <renderModeContext.Provider value="print">
+  return <renderModeContext.Provider value="genericPrinted">
     <div style={{position: "absolute", top: "0", left: "0", right: "0", bottom: "0", overflow: "scroll"}}>
       {exercises.map((exercise, index) => <div style={{margin: "0.2em"}}>
         <h1>{getExerciseLabel(exercise, index)}</h1>

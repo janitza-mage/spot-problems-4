@@ -1,0 +1,70 @@
+
+-----------------------------------------------------------------------------------------------------------------------
+exporters
+-----------------------------------------------------------------------------------------------------------------------
+
+- single exercises (direct usage)
+    already works
+- exercise sheets
+    all questions, no answers
+    collect cheat sheets and include at the top (optional, flag param but not UI for now)
+- physical flash cards
+    questions + answers as flash cards, two sided (cutting = unsolved)
+    cheat sheet as extra pages (optional -> do not re-print every time when you already have them)
+    images = solved
+- flash card apps (Anki)
+    questions + answers as flash cards
+    need cheat sheets separately (pdf?)
+    images in Anki unclear, possibly generate sqlite DB directly
+    https://www.youtube.com/watch?v=Jg095Qiec3M
+    https://www.reddit.com/r/Anki/comments/24dla5/how_to_create_decks_with_images_quickly/
+    To generate an Anki deck with images, compile your study data into a spreadsheet. Place the images in the collection.media folder, format your text and image paths Create Anki Decks Quickly Using CSV - With Images, and import the file How to create decks with images quickly? : r/Anki - Reddit. Alternatively, use AI flashcard makers to upload notes and generate a deck instantly Convert PDFs to Anki Decks | Ankify: Anki AI Card Generator.
+- continuous exercise stream apps
+    schedulung = unsolved
+    otherwise = hacking the original app
+- daily exercise sheet apps
+    virtual:
+        schedulung = unsolved
+        otherwise = hacking the original app
+    physical
+        variation of single exercise sheet
+
+-----------------------------------------------------------------------------------------------------------------------
+layout
+-----------------------------------------------------------------------------------------------------------------------
+
+Various exporters use a different line width and might break the layout, or a different layout might be better suited.
+
+-> 
+
+Use more generic layout components that use React contexts to adapt to different line widths / layout requirements /
+export requirements.
+
+-----------------------------------------------------------------------------------------------------------------------
+Physical flash cards
+-----------------------------------------------------------------------------------------------------------------------
+
+To print flashcards easily, organize your terms and definitions into a grid in a text editor (like Microsoft Word) or a
+spreadsheet (like Excel). Alternatively, use platforms like Canva to design and download as a PDF, ensuring questions
+and answers align perfectly before sending to your printer.
+--
+Not sure how to fix the printing, but you could print and cut two separate sheets for the front and back and put them
+in clear TCG sleeves to make double sided cards.
+--
+What ive been doing is printing the front and back on separate pages and the glueing them together and that makes it
+perfect, but im trying to print double sided to save time and money on the glue.
+--
+You can follow this method, or similar. One of her other videos discusses it without the core. Using a plastic core is
+labor intensive. Using a single folded sheet is less so. Depends on the level of quality you are trying to achieve.
+The gutter fold method is primarily for being able to add a core and avoid the alignment issues you are having.
+https://www.youtube.com/watch?v=1JW6Wc-8JjYYPrinting double sided on a single sheet at home will basically always have
+alignment issues unless you have a very very good printer.
+
+
+z.B. https://www.amazon.de/Soft-Clear-Kartenh%C3%BCllen-Standardgr%C3%B6%C3%9Fe-Schutzh%C3%BCllen-Sammelkarten/dp/B0GYRCSVX1/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.Xaf_rodz9UAM7Hs80RxmfXzex4nvHdYcGAGazHNsjhnC1340daP2K_I04NeHTeayc4Otisb8vczKxl5cPSszjQ-4b59TAgNz0Cuu2AcV-l8bvm1CDgSQFT0iDCydKVNYFQUeox8p8SW5JlQFRevueBI0LM0OXNb46MOxL_PK6C_aqubLx8KDaUykVrxo4rafJf43hQb0kOctDov68Z6aA31WYPOe-AZ7IZMvcPBs-xSqDj5dkDA3Qhn9x3dYdaoFIEvc3sqdAicNoDR9a1KKGdDYEKCKy8C1m2jex7ZtSvI.AbUb00Dio0vPl4t2hePypJ-mH_d6J0X78xOtXoBvBsA&dib_tag=se&keywords=tcg%2Bsleeves&qid=1783246796&sr=8-1-spons&aref=pMt2US9T7s&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1
+
+600 Stk für 10€, das ist perfekt. Einziges Problem ist noch dass TCG etwas zu klein für Matheaufgaben ist, besser für
+standard-Flashcards.
+
+Use more generic layout components that use React contexts to adapt to different chat sheet requirements.
+

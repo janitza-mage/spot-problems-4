@@ -2,6 +2,7 @@ import {Route, Routes, useParams} from "react-router-dom";
 import {ContentPathPage} from "../../pages/content/ContentPathPage";
 import {PrintAllPage} from "../../pages/PrintAllPage.tsx";
 import {AnkiExportAllPage} from "../../pages/AnkiExportAllPage.tsx";
+import {ExerciseSheetExperimentPage} from "../../pages/ExerciseSheetExperimentPage.tsx";
 
 function removeTrailingSlashes(s: string): string {
     while (s.endsWith("/")) {
@@ -20,6 +21,7 @@ export function AppRoutes() {
     return <Routes>
         <Route path={"_/printAll"} element={<PrintAllPage />} />;
         <Route path={"_/ankiAll"} element={<AnkiExportAllPage />} />;
+        <Route path={"_/experiment"} element={<ExerciseSheetExperimentPage />} />;
         <Route path={"*"} element={<ContentPathPageWrapper />} />;
     </Routes>;
 }

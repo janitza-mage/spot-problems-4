@@ -1,10 +1,9 @@
 import type {Collection} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
-import {CheatSheets} from "../../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
-import {FieldAxiomsCheatSheet} from "./FieldAxiomsCheatSheet.tsx";
-import {ComplexNumbersCheatSheet} from "../ComplexNumbersCheatSheet.tsx";
 import type {ReactNode} from "react";
 import {Grid} from "@mui/material";
+import {fieldAxiomsCheatSheet} from "./FieldAxiomsCheatSheet.tsx";
+import {ComplexNumbersCheatSheetContent} from "../ComplexNumbersCheatSheet.tsx";
 
 interface OperationTableCellProps {
   color: string;
@@ -46,9 +45,7 @@ export const fieldAxioms: Collection = {
     {
       type: "exercise",
       label: "Not a field: Natural numbers including infinity",
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet],
       problem: <>
         <p>
           This problem gives a counter-example that is <i>not</i> a field since it does not fulfil the field axioms.
@@ -164,11 +161,11 @@ export const fieldAxioms: Collection = {
     {
       type: "exercise",
       label: "Complex numbers are a field",
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet],
       problem: <>
-        <ComplexNumbersCheatSheet />
+        <h3>Definition: Complex Numbers</h3>
+        <ComplexNumbersCheatSheetContent />
+        <h3>Your Task</h3>
         <p>
           Use the above definition of the complex numbers to prove that they are a field by proving the individual
           field axioms. Find a definition for the additive inverse (negative) and for the multiplicative inverse.
@@ -257,9 +254,7 @@ export const fieldAxioms: Collection = {
     {
       type: "exercise",
       label: "Field with three elements",
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet],
       problem: <>
         <p>
           Let {mathSpan("F")} be a field that has exactly three elements. Since {mathSpan("0 #neq 1")}, two

@@ -1,9 +1,8 @@
 import type {Collection} from "../../../../framework/content.tsx";
-import {CheatSheets} from "../../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
-import {FieldAxiomsCheatSheet} from "../field/FieldAxiomsCheatSheet.tsx";
-import {OrderAxiomsCheatSheet} from "./OrderAxiomsCheatSheet.tsx";
+import {fieldAxiomsCheatSheet} from "../field/FieldAxiomsCheatSheet.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
-import {ComplexNumbersCheatSheet} from "../ComplexNumbersCheatSheet.tsx";
+import {orderAxiomsCheatSheet} from "./OrderAxiomsCheatSheet.tsx";
+import {complexNumbersCheatSheet} from "../ComplexNumbersCheatSheet.tsx";
 
 export const orderAxioms: Collection = {
   id: "orderAxioms",
@@ -13,14 +12,10 @@ export const orderAxioms: Collection = {
     {
       type: "exercise",
       label: "real part of complex numbers as order",
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-        <OrderAxiomsCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet, orderAxiomsCheatSheet, complexNumbersCheatSheet],
       problem: <>
-        <ComplexNumbersCheatSheet />
         <p>
-          Using the above definition of the complex numbers, one might try to define an order on complex numbers
+          Starting with the definition of the complex numbers, one might try to define an order on complex numbers
           by comparing their real part. That is,
         </p>
         {mathDiv("(a_1, a_2) < (b_1, b_2) #iff a_1 < b_1")}
@@ -38,14 +33,10 @@ export const orderAxioms: Collection = {
     {
       type: "exercise",
       label: "absolute of complex numbers as order",
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-        <OrderAxiomsCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet, orderAxiomsCheatSheet, complexNumbersCheatSheet],
       problem: <>
-        <ComplexNumbersCheatSheet />
         <p>
-          Using the above definition of the complex numbers, one might try to define an order on complex numbers
+          Starting with the definition of the complex numbers, one might try to define an order on complex numbers
           by comparing their absolute value. That is,
         </p>
         {mathDiv("(a_1, a_2) < (b_1, b_2) #iff |a_1| < |b_1|")}
@@ -63,10 +54,7 @@ export const orderAxioms: Collection = {
     {
       type: "exercise",
       label: "ordered field is infinite",
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-        <OrderAxiomsCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet, orderAxiomsCheatSheet],
       problem: <>
         <p>
           Prove that every ordered field has an infinite number of elements.

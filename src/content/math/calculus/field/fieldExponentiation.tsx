@@ -1,9 +1,8 @@
 import type {Collection} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
-import {CheatSheets} from "../../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
-import {FieldAxiomsCheatSheet} from "./FieldAxiomsCheatSheet.tsx";
-import {ExponentiationCheatSheet} from "./ExponentiationCheatSheet.tsx";
+import {fieldAxiomsCheatSheet} from "./FieldAxiomsCheatSheet.tsx";
 import {isNat0} from "../../util/math-atoms.tsx";
+import {exponentiationCheatSheet} from "./ExponentiationCheatSheet.tsx";
 
 const letField = <>Let {mathSpan("F")} be a field.</>;
 
@@ -15,10 +14,7 @@ export const fieldExponentiation: Collection = {
     {
       type: "exercise",
       label: mathSpan("a^{-n} = (a^n)^{-1}"),
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-        <ExponentiationCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet, exponentiationCheatSheet],
       problem: <>
         <p>
           {letField} Let {mathSpan("a #in F")}, {isNat0("n")}. Use induction to prove that
@@ -62,10 +58,7 @@ export const fieldExponentiation: Collection = {
     {
       type: "exercise",
       label: mathSpan("a^pa^q = a^{p+q}"),
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-        <ExponentiationCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet, exponentiationCheatSheet],
       problem: <>
         <p>
           {letField} Let {mathSpan("a #in F")}; {isNat0("p, q")}. Use induction to prove that
@@ -96,10 +89,7 @@ export const fieldExponentiation: Collection = {
     {
       type: "exercise",
       label: mathSpan("(a^p)^q = a^{pq}"),
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-        <ExponentiationCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet, exponentiationCheatSheet],
       problem: <>
         <p>
           {letField} Let {mathSpan("a #in F")}; {isNat0("p, q")}. Use induction to prove that
@@ -139,10 +129,7 @@ export const fieldExponentiation: Collection = {
     {
       type: "exercise",
       label: mathSpan("a^pb^p = (ab)^p"),
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-        <ExponentiationCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet, exponentiationCheatSheet],
       problem: <>
         <p>
           {letField} Let {mathSpan("a #in F")}; {isNat0("p")}. Use induction to prove that

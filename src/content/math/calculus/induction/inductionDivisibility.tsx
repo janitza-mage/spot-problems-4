@@ -1,4 +1,4 @@
-import type {Exercise, Collection} from "../../../../framework/content.tsx";
+import type {Collection, Exercise} from "../../../../framework/content.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
 import {isNatPlus, isNatPlusWithoutDefinition} from "../../util/math-atoms.tsx";
 import type {ReactNode} from "react";

@@ -1,11 +1,10 @@
 import type {Collection} from "../../../../framework/content.tsx";
-import {CheatSheets} from "../../../../framework/technical-components/CheatSheet/CheatSheets.tsx";
-import {FieldAxiomsCheatSheet} from "../field/FieldAxiomsCheatSheet.tsx";
-import {OrderAxiomsCheatSheet} from "./OrderAxiomsCheatSheet.tsx";
-import {AbsoluteAxiomsCheatSheet} from "./AbsoluteAxiomsCheatSheet.tsx";
-import {ArchimedeanAxiomsCheatSheet} from "./ArchimedeanAxiomsCheatSheet.tsx";
+import {fieldAxiomsCheatSheet} from "../field/FieldAxiomsCheatSheet.tsx";
+import {orderAxiomsCheatSheet} from "./OrderAxiomsCheatSheet.tsx";
 import {isNat0, isNatPlus} from "../../util/math-atoms.tsx";
 import {mathDiv, mathSpan} from "../../../../framework/technical-components/Math/Math.tsx";
+import {absoluteAxiomsCheatSheet} from "./AbsoluteAxiomsCheatSheet.tsx";
+import {archimedeanAxiomsCheatSheet} from "./ArchimedeanAxiomsCheatSheet.tsx";
 
 const letBinomial = <>
   <p>
@@ -26,12 +25,7 @@ export const additionalAxioms: Collection = {
     {
       type: "exercise",
       label: mathSpan("#binom{n}{k}#frac{1}{n^k} #leq #frac{1}{k!}"),
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-        <OrderAxiomsCheatSheet />
-        <AbsoluteAxiomsCheatSheet />
-        <ArchimedeanAxiomsCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet, orderAxiomsCheatSheet, absoluteAxiomsCheatSheet, archimedeanAxiomsCheatSheet],
       problem: <>
         <p>
           {letBinomial}
@@ -51,12 +45,7 @@ export const additionalAxioms: Collection = {
     {
       type: "exercise",
       label: mathSpan("(1 + #frac{1}{n})^n #leq #sum_{k=0}^{n}#frac{1}{k!}"),
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-        <OrderAxiomsCheatSheet />
-        <AbsoluteAxiomsCheatSheet />
-        <ArchimedeanAxiomsCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet, orderAxiomsCheatSheet, absoluteAxiomsCheatSheet, archimedeanAxiomsCheatSheet],
       problem: <>
         <p>
           Let {isNatPlus("n")}.
@@ -72,12 +61,7 @@ export const additionalAxioms: Collection = {
     {
       type: "exercise",
       label: mathSpan("#sum_{k=0}^{n}#frac{1}{k!} < 3"),
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-        <OrderAxiomsCheatSheet />
-        <AbsoluteAxiomsCheatSheet />
-        <ArchimedeanAxiomsCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet, orderAxiomsCheatSheet, absoluteAxiomsCheatSheet, archimedeanAxiomsCheatSheet],
       problem: <>
         <p>
           Let {isNatPlus("n")}.
@@ -93,12 +77,7 @@ export const additionalAxioms: Collection = {
     {
       type: "exercise",
       label: mathSpan("(#frac{n}{3})^n #leq #frac{n!}{3}"),
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-        <OrderAxiomsCheatSheet />
-        <AbsoluteAxiomsCheatSheet />
-        <ArchimedeanAxiomsCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet, orderAxiomsCheatSheet, absoluteAxiomsCheatSheet, archimedeanAxiomsCheatSheet],
       problem: <>
         <p>
           Let {isNatPlus("n")}.
@@ -114,12 +93,7 @@ export const additionalAxioms: Collection = {
     {
       type: "exercise",
       label: "define min/max using absolute",
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-        <OrderAxiomsCheatSheet />
-        <AbsoluteAxiomsCheatSheet />
-        <ArchimedeanAxiomsCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet, orderAxiomsCheatSheet, absoluteAxiomsCheatSheet, archimedeanAxiomsCheatSheet],
       problem: <>
         <p>
           Prove that
@@ -136,12 +110,7 @@ export const additionalAxioms: Collection = {
     {
       type: "exercise",
       label: <>{mathSpan("#lfloor x #rfloor")} and {mathSpan("#lceil x #rceil")} with negation</>,
-      intro: <CheatSheets>
-        <FieldAxiomsCheatSheet />
-        <OrderAxiomsCheatSheet />
-        <AbsoluteAxiomsCheatSheet />
-        <ArchimedeanAxiomsCheatSheet />
-      </CheatSheets>,
+      cheatSheets: [fieldAxiomsCheatSheet, orderAxiomsCheatSheet, absoluteAxiomsCheatSheet, archimedeanAxiomsCheatSheet],
       problem: <>
         <p>
           Prove that

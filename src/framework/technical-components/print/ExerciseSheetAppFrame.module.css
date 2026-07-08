@@ -5,11 +5,8 @@ html.exerciseSheet {
 }
 
 html.exerciseSheet body {
-    background-color: #fff;
+  background-color: #fff;
 }
 
-/*
-this app is intended to be used in portrait orientation, so if in landscape, reduce the screen to at most square size.
- */
 .ExerciseSheetAppFrame {
 }

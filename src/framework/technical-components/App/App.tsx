@@ -1,11 +1,11 @@
 import {BrowserRouter} from "react-router-dom";
-import {AppFrame} from "./AppFrame";
+import {NormalAppFrame} from "./NormalAppFrame.tsx";
 import {AppRoutes} from "./AppRoutes";
 
 export function App() {
     return <BrowserRouter basename="/spot-problems-4">
-        <AppFrame>
+        <NormalAppFrame>
             <AppRoutes/>
-        </AppFrame>
+        </NormalAppFrame>
     </BrowserRouter>;
 }

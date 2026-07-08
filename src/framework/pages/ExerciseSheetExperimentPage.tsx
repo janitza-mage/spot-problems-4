@@ -6,13 +6,14 @@ import type {CheatSheet, Exercise} from "../content.tsx";
 import {useRef} from "react";
 import {PageBreak} from "../technical-components/print/PageBreak.tsx";
 
-// TODO: mechanism to select exercises to include. UI?
-// TODO: flag to omit solutions, currently all moved to separate pages at the end
+// TODO: mechanism to select exercises to include, and the options how to render them. UI?
 const exercisesToInclude = [
   orderAxioms.exercises[0],
   orderAxioms.exercises[1],
   additionalAxioms.exercises[0],
 ];
+const includeCheatSheets = false;
+const includeSolutions = true;
 
 function collectCheatSheets(exercises: Exercise[]): CheatSheet[] {
   const map = new Map<object, CheatSheet>();
@@ -35,37 +36,35 @@ export function ExerciseSheetExperimentPage() {
   }
   return <div>
 
-    <h1>Cheat Sheets</h1>
-    <renderModeContext.Provider value="printedExerciseSheet_cheatSheets">
-      {cheatSheets.current.map((cheatSheet, _index) => <div style={{margin: "0.2em"}}>
-        <h2>{cheatSheet.label}</h2>
-        {cheatSheet.content}
-      </div>)}
-    </renderModeContext.Provider>
+    {includeCheatSheets && <>
+      <h1>Cheat Sheets</h1>
+      <renderModeContext.Provider value="printedExerciseSheet_cheatSheets">
+        {cheatSheets.current.map((cheatSheet, _index) => <div style={{margin: "0.2em"}}>
+          <h2>{cheatSheet.label}</h2>
+          {cheatSheet.content}
+        </div>)}
+      </renderModeContext.Provider>
+      <PageBreak />
+      <h1>Exercises</h1>
+    </>}
 
-    <PageBreak />
-
-    <h1>Exercises</h1>
     <renderModeContext.Provider value="printedExerciseSheet_exercises">
       {exercisesToInclude.map((exercise, index) => <div style={{margin: "0.2em"}}>
-        <h1>{getExerciseLabel(exercise, index)}</h1>
-        <h2>Problem</h2>
+        <h2 style={index > 0 ? {marginTop: "8vh"} : {}}>Exercise {index + 1}</h2>
         <div>{exercise.problem}</div>
-        <hr />
       </div>)}
     </renderModeContext.Provider>
 
-    <PageBreak />
-
-    <h1>Solutions</h1>
-    <renderModeContext.Provider value="printedExerciseSheet_solutions">
-      {exercisesToInclude.map((exercise, index) => <div style={{margin: "0.2em"}}>
-        <h1>{getExerciseLabel(exercise, index)}</h1>
-        <h2>Solution</h2>
-        <div>{exercise.answer}</div>
-        <hr />
-      </div>)}
-    </renderModeContext.Provider>
+    {includeSolutions && <>
+      <PageBreak />
+      <h1>Solutions</h1>
+      <renderModeContext.Provider value="printedExerciseSheet_solutions">
+        {exercisesToInclude.map((exercise, index) => <div style={{margin: "0.2em"}}>
+          <h2>Exercise {index + 1}</h2>
+          <div>{exercise.answer}</div>
+        </div>)}
+      </renderModeContext.Provider>
+    </>}
 
   </div>;
 }

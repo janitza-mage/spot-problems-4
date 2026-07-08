@@ -30,7 +30,6 @@ export const additionalAxioms: Collection = {
         <p>
           {letBinomial}
         </p>
-        <hr />
         <p>
           For the case that {mathSpan("n #geq 1")}, prove that
         </p>

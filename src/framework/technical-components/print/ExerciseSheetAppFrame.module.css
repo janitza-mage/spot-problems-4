@@ -1,4 +1,6 @@
 
+/* TODO some styles seem to be ignored for printing */
+
 html.exerciseSheet {
   /* must be here, so it affects "rem" units */
   font-size: 2.0vw;
@@ -9,4 +11,8 @@ html.exerciseSheet body {
 }
 
 .ExerciseSheetAppFrame {
+}
+
+html.exerciseSheet h2 {
+    font-size: 3vh;
 }

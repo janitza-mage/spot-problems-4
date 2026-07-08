@@ -4,15 +4,12 @@ html {
   overscroll-behavior: none;
 
   /* must be here, so it affects "rem" units */
+  /* TODO use width, not height, in general for all text? Works best for fixed-width document with predictable line breaks */
   font-size: min(3.0vw, 3.0vh);
 }
 
 body {
   background-color: #888;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 /*

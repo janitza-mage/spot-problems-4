@@ -4,6 +4,7 @@ import {PrintAllPage} from "../../pages/PrintAllPage.tsx";
 import {AnkiExportAllPage} from "../../pages/AnkiExportAllPage.tsx";
 import {ExerciseSheetExperimentPage} from "../../pages/ExerciseSheetExperimentPage.tsx";
 import {NormalAppFrame} from "./NormalAppFrame.tsx";
+import {ExerciseSheetAppFrame} from "../print/ExerciseSheetAppFrame.tsx";
 
 function removeTrailingSlashes(s: string): string {
     while (s.endsWith("/")) {
@@ -22,7 +23,7 @@ export function AppRoutes() {
     return <Routes>
       <Route path={"_/printAll"} element={<NormalAppFrame><PrintAllPage /></NormalAppFrame>} />;
       <Route path={"_/ankiAll"} element={<NormalAppFrame><AnkiExportAllPage /></NormalAppFrame>} />;
-      <Route path={"_/experiment"} element={<NormalAppFrame><ExerciseSheetExperimentPage /></NormalAppFrame>} />;
+      <Route path={"_/experiment"} element={<ExerciseSheetAppFrame><ExerciseSheetExperimentPage /></ExerciseSheetAppFrame>} />;
       <Route path={"*"} element={<NormalAppFrame><ContentPathPageWrapper /></NormalAppFrame>} />;
     </Routes>;
 }

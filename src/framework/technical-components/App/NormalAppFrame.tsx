@@ -6,7 +6,7 @@ export interface AppFrameProps {
 }
 
 export function NormalAppFrame({children}: AppFrameProps): ReactElement {
-    return <div className={styles.AppFrame}>
+    return <div className={styles.NormalAppFrame}>
         {children}
     </div>;
 }

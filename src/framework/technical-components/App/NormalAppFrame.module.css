@@ -1,9 +1,3 @@
-html {
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 html {
   overflow: hidden;
@@ -14,12 +8,6 @@ html {
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background-color: #888;
 }
 
@@ -30,7 +18,7 @@ code {
 /*
 this app is intended to be used in portrait orientation, so if in landscape, reduce the screen to at most square size.
  */
-.AppFrame {
+.NormalAppFrame {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -46,9 +34,4 @@ this app is intended to be used in portrait orientation, so if in landscape, red
   section above that.
    */
   overflow: hidden;
-}
-
-/* I'm sorry if anybody wants to copy'n'paste text out, but this interferes with the UI too much. */
-* {
-  user-select: none;
 }

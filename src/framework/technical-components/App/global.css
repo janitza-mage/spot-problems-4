@@ -1,4 +1,35 @@
 
+/**********************************************************************************************************************
+document styles
+**********************************************************************************************************************/
+
+html {
+    margin: 0;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* I'm sorry if anybody wants to copy'n'paste text out, but this interferes with the UI too much. */
+/* TODO re-check if this is stil the case in a simple problem database */
+* {
+    user-select: none;
+}
+
+/**********************************************************************************************************************
+simple re-usable styles
+**********************************************************************************************************************/
+
 .thinTable {
     border-collapse: collapse;    
 }

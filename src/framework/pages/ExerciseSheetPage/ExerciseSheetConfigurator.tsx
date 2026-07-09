@@ -58,11 +58,11 @@ export function ExerciseSheetConfigurator(props: ExerciseSheetConfiguratorProps)
     setExercises(loadedExercises);
     setAllCheatSheets(cheatSheets);
     
-    const cheatSheetInclusionFlags = new Map<object, boolean>();
+    const updatedCheatSheetInclusionFlags = new Map<object, boolean>();
     for (const cheatSheet of cheatSheets) {
-      cheatSheetInclusionFlags.set(cheatSheet, true);
+      updatedCheatSheetInclusionFlags.set(cheatSheet.deduplicationToken, cheatSheetInclusionFlags.get(cheatSheet.deduplicationToken) ?? true);
     }
-    setCheatSheetInclusionFlags(cheatSheetInclusionFlags);
+    setCheatSheetInclusionFlags(updatedCheatSheetInclusionFlags);
   }
   
   function onClickShow() {
@@ -87,7 +87,7 @@ export function ExerciseSheetConfigurator(props: ExerciseSheetConfiguratorProps)
           {allCheatSheets.map(cheatSheet => <div>
             <input
                 type="checkbox"
-                checked={cheatSheetInclusionFlags.get(cheatSheet.deduplicationToken)}
+                checked={!!cheatSheetInclusionFlags.get(cheatSheet.deduplicationToken)}
                 onChange={() => {
                   const updated = new Map(cheatSheetInclusionFlags);
                   updated.set(cheatSheet.deduplicationToken, !updated.get(cheatSheet.deduplicationToken))

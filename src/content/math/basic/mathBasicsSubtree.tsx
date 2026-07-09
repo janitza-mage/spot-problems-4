@@ -8,7 +8,7 @@ import {relationsSubtree} from "./relations/relationsSubtree.tsx";
 import {functionsSubtree} from "./functions/functionsSubtree.tsx";
 
 export const mathBasicsSubtree: Folder = {
-  id: "matheBasics",
+  id: "mathBasics",
   name: "Basics",
   type: "folder",
   elements: [

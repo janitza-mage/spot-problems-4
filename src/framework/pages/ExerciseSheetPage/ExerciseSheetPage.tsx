@@ -20,7 +20,9 @@ export function ExerciseSheetPage() {
     <div style={configuration ? {display: "none"} : {}}>
       <ExerciseSheetConfigurator setConfiguration={setConfiguration} />
     </div>
-    {configuration && <ExerciseSheetResult configuration={configuration} />}
+    <div style={configuration ? {} : {display: "none"}}>
+      {configuration && <ExerciseSheetResult configuration={configuration} />}
+    </div>
   </>;
   
 }

@@ -4,8 +4,6 @@ import {getContentNodeByPath} from "../../paths.tsx";
 import {useUrlToPath} from "../../technical-components/navigation/useUrlToPath.ts";
 import {collectCheatSheetsFromExercises} from "./collectCheatSheetsFromExercises.ts";
 import type {ExerciseSheetConfiguration} from "./ExerciseSheetConfiguration.ts";
-import {orderAxioms} from "../../../content/math/calculus/order/orderAxioms.tsx";
-import {additionalAxioms} from "../../../content/math/calculus/order/additionalAxioms.tsx";
 
 /*
 Sample input:
@@ -68,15 +66,10 @@ export function ExerciseSheetConfigurator(props: ExerciseSheetConfiguratorProps)
   }
   
   function onClickShow() {
-    // TODO honoer the actual selection
     props.setConfiguration({
-      exercises: [
-        orderAxioms.exercises[0],
-        orderAxioms.exercises[1],
-        additionalAxioms.exercises[0],
-      ],
-      cheatSheets: [],
-      includeSolutions: true,
+      exercises,
+      cheatSheets: allCheatSheets.filter(cheatSheet => !!cheatSheetInclusionFlags.get(cheatSheet.deduplicationToken)),
+      includeSolutions,
     });
   }
 
@@ -95,7 +88,11 @@ export function ExerciseSheetConfigurator(props: ExerciseSheetConfiguratorProps)
             <input
                 type="checkbox"
                 checked={cheatSheetInclusionFlags.get(cheatSheet.deduplicationToken)}
-                onChange={() => cheatSheetInclusionFlags.set(cheatSheet.deduplicationToken, !cheatSheetInclusionFlags.get(cheatSheet.deduplicationToken))}
+                onChange={() => {
+                  const updated = new Map(cheatSheetInclusionFlags);
+                  updated.set(cheatSheet.deduplicationToken, !updated.get(cheatSheet.deduplicationToken))
+                  setCheatSheetInclusionFlags(updated);
+                }}
             />
             {cheatSheet.label}
           </div>)}

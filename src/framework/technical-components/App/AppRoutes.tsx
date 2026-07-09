@@ -17,8 +17,7 @@ export function AppRoutes() {
     return <Routes>
       <Route path={"_/printAll"} element={<NormalAppFrame><PrintAllPage /></NormalAppFrame>} />;
       <Route path={"_/ankiAll"} element={<NormalAppFrame><AnkiExportAllPage /></NormalAppFrame>} />;
-      <Route path={"_/experiment/print"} element={<ExerciseSheetAppFrame><ExerciseSheetPage print={true} /></ExerciseSheetAppFrame>} />;
-      <Route path={"_/experiment"} element={<ExerciseSheetAppFrame><ExerciseSheetPage print={false} /></ExerciseSheetAppFrame>} />;
+      <Route path={"_/experiment"} element={<ExerciseSheetAppFrame><ExerciseSheetPage /></ExerciseSheetAppFrame>} />;
       <Route path={"*"} element={<NormalAppFrame><ContentPathPageWrapper /></NormalAppFrame>} />;
     </Routes>;
 }

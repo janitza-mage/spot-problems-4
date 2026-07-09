@@ -13,7 +13,7 @@ export function useUrlToPath(): UrlToPath {
   if (!sampleUrl.endsWith("/" + sampleNodePathSegment)) {
     throw new Error();
   }
-  const baseUrl = sampleUrl.substring(0, sampleUrl.length - sampleNodePathSegment.length);
+  const baseUrl = window.location.origin + sampleUrl.substring(0, sampleUrl.length - sampleNodePathSegment.length);
   return (url: string) => {
     if (!url.startsWith(baseUrl)) {
       return null;

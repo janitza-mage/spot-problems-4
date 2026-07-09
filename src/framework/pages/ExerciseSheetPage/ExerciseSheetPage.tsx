@@ -1,35 +1,72 @@
-import {additionalAxioms} from "../../../content/math/calculus/order/additionalAxioms.tsx";
-import {orderAxioms} from "../../../content/math/calculus/order/orderAxioms.tsx";
-import type {CheatSheet} from "../../content.tsx";
-import {useRef} from "react";
-import {collectCheatSheetsFromExercises} from "./collectCheatSheetsFromExercises.ts";
-import {ExerciseSheetResult} from "./ExerciseSheetResult.tsx";
-import type {ExerciseSheetConfiguration} from "./ExerciseSheetConfiguration.ts";
-
-// TODO: mechanism to select exercises to include, and the options how to render them. UI?
-const exercisesToInclude = [
-  orderAxioms.exercises[0],
-  orderAxioms.exercises[1],
-  additionalAxioms.exercises[0],
-];
-const includeCheatSheets = false;
-const includeSolutions = true;
+import {useContext, useRef, useState} from "react";
+import type {CheatSheet, Exercise} from "../../content.tsx";
+import {UNSAFE_NavigationContext, useNavigate, useResolvedPath} from "react-router-dom";
+import {buildUrlPathForContentPath, getContentNodeByPath} from "../../paths.tsx";
+import {useUrlToPath} from "../../technical-components/navigation/useUrlToPath.ts";
 
 export interface ExerciseSheetPageProps {
   print: boolean;
 }
 
-// TODO: detect "intro" parts outside of cheat shetts? prob not needed: if we make cheat sheets and the CS section
-// invisible, the "intro" part is still there but completely empty/invisible.
-export function ExerciseSheetPage(_props: ExerciseSheetPageProps) {
-  const cheatSheets = useRef<CheatSheet[] | null>(null);
-  if (cheatSheets.current === null) {
-    cheatSheets.current = collectCheatSheetsFromExercises(exercisesToInclude);
+export function ExerciseSheetPage(props: ExerciseSheetPageProps) {
+  const urlToPath = useUrlToPath();
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [error, setError] = useState<string>("");
+  const [exercises, setExercises] = useState<Exercise[]>([]);
+  const [allCheatSheets, setAllCheatSheets] = useState<CheatSheet[]>([]);
+
+  function loadExercises() {
+    setError("loadExercises() in progress");
+    if (!textareaRef.current) {
+      setError("no textarea ref");
+      return;
+    }
+    const loadedExercises: Exercise[] = [];
+    for (let line of textareaRef.current.value.split("\n")) {
+      line = line.trim();
+      if (line !== "") {
+        const path = urlToPath(line);
+        if (path === null) {
+          setError("cannot resolve exercise path for " + line);
+          return;
+        }
+        let node = getContentNodeByPath(path);
+        if (!node) {
+          setError("node not found for " + line);
+          return;
+        }
+        if (node.type !== "exercise") {
+          setError("node is not an exercise: " + line);
+          return;
+        }
+        loadedExercises.push(node);
+      }
+    }
+    setExercises(loadedExercises);
+    setError("");
   }
-  const configuration: ExerciseSheetConfiguration = {
-    exercises: exercisesToInclude,
-    cheatSheets: includeCheatSheets ? cheatSheets.current : [],
-    includeSolutions,
-  };
-  return <ExerciseSheetResult configuration={configuration} />;
+
+  return <div style={{display: "flex", flexDirection: "row", fontSize: "0.7em"}}>
+    <div style={{width: "50%", padding: "1vw"}}>
+      <div><b>Exercises</b></div>
+      <p>Paste the addresses of the exercises here (one address per line):</p>
+      <textarea style={{width: "100%", minHeight: "5vw"}} ref={textareaRef}></textarea>
+      <div><button style={{fontSize: "1vw", padding: "0.5vw"}} onClick={loadExercises}>Load exercises</button></div>
+      <br /><br />
+      {exercises.length > 0 && <>
+          <div><b>Cheat Sheets</b></div>
+      </>}
+    </div>
+    <div style={{width: "1px", flexGrow: 1, padding: "1vw", borderLeft: "1px solid #aaa"}}>
+      {error && <>
+          <b style={{color: "red"}}>{error}</b>
+      </>}
+      {!error && exercises.length > 0 && <>
+        <div><b>Exercises</b></div>
+        <ul>
+          {exercises.map(exercise => <li>{exercise.label}</li>)}
+        </ul>
+      </>}
+    </div>
+  </div>;
 }

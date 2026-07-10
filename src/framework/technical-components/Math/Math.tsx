@@ -6,10 +6,14 @@ import {useRenderMode} from "../../RenderMode.tsx";
 // helpers
 // --------------------------------------------------------------------------------------------------------------------
 
+function translateSource(source: string): string {
+  return source
+      .replaceAll("§cursor", "#kern -0.01em #textcolor{red}{#rule{0.02em}{0.7em}} #kern -0.01em#relax ")
+      .replaceAll("#", "\\");
+}
+
 function render(source: string, displayMode: boolean): string {
-    const translatedSource = source
-        .replaceAll("§cursor", "#kern -0.01em #textcolor{red}{#rule{0.02em}{0.7em}} #kern -0.01em#relax ")
-        .replaceAll("#", "\\");
+    const translatedSource = translateSource(source);
     const options: KatexOptions = {
         displayMode,
         throwOnError: false,
@@ -46,8 +50,9 @@ function MathDivNormal(props: MathDivProps) {
 }
 
 function MathDivLatex(props: MathDivProps) {
+  const translatedSource = translateSource(props.source);
   // TODO use \\ line breaks instead of repeated delimiters, and/or \begin{equation} (numbered?) or \begin{displaymath} instead of $$ as delimiter 
-  return <>$${props.source}$${"\n"}</>;
+  return <>$${translatedSource}$${"\n"}</>;
 }
 
 export function MathDiv(props: MathDivProps) {
@@ -73,7 +78,8 @@ function MathSpanNormal(props: MathSpanProps) {
 }
 
 function MathSpanLatex(props: MathSpanProps) {
-  return <>${props.source}$</>;
+  const translatedSource = translateSource(props.source);
+  return <>${translatedSource}$</>;
 }
 
 export function MathSpan(props: MathSpanProps) {

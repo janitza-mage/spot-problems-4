@@ -2,9 +2,40 @@ import {renderModeContext} from "../../RenderMode.tsx";
 import type {ExerciseSheetResultProps} from "./ExerciseSheetResult.tsx";
 import {useEffect, useRef} from "react";
 
+const specialCloneMarker = "SPECIAL-CLONE-MARKER";
+
 function translateStandardTags(from: HTMLElement, to: HTMLElement) {
+  
+  function add(s: string): void {
+    to.appendChild(document.createTextNode(s));
+  }
+  
   for (const child of from.childNodes) {
-    to.appendChild(child.cloneNode(true));
+    if (child instanceof HTMLElement) {
+      switch (child.nodeName) {
+        
+        case "P": {
+          add("\n");
+          translateStandardTags(child, to);
+          add("\n\n");
+          break;
+        }
+        
+        default: {
+          const myClone = child.cloneNode(false) as HTMLElement;
+          myClone.appendChild(document.createTextNode(specialCloneMarker));
+          const myCloneText = myClone.outerHTML;
+          const markerIndex = myCloneText.indexOf(specialCloneMarker);
+          add(markerIndex < 0 ? myCloneText : myCloneText.substring(0, markerIndex));
+          translateStandardTags(child, to);
+          add(markerIndex < 0 ? "</unknown>" : myCloneText.substring(markerIndex + specialCloneMarker.length));
+          break;
+        }
+        
+      }
+    } else {
+      to.appendChild(child.cloneNode(true));
+    }
   }
 }
 
@@ -37,6 +68,7 @@ export function ExerciseSheetResultLatex(props: ExerciseSheetResultProps) {
           {"\n"}
           {props.configuration.cheatSheets.map((cheatSheet, _index) => <>
             \subsection{"{"}{cheatSheet.label}{"}"}{"\n"}
+            {"\n"}
             {cheatSheet.content}
             {"\n"}
           </>)}

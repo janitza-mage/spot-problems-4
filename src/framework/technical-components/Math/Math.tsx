@@ -1,5 +1,6 @@
 import {type ReactElement, useMemo} from 'react';
 import KaTeX, {type KatexOptions} from "katex";
+import {useRenderMode} from "../../RenderMode.tsx";
 
 // --------------------------------------------------------------------------------------------------------------------
 // helpers
@@ -38,10 +39,20 @@ export interface MathProps {
 export interface MathDivProps extends MathProps {
 }
 
-export function MathDiv(props: MathDivProps) {
+function MathDivNormal(props: MathDivProps) {
     const html = useRendered(props.source, true);
     const style = props.textSize ? {fontSize: props.textSize + "em"} : {};
     return <div style={style} dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
+function MathDivLatex(props: MathDivProps) {
+  // TODO use \\ line breaks instead of repeated delimiters, and/or \begin{equation} (numbered?) or \begin{displaymath} instead of $$ as delimiter 
+  return <>$${props.source}$${"\n"}</>;
+}
+
+export function MathDiv(props: MathDivProps) {
+  const renderMode = useRenderMode();
+  return renderMode === "printedExerciseSheetLatex" ? <MathDivLatex {...props} /> : <MathDivNormal {...props} />;
 }
 
 export function mathDiv(source: string, textSize?: number): ReactElement {
@@ -55,10 +66,19 @@ export function mathDiv(source: string, textSize?: number): ReactElement {
 export interface MathSpanProps extends MathProps {
 }
 
+function MathSpanNormal(props: MathSpanProps) {
+  const html = useRendered(props.source, false);
+  const style = props.textSize ? {fontSize: props.textSize + "em"} : {};
+  return <span style={style} dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
+function MathSpanLatex(props: MathSpanProps) {
+  return <>${props.source}$</>;
+}
+
 export function MathSpan(props: MathSpanProps) {
-    const html = useRendered(props.source, false);
-    const style = props.textSize ? {fontSize: props.textSize + "em"} : {};
-    return <span style={style} dangerouslySetInnerHTML={{ __html: html }} />;
+  const renderMode = useRenderMode();
+  return renderMode === "printedExerciseSheetLatex" ? <MathSpanLatex {...props} /> : <MathSpanNormal {...props} />;
 }
 
 export function mathSpan(source: string, textSize?: number): ReactElement {

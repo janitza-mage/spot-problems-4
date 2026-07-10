@@ -1,9 +1,26 @@
 import {renderModeContext} from "../../RenderMode.tsx";
 import type {ExerciseSheetResultProps} from "./ExerciseSheetResult.tsx";
+import {useEffect, useRef} from "react";
+
+function translateStandardTags(from: HTMLElement, to: HTMLElement) {
+  for (const child of from.childNodes) {
+    to.appendChild(child.cloneNode(true));
+  }
+}
 
 export function ExerciseSheetResultLatex(props: ExerciseSheetResultProps) {
+  const intermediateRef = useRef<HTMLDivElement>(null);
+  const finalRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!intermediateRef.current || !finalRef.current) {
+      return;
+    }
+    finalRef.current.innerHTML = "";
+    translateStandardTags(intermediateRef.current, finalRef.current);
+  });
+  
   return <renderModeContext.Provider value="printedExerciseSheetLatex">
-    <div style={{ fontSize: "0.5em", fontFamily: "monospace", whiteSpace: "pre-wrap" }}>
+    <div style={{ display: "none" }} ref={intermediateRef}>
       \documentclass[12pt]{"{"}article{"}"}{"\n"}
       \usepackage[a4paper, margin=1cm]{"{"}geometry{"}"}{"\n"}
       \usepackage{"{"}amsmath,amsthm,amssymb{"}"}{"\n"}
@@ -51,5 +68,6 @@ export function ExerciseSheetResultLatex(props: ExerciseSheetResultProps) {
 
       \end{"{"}document{"}"}{"\n"}
     </div>
+    <div style={{ fontSize: "0.5em", fontFamily: "monospace", whiteSpace: "pre-wrap" }} ref={finalRef} />
   </renderModeContext.Provider>;
 }

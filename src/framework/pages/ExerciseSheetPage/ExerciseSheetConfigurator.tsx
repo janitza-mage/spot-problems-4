@@ -25,6 +25,7 @@ export function ExerciseSheetConfigurator(props: ExerciseSheetConfiguratorProps)
   const [allCheatSheets, setAllCheatSheets] = useState<CheatSheet[]>([]);
   const [cheatSheetInclusionFlags, setCheatSheetInclusionFlags] = useState<Map<object, boolean>>(new Map());
   const [includeSolutions, setIncludeSolutions] = useState(true);
+  const [generateLatex, setGenerateLatex] = useState(false);
 
   function loadExercises() {
     setError("loadExercises() in progress");
@@ -70,6 +71,7 @@ export function ExerciseSheetConfigurator(props: ExerciseSheetConfiguratorProps)
       exercises,
       cheatSheets: allCheatSheets.filter(cheatSheet => !!cheatSheetInclusionFlags.get(cheatSheet.deduplicationToken)),
       includeSolutions,
+      generateLatex,
     });
   }
 
@@ -98,8 +100,14 @@ export function ExerciseSheetConfigurator(props: ExerciseSheetConfiguratorProps)
           </div>)}
           <br />
           <div><b>Options</b></div>
-          <input type="checkbox" checked={includeSolutions} onChange={() => setIncludeSolutions(!includeSolutions)} />
-          Include Solutions
+          <div>
+            <input type="checkbox" checked={includeSolutions} onChange={() => setIncludeSolutions(!includeSolutions)} />
+            Include Solutions
+          </div>
+          <div>
+            <input type="checkbox" checked={generateLatex} onChange={() => setGenerateLatex(!generateLatex)} />
+            Generate LaTeX code
+          </div>
           <br />
           <br />
           <div>

@@ -6,4 +6,5 @@ export interface ExerciseSheetConfiguration {
   exercises: Exercise[];
   cheatSheets: CheatSheet[];
   includeSolutions: boolean;
+  generateLatex: boolean;
 }

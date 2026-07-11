@@ -21,6 +21,27 @@ function translateStandardTags(from: HTMLElement, to: HTMLElement) {
           break;
         }
         
+        case "I": {
+          add("\\textit{");
+          translateStandardTags(child, to);
+          add("}");
+          break;
+        }
+        
+        case "UL": {
+          add("\n\\begin{itemize}\n");
+          translateStandardTags(child, to);
+          add("\\end{itemize}\n");
+          break;
+        }
+        
+        case "LI": {
+          add("\\item ");
+          translateStandardTags(child, to);
+          add("\n");
+          break;
+        }
+        
         default: {
           const myClone = child.cloneNode(false) as HTMLElement;
           myClone.appendChild(document.createTextNode(specialCloneMarker));

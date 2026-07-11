@@ -20,12 +20,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* I'm sorry if anybody wants to copy'n'paste text out, but this interferes with the UI too much. */
-/* TODO re-check if this is stil the case in a simple problem database */
-* {
-    user-select: none;
-}
-
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

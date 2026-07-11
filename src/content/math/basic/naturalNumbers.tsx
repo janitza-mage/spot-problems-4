@@ -139,7 +139,8 @@ export const naturalNumbers: Collection = {
           Which are in {mathSpan("#mathbb{N}^+_0")}?
         </p>
         <p>
-          0, 1, 2, 3, 100^100, -1, -2, -100^100, 0.5, -0.5
+          {mathSpan("0")}, {mathSpan("1")}, {mathSpan("2")}, {mathSpan("3")}, {mathSpan("100^{100}")},
+          {mathSpan("-1")}, {mathSpan("-2")}, {mathSpan("-100^{100}")}, {mathSpan("0.5")}, {mathSpan("-0.5")}
         </p>
       </>,
       answer: <>
@@ -147,17 +148,19 @@ export const naturalNumbers: Collection = {
           These are both in {mathSpan("#mathbb{N}^+")} and {mathSpan("#mathbb{N}^+_0")}:
         </p>
         <p>
-          1, 2, 3, 100^100
+          {mathSpan("1")}, {mathSpan("2")}, {mathSpan("3")}, {mathSpan("100^{100}")}
         </p>
         <p>
           These are neither in {mathSpan("#mathbb{N}^+")} nor in {mathSpan("#mathbb{N}^+_0")}:
         </p>
         <ul>
-          <li>-1, -2, -100^100 (because they are negative, and the natural numbers do not include negative numbers</li>
-          <li>0.5, -0.5 (because they are not integers, and the natural numbers do not include any non-integers</li>
+          <li>{mathSpan("-1")}, {mathSpan("-2")}, {mathSpan("-100^{100}")} (because they are negative, and the natural
+            numbers do not include negative numbers</li>
+          <li>{mathSpan("0.5")}, {mathSpan("-0.5")} (because they are not integers, and the natural numbers do not
+            include any non-integers</li>
         </ul>
         <p>
-          The number 0 is in {mathSpan("#mathbb{N}^+_0")}, but not in {mathSpan("#mathbb{N}^+")}.
+          The number {mathSpan("0")} is in {mathSpan("#mathbb{N}^+_0")}, but not in {mathSpan("#mathbb{N}^+")}.
         </p>
       </>,
     },

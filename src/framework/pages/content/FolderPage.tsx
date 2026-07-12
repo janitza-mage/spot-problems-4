@@ -23,11 +23,10 @@ export function FolderPage(props: FolderPageProps) {
         };
     });
     return <WithHeader
-        header={<div style={{backgroundColor: "#ccc", borderBottom: "1px solid #aaa"}}>
+        header={<>
             <NavigationPageBreadcrumbs path={props.path} />
             <h1 style={{margin: 0}}>{props.folder.name}</h1>
-        </div>}
-        overflow={"hidden scroll"}
+        </>}
     >
         <NavigationList elements={navigationElements} />
     </WithHeader>;

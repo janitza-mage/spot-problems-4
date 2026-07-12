@@ -22,11 +22,10 @@ export function CollectionPage(props: CollectionPageProps) {
         };
     });
     return <WithHeader
-        header={<div style={{backgroundColor: "#ccc", borderBottom: "1px solid #aaa"}}>
+        header={<>
             <NavigationPageBreadcrumbs path={props.path} />
             <h1 style={{margin: 0}}>{props.collection.name}</h1>
-        </div>}
-        overflow={"hidden scroll"}
+        </>}
     >
         <NavigationList elements={navigationElements} />
     </WithHeader>;

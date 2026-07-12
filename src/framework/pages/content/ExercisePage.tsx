@@ -3,7 +3,6 @@ import {useState} from "react";
 import {
   useNavigateToContentNode
 } from "../../technical-components/navigation/ContentNodeLink/useNavigateToContentNode.ts";
-import {PageWithHeader} from "../../technical-components/layout/PageWithHeader.tsx";
 import {Button, IconButton} from "@mui/material";
 import CancelIcon from "@mui/icons-material/Cancel";
 import LeftIcon from "@mui/icons-material/ChevronLeft";
@@ -13,6 +12,7 @@ import {getContentNodeByPath} from "../../paths.tsx";
 import {useGlobalHotkeyListener} from "../../technical-components/util/useGlobalKeyEventListener.tsx";
 import {CheatSheetsModalButtons} from "../../technical-components/CheatSheet/CheatSheetsModalButtons.tsx";
 import {CheatSheetModalButton} from "../../technical-components/CheatSheet/CheatSheetModalButton.tsx";
+import {WithHeader} from "../../technical-components/layout/WithHeader.tsx";
 
 export interface ExercisePageProps {
   path: string[];
@@ -78,7 +78,7 @@ export function ExercisePage(props: ExercisePageProps) {
 
   const cheatSheets = props.exercise.cheatSheets ?? [];
   return <>
-    <PageWithHeader
+    <WithHeader
         header={<>
           <h1 style={{margin: 0, fontSize: "1em"}}>
             <IconButton onClick={onClickPrevious}>
@@ -109,6 +109,6 @@ export function ExercisePage(props: ExercisePageProps) {
         </>}
         <br />
       </div>
-    </PageWithHeader>
+    </WithHeader>
   </>;
 }

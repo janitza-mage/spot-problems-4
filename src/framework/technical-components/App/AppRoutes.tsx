@@ -6,6 +6,7 @@ import {ExerciseSheetPage} from "../../pages/ExerciseSheetPage/ExerciseSheetPage
 import {NormalAppFrame} from "./NormalAppFrame.tsx";
 import {ExerciseSheetAppFrame} from "../print/ExerciseSheetAppFrame.tsx";
 import {removeTrailingSlashes} from "../../util/removeTrailingSlashes.ts";
+import {AboutPage} from "../../pages/AboutPage.tsx";
 
 function ContentPathPageWrapper() {
     const { "*": splat } = useParams();
@@ -17,7 +18,8 @@ export function AppRoutes() {
     return <Routes>
       <Route path={"_/printAll"} element={<NormalAppFrame><PrintAllPage /></NormalAppFrame>} />;
       <Route path={"_/ankiAll"} element={<NormalAppFrame><AnkiExportAllPage /></NormalAppFrame>} />;
-      <Route path={"_/experiment"} element={<ExerciseSheetAppFrame><ExerciseSheetPage /></ExerciseSheetAppFrame>} />;
+      <Route path={"_/printExerciseSheet"} element={<ExerciseSheetAppFrame><ExerciseSheetPage /></ExerciseSheetAppFrame>} />;
+      <Route path={"_/about"} element={<NormalAppFrame><AboutPage /></NormalAppFrame>} />;
       <Route path={"*"} element={<NormalAppFrame><ContentPathPageWrapper /></NormalAppFrame>} />;
     </Routes>;
 }

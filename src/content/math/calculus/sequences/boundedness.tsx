@@ -12,7 +12,7 @@ export const boundedness: Collection = {
   exercises: [
     {
       type: "exercise",
-      label: "...",
+      label: "Definition (1)",
       problem: <>
         <p>In the context of a sequence {a_n} of real numbers, give a definition of the terms <i>bounded from
           above</i>, <i>bounded from below</i>, <i>bounded</i>, <i>upper bound</i> and <i>lower bound</i>.</p>
@@ -29,7 +29,7 @@ export const boundedness: Collection = {
     },
     {
       type: "exercise",
-      label: "...",
+      label: "Definition (2)",
       problem: <>
         <p>Is the following statement correct?</p>
         <p><i>A sequence that is bounded from above is bounded.</i></p>
@@ -40,7 +40,7 @@ export const boundedness: Collection = {
     },
     {
       type: "exercise",
-      label: "...",
+      label: "Examples",
       problem: <>
         <p>Which of the following sequences are bounded from above/below? Give bounds when possible.</p>
         {mathDiv("a_n = 3")}
@@ -57,7 +57,7 @@ export const boundedness: Collection = {
     },
     {
       type: "exercise",
-      label: "...",
+      label: <>Boundedness of {mathSpan("#frac{1}{(3.5-x)^2}")}</>,
       problem: <>
         <p>Observe that {mathSpan("#frac{1}{(3.5-x)^2}")} becomes arbitrarily large the closer you get
           to {mathSpan("x=3.5")}.</p>

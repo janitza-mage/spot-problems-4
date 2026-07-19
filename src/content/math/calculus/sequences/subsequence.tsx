@@ -8,7 +8,7 @@ export const subsequence: Collection = {
   exercises: [
     {
       type: "exercise",
-      label: "...",
+      label: "Subsequency by Filtering Condition",
       problem: <>
         <p>From the sequence</p>
         {mathDiv("1, 2, 3, #hskip 5pt 2, 3, 4, #hskip 5pt 1, 2, 3, #hskip 5pt 2, 3, 4, #hskip 5pt 1, 2, 3, #hskip 5pt 2, 3, 4, #dots")}
@@ -20,7 +20,7 @@ export const subsequence: Collection = {
     },
     {
       type: "exercise",
-      label: "...",
+      label: "Find Natural Numbers Subsequence (1)",
       problem: <>
         <p>Is the sequence of natural numbers a subsequence of the following sequence?</p>
         {mathDiv("0, #hskip 5pt 0, 1, #hskip 5pt 0, 1, 2, #hskip 5pt 0, 1, 2, 3, #dots")}
@@ -31,7 +31,7 @@ export const subsequence: Collection = {
     },
     {
       type: "exercise",
-      label: "...",
+      label: "Find Natural Numbers Subsequence (2)",
       problem: <>
         <p>Is the sequence of natural numbers a subsequence of the following sequence?</p>
         {mathDiv("0, 2, 4, 6, 8,#hskip 5pt 1, 3, 5, 7, 9, #hskip 5pt 10, 12, 14, 16, 18, #hskip 5pt 11, 13, #dots")}

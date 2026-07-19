@@ -58,7 +58,7 @@ export const relationsSameSet: Collection = {
     },
     {
       type: "exercise",
-      label: <>...</>,
+      label: <>{mathSpan(">")} and {mathSpan("#geq")} in set notation</>,
       problem: <>
         <p>Let</p>
         {mathDiv("A = #{1, 2, 3#}")}
@@ -71,7 +71,7 @@ export const relationsSameSet: Collection = {
     },
     {
       type: "exercise",
-      label: <>...</>,
+      label: <>Reflexivity and Irreflexivity (1)</>,
       problem: <>
         <p>Let</p>
         {mathDiv("A = #{1, 2, 3#}")}
@@ -110,9 +110,9 @@ export const relationsSameSet: Collection = {
     },
     {
       type: "exercise",
-      label: <>...</>,
+      label: <>Reflexivity and Irreflexivity (2)</>,
       problem: <>
-        <p>Note that an <i>irreflexive</i> relation is also called <i>strict</i></p>.
+        <p>Note that an <i>irreflexive</i> relation is also called <i>strict</i>.</p>
         <p>Let</p>
         {mathDiv("A = #{1, 2, 3#}")}
         <p>Given a relation R between elements on A, that relation can be made reflexive by including all missing pairs:</p>
@@ -135,7 +135,7 @@ export const relationsSameSet: Collection = {
     },
     {
       type: "exercise",
-      label: <>...</>,
+      label: <>Symmetry, Asymmetry and Antisymmetry (1)</>,
       problem: <>
         <p>The following six terms mean six different things. Give their definition in terms of element pairs.</p>
         <ul>
@@ -162,11 +162,11 @@ export const relationsSameSet: Collection = {
     },
     {
       type: "exercise",
-      label: <>...</>,
+      label: <>Symmetry, Asymmetry and Antisymmetry (2)</>,
       problem: <>
         <p>Let A be a set, and R a relation between elements of A. </p>
-        <p>Explain the difference between the terms <i>symmetric</i>, <i>asymmetric</i> and <i>antisymmetric</i>
-        in terms of an arbitrary element {mathSpan("(x, y) #in R")}.</p>
+        <p>Explain the difference between the terms <i>symmetric</i>, <i>asymmetric</i> and <i>antisymmetric</i> in
+          terms of an arbitrary element {mathSpan("(x, y) #in R")}.</p>
       </>,
       answer: <>
         <ul>
@@ -178,7 +178,7 @@ export const relationsSameSet: Collection = {
     },
     {
       type: "exercise",
-      label: <>...</>,
+      label: <>Symbols</>,
       problem: <>
         <p>Let A be a set and {mathSpan("#lhd")}, {mathSpan("#unlhd")}, {mathSpan("#rhd")}, {mathSpan("#unrhd")}, {mathSpan("#bowtie")} relations
           between elements of A. What properties can you expect from these relations <i>by convention</i>, based on the
@@ -199,7 +199,7 @@ export const relationsSameSet: Collection = {
     },
     {
       type: "exercise",
-      label: <>...</>,
+      label: <>Transitivity</>,
       problem: <>
         <p>Let A be a set and R be a relation between elements of A. Give a definition for the term <i>transitive</i> in
         terms of element pairs.</p>
@@ -210,7 +210,7 @@ export const relationsSameSet: Collection = {
     },
     {
       type: "exercise",
-      label: <>...</>,
+      label: <>The "less but not <i>much</i> less" Relation</>,
       problem: <>
         <p>The {mathSpan("#leq")} relation on natural numbers are reflexive, transitive
           and antisymmetric. Now consider the relation {mathSpan("#leq'")} that is defined as</p>
@@ -236,7 +236,7 @@ export const relationsSameSet: Collection = {
     },
     {
       type: "exercise",
-      label: <>...</>,
+      label: <>The Subset Relation</>,
       problem: <>
         <p>Let</p>
         {mathDiv("A = #{1, 2, 3#}")}

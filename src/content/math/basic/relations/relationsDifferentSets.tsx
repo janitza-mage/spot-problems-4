@@ -94,7 +94,7 @@ export const relationsDifferentSets: Collection = {
     },
     {
       type: "exercise",
-      label: <>...</>,
+      label: <>{mathSpan(">")} and {mathSpan("#geq")} in set notation</>,
       problem: <>
         <p>Let</p>
         {mathDiv("A = #{1, 2, 3, 4, 5#}")}
